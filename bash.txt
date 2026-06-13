@@ -1,0 +1,1499 @@
+bash
+
+cat > /mnt/user-data/outputs/pc-builder.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="ClearTech Solutions — Custom PC builds by a Marine Corps veteran in Melissa, TX. We design, build, and deliver custom gaming PCs. Serving McKinney, Frisco, Allen, Prosper, and all of North Texas.">
+<title>PC Build Advisor | ClearTech Solutions</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A0E1A'/><rect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%2300D4FF' stroke-width='2'/><rect x='12' y='12' width='8' height='8' rx='1' fill='%2300D4FF'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0E1A;--surf:#111827;--surf2:#1A2332;--border:#1E293B;
+  --cyan:#00D4FF;--cyan-dim:rgba(0,212,255,0.12);
+  --orange:#FF6B35;--orange-dim:rgba(255,107,53,0.12);
+  --green:#10B981;--green-dim:rgba(16,185,129,0.12);
+  --red:#EF4444;--red-dim:rgba(239,68,68,0.12);
+  --text:#F1F5F9;--muted:#64748B;--mid:#94A3B8;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(10,14,26,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;gap:1rem}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--cyan);text-decoration:none;letter-spacing:-0.02em;white-space:nowrap}
+.nav-logo span{color:var(--text)}
+.nav-center{display:flex;gap:1.5rem;list-style:none}
+.nav-center a{color:var(--mid);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s}
+.nav-center a:hover,.nav-center a.active{color:var(--cyan)}
+.nav-right{display:flex;align-items:center;gap:0.75rem}
+.nav-phone{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-decoration:none;white-space:nowrap}
+.nav-phone:hover{color:#fff}
+.lang-toggle{display:flex;background:var(--surf2);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.lang-btn{background:none;border:none;color:var(--mid);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.72rem;padding:0.3rem 0.6rem;cursor:pointer;transition:all 0.2s}
+.lang-btn.active{background:var(--cyan);color:#0A0E1A}
+
+/* ── BACK TO TOP ── */
+.btt{position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;width:40px;height:40px;background:var(--cyan);color:#0A0E1A;border:none;border-radius:50%;cursor:pointer;font-size:1.1rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,212,255,0.4);transition:transform 0.2s}
+.btt:hover{transform:translateY(-2px)}
+.btt.show{display:flex}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 2rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:56px 56px}
+.hero::after{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.vet-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.4);color:var(--orange);padding:0.45rem 1.1rem;border-radius:100px;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero-badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);padding:0.35rem 1rem;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.25rem;margin-left:0.5rem}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.1rem,5vw,3.6rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.25rem}
+h1 .accent{color:var(--cyan)}
+.hero p{font-size:1rem;color:var(--mid);line-height:1.75;max-width:620px;margin:0 auto 1.5rem}
+.hero-bio{background:var(--surf);border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:0 10px 10px 0;padding:1rem 1.25rem;text-align:left;max-width:600px;margin:0 auto 2rem;font-size:0.88rem;color:var(--mid);line-height:1.65}
+.hero-bio strong{color:var(--text)}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-btn{display:inline-block;background:var(--cyan);color:#0A0E1A;padding:0.85rem 2rem;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;text-decoration:none;font-size:0.92rem;transition:box-shadow 0.2s,transform 0.2s}
+.hero-btn:hover{box-shadow:0 4px 28px rgba(0,212,255,0.4);transform:translateY(-1px)}
+.hero-btn-outline{display:inline-block;background:transparent;color:var(--orange);border:2px solid var(--orange);padding:0.83rem 2rem;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;text-decoration:none;font-size:0.92rem;transition:all 0.2s}
+.hero-btn-outline:hover{background:var(--orange);color:#fff}
+
+/* ── SECTIONS ── */
+.section{padding:5rem 2rem;max-width:1140px;margin:0 auto}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:0.6rem}
+.sec-sub{color:var(--mid);font-size:0.92rem;line-height:1.65;margin-bottom:2.5rem}
+
+/* ── USE CASE ── */
+.uc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.uc-card{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.4rem;cursor:pointer;transition:border-color 0.2s,background 0.2s;text-align:left}
+.uc-card:hover{border-color:var(--cyan);background:var(--cyan-dim)}
+.uc-card.active{border-color:var(--cyan);background:var(--cyan-dim);box-shadow:0 0 0 1px var(--cyan)}
+.uc-icon{font-size:1.6rem;margin-bottom:0.65rem;display:block}
+.uc-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.92rem;margin-bottom:0.3rem}
+.uc-card p{color:var(--muted);font-size:0.8rem;line-height:1.5}
+
+/* ── BUILDER ── */
+.builder-wrap{padding:2rem 2rem 5rem;max-width:1240px;margin:0 auto}
+.builder-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start}
+.builder-col{display:flex;flex-direction:column;gap:1.2rem}
+
+/* Progress bar */
+.progress-wrap{background:var(--surf);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.2rem}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem}
+.progress-label{font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600}
+.progress-count{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cyan)}
+.progress-track{background:var(--surf2);border-radius:100px;height:6px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,var(--cyan),var(--green));height:100%;border-radius:100px;transition:width 0.4s ease;width:0%}
+
+/* Component groups */
+.cgroup{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.3rem}
+.cgroup-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.88rem;margin-bottom:0.28rem;display:flex;align-items:center;gap:0.5rem}
+.cgroup-svg{width:20px;height:20px;flex-shrink:0;color:var(--cyan)}
+.ctag{font-family:'JetBrains Mono',monospace;font-size:0.58rem;background:var(--cyan-dim);color:var(--cyan);padding:0.15rem 0.4rem;border-radius:4px;letter-spacing:0.04em}
+.cdesc{color:var(--muted);font-size:0.78rem;margin-bottom:0.9rem;line-height:1.5}
+.copts{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:0.5rem}
+.empty-hint{color:var(--muted);font-size:0.8rem;grid-column:1/-1;padding:0.2rem 0}
+
+/* Budget buttons */
+.bud-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem}
+.bud-btn{background:var(--surf2);border:2px solid var(--border);border-radius:10px;padding:0.85rem 0.65rem;cursor:pointer;text-align:center;transition:all 0.2s;color:var(--text)}
+.bud-btn:hover{border-color:var(--orange)}
+.bud-btn.active{border-color:var(--orange);background:var(--orange-dim)}
+.bud-tier{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.82rem;display:block;margin-bottom:0.2rem}
+.bud-range{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--orange)}
+
+/* Option buttons */
+.opt-btn{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:0.65rem 0.85rem;cursor:pointer;text-align:left;transition:all 0.2s;color:var(--text);width:100%}
+.opt-btn:hover{border-color:var(--cyan)}
+.opt-btn.active{border-color:var(--cyan);background:var(--cyan-dim)}
+.opt-tier{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.06em;padding:0.12rem 0.4rem;border-radius:4px;margin-bottom:0.2rem;text-transform:uppercase}
+.tier-budget{background:rgba(100,116,139,0.2);color:#94A3B8}
+.tier-mid{background:rgba(16,185,129,0.15);color:#34D399}
+.tier-high{background:rgba(0,212,255,0.15);color:var(--cyan)}
+.tier-elite{background:rgba(255,107,53,0.15);color:var(--orange)}
+.opt-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.8rem;display:block;margin-bottom:0.12rem}
+.opt-price{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--cyan)}
+.opt-spec{font-size:0.68rem;color:var(--muted);margin-top:0.12rem;display:block;line-height:1.4}
+
+/* Storage groups */
+.storage-grp{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:0.5rem}
+.storage-grp-hdr{width:100%;background:var(--surf2);border:none;color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;padding:0.7rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s}
+.storage-grp-hdr:hover{background:var(--cyan-dim)}
+.storage-grp-hdr .sarrow{transition:transform 0.2s;font-size:0.7rem;color:var(--mid)}
+.storage-grp-hdr.open .sarrow{transform:rotate(180deg)}
+.storage-grp-body{display:none;padding:0.75rem;background:var(--surf);display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:0.5rem}
+.storage-grp-body.open{display:grid}
+
+/* ── PRICE PANEL ── */
+.price-panel{position:sticky;top:80px;background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:1.35rem;overflow:hidden}
+.price-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--orange))}
+.pp-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.92rem;margin-bottom:1rem;padding-top:0.2rem}
+.price-lines{display:flex;flex-direction:column;gap:0.48rem;margin-bottom:0.9rem}
+.pline{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem}
+.plabel{color:var(--mid)}
+.pval{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text)}
+.pval.empty{color:var(--muted);font-family:'Inter',sans-serif;font-style:italic;font-size:0.75rem}
+.pdivider{border:none;border-top:1px solid var(--border);margin:0.5rem 0}
+
+/* Compatibility indicator */
+.compat-box{border-radius:8px;padding:0.6rem 0.85rem;font-size:0.75rem;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;line-height:1.4}
+.compat-box.neutral{background:var(--surf2);color:var(--muted)}
+.compat-box.ok{background:var(--green-dim);border:1px solid rgba(16,185,129,0.3);color:#34D399}
+.compat-box.error{background:var(--red-dim);border:1px solid rgba(239,68,68,0.3);color:#F87171}
+
+/* OS notice */
+.os-notice{background:var(--surf2);border-radius:8px;padding:0.6rem 0.85rem;font-size:0.73rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.45;border-left:2px solid var(--orange)}
+.os-notice a{color:var(--orange);text-decoration:none}
+
+/* Price total */
+.ptotal{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.25rem}
+.ptotal-label{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.88rem}
+.ptotal-amt{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:600;color:var(--cyan)}
+.pupdate{font-size:0.65rem;color:var(--muted);margin-bottom:1rem;font-family:'JetBrains Mono',monospace}
+/* PRICES LAST UPDATED — change date below monthly */
+.pnote{font-size:0.7rem;color:var(--muted);text-align:center;margin-bottom:0.85rem;line-height:1.4}
+.pp-btns{display:flex;flex-direction:column;gap:0.6rem}
+.cta-btn{width:100%;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.2s}
+.cta-btn:hover{background:#ff7849;transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,107,53,0.35)}
+.share-btn{width:100%;background:transparent;color:var(--cyan);border:1px solid var(--cyan);border-radius:10px;padding:0.75rem;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;cursor:pointer;transition:all 0.2s}
+.share-btn:hover{background:var(--cyan-dim)}
+
+/* ── SERVICE SECTION ── */
+.svc-section{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 2rem}
+.svc-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.svc-steps{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.25rem}
+.sstep{display:flex;gap:0.9rem;align-items:flex-start}
+.snum{width:32px;height:32px;border-radius:50%;background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;color:var(--cyan);flex-shrink:0;margin-top:1px}
+.scontent h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.88rem;margin-bottom:0.25rem}
+.scontent p{color:var(--muted);font-size:0.8rem;line-height:1.5}
+.area-card{background:var(--surf2);border:1px solid var(--border);border-radius:16px;padding:1.75rem}
+.area-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.9rem}
+.area-card p{color:var(--mid);font-size:0.85rem;line-height:1.6;margin-bottom:0.85rem}
+.area-badge{display:inline-flex;align-items:center;gap:0.35rem;background:var(--orange-dim);border:1px solid rgba(255,107,53,0.25);color:var(--orange);padding:0.32rem 0.8rem;border-radius:100px;font-size:0.75rem;font-weight:700;margin-bottom:0.85rem}
+.fee-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.5rem}
+.fee-item{background:var(--surf);border:1px solid var(--border);border-radius:8px;padding:0.75rem}
+.fee-item .fee-type{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.78rem;margin-bottom:0.2rem}
+.fee-item .fee-price{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--cyan)}
+.fee-item .fee-note{font-size:0.68rem;color:var(--muted);margin-top:0.15rem}
+
+/* ── PROOF OF WORK ── */
+.pow-section{padding:5rem 2rem;max-width:1140px;margin:0 auto}
+.pow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+.pow-card{background:var(--surf);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
+.pow-card:hover{border-color:var(--cyan)}
+/* Replace the placeholder divs below with <img> tags once you have your build photos */
+.pow-img{height:180px;background:var(--surf2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;color:var(--muted);font-size:0.78rem;border-bottom:1px solid var(--border)}
+.pow-img-icon{font-size:2rem}
+.pow-body{padding:1.1rem}
+.pow-tag{display:inline-block;background:var(--cyan-dim);color:var(--cyan);font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:4px;margin-bottom:0.5rem}
+.pow-tag.upgrade{background:var(--orange-dim);color:var(--orange)}
+.pow-body h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.92rem;margin-bottom:0.35rem}
+.pow-body p{color:var(--muted);font-size:0.78rem;line-height:1.5}
+
+/* ── INCLUDED / WARRANTY ── */
+.included-section{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 2rem}
+.included-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.included-list{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem}
+.inc-item{display:flex;gap:0.75rem;align-items:flex-start;font-size:0.85rem}
+.inc-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.05rem}
+.inc-text h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;margin-bottom:0.15rem}
+.inc-text p{color:var(--muted);font-size:0.78rem;line-height:1.45}
+.warranty-card{background:var(--surf2);border:1px solid var(--border);border-radius:14px;padding:1.6rem}
+.warranty-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.85rem}
+.warranty-card p{color:var(--mid);font-size:0.85rem;line-height:1.6;margin-bottom:0.85rem}
+.warranty-badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--green-dim);border:1px solid rgba(16,185,129,0.3);color:var(--green);padding:0.35rem 0.85rem;border-radius:100px;font-size:0.75rem;font-weight:700}
+
+/* ── UPGRADE SECTION ── */
+.upgrade-section{padding:5rem 2rem;max-width:1140px;margin:0 auto}
+.upgrade-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem}
+.upgrade-card{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.3rem;transition:border-color 0.2s}
+.upgrade-card:hover{border-color:var(--cyan)}
+.upgrade-card .u-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block}
+.upgrade-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem}
+.upgrade-card p{color:var(--muted);font-size:0.78rem;line-height:1.5;margin-bottom:0.6rem}
+.upgrade-card .u-price{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--cyan)}
+
+/* ── CHECKLIST ── */
+.checklist-section{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 2rem}
+.checklist-inner{max-width:1140px;margin:0 auto}
+.checklist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;margin-top:1.5rem}
+.cl-item{background:var(--surf2);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;display:flex;gap:0.75rem;align-items:center}
+.cl-icon{font-size:1.3rem;flex-shrink:0}
+.cl-text h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;margin-bottom:0.15rem}
+.cl-text p{color:var(--muted);font-size:0.72rem}
+
+/* ── WHY CLEARTECH ── */
+.why-section{padding:5rem 2rem;max-width:1140px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.why-col{background:var(--surf);border:1px solid var(--border);border-radius:14px;padding:1.5rem}
+.why-col.cleartech{border-color:var(--cyan);background:var(--cyan-dim)}
+.why-col h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;margin-bottom:1rem}
+.why-col h3 span{color:var(--cyan)}
+.why-row{display:flex;gap:0.6rem;align-items:flex-start;font-size:0.82rem;margin-bottom:0.6rem;color:var(--mid)}
+.why-row .wcheck{color:var(--green);flex-shrink:0;font-size:0.9rem}
+.why-row .wcross{color:var(--red);flex-shrink:0;font-size:0.9rem}
+
+/* ── FAQ ── */
+.faq-section{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 2rem}
+.faq-inner{max-width:860px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.75rem}
+.faq-item{background:var(--surf2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.88rem;padding:1rem 1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:1rem;transition:background 0.2s}
+.faq-q:hover{background:var(--cyan-dim)}
+.faq-q .farrow{color:var(--cyan);flex-shrink:0;font-size:0.75rem;transition:transform 0.2s}
+.faq-q.open .farrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 1.1rem 1rem;color:var(--mid);font-size:0.83rem;line-height:1.65;border-top:1px solid var(--border)}
+.faq-a.open{display:block}
+
+/* ── PARTS POLICY ── */
+.parts-banner{background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.25);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;max-width:1140px;margin-left:auto;margin-right:auto}
+.parts-banner .pb-icon{font-size:1.4rem;flex-shrink:0}
+.parts-banner h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.3rem;color:var(--cyan)}
+.parts-banner p{color:var(--mid);font-size:0.82rem;line-height:1.55}
+
+/* ── CONTACT FORM ── */
+.contact-section{padding:5rem 2rem;max-width:720px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fgroup{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem}
+.fgroup label{font-size:0.8rem;font-weight:500;color:var(--mid)}
+.fgroup input,.fgroup select,.fgroup textarea{background:var(--surf);border:1px solid var(--border);border-radius:8px;padding:0.68rem 0.95rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.86rem;outline:none;transition:border-color 0.2s;width:100%}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--cyan)}
+.fgroup textarea{resize:vertical;min-height:100px}
+.fgroup select option{background:var(--surf)}
+.privacy-note{background:var(--surf);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1.05rem;font-size:0.76rem;color:var(--muted);line-height:1.5;margin-bottom:1.25rem;display:flex;gap:0.6rem;align-items:flex-start}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--cyan),#009dbf);color:#0A0E1A;border:none;border-radius:10px;padding:0.95rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;transition:all 0.2s}
+.submit-btn:hover{box-shadow:0 4px 24px rgba(0,212,255,0.3);transform:translateY(-1px)}
+.summary-box{background:var(--surf2);border:1px solid var(--border);border-radius:10px;padding:1.05rem;margin-bottom:1.05rem;font-size:0.82rem}
+.summary-box h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;color:var(--cyan);margin-bottom:0.65rem}
+.sline{display:flex;justify-content:space-between;padding:0.25rem 0;border-bottom:1px solid var(--border);color:var(--mid)}
+.sline:last-child{border-bottom:none}
+.sline .sval{color:var(--text);font-weight:500}
+.success-msg{text-align:center;padding:3rem 1rem;display:none}
+.success-msg h3{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--green);margin-bottom:0.75rem}
+.success-msg p{color:var(--mid);font-size:0.88rem;line-height:1.6}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--surf)}
+.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+.footer-brand h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--cyan);margin-bottom:0.5rem}
+.footer-brand p{color:var(--muted);font-size:0.78rem;line-height:1.6}
+.footer-brand .f-phone{display:block;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--cyan);text-decoration:none;margin-top:0.5rem}
+.footer-col h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;margin-bottom:0.75rem;color:var(--text)}
+.footer-col p,.footer-col a{color:var(--muted);font-size:0.78rem;line-height:1.7;text-decoration:none;display:block}
+.footer-col a:hover{color:var(--cyan)}
+.footer-social{display:flex;gap:0.6rem;margin-top:0.75rem}
+.social-link{width:34px;height:34px;background:var(--surf2);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--mid);font-size:0.85rem;transition:all 0.2s}
+.social-link:hover{border-color:var(--cyan);color:var(--cyan)}
+.footer-bottom{max-width:1140px;margin:1.5rem auto 0;border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;font-size:0.73rem;color:var(--muted)}
+
+/* ── SHARE MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.show{display:flex}
+.modal-box{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:2rem;max-width:440px;width:100%}
+.modal-box h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.5rem}
+.modal-box p{color:var(--mid);font-size:0.82rem;margin-bottom:1.25rem;line-height:1.55}
+.modal-actions{display:flex;flex-direction:column;gap:0.65rem}
+.modal-btn{width:100%;padding:0.8rem;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.2s;border:none}
+.modal-btn.primary{background:var(--cyan);color:#0A0E1A}
+.modal-btn.primary:hover{box-shadow:0 4px 20px rgba(0,212,255,0.35)}
+.modal-btn.secondary{background:var(--surf2);border:1px solid var(--border);color:var(--text)}
+.modal-btn.secondary:hover{border-color:var(--cyan)}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.url-display{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--mid);word-break:break-all;margin-bottom:0.65rem;display:none}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .builder-grid{grid-template-columns:1fr}
+  .price-panel{position:static;order:-1}
+  .svc-inner,.included-inner,.why-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .nav-center{display:none}
+  .form-row{grid-template-columns:1fr}
+  .bud-row{grid-template-columns:1fr 1fr}
+  .pow-grid{grid-template-columns:1fr}
+  .copts{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .fee-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Clear<span>Tech</span></a>
+  <ul class="nav-center">
+    <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a href="index.html#services" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="pc-builder.html" class="active" data-en="PC Builder" data-es="Armador de PC">PC Builder</a></li>
+    <li><a href="#contact-form" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:9723917153" class="nav-phone">📞 972-391-7153</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div style="display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+      <div class="vet-badge">🇺🇸 <span data-en="Veteran-Owned Business" data-es="Negocio de Veterano">Veteran-Owned Business</span></div>
+      <div class="hero-badge">⚡ <span data-en="ClearTech PC Build Service · Melissa, TX" data-es="Servicio de Armado ClearTech · Melissa, TX">ClearTech PC Build Service · Melissa, TX</span></div>
+    </div>
+    <h1 data-en="Want a <span class='accent'>Custom PC</span><br>But Don't Know Where to Start?" data-es="¿Quieres una <span class='accent'>PC a tu Medida</span><br>Pero No Sabes Por Dónde Empezar?">Want a <span class="accent">Custom PC</span><br>But Don't Know Where to Start?</h1>
+    <p data-en="Whether you're jumping into gaming, running AI tools, creating content, or just need a solid machine — tell us what you need, we'll spec it out and build it for you." data-es="Ya sea para gaming, herramientas de IA, creación de contenido, o simplemente una máquina confiable — dinos qué necesitas, nosotros lo configuramos y lo armamos.">Whether you're jumping into gaming, running AI tools, creating content, or just need a solid machine — tell us what you need, we'll spec it out and build it for you.</p>
+    <div class="hero-bio">
+      <strong data-en="Hey, I'm Ismael." data-es="Hey, soy Ismael.">Hey, I'm Ismael.</strong> <span data-en="Marine Corps veteran, North Texas local, and the guy behind ClearTech Solutions. After getting out in 2017 I taught myself everything I know about computers, built my first PC, and never looked back. I started this because I kept seeing people drop serious money on prebuilts from Best Buy when they could've gotten something way better for the same price — or less. I'm not a big box store. I'm a real person who comes to your house, builds your PC the right way, stress tests it until I'm confident it's solid, and actually picks up when you have questions after. That's the whole pitch." data-es="Veterano de la Infantería de Marina, residente del Norte de Texas, y el fundador de ClearTech Solutions. Después de salir del servicio en 2017, aprendí todo sobre computadoras por mi cuenta, armé mi primera PC, y nunca paré. Empecé esto porque veía gente gastar dinero en prearmadas de Best Buy cuando podían conseguir algo mucho mejor al mismo precio. No soy una tienda grande. Soy una persona real que va a tu casa, arma tu PC de la forma correcta, la prueba hasta estar seguro de que funciona perfecto, y contesta cuando tienes preguntas después. Ese es el trato.">Marine Corps veteran, North Texas local, and the guy behind ClearTech Solutions. After getting out in 2017 I taught myself everything I know about computers, built my first PC, and never looked back. I started this because I kept seeing people drop serious money on prebuilts from Best Buy when they could've gotten something way better for the same price — or less. I'm not a real big box store. I'm a real person who comes to your house, builds your PC the right way, stress tests it until I'm confident it's solid, and actually picks up when you have questions after. That's the whole pitch.</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#use-case" class="hero-btn" data-en="Start Building →" data-es="Comenzar →">Start Building →</a>
+      <a href="#upgrade" class="hero-btn-outline" data-en="Upgrade My PC" data-es="Actualizar Mi PC">Upgrade My PC</a>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASE -->
+<section class="section reveal" id="use-case">
+  <div class="sec-label" data-en="// Step 01 — Choose Your Purpose" data-es="// Paso 01 — Elige Tu Propósito">// Step 01 — Choose Your Purpose</div>
+  <h2 class="sec-title" data-en="What Are You Building This PC For?" data-es="¿Para Qué Necesitas Tu PC?">What Are You Building This PC For?</h2>
+  <p class="sec-sub" data-en="Not sure what you need? Start here. Your use case points us toward the right components for your goals." data-es="¿No sabes qué necesitas? Empieza aquí. Tu uso determina los componentes correctos para tus objetivos.">Not sure what you need? Start here. Your use case points us toward the right components for your goals.</p>
+  <div class="uc-grid">
+    <div class="uc-card" onclick="pickUseCase(this,'gaming')">
+      <span class="uc-icon">🎮</span>
+      <h3 data-en="Gaming" data-es="Videojuegos">Gaming</h3>
+      <p data-en="High FPS, smooth gameplay, the GPU power to run modern titles at 1080p, 1440p, or 4K. This is what most builds are about." data-es="FPS altos, juego fluido, el poder de GPU para correr títulos modernos en 1080p, 1440p o 4K.">High FPS, smooth gameplay, the GPU power to run modern titles at 1080p, 1440p, or 4K. This is what most builds are about.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'content')">
+      <span class="uc-icon">🎥</span>
+      <h3 data-en="Content Creation" data-es="Creación de Contenido">Content Creation</h3>
+      <p data-en="Video editing, streaming, photo work — you need CPU cores, fast RAM, and plenty of storage." data-es="Edición de video, streaming, fotografía — necesitas núcleos de CPU, RAM rápida y bastante almacenamiento.">Video editing, streaming, photo work — you need CPU cores, fast RAM, and plenty of storage.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'ai')">
+      <span class="uc-icon">🤖</span>
+      <h3 data-en="AI & Productivity" data-es="IA y Productividad">AI & Productivity</h3>
+      <p data-en="Running local AI models like Llama, Stable Diffusion, or Copilot+ apps. VRAM and processing power are everything here." data-es="Correr modelos de IA locales como Llama, Stable Diffusion o apps Copilot+. La VRAM y potencia de procesamiento son clave.">Running local AI models like Llama, Stable Diffusion, or Copilot+ apps. VRAM and processing power are everything here.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'general')">
+      <span class="uc-icon">💻</span>
+      <h3 data-en="General Use" data-es="Uso General">General Use</h3>
+      <p data-en="Browsing, Office, school, or light tasks. You want something reliable, fast, and cost-effective." data-es="Navegación, Office, escuela o tareas ligeras. Quieres algo confiable, rápido y económico.">Browsing, Office, school, or light tasks. You want something reliable, fast, and cost-effective.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section class="builder-wrap reveal" id="builder">
+  <div class="sec-label" data-en="// Step 02 — Configure Your Build" data-es="// Paso 02 — Configura Tu PC">// Step 02 — Configure Your Build</div>
+  <h2 class="sec-title" data-en="Pick Your Components" data-es="Elige Tus Componentes">Pick Your Components</h2>
+  <p class="sec-sub" data-en="Select each part below. Your estimated cost updates live. Parts are your responsibility to purchase — first-timers get free guidance through the ordering process." data-es="Selecciona cada pieza. El costo estimado se actualiza en tiempo real. Las piezas son tu responsabilidad de compra — los principiantes reciben orientación gratuita en el proceso.">Select each part below. Your estimated cost updates live. Parts are your responsibility to purchase — first-timers get free guidance through the ordering process.</p>
+
+  <div class="builder-grid">
+    <div class="builder-col">
+
+      <!-- PROGRESS -->
+      <div class="progress-wrap">
+        <div class="progress-header">
+          <span class="progress-label" data-en="Build Progress" data-es="Progreso del Build">Build Progress</span>
+          <span class="progress-count" id="prog-text">0 of 9 selected</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="prog-bar"></div></div>
+      </div>
+
+      <!-- BUDGET -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span data-en="Budget" data-es="Presupuesto">Budget</span> <span class="ctag" data-en="START HERE" data-es="EMPIEZA AQUÍ">START HERE</span>
+        </div>
+        <div class="cdesc" data-en="Your budget sets the foundation. Pick a tier and we match components automatically." data-es="Tu presupuesto establece las bases. Elige un nivel y ajustamos los componentes automáticamente.">Your budget sets the foundation. Pick a tier and we match components automatically.</div>
+        <div class="bud-row">
+          <button class="bud-btn" onclick="pickBudget(this,'budget',700,1100)"><span class="bud-tier" data-en="Budget" data-es="Económico">Budget</span><span class="bud-range">$700–$1,100</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'mid',1100,1800)"><span class="bud-tier" data-en="Mid-Range" data-es="Rango Medio">Mid-Range</span><span class="bud-range">$1,100–$1,800</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'high',2000,3200)"><span class="bud-tier" data-en="High-End" data-es="Alta Gama">High-End</span><span class="bud-range">$2,000–$3,200</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'ultra',4500,8000)"><span class="bud-tier">Ultra</span><span class="bud-range">$4,500+</span></button>
+        </div>
+      </div>
+
+      <!-- GPU -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- GPU SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="7" width="20" height="10" rx="1.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="7" cy="12" r="1"/><circle cx="14" cy="12" r="2.5"/><circle cx="14" cy="12" r="1"/><rect x="1" y="17" width="2.5" height="3" rx="0.5"/><rect x="4.5" y="17" width="2.5" height="3" rx="0.5"/><rect x="8" y="17" width="2.5" height="3" rx="0.5"/><rect x="21" y="6" width="2" height="12" rx="1"/></svg>
+          <span data-en="Graphics Card (GPU)" data-es="Tarjeta Gráfica (GPU)">Graphics Card (GPU)</span> <span class="ctag" data-en="KEY PART" data-es="PIEZA CLAVE">KEY PART</span>
+        </div>
+        <div class="cdesc" data-en="The GPU is the heart of gaming and visual work. More VRAM = more detail, higher resolution, better performance. DLSS 4 (NVIDIA) and FSR 4 (AMD) both use AI to boost FPS dramatically." data-es="La GPU es el corazón del gaming y trabajo visual. Más VRAM = más detalle, mayor resolución, mejor rendimiento.">The GPU is the heart of gaming and visual work. More VRAM = more detail, higher resolution, better performance. DLSS 4 (NVIDIA) and FSR 4 (AMD) both use AI to boost FPS dramatically.</div>
+        <div class="copts" id="gpu-opts"><div class="empty-hint" data-en="Select a budget tier above to see GPU options." data-es="Selecciona un nivel de presupuesto para ver opciones de GPU.">Select a budget tier above to see GPU options.</div></div>
+      </div>
+
+      <!-- CPU -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- CPU SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="0.5"/><line x1="9" y1="6" x2="9" y2="3"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="15" y1="6" x2="15" y2="3"/><line x1="9" y1="18" x2="9" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="15" y1="18" x2="15" y2="21"/><line x1="6" y1="9" x2="3" y2="9"/><line x1="6" y1="12" x2="3" y2="12"/><line x1="6" y1="15" x2="3" y2="15"/><line x1="18" y1="9" x2="21" y2="9"/><line x1="18" y1="12" x2="21" y2="12"/><line x1="18" y1="15" x2="21" y2="15"/></svg>
+          <span data-en="Processor (CPU)" data-es="Procesador (CPU)">Processor (CPU)</span>
+        </div>
+        <div class="cdesc" data-en="The CPU handles game logic, background apps, and everything else. More cores = better multitasking. The Ryzen 7 9800X3D is the #1 gaming CPU right now — nothing else comes close." data-es="La CPU maneja la lógica del juego, apps en segundo plano y todo lo demás. Más núcleos = mejor multitarea.">The CPU handles game logic, background apps, and everything else. More cores = better multitasking. The Ryzen 7 9800X3D is the #1 gaming CPU right now — nothing else comes close.</div>
+        <div class="copts" id="cpu-opts"><div class="empty-hint" data-en="Select a budget tier above to see CPU options." data-es="Selecciona un nivel de presupuesto para ver opciones de CPU.">Select a budget tier above to see CPU options.</div></div>
+      </div>
+
+      <!-- MOTHERBOARD -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- Motherboard SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="1.5"/><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="5.5" y="5.5" width="4" height="4" rx="0.5"/><rect x="13" y="4" width="2.5" height="6" rx="0.5"/><rect x="16.5" y="4" width="2.5" height="6" rx="0.5"/><rect x="4" y="14" width="14" height="2.5" rx="0.5"/><rect x="4" y="18" width="9" height="1.5" rx="0.5"/><rect x="19" y="4" width="2" height="10" rx="0.5"/></svg>
+          <span data-en="Motherboard" data-es="Tarjeta Madre">Motherboard</span> <span class="ctag" data-en="MUST MATCH CPU SOCKET" data-es="DEBE COINCIDIR CON CPU">MUST MATCH CPU SOCKET</span>
+        </div>
+        <div class="cdesc" data-en="The motherboard connects every component. It must match your CPU's socket — AM4, AM5, LGA1700, or LGA1851. The compatibility checker below will warn you if they don't match." data-es="La tarjeta madre conecta todos los componentes. Debe coincidir con el socket de tu CPU. El verificador de compatibilidad te avisará si no coinciden.">The motherboard connects every component. It must match your CPU's socket — AM4, AM5, LGA1700, or LGA1851. The compatibility checker below will warn you if they don't match.</div>
+        <div class="copts" id="mobo-opts"><div class="empty-hint" data-en="Select a budget tier above to see motherboard options." data-es="Selecciona un nivel de presupuesto para ver opciones de tarjeta madre.">Select a budget tier above to see motherboard options.</div></div>
+      </div>
+
+      <!-- RAM -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- RAM SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="6" height="18" rx="1"/><rect x="4" y="5" width="4" height="14" rx="0.5"/><rect x="4.5" y="6" width="3" height="2" rx="0.2"/><rect x="4.5" y="9.5" width="3" height="2" rx="0.2"/><rect x="4.5" y="13" width="3" height="2" rx="0.2"/><rect x="15" y="3" width="6" height="18" rx="1"/><rect x="16" y="5" width="4" height="14" rx="0.5"/><rect x="16.5" y="6" width="3" height="2" rx="0.2"/><rect x="16.5" y="9.5" width="3" height="2" rx="0.2"/><rect x="16.5" y="13" width="3" height="2" rx="0.2"/></svg>
+          <span data-en="Memory (RAM)" data-es="Memoria (RAM)">Memory (RAM)</span>
+        </div>
+        <div class="cdesc" data-en="RAM is your PC's short-term workspace. 16GB handles most games. 32GB is the new sweet spot. 64GB+ for serious workloads. Note: AM4/LGA1700 platforms use DDR4. AM5/LGA1851 platforms use DDR5." data-es="La RAM es el espacio de trabajo de tu PC. 16GB para la mayoría de juegos. 32GB es el punto ideal. 64GB+ para cargas de trabajo serias.">RAM is your PC's short-term workspace. 16GB handles most games. 32GB is the new sweet spot. 64GB+ for serious workloads. Note: AM4/LGA1700 platforms use DDR4. AM5/LGA1851 platforms use DDR5.</div>
+        <div class="copts" id="ram-opts"><div class="empty-hint" data-en="Select a budget tier above to see RAM options." data-es="Selecciona un nivel de presupuesto para ver opciones de RAM.">Select a budget tier above to see RAM options.</div></div>
+      </div>
+
+      <!-- STORAGE -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- SSD SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="9" width="20" height="6" rx="1.5"/><rect x="2" y="10.5" width="4" height="3" rx="0.5"/><rect x="7.5" y="10" width="4" height="4" rx="0.5"/><rect x="13" y="10" width="4" height="4" rx="0.5"/><rect x="18" y="9.5" width="3.5" height="5" rx="0.5"/><path d="M 4 9 L 4 8 L 7 8 L 7 9" stroke-width="1"/></svg>
+          <span data-en="Storage (SSD)" data-es="Almacenamiento (SSD)">Storage (SSD)</span>
+        </div>
+        <div class="cdesc" data-en="Brand matters here — Samsung and WD are the gold standards. Kingston NV3 is solid budget. Avoid no-name drives for your main OS/game drive. Modern AAA games can be 100GB+." data-es="La marca importa — Samsung y WD son los estándares de oro. Kingston NV3 es buen presupuesto. Los juegos AAA modernos pueden ocupar más de 100GB.">Brand matters here — Samsung and WD are the gold standards. Kingston NV3 is solid budget. Avoid no-name drives for your main OS/game drive. Modern AAA games can be 100GB+.</div>
+        <div id="storage-opts">
+          <!-- 500GB -->
+          <div class="storage-grp">
+            <button class="storage-grp-hdr" onclick="toggleStorage(this)"><span>500GB Options</span><span class="sarrow">▼</span></button>
+            <div class="storage-grp-body">
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Kingston NV3 500GB',70,95)"><span class="opt-tier tier-budget">BUDGET</span><span class="opt-name">Kingston NV3 · 500GB</span><span class="opt-price">~$70–95</span><span class="opt-spec">PCIe 4.0 · OS + 2 games · Decent speeds, reliable brand</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Blue SN580 500GB',105,138)"><span class="opt-tier tier-mid">MAINSTREAM</span><span class="opt-name">WD Blue SN580 · 500GB</span><span class="opt-price">~$105–138</span><span class="opt-spec">PCIe 4.0 · Better endurance · WD reliability</span></button>
+            </div>
+          </div>
+          <!-- 1TB -->
+          <div class="storage-grp">
+            <button class="storage-grp-hdr" onclick="toggleStorage(this)"><span>1TB Options</span><span class="sarrow">▼</span></button>
+            <div class="storage-grp-body">
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Kingston NV3 1TB',155,188)"><span class="opt-tier tier-budget">BUDGET</span><span class="opt-name">Kingston NV3 · 1TB</span><span class="opt-price">~$155–188</span><span class="opt-spec">PCIe 4.0 · Most affordable 1TB · Gets the job done</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN770 1TB',185,235)"><span class="opt-tier tier-mid">MAINSTREAM</span><span class="opt-name">WD Black SN770 · 1TB</span><span class="opt-price">~$185–235</span><span class="opt-spec">PCIe 4.0 · 5,150 MB/s · Gaming-focused fast loading</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Evo 1TB',195,248)"><span class="opt-tier tier-mid">MAINSTREAM</span><span class="opt-name">Samsung 990 Evo · 1TB</span><span class="opt-price">~$195–248</span><span class="opt-spec">Samsung quality · Excellent reliability · Great speeds</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 1TB',222,288)"><span class="opt-tier tier-high">ENTHUSIAST</span><span class="opt-name">WD Black SN850X · 1TB</span><span class="opt-price">~$222–288</span><span class="opt-spec">PCIe 4.0 · 7,300 MB/s · Top gaming drive</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 1TB',252,328)"><span class="opt-tier tier-elite">FLAGSHIP</span><span class="opt-name">Samsung 990 Pro · 1TB</span><span class="opt-price">~$252–328</span><span class="opt-spec">7,450 MB/s · Best reliability · Fastest consumer 1TB</span></button>
+            </div>
+          </div>
+          <!-- 2TB -->
+          <div class="storage-grp">
+            <button class="storage-grp-hdr" onclick="toggleStorage(this)"><span>2TB Options</span><span class="sarrow">▼</span></button>
+            <div class="storage-grp-body">
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN7100 2TB',282,328)"><span class="opt-tier tier-mid">MAINSTREAM</span><span class="opt-name">WD Black SN7100 · 2TB</span><span class="opt-price">~$282–328</span><span class="opt-spec">PCIe 4.0 · Best 2TB value · Strong all-around</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 2TB',318,398)"><span class="opt-tier tier-high">ENTHUSIAST</span><span class="opt-name">WD Black SN850X · 2TB</span><span class="opt-price">~$318–398</span><span class="opt-spec">7,300 MB/s · Most recommended 2TB gaming drive</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 2TB',368,428)"><span class="opt-tier tier-elite">FLAGSHIP</span><span class="opt-name">Samsung 990 Pro · 2TB</span><span class="opt-price">~$368–428</span><span class="opt-spec">7,450 MB/s · Best-in-class reliability</span></button>
+            </div>
+          </div>
+          <!-- 4TB -->
+          <div class="storage-grp">
+            <button class="storage-grp-hdr" onclick="toggleStorage(this)"><span>4TB Options</span><span class="sarrow">▼</span></button>
+            <div class="storage-grp-body">
+              <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 4TB',515,648)"><span class="opt-tier tier-high">ENTHUSIAST</span><span class="opt-name">WD Black SN850X · 4TB</span><span class="opt-price">~$515–648</span><span class="opt-spec">Massive game library · Enthusiast-grade speeds</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 4TB',572,725)"><span class="opt-tier tier-elite">FLAGSHIP</span><span class="opt-name">Samsung 990 Pro · 4TB</span><span class="opt-price">~$572–725</span><span class="opt-spec">Max storage + speed · Top 5-year warranty</span></button>
+              <button class="opt-btn" onclick="pickOpt(this,'storage','Seagate FireCuda 530 4TB',548,688)"><span class="opt-tier tier-high">ENTHUSIAST</span><span class="opt-name">Seagate FireCuda 530 · 4TB</span><span class="opt-price">~$548–688</span><span class="opt-spec">7,300 MB/s · Fast 4TB alternative</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- Case SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="1.5"/><line x1="8" y1="5" x2="15" y2="5"/><line x1="8" y1="7.5" x2="15" y2="7.5"/><line x1="8" y1="10" x2="15" y2="10"/><circle cx="12" cy="14" r="2"/><rect x="8" y="17.5" width="6" height="1.5" rx="0.3"/><line x1="17" y1="4" x2="17" y2="20"/></svg>
+          <span data-en="Case (Chassis)" data-es="Gabinete (Chasis)">Case (Chassis)</span>
+        </div>
+        <div class="cdesc" data-en="The case houses everything. Mid-towers are the sweet spot — plenty of room, great airflow. Want to show off your build? Go RGB/glass panel." data-es="El gabinete aloja todo. Los mid-towers son el punto ideal. ¿Quieres mostrar tu build? Ve por el panel de vidrio con RGB.">The case houses everything. Mid-towers are the sweet spot — plenty of room, great airflow. Want to show off your build? Go RGB/glass panel.</div>
+        <div class="copts" id="case-opts">
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mini-ITX (Compact)',60,92)"><span class="opt-name">Mini-ITX</span><span class="opt-price">~$60–92</span><span class="opt-spec">Small & compact · Limited airflow</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mid-Tower',75,132)"><span class="opt-name">Mid-Tower</span><span class="opt-price">~$75–132</span><span class="opt-spec">Most popular · Great airflow</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mid-Tower RGB/Glass',92,168)"><span class="opt-name">Mid-Tower RGB/Glass</span><span class="opt-price">~$92–168</span><span class="opt-spec">Tempered glass · Show off your build</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Full Tower',138,228)"><span class="opt-name">Full Tower</span><span class="opt-price">~$138–228</span><span class="opt-spec">Max airflow · Best for extreme builds</span></button>
+        </div>
+      </div>
+
+      <!-- PSU -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- PSU SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="15" height="12" rx="1.5"/><circle cx="9" cy="12" r="3.5"/><circle cx="9" cy="12" r="1.5"/><line x1="9" y1="8.5" x2="9" y2="10"/><line x1="9" y1="14" x2="9" y2="15.5"/><line x1="5.5" y1="12" x2="7" y2="12"/><line x1="11" y1="12" x2="12.5" y2="12"/><line x1="17" y1="9" x2="22" y2="9"/><line x1="17" y1="12" x2="22" y2="12"/><line x1="17" y1="15" x2="22" y2="15"/></svg>
+          <span data-en="Power Supply (PSU)" data-es="Fuente de Poder (PSU)">Power Supply (PSU)</span>
+        </div>
+        <div class="cdesc" data-en="The PSU powers everything. 80+ ratings = efficiency. Bronze is entry-level (82% efficient). Gold is what most builds should use (90% efficient — quieter, cooler, lower power bill). Platinum (92%) is for heavy 24/7 use. Higher wattage = more headroom for powerful GPUs." data-es="La PSU alimenta todo. Las calificaciones 80+ = eficiencia. Bronze es básico (82%). Gold es lo recomendado para la mayoría (90%). Platinum (92%) para uso intensivo 24/7.">The PSU powers everything. 80+ ratings = efficiency. Bronze is entry-level (82% efficient). Gold is what most builds should use (90% efficient — quieter, cooler, lower power bill). Platinum (92%) is for heavy 24/7 use. Higher wattage = more headroom for powerful GPUs.</div>
+        <div class="copts" id="psu-opts"><div class="empty-hint" data-en="Select a budget tier above to see PSU options." data-es="Selecciona un nivel de presupuesto para ver opciones de PSU.">Select a budget tier above to see PSU options.</div></div>
+      </div>
+
+      <!-- CPU COOLER -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- Heatsink SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="3" height="13" rx="0.5"/><rect x="6.5" y="4" width="3" height="13" rx="0.5"/><rect x="11" y="4" width="3" height="13" rx="0.5"/><rect x="15.5" y="4" width="3" height="13" rx="0.5"/><rect x="20" y="4" width="2" height="13" rx="0.5"/><rect x="2" y="17" width="20" height="4" rx="1"/><line x1="7" y1="4" x2="7" y2="2"/><line x1="12" y1="4" x2="12" y2="2"/><line x1="17" y1="4" x2="17" y2="2"/></svg>
+          <span data-en="CPU Cooler" data-es="Enfriamiento de CPU">CPU Cooler</span>
+        </div>
+        <div class="cdesc" data-en="Air cooler = metal heatsink tower that sits on the CPU with a fan attached. Great for most builds. AIO = liquid system with pump, tubes, and a radiator. Keeps temps lower under heavy loads and looks cleaner inside the case." data-es="Enfriamiento de aire = torre de disipador metálico. Ideal para la mayoría. AIO = sistema líquido con bomba, tubos y radiador. Temperaturas más bajas y aspecto más limpio.">Air cooler = metal heatsink tower that sits on the CPU with a fan attached. Great for most builds. AIO = liquid system with pump, tubes, and a radiator. Keeps temps lower under heavy loads and looks cleaner inside the case.</div>
+        <div class="copts" id="cooler-opts"><div class="empty-hint" data-en="Select a budget tier above to see cooler options." data-es="Selecciona un nivel de presupuesto para ver opciones de enfriamiento.">Select a budget tier above to see cooler options.</div></div>
+      </div>
+
+      <!-- CASE FANS -->
+      <div class="cgroup">
+        <div class="cgroup-title">
+          <!-- Fan SVG -->
+          <svg class="cgroup-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="12" cy="12" r="2.2"/><path d="M12 9.8 C13.5 7.5 16.5 8 16 10.5" stroke-linecap="round"/><path d="M14.2 12 C16.5 13.5 16 16.5 13.5 16" stroke-linecap="round"/><path d="M12 14.2 C10.5 16.5 7.5 16 8 13.5" stroke-linecap="round"/><path d="M9.8 12 C7.5 10.5 8 7.5 10.5 8" stroke-linecap="round"/><circle cx="5.5" cy="5.5" r="1"/><circle cx="18.5" cy="5.5" r="1"/><circle cx="5.5" cy="18.5" r="1"/><circle cx="18.5" cy="18.5" r="1"/></svg>
+          <span data-en="Case Fans (3-Pack)" data-es="Ventiladores de Gabinete (Pack de 3)">Case Fans (3-Pack)</span>
+        </div>
+        <div class="cdesc" data-en="Case fans keep air flowing through your build — front intake, top/rear exhaust. Most builds need 3–6 fans. These are sold in 3-packs. 120mm is the standard size. RGB is optional — purely aesthetic." data-es="Los ventiladores mantienen el flujo de aire en tu build. La mayoría necesita 3–6 ventiladores. Se venden en packs de 3. 120mm es el tamaño estándar.">Case fans keep air flowing through your build — front intake, top/rear exhaust. Most builds need 3–6 fans. These are sold in 3-packs. 120mm is the standard size. RGB is optional — purely aesthetic.</div>
+        <div class="copts" id="fans-opts">
+          <button class="opt-btn" onclick="pickOpt(this,'case_fans','Arctic P12 PWM 3-Pack (120mm)',22,38)"><span class="opt-tier tier-budget">BUDGET</span><span class="opt-name">Arctic P12 PWM 3-Pack</span><span class="opt-price">~$22–38</span><span class="opt-spec">No RGB · Pure airflow · Best budget fans made</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case_fans','Corsair RS120 ARGB 3-Pack (120mm)',40,62)"><span class="opt-tier tier-mid">MAINSTREAM</span><span class="opt-name">Corsair RS120 ARGB 3-Pack</span><span class="opt-price">~$40–62</span><span class="opt-spec">Great ARGB · Most popular choice · Easy install</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case_fans','Lian Li UNI Fan 120 ARGB 3-Pack',55,78)"><span class="opt-tier tier-high">PREMIUM</span><span class="opt-name">Lian Li UNI Fan 120 ARGB 3-Pack</span><span class="opt-price">~$55–78</span><span class="opt-spec">Daisy chain · Clean single cable · Premium RGB</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case_fans','Corsair iCUE Link QX120 ARGB 3-Pack',78,108)"><span class="opt-tier tier-elite">ELITE</span><span class="opt-name">Corsair iCUE Link QX120 3-Pack</span><span class="opt-price">~$78–108</span><span class="opt-spec">Best in class · 1 cable for all 3 · iCUE sync</span></button>
+        </div>
+      </div>
+
+    </div><!-- end builder-col -->
+
+    <!-- PRICE PANEL -->
+    <div class="price-panel">
+      <div class="pp-title" data-en="Your Build Estimate" data-es="Estimado de Tu Build">Your Build Estimate</div>
+
+      <!-- Progress mini -->
+      <div style="margin-bottom:0.85rem">
+        <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--muted);margin-bottom:0.3rem">
+          <span data-en="Components selected" data-es="Componentes seleccionados">Components selected</span>
+          <span id="pp-prog-text" style="font-family:'JetBrains Mono',monospace;color:var(--cyan)">0/9</span>
+        </div>
+        <div style="background:var(--surf2);border-radius:100px;height:4px;overflow:hidden"><div id="pp-prog-bar" style="background:linear-gradient(90deg,var(--cyan),var(--green));height:100%;border-radius:100px;transition:width 0.4s;width:0%"></div></div>
+      </div>
+
+      <!-- Price lines -->
+      <div class="price-lines">
+        <div class="pline"><span class="plabel">GPU</span><span class="pval empty" id="pp-gpu">—</span></div>
+        <div class="pline"><span class="plabel">CPU</span><span class="pval empty" id="pp-cpu">—</span></div>
+        <div class="pline"><span class="plabel" data-en="Motherboard" data-es="Tarjeta Madre">Motherboard</span><span class="pval empty" id="pp-mobo">—</span></div>
+        <div class="pline"><span class="plabel">RAM</span><span class="pval empty" id="pp-ram">—</span></div>
+        <div class="pline"><span class="plabel" data-en="Storage" data-es="Almacenamiento">Storage</span><span class="pval empty" id="pp-storage">—</span></div>
+        <div class="pline"><span class="plabel" data-en="Case" data-es="Gabinete">Case</span><span class="pval empty" id="pp-case">—</span></div>
+        <div class="pline"><span class="plabel">PSU</span><span class="pval empty" id="pp-psu">—</span></div>
+        <div class="pline"><span class="plabel" data-en="CPU Cooler" data-es="Enfriamiento CPU">CPU Cooler</span><span class="pval empty" id="pp-cooler">—</span></div>
+        <div class="pline"><span class="plabel" data-en="Case Fans" data-es="Ventiladores">Case Fans</span><span class="pval empty" id="pp-fans">—</span></div>
+      </div>
+
+      <!-- Compatibility indicator -->
+      <div class="compat-box neutral" id="compat-box">
+        ⬤ <span id="compat-text" data-en="Select CPU &amp; Motherboard to check compatibility" data-es="Selecciona CPU y Tarjeta Madre para verificar compatibilidad">Select CPU &amp; Motherboard to check compatibility</span>
+      </div>
+
+      <hr class="pdivider">
+
+      <!-- Total -->
+      <div class="ptotal">
+        <span class="ptotal-label" data-en="Estimated Total" data-es="Total Estimado">Estimated Total</span>
+        <span class="ptotal-amt" id="pp-total">$—</span>
+      </div>
+      <!-- PRICE UPDATE NOTE — change the date below each month when you update component prices -->
+      <div class="pupdate">⟳ <span data-en="Prices last updated:" data-es="Precios actualizados:">Prices last updated:</span> June 2026</div>
+
+      <!-- OS Notice -->
+      <div class="os-notice">
+        ⚠️ <strong data-en="Windows 11 not included" data-es="Windows 11 no incluido">Windows 11 not included</strong> (~$100–140). 
+        <span data-en="Linux is a free alternative." data-es="Linux es una alternativa gratuita.">Linux is a free alternative.</span>
+        <a href="#contact-form" data-en="Add OS install to your request →" data-es="Agrega instalación de OS a tu solicitud →">Add OS install to your request →</a>
+      </div>
+
+      <div class="pnote" data-en="Range based on current market prices. Assembly fee not included. Tower only — monitor not included." data-es="Rango basado en precios actuales del mercado. Tarifa de ensamble no incluida. Solo torre — monitor no incluido.">Range based on current market prices. Assembly fee not included. Tower only — monitor not included.</div>
+
+      <div class="pp-btns">
+        <button class="share-btn" onclick="openShare()" data-en="🔗 Share This Build" data-es="🔗 Compartir Este Build">🔗 Share This Build</button>
+        <button class="cta-btn" id="req-btn" onclick="goToForm()" data-en="Request This Build →" data-es="Solicitar Este Build →">Request This Build →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="svc-section reveal">
+  <div class="svc-inner">
+    <div>
+      <div class="sec-label" data-en="// How It Works" data-es="// ¿Cómo Funciona?"">// How It Works</div>
+      <h2 class="sec-title" data-en="You Pick It. We Build It." data-es="Tú lo Eliges. Nosotros lo Armamos.">You Pick It. We Build It.</h2>
+      <p class="sec-sub" data-en="No YouTube tutorials. No screwdrivers. No stress. Tell us what you want and we handle the rest." data-es="Sin tutoriales de YouTube. Sin destornilladores. Sin estrés. Dinos qué quieres y nosotros hacemos el resto.">No YouTube tutorials. No screwdrivers. No stress. Tell us what you want and we handle the rest.</p>
+      <div class="svc-steps">
+        <div class="sstep"><div class="snum">01</div><div class="scontent"><h4 data-en="Configure Your Build" data-es="Configura Tu Build">Configure Your Build</h4><p data-en="Use the tool above to pick your components and get an instant price estimate." data-es="Usa la herramienta de arriba para elegir tus componentes y obtener un estimado de precio.">Use the tool above to pick your components and get an instant price estimate.</p></div></div>
+        <div class="sstep"><div class="snum">02</div><div class="scontent"><h4 data-en="Order Your Parts" data-es="Ordena Tus Piezas">Order Your Parts</h4><p data-en="Purchase your components online (Amazon, Newegg, etc.) and have them ready or shipped to us. First-time buyers get free guidance through the ordering process so nothing goes wrong." data-es="Compra tus componentes en línea y tenlos listos o envíalos. Los compradores por primera vez reciben orientación gratuita para que nada salga mal.">Purchase your components online (Amazon, Newegg, etc.) and have them ready or shipped to us. First-time buyers get free guidance through the ordering process so nothing goes wrong.</p></div></div>
+        <div class="sstep"><div class="snum">03</div><div class="scontent"><h4 data-en="We Assemble & Test" data-es="Ensamblamos y Probamos">We Assemble &amp; Test</h4><p data-en="We build it, cable manage it, update BIOS and drivers, then stress test everything from basic tasks to hardcore gaming — left on for 24 hours straight to verify stability." data-es="Lo armamos, manejamos los cables, actualizamos BIOS y drivers, luego probamos todo desde tareas básicas hasta gaming intenso — dejándolo encendido 24 horas para verificar estabilidad.">We build it, cable manage it, update BIOS and drivers, then stress test everything from basic tasks to hardcore gaming — left on for 24 hours straight to verify stability.</p></div></div>
+        <div class="sstep"><div class="snum">04</div><div class="scontent"><h4 data-en="Delivery or Pickup" data-es="Entrega o Recolección">Delivery or Pickup</h4><p data-en="Local North Texas builds: we come to you (3–4 days if parts on hand, up to 1 week waiting on shipping). Out-of-state: ship your parts to us, we assemble and ship back fully tested." data-es="Builds locales en North Texas: vamos a ti (3–4 días si las piezas están listas, hasta 1 semana si esperamos envíos). Fuera del estado: envíanos las piezas, ensamblamos y enviamos de vuelta completamente probado.">Local North Texas builds: we come to you (3–4 days if parts on hand, up to 1 week waiting on shipping). Out-of-state: ship your parts to us, we assemble and ship back fully tested.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="area-card">
+        <h3>📍 <span data-en="Service Area" data-es="Área de Servicio">Service Area</span></h3>
+        <p data-en="Based in Melissa, TX. Serving the North Texas area including McKinney, Frisco, Allen, Prosper, and surrounding communities for in-home local assembly." data-es="Con base en Melissa, TX. Atendiendo el Norte de Texas incluyendo McKinney, Frisco, Allen, Prosper y comunidades cercanas para ensamble a domicilio.">Based in <strong>Melissa, TX</strong>. Serving the North Texas area including <strong>McKinney, Frisco, Allen, Prosper</strong>, and surrounding communities for in-home local assembly.</p>
+        <p data-en="Not in North Texas? Order your parts, ship them to us, we assemble and ship back fully tested." data-es="¿No estás en North Texas? Ordena tus piezas, envíanoslas, ensamblamos y enviamos de vuelta completamente probado.">Not in North Texas? Order your parts, ship them to us, we assemble and ship back fully tested.</p>
+        <div><span class="area-badge">🇺🇸 <span data-en="Veteran-Owned · Melissa, TX" data-es="Negocio de Veterano · Melissa, TX">Veteran-Owned · Melissa, TX</span></span></div>
+        <div style="margin-top:1rem">
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;margin-bottom:0.5rem" data-en="Assembly Fee" data-es="Tarifa de Ensamble">Assembly Fee</h4>
+          <div class="fee-grid">
+            <div class="fee-item"><div class="fee-type" data-en="Standard Local Build" data-es="Build Local Estándar">Standard Local Build</div><div class="fee-price" data-en="Starting at $75" data-es="Desde $75">Starting at $75</div><div class="fee-note" data-en="Mid-tower ATX, in-home" data-es="Mid-tower ATX, a domicilio">Mid-tower ATX, in-home</div></div>
+            <div class="fee-item"><div class="fee-type" data-en="Mini-ITX Build" data-es="Build Mini-ITX">Mini-ITX Build</div><div class="fee-price" data-en="Starting at $125" data-es="Desde $125">Starting at $125</div><div class="fee-note" data-en="Tighter space, more labor" data-es="Espacio reducido, más trabajo">Tighter space, more labor</div></div>
+            <div class="fee-item"><div class="fee-type" data-en="Remote/Shipped Build" data-es="Build Remoto/Enviado">Remote/Shipped Build</div><div class="fee-price" data-en="Starting at $50" data-es="Desde $50">Starting at $50</div><div class="fee-note" data-en="Ship parts to us + shipping back" data-es="Envías piezas + nosotros enviamos">Ship parts to us + shipping back</div></div>
+            <div class="fee-item"><div class="fee-type" data-en="OS Installation" data-es="Instalación de OS">OS Installation</div><div class="fee-price" data-en="+$35 add-on" data-es="+$35 adicional">+$35 add-on</div><div class="fee-note" data-en="Windows 11 or Linux setup" data-es="Configuración Windows 11 o Linux">Windows 11 or Linux setup</div></div>
+          </div>
+          <p style="font-size:0.72rem;color:var(--muted);margin-top:0.75rem" data-en="Payment accepted: Zelle, Venmo, PayPal, Cash. Payment due upon build completion." data-es="Pagos aceptados: Zelle, Venmo, PayPal, Efectivo. Pago al completar el build.">💳 <span data-en="Payment:" data-es="Pago:">Payment:</span> Zelle · Venmo · PayPal · Cash</p>
+        </div>
+      </div>
+      <div style="background:var(--surf2);border:1px solid var(--border);border-radius:12px;padding:1.1rem;margin-top:1rem;font-size:0.8rem;color:var(--mid)">
+        🕐 <strong style="color:var(--text)" data-en="Business Hours:" data-es="Horario de Atención:">Business Hours:</strong> <span data-en="Monday–Friday, 9am–8pm. Weekends by appointment only." data-es="Lunes–Viernes, 9am–8pm. Fines de semana solo con cita.">Monday–Friday, 9am–8pm. Weekends by appointment only.</span><br>
+        📞 <a href="tel:9723917153" style="color:var(--cyan);text-decoration:none">972-391-7153</a> · <span data-en="Responds within 24–28 hours." data-es="Responde en 24–28 horas.">Responds within 24–28 hours.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF OF WORK -->
+<section class="pow-section section reveal">
+  <div class="sec-label" data-en="// Real Builds · Real Work" data-es="// Builds Reales · Trabajo Real">// Real Builds · Real Work</div>
+  <h2 class="sec-title" data-en="Builds I've Done" data-es="Builds Que He Realizado">Builds I've Done</h2>
+  <p class="sec-sub" data-en="Not stock photos. Not examples. These are actual machines I've built — tested, delivered, and running." data-es="No son fotos de stock. No son ejemplos. Estas son máquinas reales que he armado — probadas, entregadas y funcionando.">Not stock photos. Not examples. These are actual machines I've built — tested, delivered, and running.</p>
+  <div class="pow-grid">
+    <div class="pow-card">
+      <!-- 📸 REPLACE this div with <img src="YOUR_PHOTO_URL" alt="Build 1"> once you have your photo -->
+      <div class="pow-img"><span class="pow-img-icon">📸</span><span data-en="Build photo coming soon" data-es="Foto del build próximamente">Build photo coming soon</span></div>
+      <div class="pow-body">
+        <span class="pow-tag" data-en="FROM SCRATCH" data-es="DESDE CERO">FROM SCRATCH</span>
+        <h3 data-en="Custom Gaming Build" data-es="Build Gaming Personalizado">Custom Gaming Build</h3>
+        <p data-en="Full custom gaming rig built from the ground up. Every part sourced, assembled, cable managed, and stress tested before delivery." data-es="Build gaming personalizado construido desde cero. Cada pieza adquirida, ensamblada, con cables organizados y probada bajo estrés antes de la entrega.">Full custom gaming rig built from the ground up. Every part sourced, assembled, cable managed, and stress tested before delivery.</p>
+      </div>
+    </div>
+    <div class="pow-card">
+      <!-- 📸 REPLACE this div with <img src="YOUR_PHOTO_URL" alt="Build 2"> once you have your photo -->
+      <div class="pow-img"><span class="pow-img-icon">📸</span><span data-en="Build photo coming soon" data-es="Foto del build próximamente">Build photo coming soon</span></div>
+      <div class="pow-body">
+        <span class="pow-tag upgrade" data-en="UPGRADE" data-es="ACTUALIZACIÓN">UPGRADE</span>
+        <h3 data-en="Existing PC Upgrade" data-es="Actualización de PC Existente">Existing PC Upgrade</h3>
+        <p data-en="GPU and RAM upgrade on an existing system. Diagnosed compatibility, sourced parts, upgraded, and retested for performance gains." data-es="Actualización de GPU y RAM en un sistema existente. Diagnóstico de compatibilidad, piezas adquiridas, actualización y re-prueba de mejoras de rendimiento.">GPU and RAM upgrade on an existing system. Diagnosed compatibility, sourced parts, upgraded, and retested for performance gains.</p>
+      </div>
+    </div>
+    <div class="pow-card">
+      <!-- 📸 REPLACE this div with <img src="YOUR_PHOTO_URL" alt="Build 3"> once you have your photo -->
+      <div class="pow-img"><span class="pow-img-icon">📸</span><span data-en="Build photo coming soon" data-es="Foto del build próximamente">Build photo coming soon</span></div>
+      <div class="pow-body">
+        <span class="pow-tag upgrade" data-en="UPGRADE" data-es="ACTUALIZACIÓN">UPGRADE</span>
+        <h3 data-en="Older System Refresh" data-es="Renovación de Sistema Antiguo">Older System Refresh</h3>
+        <p data-en="Full refresh of an older build — new storage, updated cooling, cleaned thermals, and brought back to life for modern gaming." data-es="Renovación completa de un build antiguo — nuevo almacenamiento, enfriamiento actualizado, limpieza de térmicos y revivido para gaming moderno.">Full refresh of an older build — new storage, updated cooling, cleaned thermals, and brought back to life for modern gaming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED + WARRANTY -->
+<section class="included-section reveal">
+  <div class="included-inner">
+    <div>
+      <div class="sec-label" data-en="// What's Included" data-es="// Qué Está Incluido">// What's Included</div>
+      <h2 class="sec-title" data-en="Every Build Comes With" data-es="Cada Build Incluye">Every Build Comes With</h2>
+      <div class="included-list">
+        <div class="inc-item"><span class="inc-icon">🔧</span><div class="inc-text"><h4 data-en="Full Assembly" data-es="Ensamble Completo">Full Assembly</h4><p data-en="Every component properly seated and secured, no shortcuts." data-es="Cada componente correctamente instalado y asegurado, sin atajos.">Every component properly seated and secured, no shortcuts.</p></div></div>
+        <div class="inc-item"><span class="inc-icon">🪢</span><div class="inc-text"><h4 data-en="Professional Cable Management" data-es="Manejo Profesional de Cables">Professional Cable Management</h4><p data-en="Clean, routed cables that improve airflow and look great." data-es="Cables organizados que mejoran el flujo de aire y se ven geniales.">Clean, routed cables that improve airflow and look great.</p></div></div>
+        <div class="inc-item"><span class="inc-icon">🔬</span><div class="inc-text"><h4 data-en="Thermal Paste & BIOS Setup" data-es="Pasta Térmica y Configuración de BIOS">Thermal Paste &amp; BIOS Setup</h4><p data-en="Proper thermal paste application and BIOS configured for your specific hardware." data-es="Aplicación correcta de pasta térmica y BIOS configurado para tu hardware específico.">Proper thermal paste application and BIOS configured for your specific hardware.</p></div></div>
+        <div class="inc-item"><span class="inc-icon">🔄</span><div class="inc-text"><h4 data-en="Driver Updates" data-es="Actualización de Drivers">Driver Updates</h4><p data-en="All GPU, chipset, and peripheral drivers updated before delivery." data-es="Todos los drivers de GPU, chipset y periféricos actualizados antes de la entrega.">All GPU, chipset, and peripheral drivers updated before delivery.</p></div></div>
+        <div class="inc-item"><span class="inc-icon">🔥</span><div class="inc-text"><h4 data-en="24-Hour Burn-In Stress Test" data-es="Prueba de Estrés de 24 Horas">24-Hour Burn-In Stress Test</h4><p data-en="From basic tasks to hardcore gaming — left on for 24 hours to confirm everything is stable before it reaches you." data-es="Desde tareas básicas hasta gaming intenso — encendido 24 horas para confirmar estabilidad antes de que llegue contigo.">From basic tasks to hardcore gaming — left on for 24 hours to confirm everything is stable before it reaches you.</p></div></div>
+      </div>
+    </div>
+    <div class="warranty-card">
+      <h3 data-en="🛡️ Warranty" data-es="🛡️ Garantía">🛡️ Warranty</h3>
+      <p data-en="All builds include a 30-day assembly warranty. If something fails due to our work — a loose connection, an improperly seated component, anything on our end — we fix it at no cost to you." data-es="Todos los builds incluyen una garantía de ensamble de 30 días. Si algo falla por nuestro trabajo — una conexión suelta, un componente mal instalado — lo reparamos sin costo para ti.">All builds include a <strong>30-day assembly warranty</strong>. If something fails due to our work — a loose connection, an improperly seated component, anything on our end — we fix it at no cost to you.</p>
+      <p data-en="Parts carry their own manufacturer warranty — typically 1–5 years depending on the component. If a part fails due to a manufacturer defect, we offer RMA concierge service: we handle the return process on your behalf for a small fee so you don't have to deal with the hassle." data-es="Las piezas tienen su propia garantía del fabricante. Si una pieza falla por defecto del fabricante, ofrecemos servicio de concierge RMA: manejamos el proceso de devolución por ti por una pequeña tarifa.">Parts carry their own manufacturer warranty — typically 1–5 years depending on the component. If a part fails due to a manufacturer defect, we offer <strong>RMA concierge service</strong>: we handle the return process on your behalf for a small fee so you don't have to deal with the hassle.</p>
+      <span class="warranty-badge">✅ <span data-en="30-Day Assembly Warranty Included" data-es="Garantía de Ensamble de 30 Días Incluida">30-Day Assembly Warranty Included</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- UPGRADE SERVICE -->
+<section class="upgrade-section section reveal" id="upgrade">
+  <div class="sec-label" data-en="// Already Have a PC?" data-es="// ¿Ya Tienes Una PC?">// Already Have a PC?</div>
+  <h2 class="sec-title" data-en="We Do Upgrades Too" data-es="También Hacemos Actualizaciones">We Do Upgrades Too</h2>
+  <p class="sec-sub" data-en="You don't need a full new build to get better performance. GPU swaps, RAM upgrades, SSD installs — we do it all. Starting at $50 depending on complexity." data-es="No necesitas un build completo para mejorar el rendimiento. Cambios de GPU, actualizaciones de RAM, instalación de SSD — todo lo hacemos. Desde $50 según complejidad.">You don't need a full new build to get better performance. GPU swaps, RAM upgrades, SSD installs — we do it all. Starting at $50 depending on complexity.</p>
+  <div class="upgrade-grid">
+    <div class="upgrade-card"><span class="u-icon">🖥️</span><h3 data-en="GPU Swap" data-es="Cambio de GPU">GPU Swap</h3><p data-en="Replace your old graphics card with a newer, faster one. We handle the swap, driver cleanup, and verify it's stable." data-es="Reemplaza tu tarjeta gráfica antigua con una más nueva y rápida. Manejamos el cambio, limpieza de drivers y verificamos la estabilidad.">Replace your old graphics card with a newer, faster one. We handle the swap, driver cleanup, and verify it's stable.</p><span class="u-price" data-en="From $50" data-es="Desde $50">From $50</span></div>
+    <div class="upgrade-card"><span class="u-icon">🧠</span><h3 data-en="RAM Upgrade" data-es="Actualización de RAM">RAM Upgrade</h3><p data-en="Add more RAM or replace existing sticks. We verify compatibility and optimize XMP/EXPO settings for best performance." data-es="Agrega más RAM o reemplaza los módulos existentes. Verificamos compatibilidad y optimizamos configuraciones XMP/EXPO.">Add more RAM or replace existing sticks. We verify compatibility and optimize XMP/EXPO settings for best performance.</p><span class="u-price" data-en="From $40" data-es="Desde $40">From $40</span></div>
+    <div class="upgrade-card"><span class="u-icon">💾</span><h3 data-en="SSD Upgrade" data-es="Actualización de SSD">SSD Upgrade</h3><p data-en="Add a faster, larger SSD. We clone your existing drive so you don't lose anything, or do a fresh install — your choice." data-es="Agrega un SSD más rápido y grande. Clonamos tu disco existente para no perder nada, o hacemos instalación limpia — tu eliges.">Add a faster, larger SSD. We clone your existing drive so you don't lose anything, or do a fresh install — your choice.</p><span class="u-price" data-en="From $40" data-es="Desde $40">From $40</span></div>
+    <div class="upgrade-card"><span class="u-icon">🛠️</span><h3 data-en="Full System Refresh" data-es="Renovación Completa del Sistema">Full System Refresh</h3><p data-en="Clean thermals, replace thermal paste, update drivers, optimize startup — give your existing PC new life without buying new parts." data-es="Limpieza de térmicos, reemplazo de pasta térmica, actualización de drivers, optimización de inicio — dale nueva vida a tu PC sin comprar piezas nuevas.">Clean thermals, replace thermal paste, update drivers, optimize startup — give your existing PC new life without buying new parts.</p><span class="u-price" data-en="From $60" data-es="Desde $60">From $60</span></div>
+  </div>
+  <div style="text-align:center;margin-top:2rem"><a href="#contact-form" class="hero-btn" data-en="Request an Upgrade →" data-es="Solicitar una Actualización →">Request an Upgrade →</a></div>
+</section>
+
+<!-- PARTS POLICY BANNER -->
+<div class="parts-banner reveal">
+  <span class="pb-icon">📦</span>
+  <div>
+    <h4 data-en="How Parts Work" data-es="Cómo Funcionan las Piezas">How Parts Work</h4>
+    <p data-en="Parts are your responsibility to purchase from Amazon, Newegg, or wherever you prefer. If you're new to PC building and don't know what to order or where to start — reach out before you buy anything. We'll walk you through the entire process step by step at no extra charge so you don't order the wrong thing." data-es="Las piezas son tu responsabilidad de compra en Amazon, Newegg o donde prefieras. Si eres nuevo en el armado de PCs y no sabes qué ordenar — contáctanos antes de comprar nada. Te guiaremos paso a paso sin costo adicional.">Parts are your responsibility to purchase from Amazon, Newegg, or wherever you prefer. If you're new to PC building and don't know what to order or where to start — reach out before you buy anything. We'll walk you through the entire process step by step at no extra charge so you don't order the wrong thing.</p>
+  </div>
+</div>
+
+<!-- DON'T FORGET CHECKLIST -->
+<section class="checklist-section reveal">
+  <div class="checklist-inner">
+    <div class="sec-label" data-en="// Don't Forget" data-es="// No Olvides">// Don't Forget</div>
+    <h2 class="sec-title" data-en="Your PC Also Needs..." data-es="Tu PC También Necesita...">Your PC Also Needs...</h2>
+    <p class="sec-sub" data-en="These aren't included in the build estimate. First-time builders often forget these — don't get caught off guard." data-es="Estos no están incluidos en el estimado del build. Los principiantes a menudo los olvidan.">These aren't included in the build estimate. First-time builders often forget these — don't get caught off guard.</p>
+    <div class="checklist-grid">
+      <div class="cl-item"><span class="cl-icon">🖥️</span><div class="cl-text"><h4>Monitor</h4><p data-en="$150–$800+ depending on size/resolution" data-es="$150–$800+ según tamaño/resolución">$150–$800+ depending on size/resolution</p></div></div>
+      <div class="cl-item"><span class="cl-icon">⌨️</span><div class="cl-text"><h4 data-en="Keyboard" data-es="Teclado">Keyboard</h4><p data-en="$30–$200+ (mechanical vs membrane)" data-es="$30–$200+ (mecánico vs membrana)">$30–$200+ (mechanical vs membrane)</p></div></div>
+      <div class="cl-item"><span class="cl-icon">🖱️</span><div class="cl-text"><h4 data-en="Mouse" data-es="Mouse">Mouse</h4><p data-en="$25–$150+ for gaming mice" data-es="$25–$150+ para mice gaming">$25–$150+ for gaming mice</p></div></div>
+      <div class="cl-item"><span class="cl-icon">🖱️</span><div class="cl-text"><h4 data-en="Mousepad" data-es="Mousepad">Mousepad</h4><p data-en="$10–$50 — often forgotten" data-es="$10–$50 — a menudo olvidado">$10–$50 — often forgotten</p></div></div>
+      <div class="cl-item"><span class="cl-icon">🌐</span><div class="cl-text"><h4 data-en="WiFi Adapter" data-es="Adaptador WiFi">WiFi Adapter</h4><p data-en="$25–$80 if mobo has no built-in WiFi" data-es="$25–$80 si la tarjeta madre no tiene WiFi integrado">$25–$80 if mobo has no built-in WiFi</p></div></div>
+      <div class="cl-item"><span class="cl-icon">🪟</span><div class="cl-text"><h4>Windows 11</h4><p data-en="~$100–140 (OEM ~$30 online)" data-es="~$100–140 (OEM ~$30 en línea)">~$100–140 (OEM ~$30 online)</p></div></div>
+      <div class="cl-item"><span class="cl-icon">🎧</span><div class="cl-text"><h4 data-en="Headset/Audio" data-es="Audífonos/Audio">Headset/Audio</h4><p data-en="$40–$300+ for gaming headsets" data-es="$40–$300+ para audífonos gaming">$40–$300+ for gaming headsets</p></div></div>
+      <div class="cl-item"><span class="cl-icon">📡</span><div class="cl-text"><h4 data-en="Ethernet Cable" data-es="Cable Ethernet">Ethernet Cable</h4><p data-en="$10–$25 — wired is always better" data-es="$10–$25 — cableado siempre es mejor">$10–$25 — wired is always better</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CLEARTECH -->
+<section class="why-section section reveal">
+  <div class="sec-label" data-en="// Why Choose Us" data-es="// ¿Por Qué Elegirnos?">// Why Choose Us</div>
+  <h2 class="sec-title" data-en="ClearTech vs. The Competition" data-es="ClearTech vs. La Competencia">ClearTech vs. The Competition</h2>
+  <div class="why-grid">
+    <div class="why-col cleartech">
+      <h3><span>ClearTech Solutions</span></h3>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="We come to your house — zero hassle" data-es="Vamos a tu casa — cero molestias">We come to your house — zero hassle</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="Parts chosen specifically for what YOU need" data-es="Piezas elegidas específicamente para lo que TÚ necesitas">Parts chosen specifically for what YOU need</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="24-hour burn-in test before delivery" data-es="Prueba de 24 horas antes de entrega">24-hour burn-in test before delivery</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="Professional cable management" data-es="Manejo profesional de cables">Professional cable management</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="30-day assembly warranty" data-es="Garantía de ensamble de 30 días">30-day assembly warranty</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="Real person who picks up the phone" data-es="Una persona real que contesta el teléfono">Real person who picks up the phone</span></div>
+      <div class="why-row"><span class="wcheck">✓</span><span data-en="Assembly from $75" data-es="Ensamble desde $75">Assembly from $75</span></div>
+    </div>
+    <div class="why-col">
+      <h3>Geek Squad / Big Box Stores</h3>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="You haul your stuff to them" data-es="Tú llevas tus cosas a ellos">You haul your stuff to them</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="Generic prebuilts with bloatware" data-es="Prearmadas genéricas con bloatware">Generic prebuilts with bloatware</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="No burn-in testing" data-es="Sin pruebas de burn-in">No burn-in testing</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="Messy cable routing" data-es="Cables desordenados">Messy cable routing</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="No assembly warranty" data-es="Sin garantía de ensamble">No assembly warranty</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="Call center support" data-es="Soporte de call center">Call center support</span></div>
+      <div class="why-row"><span class="wcross">✗</span><span data-en="$100+ just to diagnose your PC" data-es="$100+ solo para diagnosticar tu PC">$100+ just to diagnose your PC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section reveal">
+  <div class="faq-inner">
+    <div class="sec-label" data-en="// Frequently Asked Questions" data-es="// Preguntas Frecuentes">// Frequently Asked Questions</div>
+    <h2 class="sec-title" data-en="Got Questions? We've Got Answers." data-es="¿Tienes Preguntas? Tenemos Respuestas.">Got Questions? We've Got Answers.</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Do I have to buy my own parts, or will you source them for me?" data-es="¿Tengo que comprar mis propias piezas, o las consiguen por mí?">Do I have to buy my own parts, or will you source them for me?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Parts are your responsibility to purchase. If you're new and don't know where to start, don't sweat it — we'll walk you through the entire ordering process at no extra charge so you don't buy the wrong thing." data-es="Las piezas son tu responsabilidad de compra. Si eres nuevo y no sabes por dónde empezar, no te preocupes — te guiaremos por todo el proceso de compra sin costo adicional para que no compres lo incorrecto.">Parts are your responsibility to purchase. If you're new and don't know where to start, don't sweat it — we'll walk you through the entire ordering process at no extra charge so you don't buy the wrong thing.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Do you come to me, or do I bring my parts somewhere?" data-es="¿Vienen a mí, o llevo las piezas a algún lugar?">Do you come to me, or do I bring my parts somewhere?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="For local North Texas builds, we come to you. You don't have to haul anything anywhere. For out-of-state customers, you order your parts, ship them to us, we assemble, and ship your finished build back." data-es="Para builds locales en North Texas, vamos a ti. No tienes que llevar nada a ningún lado. Para clientes fuera del estado, ordenas las piezas, nos las envías, ensamblamos y te enviamos tu build terminado.">For local North Texas builds, we come to you. You don't have to haul anything anywhere. For out-of-state customers, you order your parts, ship them to us, we assemble, and ship your finished build back.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="How long does a build take?" data-es="¿Cuánto tiempo tarda un build?">How long does a build take?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Once all parts are on hand, most builds take 3–4 days including the 24-hour burn-in test. If we're waiting on parts to arrive, allow up to 1 week. We'll keep you updated the whole time." data-es="Una vez que todas las piezas están disponibles, la mayoría de builds toman 3–4 días incluyendo la prueba de burn-in de 24 horas. Si esperamos piezas, hasta 1 semana. Te mantendremos informado todo el tiempo.">Once all parts are on hand, most builds take 3–4 days including the 24-hour burn-in test. If we're waiting on parts to arrive, allow up to 1 week. We'll keep you updated the whole time.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="What if a part I ordered turns out to be incompatible?" data-es="¿Qué pasa si una pieza que ordené resulta ser incompatible?">What if a part I ordered turns out to be incompatible?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="That's exactly why we review every build before you order anything. If something doesn't work together, we'll catch it before you spend a dime. Our compatibility checker on this page also flags common socket and RAM type mismatches automatically." data-es="Por eso revisamos cada build antes de que compres. Si algo no funciona junto, lo detectamos antes de que gastes dinero. Nuestro verificador de compatibilidad también señala automáticamente incompatibilidades de socket y tipo de RAM.">That's exactly why we review every build before you order anything. If something doesn't work together, we'll catch it before you spend a dime. Our compatibility checker on this page also flags common socket and RAM type mismatches automatically.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Is Windows included in the price?" data-es="¿Windows está incluido en el precio?">Is Windows included in the price?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Windows 11 is not included in the build estimate — it's an additional ~$100–140. We can install it for an additional $35 service fee. If you want to go the free route, Linux is a solid option for non-gaming or general use. Just mention your preference when you submit your request." data-es="Windows 11 no está incluido en el estimado del build — es adicional ~$100–140. Podemos instalarlo por $35 adicionales. Si quieres la opción gratuita, Linux es sólida para uso general. Menciona tu preferencia al enviar tu solicitud.">Windows 11 is not included in the build estimate — it's an additional ~$100–140. We can install it for an additional $35 service fee. If you want to go the free route, Linux is a solid option for non-gaming or general use. Just mention your preference when you submit your request.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Can you upgrade my existing PC instead of building a new one?" data-es="¿Pueden actualizar mi PC existente en vez de armar una nueva?">Can you upgrade my existing PC instead of building a new one?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Absolutely. GPU swaps, RAM upgrades, SSD installs, full system refreshes — we do it all. Starting at $40–50 depending on complexity. Reach out and we'll figure out what makes the most sense for your setup." data-es="Por supuesto. Cambios de GPU, actualizaciones de RAM, instalación de SSD, renovaciones completas — todo lo hacemos. Desde $40–50 según complejidad. Contáctanos y averiguamos qué tiene más sentido para tu configuración.">Absolutely. GPU swaps, RAM upgrades, SSD installs, full system refreshes — we do it all. Starting at $40–50 depending on complexity. Reach out and we'll figure out what makes the most sense for your setup.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="What happens if something breaks after you build it?" data-es="¿Qué pasa si algo se rompe después de que lo arman?">What happens if something breaks after you build it?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="All builds come with a 30-day assembly warranty. If something fails due to our work — a loose connection, an improperly seated component — we fix it for free. If a part fails due to a manufacturer defect, we offer RMA concierge service to handle the return process on your behalf for a small fee." data-es="Todos los builds incluyen garantía de ensamble de 30 días. Si algo falla por nuestro trabajo, lo reparamos gratis. Si una pieza falla por defecto del fabricante, ofrecemos servicio de concierge RMA para manejar el proceso de devolución por ti por una pequeña tarifa.">All builds come with a 30-day assembly warranty. If something fails due to our work — a loose connection, an improperly seated component — we fix it for free. If a part fails due to a manufacturer defect, we offer RMA concierge service to handle the return process on your behalf for a small fee.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="What's included in the assembly fee?" data-es="¿Qué incluye la tarifa de ensamble?">What's included in the assembly fee?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Full assembly, professional cable management, thermal paste application, BIOS setup, driver updates, and a 24-hour burn-in stress test. We don't hand you a box of parts thrown together — every build is fully tested before it leaves our hands." data-es="Ensamble completo, manejo profesional de cables, aplicación de pasta térmica, configuración de BIOS, actualización de drivers y prueba de estrés de 24 horas. No te entregamos una caja de piezas armadas al azar — cada build se prueba completamente antes de salir de nuestras manos.">Full assembly, professional cable management, thermal paste application, BIOS setup, driver updates, and a 24-hour burn-in stress test. We don't hand you a box of parts thrown together — every build is fully tested before it leaves our hands.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Can I use parts I already own in a new build?" data-es="¿Puedo usar piezas que ya tengo en un nuevo build?">Can I use parts I already own in a new build?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Yes, as long as they're compatible with your new components. Let us know what you have when you submit your request and we'll review compatibility before anything is ordered." data-es="Sí, siempre y cuando sean compatibles con tus nuevos componentes. Dinos qué tienes cuando envíes tu solicitud y revisaremos la compatibilidad antes de ordenar nada.">Yes, as long as they're compatible with your new components. Let us know what you have when you submit your request and we'll review compatibility before anything is ordered.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="How do I pay?" data-es="¿Cómo pago?">How do I pay?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="We accept Zelle, Venmo, PayPal, and cash. Payment is due upon completion of the build — you don't pay until the work is done and you're satisfied." data-es="Aceptamos Zelle, Venmo, PayPal y efectivo. El pago se realiza al completar el build — no pagas hasta que el trabajo esté terminado y estés satisfecho.">We accept Zelle, Venmo, PayPal, and cash. Payment is due upon completion of the build — you don't pay until the work is done and you're satisfied.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="Do you install the operating system and drivers?" data-es="¿Instalan el sistema operativo y los drivers?">Do you install the operating system and drivers?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="Driver updates are included in every build. OS installation (Windows 11 or Linux) is an optional add-on for $35. Just request it when you submit your build — we'll have your machine ready to use right out of the box." data-es="Las actualizaciones de drivers están incluidas en cada build. La instalación del OS (Windows 11 o Linux) es un complemento opcional de $35. Solicítalo al enviar tu build — tendremos tu máquina lista para usar desde el primer momento.">Driver updates are included in every build. OS installation (Windows 11 or Linux) is an optional add-on for $35. Just request it when you submit your build — we'll have your machine ready to use right out of the box.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-en="What's the difference between you and buying a prebuilt from Best Buy?" data-es="¿Cuál es la diferencia entre ustedes y comprar una prearmada de Best Buy?">What's the difference between you and buying a prebuilt from Best Buy?</span><span class="farrow">▼</span></button><div class="faq-a" data-en="A prebuilt from Best Buy is built for profit margins — generic components, bloatware loaded, zero customization. We build specifically for what YOU need, with the exact components you chose, tested for 24 hours straight, and we come to your house. Geek Squad charges $100+ just to look at your PC. We build the whole thing for $75." data-es="Una prearmada de Best Buy está hecha para márgenes de ganancia — componentes genéricos, bloatware cargado, cero personalización. Nosotros construimos específicamente para lo que TÚ necesitas, con los componentes exactos que elegiste, probados por 24 horas seguidas, y vamos a tu casa. Geek Squad cobra $100+ solo para ver tu PC. Nosotros armamos todo por $75.">A prebuilt from Best Buy is built for profit margins — generic components, bloatware loaded, zero customization. We build specifically for what YOU need, with the exact components you chose, tested for 24 hours straight, and we come to your house. Geek Squad charges $100+ just to look at your PC. We build the whole thing for $75.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section reveal" id="contact-form">
+  <div class="sec-label" data-en="// Step 03 — Let's Get Started" data-es="// Paso 03 — Comencemos">// Step 03 — Let's Get Started</div>
+  <h2 class="sec-title" data-en="Request Your Build" data-es="Solicita Tu Build">Request Your Build</h2>
+  <p class="sec-sub" style="margin-bottom:1.5rem" data-en="Fill out the form below and we'll reach back out using your preferred method within 24–28 hours." data-es="Llena el formulario y nos comunicaremos con tu método preferido en 24–28 horas.">Fill out the form below and we'll reach back out using your preferred method within 24–28 hours.</p>
+
+  <div class="summary-box">
+    <h4 data-en="Your Selected Build" data-es="Tu Build Seleccionado">Your Selected Build</h4>
+    <div id="summary-lines"><div class="sline"><span style="color:var(--muted)" data-en="No components selected yet — configure your build above first." data-es="Ningún componente seleccionado aún — configura tu build primero.">No components selected yet — configure your build above first.</span></div></div>
+  </div>
+
+  <div id="form-wrap">
+    <form name="pc-build-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="onSubmit(event)">
+      <input type="hidden" name="form-name" value="pc-build-request">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="build_summary" id="hid-summary" value="">
+      <input type="hidden" name="use_case" id="hid-usecase" value="">
+
+      <div class="form-row">
+        <div class="fgroup"><label data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
+        <div class="fgroup"><label data-en="Email Address *" data-es="Correo Electrónico *">Email Address *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="form-row">
+        <div class="fgroup"><label data-en="Phone Number" data-es="Número de Teléfono">Phone Number</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
+        <div class="fgroup">
+          <label data-en="How Should We Contact You Back? *" data-es="¿Cómo Prefieres que Te Contactemos? *">How Should We Contact You Back? *</label>
+          <select name="contact_preference" required>
+            <option value="" disabled selected data-en="Choose one..." data-es="Elige uno...">Choose one...</option>
+            <option value="Email" data-en="Email" data-es="Correo">Email</option>
+            <option value="Phone Call" data-en="Phone Call" data-es="Llamada">Phone Call</option>
+            <option value="Text Message" data-en="Text Message" data-es="Mensaje de Texto">Text Message</option>
+          </select>
+        </div>
+      </div>
+      <div class="fgroup"><label data-en="City / Zip Code" data-es="Ciudad / Código Postal">City / Zip Code</label><input type="text" name="location" placeholder="McKinney, TX 75069"></div>
+      <div class="fgroup">
+        <label data-en="OS Installation?" data-es="¿Instalación de OS?">OS Installation? (+$35 add-on)</label>
+        <select name="os_install">
+          <option value="No OS needed" data-en="No — I'll handle it myself" data-es="No — lo haré yo mismo">No — I'll handle it myself</option>
+          <option value="Windows 11" data-en="Yes — Install Windows 11 (+$35)" data-es="Sí — Instalar Windows 11 (+$35)">Yes — Install Windows 11 (+$35)</option>
+          <option value="Linux" data-en="Yes — Install Linux (+$35)" data-es="Sí — Instalar Linux (+$35)">Yes — Install Linux (+$35)</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label data-en="Anything else we should know?" data-es="¿Algo más que debamos saber?">Anything else we should know?</label>
+        <textarea name="notes" data-en-placeholder="Timeline, specific questions, existing parts to reuse, out-of-state shipping, anything..." data-es-placeholder="Plazo de tiempo, preguntas específicas, piezas existentes para reutilizar, envío fuera del estado..." placeholder="Timeline, specific questions, existing parts to reuse, out-of-state shipping, anything..."></textarea>
+      </div>
+
+      <div class="privacy-note">
+        <span style="font-size:1rem;flex-shrink:0">🔒</span>
+        <span data-en="Your information is securely submitted through Netlify and is only used to contact you about your build. We don't store, sell, or share your personal data." data-es="Tu información se envía de forma segura a través de Netlify y solo se usa para contactarte sobre tu build. No almacenamos, vendemos ni compartimos tus datos personales.">Your information is securely submitted through Netlify and is only used to contact you about your build. We don't store, sell, or share your personal data.</span>
+      </div>
+
+      <button type="submit" class="submit-btn" data-en="Send My Build Request →" data-es="Enviar Mi Solicitud →">Send My Build Request →</button>
+    </form>
+  </div>
+
+  <div class="success-msg" id="success-msg">
+    <h3>✅ <span data-en="Request Sent!" data-es="¡Solicitud Enviada!">Request Sent!</span></h3>
+    <p data-en="Your build request is on its way. We'll reach out via your preferred contact method within 24–28 hours. Thanks for choosing ClearTech Solutions." data-es="Tu solicitud de build está en camino. Nos comunicaremos por tu método de contacto preferido en 24–28 horas. Gracias por elegir ClearTech Solutions.">Your build request is on its way. We'll reach out via your preferred contact method within 24–28 hours. Thanks for choosing ClearTech Solutions.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>ClearTech Solutions</h3>
+      <p data-en="Veteran-owned custom PC building and upgrade service. Serving North Texas and beyond." data-es="Servicio de armado y actualización de PC personalizado, propiedad de un veterano. Sirviendo al Norte de Texas y más allá.">Veteran-owned custom PC building and upgrade service. Serving North Texas and beyond.</p>
+      <a href="tel:9723917153" class="f-phone">📞 972-391-7153</a>
+      <div class="footer-social" style="margin-top:0.75rem">
+        <!-- Replace # with your actual social media URLs -->
+        <a href="#" class="social-link" title="Facebook">f</a>
+        <a href="#" class="social-link" title="Instagram">ig</a>
+        <a href="#" class="social-link" title="TikTok">tt</a>
+        <a href="#" class="social-link" title="YouTube">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Service Areas" data-es="Áreas de Servicio">Service Areas</h4>
+      <p>Melissa, TX</p><p>McKinney, TX</p><p>Frisco, TX</p><p>Allen, TX</p><p>Prosper, TX</p>
+      <p data-en="+ Surrounding North Texas" data-es="+ Norte de Texas en general">+ Surrounding North Texas</p>
+      <p style="margin-top:0.5rem" data-en="Out-of-state shipping available" data-es="Envíos fuera del estado disponibles">Out-of-state shipping available</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Hours & Payment" data-es="Horario y Pago">Hours &amp; Payment</h4>
+      <p data-en="Mon–Fri: 9am–8pm" data-es="Lun–Vie: 9am–8pm">Mon–Fri: 9am–8pm</p>
+      <p data-en="Weekends: By appointment" data-es="Fines de semana: Con cita">Weekends: By appointment</p>
+      <p data-en="Response: Within 24–28 hours" data-es="Respuesta: En 24–28 horas">Response: Within 24–28 hours</p>
+      <p style="margin-top:0.5rem;font-weight:600;color:var(--text)" data-en="Payment Accepted:" data-es="Pagos Aceptados:">Payment Accepted:</p>
+      <p>Zelle · Venmo · PayPal · Cash</p>
+      <a href="index.html" style="margin-top:0.75rem;color:var(--cyan)" data-en="← Back to Main Site" data-es="← Regresar al Sitio Principal">← Back to Main Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ClearTech Solutions · Veteran-Owned · Melissa, TX</span>
+    <span data-en="Parts pricing updated monthly. Estimates are approximate." data-es="Precios de piezas actualizados mensualmente. Los estimados son aproximados.">Parts pricing updated monthly. Estimates are approximate.</span>
+  </div>
+</footer>
+
+<!-- SHARE MODAL -->
+<div class="modal-overlay" id="share-modal">
+  <div class="modal-box" style="position:relative">
+    <button class="modal-close" onclick="closeShare()">✕</button>
+    <h3 data-en="🔗 Share Your Build" data-es="🔗 Comparte Tu Build">🔗 Share Your Build</h3>
+    <p data-en="Copy a link with your exact build pre-loaded, or download a summary card to share on Discord, Reddit, or Facebook." data-es="Copia un enlace con tu build exacto precargado, o descarga una tarjeta resumen para compartir en Discord, Reddit o Facebook.">Copy a link with your exact build pre-loaded, or download a summary card to share on Discord, Reddit, or Facebook.</p>
+    <div class="url-display" id="share-url"></div>
+    <div class="modal-actions">
+      <button class="modal-btn primary" onclick="copyShareLink()" id="copy-btn" data-en="📋 Copy Shareable Link" data-es="📋 Copiar Enlace para Compartir">📋 Copy Shareable Link</button>
+      <button class="modal-btn secondary" onclick="downloadSummary()" data-en="⬇️ Download Build Summary" data-es="⬇️ Descargar Resumen del Build">⬇️ Download Build Summary</button>
+      <button class="modal-btn secondary" onclick="closeShare()" data-en="Close" data-es="Cerrar">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+const S = {
+  useCase:null, budget:null,
+  gpu:{name:null,lo:0,hi:0},
+  cpu:{name:null,lo:0,hi:0},
+  mobo:{name:null,lo:0,hi:0},
+  ram:{name:null,lo:0,hi:0},
+  storage:{name:null,lo:0,hi:0},
+  case:{name:null,lo:0,hi:0},
+  psu:{name:null,lo:0,hi:0},
+  cpu_cooler:{name:null,lo:0,hi:0},
+  case_fans:{name:null,lo:0,hi:0}
+};
+let prevTotalLo = 0;
+let currentLang = localStorage.getItem('ctlang') || 'en';
+
+// ═══════════════════════════════════════════════
+// SOCKET COMPATIBILITY MAP
+// ═══════════════════════════════════════════════
+const SOCKET = {
+  // Budget CPUs
+  'AMD Ryzen 5 4500':'AM4','AMD Ryzen 5 5600':'AM4','AMD Ryzen 5 5600X':'AM4',
+  'Intel Core i5-12400F':'LGA1700','Intel Core i5-12600K':'LGA1700',
+  'Intel Core Ultra 5 245KF':'LGA1851',
+  // Mid CPUs
+  'AMD Ryzen 5 7600X':'AM5','AMD Ryzen 5 9600X':'AM5',
+  'Intel Core i5-14600K':'LGA1700','Intel Core i5-14600KF':'LGA1700',
+  'AMD Ryzen 7 7700X':'AM5','AMD Ryzen 7 9700X':'AM5',
+  'Intel Core Ultra 7 265KF':'LGA1851','Intel Core Ultra 7 265K':'LGA1851',
+  // High CPUs
+  'AMD Ryzen 7 9800X3D':'AM5','AMD Ryzen 9 7900X':'AM5',
+  'AMD Ryzen 9 9900X':'AM5','AMD Ryzen 9 7950X':'AM5',
+  'Intel Core i7-14700K':'LGA1700','Intel Core i7-14700KF':'LGA1700',
+  'Intel Core i9-14900K':'LGA1700',
+  // Ultra CPUs
+  'AMD Ryzen 9 9950X':'AM5',
+  'Intel Core i9-14900KS':'LGA1700','Intel Core Ultra 9 285K':'LGA1851',
+  // Budget Mobos
+  'B550 ATX (AM4)':'AM4','X570 ATX (AM4)':'AM4',
+  'B660 ATX (LGA1700)':'LGA1700','B760 ATX (LGA1700)':'LGA1700',
+  'Z790 ATX (LGA1700)':'LGA1700','B860 ATX (LGA1851)':'LGA1851',
+  // Mid Mobos
+  'B650 ATX (AM5)':'AM5','B650E ATX (AM5)':'AM5','X670 ATX (AM5)':'AM5',
+  'Z890 ATX (LGA1851)':'LGA1851',
+  // High Mobos
+  'X670E ATX (AM5)':'AM5','X870 ATX (AM5)':'AM5','X870E ATX (AM5)':'AM5',
+  // Ultra Mobos
+  'X870E Premium (AM5)':'AM5',
+  'Z790 High-End (LGA1700)':'LGA1700','Z890 Extreme (LGA1851)':'LGA1851'
+};
+const DDR_MAP = {AM4:'DDR4',LGA1700:'DDR4',AM5:'DDR5',LGA1851:'DDR5'};
+
+// ═══════════════════════════════════════════════
+// COMPONENT DATA
+// PRICES LAST UPDATED: June 2026
+// TO UPDATE: Search for the component name and change lo/hi values
+// Run a price check on Newegg, Amazon, and Best Buy monthly
+// ═══════════════════════════════════════════════
+const DATA = {
+  budget:{
+    gpu:[
+      {name:'NVIDIA RTX 5050 8GB',lo:285,hi:318,spec:'1080p entry · Brand new Blackwell · Great for casual gaming'},
+      {name:'NVIDIA RTX 5060 8GB',lo:322,hi:362,spec:'1080p solid · Handles modern titles well · DLSS 4'},
+      {name:'AMD RX 9060 XT 8GB',lo:355,hi:398,spec:'1080p AMD · Great value vs NVIDIA · FSR 4'},
+      {name:'AMD RX 9060 XT 16GB',lo:415,hi:458,spec:'1080p–1440p · Extra 16GB VRAM is huge long-term'},
+      {name:'NVIDIA RTX 5060 Ti 8GB',lo:375,hi:422,spec:'1080p/1440p · DLSS 4 · Faster Ti chip'},
+      {name:'NVIDIA RTX 5060 Ti 16GB',lo:490,hi:562,spec:'1440p capable · 16GB VRAM · Best budget Ti'}
+    ],
+    cpu:[
+      {name:'AMD Ryzen 5 4500',lo:80,hi:105,spec:'6-Core AM4 · Entry level · Good for light gaming'},
+      {name:'AMD Ryzen 5 5600',lo:105,hi:145,spec:'6-Core AM4 · Budget king · Great 1080p gaming'},
+      {name:'AMD Ryzen 5 5600X',lo:145,hi:168,spec:'6-Core AM4 · Boosted clocks · Step up from 5600'},
+      {name:'Intel Core i5-12400F',lo:155,hi:188,spec:'6-Core LGA1700 · Solid 1080p · No iGPU'},
+      {name:'Intel Core i5-12600K',lo:165,hi:212,spec:'10-Core LGA1700 · More cores · Great for streaming'},
+      {name:'Intel Core Ultra 5 245KF',lo:195,hi:232,spec:'14-Core LGA1851 · DDR5 platform · Future-ready'}
+    ],
+    mobo:[
+      {name:'B550 ATX (AM4)',lo:90,hi:138,spec:'Pairs with Ryzen 4500/5600/5600X · Solid budget board'},
+      {name:'X570 ATX (AM4)',lo:138,hi:198,spec:'AM4 · Better VRMs · More features than B550'},
+      {name:'B660 ATX (LGA1700)',lo:88,hi:132,spec:'Pairs with i5-12400F/12600K · Budget Intel board'},
+      {name:'B760 ATX (LGA1700)',lo:98,hi:155,spec:'LGA1700 · Modern chipset · Better than B660'},
+      {name:'Z790 ATX (LGA1700)',lo:158,hi:252,spec:'LGA1700 · Overclocking support · Top Intel budget board'},
+      {name:'B860 ATX (LGA1851)',lo:118,hi:185,spec:'Pairs with Core Ultra 5 245KF · DDR5 platform'}
+    ],
+    ram:[
+      {name:'8GB DDR4 3200MHz',lo:55,hi:80,spec:'Entry only — tight budget · Will feel limited fast'},
+      {name:'16GB DDR4 3200MHz',lo:125,hi:160,spec:'Minimum for gaming in 2026 · Works for most titles'},
+      {name:'32GB DDR4 3200MHz',lo:195,hi:262,spec:'Recommended · Future-proofs your DDR4 build'},
+      {name:'16GB DDR5 4800MHz',lo:100,hi:138,spec:'Entry DDR5 · If pairing with Core Ultra 5 245KF'},
+      {name:'32GB DDR5 5600MHz',lo:185,hi:238,spec:'Mainstream DDR5 · 245KF build sweet spot'}
+    ],
+    psu:[
+      {name:'650W 80+ Bronze',lo:45,hi:75,spec:'Entry efficiency · Fine for budget builds · 82% efficient'},
+      {name:'650W 80+ Gold',lo:75,hi:110,spec:'Recommended · 90% efficient · Quieter & lower power bill'},
+      {name:'750W 80+ Gold',lo:85,hi:125,spec:'Extra headroom · Future-proofs your power supply'}
+    ],
+    cpu_cooler:[
+      {name:'Thermalright Peerless Assassin 120 SE (Air)',lo:35,hi:48,spec:'Best budget air cooler · Handles 250W TDP · Beats many AIOs'},
+      {name:'Arctic Freezer 36 (Air)',lo:45,hi:62,spec:'Quiet all-rounder · Works with AM4 + AM5 + LGA1700'},
+      {name:'Arctic Liquid Freezer III 240mm (AIO)',lo:65,hi:88,spec:'Entry liquid cooling · Much better temps than air'}
+    ]
+  },
+  mid:{
+    gpu:[
+      {name:'AMD RX 9070 16GB',lo:572,hi:628,spec:'1440p powerhouse · More VRAM than RTX 5070 · Great value'},
+      {name:'NVIDIA RTX 5070 12GB',lo:592,hi:652,spec:'1440p/4K · DLSS 4 Multi-Frame Gen · Near MSRP now'},
+      {name:'AMD RX 9070 XT 16GB',lo:622,hi:722,spec:'1440p/4K · Beats 5070 in most benchmarks · RDNA 4'},
+      {name:'NVIDIA RTX 5070 Ti 16GB',lo:815,hi:998,spec:'High-refresh 1440p / 4K entry · Top mid-range pick'}
+    ],
+    cpu:[
+      {name:'AMD Ryzen 5 7600X',lo:175,hi:218,spec:'6-Core AM5 · DDR5 · Fast 1080p/1440p gaming'},
+      {name:'AMD Ryzen 5 9600X',lo:218,hi:252,spec:'6-Core AM5 · Zen 5 · 5.4GHz boost · Efficient'},
+      {name:'Intel Core i5-14600K',lo:225,hi:262,spec:'14-Core LGA1700 · Phenomenal value · Great gaming'},
+      {name:'Intel Core i5-14600KF',lo:238,hi:272,spec:'14-Core LGA1700 · No iGPU · Slightly cheaper'},
+      {name:'AMD Ryzen 7 7700X',lo:245,hi:282,spec:'8-Core AM5 · More headroom for streaming + gaming'},
+      {name:'AMD Ryzen 7 9700X',lo:298,hi:348,spec:'8-Core AM5 · Zen 5 · Improved over 7700X'},
+      {name:'Intel Core Ultra 7 265KF',lo:292,hi:342,spec:'20-Core LGA1851 · DDR5 · Fast multi-threaded'},
+      {name:'Intel Core Ultra 7 265K',lo:308,hi:362,spec:'20-Core LGA1851 · DDR5 · Includes iGPU'}
+    ],
+    mobo:[
+      {name:'B650 ATX (AM5)',lo:128,hi:212,spec:'Pairs with Ryzen 7600X–9700X · Best AM5 entry board'},
+      {name:'B650E ATX (AM5)',lo:155,hi:245,spec:'AM5 · PCIe 5.0 support · Step up from B650'},
+      {name:'X670 ATX (AM5)',lo:225,hi:358,spec:'AM5 · More bandwidth · Better power delivery'},
+      {name:'Z790 ATX (LGA1700)',lo:178,hi:302,spec:'Pairs with i5-14600K / 14600KF · Best Intel mid board'},
+      {name:'Z890 ATX (LGA1851)',lo:225,hi:388,spec:'Pairs with Core Ultra 7 265K/KF · DDR5 flagship'}
+    ],
+    ram:[
+      {name:'16GB DDR5 6000MHz',lo:100,hi:138,spec:'Entry AM5 · Budget single stick · Upgrade later'},
+      {name:'32GB DDR5 5600MHz',lo:185,hi:238,spec:'Solid entry DDR5 kit · Good enough for most games'},
+      {name:'32GB DDR5 6000MHz CL30',lo:192,hi:222,spec:'Sweet spot · Recommended for all AM5 builds'},
+      {name:'32GB DDR5 6400MHz CL32',lo:232,hi:268,spec:'Faster kit · Noticeable gains with Ryzen AM5'},
+      {name:'64GB DDR5 6000MHz CL30',lo:392,hi:452,spec:'Content creation + streaming + gaming'},
+      {name:'64GB DDR5 6400MHz CL32',lo:472,hi:542,spec:'High-capacity fast kit · Future-proof'}
+    ],
+    psu:[
+      {name:'750W 80+ Gold',lo:85,hi:125,spec:'Sweet spot for RTX 5070 / RX 9070 builds · Reliable'},
+      {name:'850W 80+ Gold',lo:95,hi:145,spec:'Recommended · Handles any GPU in this tier comfortably'},
+      {name:'850W 80+ Platinum',lo:125,hi:175,spec:'92% efficient · Best for heavy users & streamers'},
+      {name:'1000W 80+ Gold',lo:120,hi:165,spec:'Max headroom · Ready for any future GPU upgrade'}
+    ],
+    cpu_cooler:[
+      {name:'Arctic Freezer 36 (Air)',lo:45,hi:62,spec:'Good for 65W CPUs · Quiet and reliable'},
+      {name:'be quiet! Dark Rock 4 (Air)',lo:65,hi:88,spec:'Near-silent · High performance · Great for streamers'},
+      {name:'Arctic Liquid Freezer III 240mm (AIO)',lo:65,hi:88,spec:'Best value 240mm AIO · Outperforms most 360mm units'},
+      {name:'NZXT Kraken Core 240mm (AIO)',lo:85,hi:118,spec:'Mid-range liquid · Clean look · LCD option'},
+      {name:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,spec:"Best performance per dollar · #1 rated by Tom's Hardware"}
+    ]
+  },
+  high:{
+    gpu:[
+      {name:'AMD RX 9070 XT 16GB',lo:622,hi:722,spec:'4K value champ · Outperforms RTX 5070 · RDNA 4'},
+      {name:'NVIDIA RTX 5070 Ti 16GB',lo:815,hi:998,spec:'High-refresh 4K · Big step over 5070 · Great card'},
+      {name:'NVIDIA RTX 5080 16GB',lo:1282,hi:1405,spec:'4K ultra beast · Flagship Blackwell · Best non-5090'}
+    ],
+    cpu:[
+      {name:'AMD Ryzen 7 9700X',lo:298,hi:348,spec:'8-Core AM5 · Zen 5 · Good high-end entry CPU'},
+      {name:'AMD Ryzen 7 9800X3D',lo:425,hi:492,spec:'8-Core AM5 · #1 gaming CPU on the market · Period'},
+      {name:'AMD Ryzen 9 7900X',lo:325,hi:388,spec:'12-Core AM5 · Gaming + content creation sweet spot'},
+      {name:'AMD Ryzen 9 9900X',lo:388,hi:458,spec:'12-Core AM5 · Zen 5 · Latest gen 12-core'},
+      {name:'AMD Ryzen 9 7950X',lo:448,hi:532,spec:'16-Core AM5 · Workstation-tier · Serious multitasking'},
+      {name:'Intel Core i7-14700K',lo:322,hi:378,spec:'20-Core LGA1700 · Excellent value · Gaming + work'},
+      {name:'Intel Core i7-14700KF',lo:322,hi:378,spec:'20-Core LGA1700 · No iGPU · Same chip, slightly cheaper'},
+      {name:'Intel Core i9-14900K',lo:460,hi:492,spec:'24-Core LGA1700 · Workhorse · All-time low pricing now'}
+    ],
+    mobo:[
+      {name:'X670 ATX (AM5)',lo:225,hi:358,spec:'Pairs with Ryzen 9700X–9950X · Solid high-end AM5'},
+      {name:'X670E ATX (AM5)',lo:288,hi:462,spec:'AM5 · PCIe 5.0 x16 · Better for fast GPUs'},
+      {name:'X870 ATX (AM5)',lo:325,hi:492,spec:'AM5 · Latest gen chipset · Supports 9800X3D well'},
+      {name:'X870E ATX (AM5)',lo:385,hi:615,spec:'AM5 flagship · Best for 9800X3D · Max bandwidth'},
+      {name:'Z790 ATX (LGA1700)',lo:288,hi:462,spec:'Pairs with i7-14700K / i9-14900K · High-end Intel'}
+    ],
+    ram:[
+      {name:'16GB DDR5 6000MHz',lo:100,hi:138,spec:'Minimum · Only if very budget-constrained'},
+      {name:'32GB DDR5 6000MHz CL30',lo:192,hi:222,spec:'Recommended starting point for high-end builds'},
+      {name:'32GB DDR5 6400MHz CL32',lo:232,hi:268,spec:'Optimized speed for Ryzen 9800X3D · Best pairing'},
+      {name:'64GB DDR5 6000MHz CL30',lo:392,hi:452,spec:'Gaming + content creation powerhouse'},
+      {name:'64GB DDR5 6400MHz CL32',lo:472,hi:542,spec:'High-speed 64GB · Serious workloads'},
+      {name:'96GB DDR5 6400MHz',lo:642,hi:722,spec:'Workstation territory · 3D / AI / heavy editing'}
+    ],
+    psu:[
+      {name:'850W 80+ Gold',lo:95,hi:145,spec:'Minimum for RTX 5080 builds · Clean stable power'},
+      {name:'1000W 80+ Gold',lo:120,hi:165,spec:'Recommended for RTX 5080 · Comfortable headroom'},
+      {name:'1000W 80+ Platinum',lo:145,hi:195,spec:'92% efficient · Best for heavy workloads'},
+      {name:'1200W 80+ Gold',lo:155,hi:215,spec:'Maximum headroom · Future-proof for any upgrade'}
+    ],
+    cpu_cooler:[
+      {name:'be quiet! Dark Rock 4 (Air)',lo:65,hi:88,spec:'Silent performance air · Great for most high-end CPUs'},
+      {name:'Noctua NH-D15 G2 (Air)',lo:125,hi:168,spec:'Best air cooler made · Rivals 360mm AIOs · Ultra quiet'},
+      {name:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,spec:'Best AIO value · Perfect for Ryzen 9800X3D'},
+      {name:'NZXT Kraken Plus 360mm (AIO)',lo:158,hi:225,spec:'Premium liquid · 1.54" LCD display · Showcase builds'},
+      {name:'Corsair iCUE H150i Elite 360mm (AIO)',lo:145,hi:198,spec:'Premium flagship · iCUE software · Great cooling'}
+    ]
+  },
+  ultra:{
+    gpu:[
+      {name:'NVIDIA RTX 5090 32GB',lo:3500,hi:4400,spec:'Best GPU alive · Nothing else comes close · 4K/8K'},
+      {name:'NVIDIA RTX 5080 16GB',lo:1282,hi:1405,spec:'4K ultra flagship · Elite build secondary option'}
+    ],
+    cpu:[
+      {name:'AMD Ryzen 7 9800X3D',lo:425,hi:492,spec:'8-Core AM5 · Best pure gaming CPU · #1 choice'},
+      {name:'AMD Ryzen 9 9900X',lo:388,hi:458,spec:'12-Core AM5 · Great if you game AND stream/create'},
+      {name:'AMD Ryzen 9 9950X',lo:518,hi:592,spec:'16-Core AM5 · Absolute best for all workloads'},
+      {name:'AMD Ryzen 9 7950X',lo:448,hi:532,spec:'16-Core AM5 · Creator + gamer · Proven platform'},
+      {name:'Intel Core i9-14900K',lo:460,hi:492,spec:'24-Core LGA1700 · All-time low · Workhorse CPU'},
+      {name:'Intel Core i9-14900KS',lo:478,hi:582,spec:'24-Core LGA1700 · Max clock speeds · Top Intel'},
+      {name:'Intel Core Ultra 9 285K',lo:538,hi:628,spec:'24-Core LGA1851 · Arrow Lake flagship · DDR5'}
+    ],
+    mobo:[
+      {name:'X870E ATX (AM5)',lo:385,hi:625,spec:'Best for Ryzen 9800X3D / 9950X · AM5 flagship'},
+      {name:'X870E Premium (AM5)',lo:555,hi:858,spec:'AM5 top tier · Extreme overclocking · ROG / MEG'},
+      {name:'Z790 High-End (LGA1700)',lo:288,hi:462,spec:'Pairs with i9-14900K/KS · Best Intel ultra board'},
+      {name:'Z890 Extreme (LGA1851)',lo:462,hi:822,spec:'Pairs with Core Ultra 9 285K · DDR5 ultimate'}
+    ],
+    ram:[
+      {name:'16GB DDR5 6000MHz',lo:100,hi:138,spec:'Entry only — upgrade immediately when able'},
+      {name:'32GB DDR5 6000MHz CL30',lo:192,hi:222,spec:'Baseline for ultra builds · Upgrade when possible'},
+      {name:'32GB DDR5 6400MHz CL32',lo:232,hi:268,spec:'Optimized for 9800X3D · Best gaming pairing'},
+      {name:'64GB DDR5 6000MHz CL30',lo:392,hi:452,spec:'Solid ultra build kit · Gaming + creation'},
+      {name:'64GB DDR5 6400MHz CL32',lo:472,hi:542,spec:'High-speed 64GB · Premium kit'},
+      {name:'96GB DDR5 6400MHz',lo:642,hi:722,spec:'Workstation / AI builds · Heavy multitasking'},
+      {name:'128GB DDR5 6000MHz',lo:852,hi:1105,spec:'Extreme workstation · Local AI models / 3D rendering'}
+    ],
+    psu:[
+      {name:'1200W 80+ Gold',lo:155,hi:215,spec:'Minimum for RTX 5090 builds · Adequate power'},
+      {name:'1200W 80+ Platinum',lo:185,hi:260,spec:'Recommended for RTX 5090 · Stable clean power'},
+      {name:'1600W 80+ Platinum',lo:350,hi:455,spec:'Maximum power · RTX 5090 extreme builds · Seasonic Prime TX'}
+    ],
+    cpu_cooler:[
+      {name:'Noctua NH-D15 G2 (Air)',lo:125,hi:168,spec:'Rivals liquid cooling · No pump failure risk'},
+      {name:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,spec:"Best performance AIO · Tom's Hardware #1"},
+      {name:'NZXT Kraken Plus 360mm (AIO)',lo:158,hi:225,spec:'Premium LCD AIO · Ideal for 9950X builds'},
+      {name:'Corsair iCUE H150i Elite 360mm (AIO)',lo:145,hi:198,spec:'Elite flagship · iCUE RGB sync · Best Corsair AIO'},
+      {name:'NZXT Kraken Elite 360mm (AIO)',lo:198,hi:288,spec:'Top of the line · 2.7" IPS LCD · Best of the best'}
+    ]
+  }
+};
+
+// ═══════════════════════════════════════════════
+// HANDLERS
+// ═══════════════════════════════════════════════
+function pickUseCase(el, type) {
+  document.querySelectorAll('.uc-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  S.useCase = type;
+  document.getElementById('hid-usecase').value = type;
+  setTimeout(()=>document.getElementById('builder').scrollIntoView({behavior:'smooth',block:'start'}),320);
+}
+
+function pickBudget(el, tier, lo, hi) {
+  document.querySelectorAll('.bud-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  S.budget = tier;
+  // Reset tier-specific selections
+  ['gpu','cpu','mobo','ram','psu','cpu_cooler'].forEach(k=>{
+    S[k]={name:null,lo:0,hi:0};
+    const pp = document.getElementById('pp-'+ppId(k));
+    if(pp){pp.className='pval empty';pp.textContent='—';}
+  });
+  const d = DATA[tier];
+  buildOpts('gpu-opts', d.gpu, 'gpu');
+  buildOpts('cpu-opts', d.cpu, 'cpu');
+  buildOpts('mobo-opts', d.mobo, 'mobo');
+  buildOpts('ram-opts', d.ram, 'ram');
+  buildOpts('psu-opts', d.psu, 'psu');
+  buildOpts('cooler-opts', d.cpu_cooler, 'cpu_cooler');
+  updateTotal();
+  updateProgress();
+  checkCompatibility();
+}
+
+function ppId(k){
+  const m={gpu:'gpu',cpu:'cpu',mobo:'mobo',ram:'ram',storage:'storage',case:'case',psu:'psu',cpu_cooler:'cooler',case_fans:'fans'};
+  return m[k]||k;
+}
+
+function buildOpts(containerId, items, type) {
+  const c = document.getElementById(containerId);
+  if(!c) return;
+  c.innerHTML='';
+  items.forEach(item=>{
+    const b=document.createElement('button');
+    b.className='opt-btn';
+    b.innerHTML=`<span class="opt-name">${item.name}</span><span class="opt-price">~$${item.lo}–${item.hi}</span><span class="opt-spec">${item.spec}</span>`;
+    b.onclick=function(){pickOpt(this,type,item.name,item.lo,item.hi);};
+    c.appendChild(b);
+  });
+}
+
+function pickOpt(el, type, name, lo, hi) {
+  const container = el.closest('.copts') || el.closest('.storage-grp-body');
+  if(container) container.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  S[type]={name,lo,hi};
+  const ppEl=document.getElementById('pp-'+ppId(type));
+  if(ppEl){ppEl.className='pval';ppEl.textContent=`~$${lo}–${hi}`;}
+  updateTotal();
+  updateProgress();
+  updateSummary();
+  if(type==='cpu'||type==='mobo') checkCompatibility();
+  if(type==='ram') checkRamCompat();
+}
+
+function updateTotal() {
+  const parts=['gpu','cpu','mobo','ram','storage','case','psu','cpu_cooler','case_fans'];
+  let tLo=0,tHi=0;
+  parts.forEach(p=>{if(S[p]&&S[p].lo>0){tLo+=S[p].lo;tHi+=S[p].hi;}});
+  const el=document.getElementById('pp-total');
+  if(tLo>0){
+    animateTotal(el,prevTotalLo,tLo,tHi);
+    prevTotalLo=tLo;
+  }
+}
+
+function animateTotal(el,from,toMin,toMax) {
+  const dur=380,t0=performance.now();
+  const tick=t=>{
+    const p=Math.min((t-t0)/dur,1);
+    const e=1-Math.pow(1-p,3);
+    const v=Math.round(from+(toMin-from)*e);
+    el.textContent=`$${v.toLocaleString()}–$${toMax.toLocaleString()}`;
+    if(p<1)requestAnimationFrame(tick);
+    else el.textContent=`$${toMin.toLocaleString()}–$${toMax.toLocaleString()}`;
+  };
+  requestAnimationFrame(tick);
+}
+
+function updateProgress() {
+  const required=['gpu','cpu','mobo','ram','storage','case','psu','cpu_cooler','case_fans'];
+  const sel=required.filter(k=>S[k]&&S[k].name).length;
+  const pct=Math.round((sel/required.length)*100);
+  document.getElementById('prog-bar').style.width=pct+'%';
+  document.getElementById('prog-text').textContent=`${sel} of ${required.length} selected`;
+  document.getElementById('pp-prog-bar').style.width=pct+'%';
+  document.getElementById('pp-prog-text').textContent=`${sel}/9`;
+}
+
+function checkCompatibility() {
+  const box=document.getElementById('compat-box');
+  const txt=document.getElementById('compat-text');
+  if(!box||!txt) return;
+  if(!S.cpu.name&&!S.mobo.name){
+    box.className='compat-box neutral';
+    txt.textContent=currentLang==='es'?'Selecciona CPU y Tarjeta Madre para verificar compatibilidad':'Select CPU & Motherboard to check compatibility';
+    return;
+  }
+  if(!S.cpu.name||!S.mobo.name){
+    box.className='compat-box neutral';
+    txt.textContent=currentLang==='es'?'Selecciona ambos CPU y Tarjeta Madre para verificar':'Select both CPU and Motherboard to verify';
+    return;
+  }
+  const cpuSocket=SOCKET[S.cpu.name];
+  const moboSocket=SOCKET[S.mobo.name];
+  if(!cpuSocket||!moboSocket){
+    box.className='compat-box neutral';
+    txt.textContent='Socket data unavailable — reach out to verify';
+    return;
+  }
+  if(cpuSocket===moboSocket){
+    box.className='compat-box ok';
+    txt.textContent=`✓ Compatible — ${cpuSocket} socket match`;
+  } else {
+    box.className='compat-box error';
+    txt.textContent=`⚠ Mismatch! CPU needs ${cpuSocket} — board is ${moboSocket}`;
+  }
+  checkRamCompat();
+}
+
+function checkRamCompat() {
+  if(!S.cpu.name||!S.ram.name) return;
+  const cpuSocket=SOCKET[S.cpu.name];
+  if(!cpuSocket) return;
+  const expectedDdr=DDR_MAP[cpuSocket];
+  const ramName=S.ram.name.toLowerCase();
+  const isDdr5=ramName.includes('ddr5');
+  const isDdr4=ramName.includes('ddr4');
+  const box=document.getElementById('compat-box');
+  if(!isDdr4&&!isDdr5) return;
+  if(expectedDdr==='DDR5'&&isDdr4){
+    box.className='compat-box error';
+    document.getElementById('compat-text').textContent=`⚠ RAM mismatch! ${cpuSocket} needs DDR5 — you selected DDR4`;
+  } else if(expectedDdr==='DDR4'&&isDdr5){
+    box.className='compat-box error';
+    document.getElementById('compat-text').textContent=`⚠ RAM mismatch! ${cpuSocket} needs DDR4 — you selected DDR5`;
+  }
+}
+
+function toggleStorage(btn) {
+  const body=btn.nextElementSibling;
+  const isOpen=body.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.storage-grp-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.storage-grp-hdr').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');btn.classList.add('open');}
+}
+
+function goToForm() {
+  updateSummary();
+  document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});
+}
+
+function updateSummary() {
+  const ucLabels={gaming:'Gaming',content:'Content Creation',ai:'AI & Productivity',general:'General Use'};
+  const budLabels={budget:'Budget ($700–$1,100)',mid:'Mid-Range ($1,100–$1,800)',high:'High-End ($2,000–$3,200)',ultra:'Ultra ($4,500+)'};
+  const rows=[
+    {label:'Use Case',val:S.useCase?ucLabels[S.useCase]:null},
+    {label:'Budget',val:S.budget?budLabels[S.budget]:null},
+    {label:'GPU',val:S.gpu.name},
+    {label:'CPU',val:S.cpu.name},
+    {label:'Motherboard',val:S.mobo.name},
+    {label:'RAM',val:S.ram.name},
+    {label:'Storage',val:S.storage.name},
+    {label:'Case',val:S.case.name},
+    {label:'PSU',val:S.psu.name},
+    {label:'CPU Cooler',val:S.cpu_cooler.name},
+    {label:'Case Fans',val:S.case_fans.name}
+  ].filter(r=>r.val);
+  const wrap=document.getElementById('summary-lines');
+  if(!rows.length){
+    wrap.innerHTML='<div class="sline"><span style="color:var(--muted)">No components selected yet — configure your build above.</span></div>';
+    document.getElementById('hid-summary').value='';
+    return;
+  }
+  wrap.innerHTML=rows.map(r=>`<div class="sline"><span>${r.label}</span><span class="sval">${r.val}</span></div>`).join('');
+  document.getElementById('hid-summary').value=rows.map(r=>`${r.label}: ${r.val}`).join(' | ');
+}
+
+function onSubmit(e) {
+  e.preventDefault();
+  updateSummary();
+  const form=e.target;
+  const body=new FormData(form);
+  fetch('/',{method:'POST',body,headers:{'Accept':'application/json'}})
+    .then(r=>{
+      if(r.ok||r.status===200){
+        document.getElementById('form-wrap').style.display='none';
+        const sm=document.getElementById('success-msg');
+        sm.style.display='block';
+        sm.scrollIntoView({behavior:'smooth'});
+      } else {
+        // Fallback: just show success since Netlify may redirect
+        document.getElementById('form-wrap').style.display='none';
+        document.getElementById('success-msg').style.display='block';
+      }
+    })
+    .catch(()=>{
+      document.getElementById('form-wrap').style.display='none';
+      document.getElementById('success-msg').style.display='block';
+    });
+}
+
+// ═══════════════════════════════════════════════
+// FAQ + SHARE + STORAGE TOGGLES
+// ═══════════════════════════════════════════════
+function toggleFaq(btn) {
+  const a=btn.nextElementSibling;
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));
+  if(!isOpen){a.classList.add('open');btn.classList.add('open');}
+}
+
+function openShare() {
+  const params=new URLSearchParams();
+  if(S.useCase) params.set('uc',S.useCase);
+  if(S.budget) params.set('bud',S.budget);
+  if(S.gpu.name) params.set('gpu',S.gpu.name);
+  if(S.cpu.name) params.set('cpu',S.cpu.name);
+  if(S.mobo.name) params.set('mb',S.mobo.name);
+  if(S.ram.name) params.set('ram',S.ram.name);
+  if(S.storage.name) params.set('sto',S.storage.name);
+  if(S.case.name) params.set('cas',S.case.name);
+  if(S.psu.name) params.set('psu',S.psu.name);
+  if(S.cpu_cooler.name) params.set('cool',S.cpu_cooler.name);
+  if(S.case_fans.name) params.set('fans',S.case_fans.name);
+  const url=window.location.origin+window.location.pathname+'?'+params.toString();
+  document.getElementById('share-url').textContent=url;
+  document.getElementById('share-url').style.display='block';
+  document.getElementById('share-modal').classList.add('show');
+}
+
+function closeShare(){document.getElementById('share-modal').classList.remove('show');}
+
+function copyShareLink() {
+  const url=document.getElementById('share-url').textContent;
+  navigator.clipboard.writeText(url).then(()=>{
+    const btn=document.getElementById('copy-btn');
+    btn.textContent='✅ Link Copied!';
+    setTimeout(()=>{btn.textContent='📋 Copy Shareable Link';},2500);
+  });
+}
+
+function downloadSummary() {
+  updateSummary();
+  const rows=document.getElementById('summary-lines').innerText;
+  const totalEl=document.getElementById('pp-total').textContent;
+  const content=`CLEARTECH SOLUTIONS — Custom PC Build Summary\n${'═'.repeat(46)}\n\n${rows}\n\nEstimated Total: ${totalEl}\n\n${'─'.repeat(46)}\nAssembly from $75 · Veteran-Owned · Melissa, TX\n📞 972-391-7153\nPrices last updated June 2026 — subject to market changes\n${'═'.repeat(46)}`;
+  const blob=new Blob([content],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='cleartech-build-summary.txt';
+  a.click();
+}
+
+// ═══════════════════════════════════════════════
+// LANGUAGE TOGGLE
+// ═══════════════════════════════════════════════
+function setLang(l) {
+  currentLang=l;
+  localStorage.setItem('ctlang',l);
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const val=l==='es'?el.dataset.es:el.dataset.en;
+    if(val!==undefined) el.innerHTML=val;
+  });
+  document.querySelectorAll('[data-en-placeholder]').forEach(el=>{
+    el.placeholder=l==='es'?el.dataset.esPlaceholder:el.dataset.enPlaceholder;
+  });
+  document.getElementById('lang-en').classList.toggle('active',l==='en');
+  document.getElementById('lang-es').classList.toggle('active',l==='es');
+}
+
+// ═══════════════════════════════════════════════
+// URL PARAM LOADER (for share links)
+// ═══════════════════════════════════════════════
+function loadFromURL() {
+  const p=new URLSearchParams(window.location.search);
+  if(!p.has('bud')) return;
+  // Load budget tier first
+  const tierMap={budget:[700,1100],mid:[1100,1800],high:[2000,3200],ultra:[4500,8000]};
+  const tier=p.get('bud');
+  if(tierMap[tier]){
+    const btns=document.querySelectorAll('.bud-btn');
+    btns.forEach(b=>{if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes(`'${tier}'`))pickBudget(b,tier,...tierMap[tier]);});
+  }
+  // Load other components from URL
+  const compMap={gpu:'gpu',cpu:'cpu',mb:'mobo',ram:'ram',sto:'storage',cas:'case',psu:'psu',cool:'cpu_cooler',fans:'case_fans'};
+  setTimeout(()=>{
+    Object.entries(compMap).forEach(([param,type])=>{
+      const val=p.get(param);
+      if(!val) return;
+      // Find in DATA
+      const tier=S.budget;
+      if(!tier) return;
+      const tierData=DATA[tier];
+      if(!tierData) return;
+      const items=tierData[type==='cpu_cooler'?'cpu_cooler':type];
+      if(!items) return;
+      const item=items.find(i=>i.name===val);
+      if(item){
+        const opts=document.querySelectorAll(`#${type==='cpu_cooler
