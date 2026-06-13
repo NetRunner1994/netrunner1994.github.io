@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC Build Advisor | ClearTech Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0E1A;
+  --surf:#111827;
+  --surf2:#1A2332;
+  --border:#1E293B;
+  --cyan:#00D4FF;
+  --cyan-dim:rgba(0,212,255,0.12);
+  --orange:#FF6B35;
+  --orange-dim:rgba(255,107,53,0.12);
+  --text:#F1F5F9;
+  --muted:#64748B;
+  --mid:#94A3B8;
+  --green:#10B981;
+}
+.opt-tier{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.06em;padding:0.15rem 0.45rem;border-radius:4px;margin-bottom:0.25rem;text-transform:uppercase}
+.tier-budget{background:rgba(100,116,139,0.2);color:#94A3B8}
+.tier-mid{background:rgba(16,185,129,0.15);color:#34D399}
+.tier-high{background:rgba(0,212,255,0.15);color:#00D4FF}
+.tier-elite{background:rgba(255,107,53,0.15);color:#FF6B35}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,14,26,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;color:var(--cyan);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--text)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--mid);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 2rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.035) 1px,transparent 1px);background-size:56px 56px}
+.hero::after{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:780px}
+.badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);padding:0.35rem 1rem;border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.5rem}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem}
+h1 .accent{color:var(--cyan)}
+.hero p{font-size:1.05rem;color:var(--mid);line-height:1.75;max-width:600px;margin:0 auto 2.5rem}
+.hero-btn{display:inline-block;background:var(--cyan);color:#0A0E1A;padding:0.85rem 2.2rem;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;text-decoration:none;font-size:0.95rem;transition:box-shadow 0.2s,transform 0.2s}
+.hero-btn:hover{box-shadow:0 4px 28px rgba(0,212,255,0.4);transform:translateY(-1px)}
+
+/* SECTIONS */
+.section{padding:5rem 2rem;max-width:1140px;margin:0 auto}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,3vw,2.1rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:0.6rem}
+.sec-sub{color:var(--mid);font-size:0.95rem;line-height:1.65;margin-bottom:2.5rem}
+
+/* USE CASE */
+.use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.uc-card{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.5rem;cursor:pointer;transition:border-color 0.2s,background 0.2s;text-align:left}
+.uc-card:hover{border-color:var(--cyan);background:var(--cyan-dim)}
+.uc-card.active{border-color:var(--cyan);background:var(--cyan-dim);box-shadow:0 0 0 1px var(--cyan)}
+.uc-icon{font-size:1.75rem;margin-bottom:0.75rem;display:block}
+.uc-card h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;margin-bottom:0.35rem}
+.uc-card p{color:var(--muted);font-size:0.82rem;line-height:1.55}
+
+/* BUILDER LAYOUT */
+.builder-wrap{padding:2rem 2rem 5rem;max-width:1200px;margin:0 auto}
+.builder-grid{display:grid;grid-template-columns:1fr 350px;gap:1.75rem;align-items:start}
+.builder-col{display:flex;flex-direction:column;gap:1.25rem}
+
+/* COMPONENT GROUPS */
+.cgroup{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.4rem}
+.cgroup-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.92rem;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.5rem}
+.ctag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;background:var(--cyan-dim);color:var(--cyan);padding:0.18rem 0.45rem;border-radius:4px;letter-spacing:0.04em}
+.cdesc{color:var(--muted);font-size:0.8rem;margin-bottom:1rem;line-height:1.5}
+.copts{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:0.55rem}
+.empty-hint{color:var(--muted);font-size:0.82rem;grid-column:1/-1;padding:0.25rem 0}
+
+/* BUDGET BUTTONS */
+.budget-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.65rem}
+.bud-btn{background:var(--surf2);border:2px solid var(--border);border-radius:10px;padding:0.9rem 0.75rem;cursor:pointer;text-align:center;transition:border-color 0.2s,background 0.2s;color:var(--text)}
+.bud-btn:hover{border-color:var(--orange)}
+.bud-btn.active{border-color:var(--orange);background:var(--orange-dim)}
+.bud-tier{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;display:block;margin-bottom:0.25rem}
+.bud-range{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--orange)}
+
+/* OPTION BUTTONS */
+.opt-btn{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;cursor:pointer;text-align:left;transition:border-color 0.2s,background 0.2s;color:var(--text)}
+.opt-btn:hover{border-color:var(--cyan)}
+.opt-btn.active{border-color:var(--cyan);background:var(--cyan-dim)}
+.opt-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;display:block;margin-bottom:0.15rem}
+.opt-price{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cyan)}
+.opt-spec{font-size:0.7rem;color:var(--muted);margin-top:0.15rem;display:block}
+
+/* PRICE PANEL */
+.price-panel{position:sticky;top:80px;background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:1.4rem;overflow:hidden}
+.price-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--orange))}
+.pp-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:1.2rem;padding-top:0.2rem}
+.price-lines{display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1.1rem}
+.pline{display:flex;justify-content:space-between;align-items:center;font-size:0.82rem}
+.pline .plabel{color:var(--mid)}
+.pline .pval{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text)}
+.pline .pval.empty{color:var(--muted);font-family:'Inter',sans-serif;font-style:italic;font-size:0.78rem}
+.pdivider{border:none;border-top:1px solid var(--border);margin:0.4rem 0}
+.ptotal{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.3rem}
+.ptotal-label{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem}
+.ptotal-amt{font-family:'JetBrains Mono',monospace;font-size:1.35rem;font-weight:600;color:var(--cyan)}
+.pnote{font-size:0.73rem;color:var(--muted);text-align:center;margin-bottom:1rem;line-height:1.45}
+.cta-btn{width:100%;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:0.85rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;transition:background 0.2s,transform 0.15s,box-shadow 0.2s}
+.cta-btn:hover{background:#ff7849;transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,107,53,0.35)}
+.cta-btn:disabled{background:var(--surf2);color:var(--muted);cursor:not-allowed;transform:none;box-shadow:none}
+
+/* SERVICE SECTION */
+.svc-section{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 2rem}
+.svc-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.svc-steps{display:flex;flex-direction:column;gap:1.2rem;margin-top:1.5rem}
+.sstep{display:flex;gap:1rem;align-items:flex-start}
+.snum{width:34px;height:34px;border-radius:50%;background:var(--cyan-dim);border:1px solid rgba(0,212,255,0.25);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--cyan);flex-shrink:0;margin-top:1px}
+.scontent h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem;margin-bottom:0.3rem}
+.scontent p{color:var(--muted);font-size:0.82rem;line-height:1.5}
+.area-card{background:var(--surf2);border:1px solid var(--border);border-radius:16px;padding:1.8rem}
+.area-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:1rem}
+.area-card p{color:var(--mid);font-size:0.88rem;line-height:1.6;margin-bottom:1rem}
+.area-badge{display:inline-flex;align-items:center;gap:0.35rem;background:var(--orange-dim);border:1px solid rgba(255,107,53,0.25);color:var(--orange);padding:0.35rem 0.85rem;border-radius:100px;font-size:0.78rem;font-weight:600;margin-bottom:1rem}
+.area-note{font-size:0.78rem;color:var(--muted);line-height:1.4;margin-bottom:0}
+
+/* CONTACT */
+.contact-section{padding:5rem 2rem;max-width:700px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fgroup{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.1rem}
+.fgroup label{font-size:0.82rem;font-weight:500;color:var(--mid)}
+.fgroup input,.fgroup select,.fgroup textarea{background:var(--surf);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.95rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;width:100%}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--cyan)}
+.fgroup textarea{resize:vertical;min-height:110px}
+.fgroup select option{background:var(--surf)}
+.privacy-note{background:var(--surf);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.1rem;font-size:0.78rem;color:var(--muted);line-height:1.5;margin-bottom:1.4rem;display:flex;gap:0.65rem;align-items:flex-start}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--cyan),#009dbf);color:#0A0E1A;border:none;border-radius:10px;padding:0.95rem;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;transition:box-shadow 0.2s,transform 0.15s}
+.submit-btn:hover{box-shadow:0 4px 24px rgba(0,212,255,0.3);transform:translateY(-1px)}
+.summary-box{background:var(--surf2);border:1px solid var(--border);border-radius:10px;padding:1.1rem;margin-bottom:1.1rem;font-size:0.83rem}
+.summary-box h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.85rem;color:var(--cyan);margin-bottom:0.7rem}
+.sline{display:flex;justify-content:space-between;padding:0.28rem 0;border-bottom:1px solid var(--border);color:var(--mid)}
+.sline:last-child{border-bottom:none}
+.sline .sval{color:var(--text);font-weight:500}
+.success{text-align:center;padding:3rem 1rem;display:none}
+.success h3{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--green);margin-bottom:0.75rem}
+.success p{color:var(--mid);font-size:0.9rem;line-height:1.6}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center;color:var(--muted);font-size:0.8rem}
+footer a{color:var(--cyan);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .builder-grid{grid-template-columns:1fr}
+  .price-panel{position:static;order:-1}
+  .svc-inner{grid-template-columns:1fr}
+  .budget-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .form-row{grid-template-columns:1fr}
+  .budget-row{grid-template-columns:1fr 1fr}
+  .copts{grid-template-columns:1fr}
+  .use-case-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Clear<span>Tech</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="pc-builder.html" class="active">PC Builder</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">⚡ ClearTech PC Build Service — North Texas</div>
+    <h1>Want a <span class="accent">Custom PC</span><br>But Don't Want to Build It?</h1>
+    <p>Whether you're jumping into gaming, running AI tools, creating content, or just need a solid machine — tell us what you need, we'll spec it out and build it for you. You pick the parts, we handle everything else.</p>
+    <a href="#use-case" class="hero-btn">Start Building →</a>
+  </div>
+</section>
+
+<!-- USE CASE -->
+<section class="section reveal" id="use-case">
+  <div class="sec-label">// Step 01 — Choose Your Purpose</div>
+  <h2 class="sec-title">What Are You Building This PC For?</h2>
+  <p class="sec-sub">Not sure what you need? Start here. Your use case helps match the right components to your goals.</p>
+  <div class="use-case-grid" id="uc-grid">
+    <div class="uc-card" onclick="pickUseCase(this,'gaming')">
+      <span class="uc-icon">🎮</span>
+      <h3>Gaming</h3>
+      <p>High FPS, smooth gameplay, the GPU power to run modern titles at 1080p, 1440p, or 4K. This is what most builds are about.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'content')">
+      <span class="uc-icon">🎥</span>
+      <h3>Content Creation</h3>
+      <p>Video editing, streaming, photo work — you need CPU cores, fast RAM, and plenty of storage. Multitasking is the name of the game.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'ai')">
+      <span class="uc-icon">🤖</span>
+      <h3>AI & Productivity</h3>
+      <p>Running AI tools, local models, or serious productivity apps. VRAM and processing power are everything here.</p>
+    </div>
+    <div class="uc-card" onclick="pickUseCase(this,'general')">
+      <span class="uc-icon">💻</span>
+      <h3>General Use</h3>
+      <p>Browsing, Office, school, or light tasks. You want something reliable, fast, and cost-effective — nothing overkill.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section class="builder-wrap reveal" id="builder">
+  <div class="sec-label">// Step 02 — Configure Your Build</div>
+  <h2 class="sec-title" style="margin-bottom:0.4rem">Pick Your Components</h2>
+  <p class="sec-sub">Select each part below. Your estimated cost updates live as you build.</p>
+
+  <div class="builder-grid">
+    <!-- LEFT -->
+    <div class="builder-col">
+
+      <!-- Budget -->
+      <div class="cgroup">
+        <div class="cgroup-title">💰 Budget <span class="ctag">START HERE</span></div>
+        <div class="cdesc">Your budget sets the foundation. We'll match components to your tier automatically.</div>
+        <div class="budget-row">
+          <button class="bud-btn" onclick="pickBudget(this,'budget',700,1100)"><span class="bud-tier">Budget</span><span class="bud-range">$700–$1,100</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'mid',1100,1800)"><span class="bud-tier">Mid-Range</span><span class="bud-range">$1,100–$1,800</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'high',2000,3200)"><span class="bud-tier">High-End</span><span class="bud-range">$2,000–$3,200</span></button>
+          <button class="bud-btn" onclick="pickBudget(this,'ultra',4500,7000)"><span class="bud-tier">Ultra</span><span class="bud-range">$4,500+</span></button>
+        </div>
+      </div>
+
+      <!-- GPU -->
+      <div class="cgroup">
+        <div class="cgroup-title">🖥️ Graphics Card (GPU) <span class="ctag">KEY PART</span></div>
+        <div class="cdesc">The GPU is the heart of gaming and visual work. It's what pushes pixels to your screen. More VRAM = more detail, higher resolution, better performance in modern games.</div>
+        <div class="copts" id="gpu-opts"><div class="empty-hint">Select a budget above to see GPU options.</div></div>
+      </div>
+
+      <!-- CPU -->
+      <div class="cgroup">
+        <div class="cgroup-title">⚙️ Processor (CPU)</div>
+        <div class="cdesc">The CPU handles game logic, background apps, and everything your GPU doesn't. Think of it as the brain. More cores = smoother multitasking and better performance in CPU-heavy games.</div>
+        <div class="copts" id="cpu-opts"><div class="empty-hint">Select a budget above to see CPU options.</div></div>
+      </div>
+
+      <!-- Motherboard -->
+      <div class="cgroup">
+        <div class="cgroup-title">🔌 Motherboard <span class="ctag">REQUIRED</span></div>
+        <div class="cdesc">The motherboard connects every component together. It has to match your CPU's socket — AM4, AM5, LGA1700, or LGA1851. Chipset (B650, X670, Z790, etc.) determines features, overclocking support, and expansion slots.</div>
+        <div class="copts" id="mobo-opts"><div class="empty-hint">Select a budget above to see motherboard options.</div></div>
+      </div>
+
+      <!-- RAM -->
+      <div class="cgroup">
+        <div class="cgroup-title">🧠 Memory (RAM)</div>
+        <div class="cdesc">RAM is your PC's short-term workspace — the more you have, the more your system can juggle at once. 16GB handles most games. 32GB is the new sweet spot. 64GB+ for serious workloads.</div>
+        <div class="copts" id="ram-opts"><div class="empty-hint">Select a budget above to see RAM options.</div></div>
+      </div>
+
+      <!-- Storage -->
+      <div class="cgroup">
+        <div class="cgroup-title">💾 Storage (SSD)</div>
+        <div class="cdesc">Real brand names matter here — they affect speed, reliability, and lifespan. Samsung and WD are the gold standards. Kingston NV3 is solid budget. Avoid no-name drives for your main OS/game drive.</div>
+        <div class="copts" id="storage-opts">
+
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Kingston NV3 500GB',70,95)">
+            <span class="opt-tier tier-budget">BUDGET</span>
+            <span class="opt-name">Kingston NV3 · 500GB</span>
+            <span class="opt-price">~$70–95</span>
+            <span class="opt-spec">PCIe 4.0 · OS + 2 games · Decent speeds, reliable brand</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Blue SN580 500GB',105,138)">
+            <span class="opt-tier tier-mid">MAINSTREAM</span>
+            <span class="opt-name">WD Blue SN580 · 500GB</span>
+            <span class="opt-price">~$105–138</span>
+            <span class="opt-spec">PCIe 4.0 · Better endurance than budget brands · WD reliability</span>
+          </button>
+
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Kingston NV3 1TB',155,188)">
+            <span class="opt-tier tier-budget">BUDGET</span>
+            <span class="opt-name">Kingston NV3 · 1TB</span>
+            <span class="opt-price">~$155–188</span>
+            <span class="opt-spec">PCIe 4.0 · Gets the job done · Most affordable 1TB</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN770 1TB',185,235)">
+            <span class="opt-tier tier-mid">MAINSTREAM</span>
+            <span class="opt-name">WD Black SN770 · 1TB</span>
+            <span class="opt-price">~$185–235</span>
+            <span class="opt-spec">PCIe 4.0 · 5,150 MB/s read · Gaming-focused, fast loading</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Evo 1TB',195,248)">
+            <span class="opt-tier tier-mid">MAINSTREAM</span>
+            <span class="opt-name">Samsung 990 Evo · 1TB</span>
+            <span class="opt-price">~$195–248</span>
+            <span class="opt-spec">PCIe 4x4 / 5x2 · Samsung quality · Excellent reliability</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 1TB',222,288)">
+            <span class="opt-tier tier-high">ENTHUSIAST</span>
+            <span class="opt-name">WD Black SN850X · 1TB</span>
+            <span class="opt-price">~$222–288</span>
+            <span class="opt-spec">PCIe 4.0 · 7,300 MB/s · Top gaming drive, PS5 compatible</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 1TB',252,328)">
+            <span class="opt-tier tier-elite">FLAGSHIP</span>
+            <span class="opt-name">Samsung 990 Pro · 1TB</span>
+            <span class="opt-price">~$252–328</span>
+            <span class="opt-spec">PCIe 4.0 · 7,450 MB/s · Best reliability, fastest consumer 1TB</span>
+          </button>
+
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN7100 2TB',282,328)">
+            <span class="opt-tier tier-mid">MAINSTREAM</span>
+            <span class="opt-name">WD Black SN7100 · 2TB</span>
+            <span class="opt-price">~$282–328</span>
+            <span class="opt-spec">PCIe 4.0 · Best 2TB value · Strong all-around performer</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 2TB',318,398)">
+            <span class="opt-tier tier-high">ENTHUSIAST</span>
+            <span class="opt-name">WD Black SN850X · 2TB</span>
+            <span class="opt-price">~$318–398</span>
+            <span class="opt-spec">PCIe 4.0 · 7,300 MB/s · Most recommended 2TB gaming drive</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 2TB',368,428)">
+            <span class="opt-tier tier-elite">FLAGSHIP</span>
+            <span class="opt-name">Samsung 990 Pro · 2TB</span>
+            <span class="opt-price">~$368–428</span>
+            <span class="opt-spec">PCIe 4.0 · 7,450 MB/s · Best-in-class reliability for 2TB</span>
+          </button>
+
+          <button class="opt-btn" onclick="pickOpt(this,'storage','WD Black SN850X 4TB',515,648)">
+            <span class="opt-tier tier-high">ENTHUSIAST</span>
+            <span class="opt-name">WD Black SN850X · 4TB</span>
+            <span class="opt-price">~$515–648</span>
+            <span class="opt-spec">PCIe 4.0 · Massive game library · Enthusiast-grade speeds</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Samsung 990 Pro 4TB',572,725)">
+            <span class="opt-tier tier-elite">FLAGSHIP</span>
+            <span class="opt-name">Samsung 990 Pro · 4TB</span>
+            <span class="opt-price">~$572–725</span>
+            <span class="opt-spec">PCIe 4.0 · Maximum storage + speed · Top 5-year warranty</span>
+          </button>
+          <button class="opt-btn" onclick="pickOpt(this,'storage','Seagate FireCuda 530 4TB',548,688)">
+            <span class="opt-tier tier-high">ENTHUSIAST</span>
+            <span class="opt-name">Seagate FireCuda 530 · 4TB</span>
+            <span class="opt-price">~$548–688</span>
+            <span class="opt-spec">PCIe 4.0 · 7,300 MB/s · Fast 4TB alternative to Samsung</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Case -->
+      <div class="cgroup">
+        <div class="cgroup-title">🏠 Case (Chassis)</div>
+        <div class="cdesc">The case is the body of your PC. It affects airflow, size, and aesthetics. Mid-towers are the sweet spot — plenty of room for components and great cooling. Want to show off your build? Go glass panel with RGB.</div>
+        <div class="copts" id="case-opts">
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mini-ITX (Compact)',60,90)"><span class="opt-name">Mini-ITX</span><span class="opt-price">~$60–90</span><span class="opt-spec">Small & compact</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mid-Tower',75,130)"><span class="opt-name">Mid-Tower</span><span class="opt-price">~$75–130</span><span class="opt-spec">Most popular</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Mid-Tower w/ RGB Glass',92,165)"><span class="opt-name">Mid-Tower RGB/Glass</span><span class="opt-price">~$92–165</span><span class="opt-spec">Show off your build</span></button>
+          <button class="opt-btn" onclick="pickOpt(this,'case','Full Tower',135,225)"><span class="opt-name">Full Tower</span><span class="opt-price">~$135–225</span><span class="opt-spec">Max airflow & space</span></button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: PRICE PANEL -->
+    <div class="price-panel">
+      <div class="pp-title">Your Build Estimate</div>
+      <div class="price-lines">
+        <div class="pline"><span class="plabel">GPU</span><span class="pval empty" id="pp-gpu">—</span></div>
+        <div class="pline"><span class="plabel">CPU</span><span class="pval empty" id="pp-cpu">—</span></div>
+        <div class="pline"><span class="plabel">Motherboard</span><span class="pval empty" id="pp-mobo">—</span></div>
+        <div class="pline"><span class="plabel">RAM</span><span class="pval empty" id="pp-ram">—</span></div>
+        <div class="pline"><span class="plabel">Storage</span><span class="pval empty" id="pp-storage">—</span></div>
+        <div class="pline"><span class="plabel">Case</span><span class="pval empty" id="pp-case">—</span></div>
+        <div class="pline"><span class="plabel">PSU + Cooling</span><span class="pval empty" id="pp-base">—</span></div>
+      </div>
+      <hr class="pdivider">
+      <div class="ptotal">
+        <span class="ptotal-label">Estimated Total</span>
+        <span class="ptotal-amt" id="pp-total">$—</span>
+      </div>
+      <p class="pnote">Range based on current market prices. Assembly fee discussed separately. Tower only — no monitor included.</p>
+      <button class="cta-btn" id="req-btn" onclick="goToForm()" disabled>Request This Build →</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="svc-section reveal">
+  <div class="svc-inner">
+    <div>
+      <div class="sec-label">// How It Works</div>
+      <h2 class="sec-title">You Pick It. We Build It.</h2>
+      <p class="sec-sub">No YouTube tutorials. No screwdrivers. No stress. Just tell us what you want and we handle the rest.</p>
+      <div class="svc-steps">
+        <div class="sstep"><div class="snum">01</div><div class="scontent"><h4>Configure Your Build</h4><p>Use the tool above to pick your components and get an instant price estimate.</p></div></div>
+        <div class="sstep"><div class="snum">02</div><div class="scontent"><h4>Submit Your Request</h4><p>Send us your build details and how you'd like to be contacted. We'll reach back out to confirm everything and get started.</p></div></div>
+        <div class="sstep"><div class="snum">03</div><div class="scontent"><h4>We Assemble & Deliver</h4><p>Buy your parts or have them shipped to us. We assemble, test, and either meet you locally or ship your finished build back ready to power on.</p></div></div>
+      </div>
+    </div>
+    <div class="area-card">
+      <h3>📍 Service Area</h3>
+      <p>ClearTech Solutions is based in <strong>Melissa, TX</strong> and serves the <strong>North Texas area</strong> for in-home and local assembly. We bring the tools to you — no need to haul your parts anywhere.</p>
+      <p>Not in North Texas? No problem. Order your parts, ship them to us, and we'll assemble your build and ship it back fully tested — just cover shipping costs, and we'll handle the rest.</p>
+      <div><span class="area-badge">🇺🇸 Veteran-Owned Business</span></div>
+      <p class="area-note">Note: Local in-home service is available within a reasonable distance of the Melissa, TX area. Out-of-state builds via shipping arrangement only — reach out to discuss.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section reveal" id="contact-form">
+  <div class="sec-label">// Step 03 — Let's Get Started</div>
+  <h2 class="sec-title">Request Your Build</h2>
+  <p class="sec-sub" style="margin-bottom:1.75rem">Fill out the form below and we'll reach back out using your preferred method.</p>
+
+  <!-- Build Summary -->
+  <div class="summary-box">
+    <h4>Your Selected Build</h4>
+    <div id="summary-lines"><div class="sline"><span style="color:var(--muted)">No components selected yet — configure your build above first.</span></div></div>
+  </div>
+
+  <div id="form-wrap">
+    <!--
+      =====================================================
+      FORMSPREE SETUP:
+      1. Go to https://formspree.io and sign up / log in
+      2. Create a new form and copy your form ID
+      3. Replace YOUR_FORM_ID below with your actual ID
+         Example: action="https://formspree.io/f/xpwzgkrb"
+      =====================================================
+    -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="onSubmit(event)">
+      <input type="hidden" name="build_summary" id="hid-summary" value="">
+
+      <div class="form-row">
+        <div class="fgroup"><label for="fn">Full Name *</label><input type="text" id="fn" name="name" placeholder="John Smith" required></div>
+        <div class="fgroup"><label for="em">Email Address *</label><input type="email" id="em" name="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="form-row">
+        <div class="fgroup"><label for="ph">Phone Number</label><input type="tel" id="ph" name="phone" placeholder="(555) 555-5555"></div>
+        <div class="fgroup">
+          <label for="cp">How Should We Contact You Back? *</label>
+          <select id="cp" name="contact_preference" required>
+            <option value="" disabled selected>Choose one...</option>
+            <option value="Email">Email</option>
+            <option value="Phone Call">Phone Call</option>
+            <option value="Text Message">Text Message</option>
+          </select>
+        </div>
+      </div>
+      <div class="fgroup"><label for="loc">City / Zip Code</label><input type="text" id="loc" name="location" placeholder="Melissa, TX 75454"></div>
+      <div class="fgroup">
+        <label for="notes">Anything else we should know?</label>
+        <textarea id="notes" name="notes" placeholder="Timeline, specific questions, budget flexibility, out-of-state shipping, anything..."></textarea>
+      </div>
+
+      <div class="privacy-note">
+        <span style="font-size:1rem;flex-shrink:0">🔒</span>
+        <span>Your information is securely submitted through our third-party form service and is only used to contact you about your build request. We don't store, sell, or share your personal data.</span>
+      </div>
+
+      <button type="submit" class="submit-btn">Send My Build Request →</button>
+    </form>
+  </div>
+
+  <div class="success" id="success-msg">
+    <h3>✅ Request Sent!</h3>
+    <p>Your build request is on its way. We'll reach out via your preferred contact method to get things rolling. Thanks for choosing ClearTech Solutions.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <a href="index.html">ClearTech Solutions</a> &nbsp;·&nbsp; Veteran-Owned IT Services &nbsp;·&nbsp; Melissa, TX &nbsp;·&nbsp; <a href="index.html#contact">Contact Us</a></p>
+</footer>
+
+<script>
+// ── STATE ──────────────────────────────────────────────
+const S = {
+  useCase: null,
+  budget: null,
+  gpu:     {name:null,lo:0,hi:0},
+  cpu:     {name:null,lo:0,hi:0},
+  mobo:    {name:null,lo:0,hi:0},
+  ram:     {name:null,lo:0,hi:0},
+  storage: {name:null,lo:0,hi:0},
+  case:    {name:null,lo:0,hi:0},
+  baseLo:  0,
+  baseHi:  0
+};
+let prevTotalLo = 0;
+
+// ── COMPONENT DATA ────────────────────────────────────
+const DATA = {
+  budget: {
+    base: {lo:80,hi:115},
+    gpu: [
+      {name:'NVIDIA RTX 5050 8GB',        lo:285,hi:318,  spec:'1080p entry · Brand new Blackwell · Great for casual gaming'},
+      {name:'NVIDIA RTX 5060 8GB',        lo:322,hi:362,  spec:'1080p solid · Step up from 5050 · Handles modern titles'},
+      {name:'AMD RX 9060 XT 8GB',         lo:355,hi:398,  spec:'1080p AMD · Great value vs NVIDIA at this tier'},
+      {name:'AMD RX 9060 XT 16GB',        lo:415,hi:458,  spec:'1080p–1440p · Extra VRAM is huge long-term'},
+      {name:'NVIDIA RTX 5060 Ti 8GB',     lo:375,hi:422,  spec:'1080p/1440p · DLSS 4 · Faster Ti chip'},
+      {name:'NVIDIA RTX 5060 Ti 16GB',    lo:490,hi:562,  spec:'1440p capable · 16GB VRAM · Best budget Ti'}
+    ],
+    cpu: [
+      {name:'AMD Ryzen 5 4500',           lo:80,hi:105,   spec:'6-Core AM4 · Entry level · Good for light gaming'},
+      {name:'AMD Ryzen 5 5600',           lo:105,hi:145,  spec:'6-Core AM4 · Budget king · Great 1080p gaming'},
+      {name:'AMD Ryzen 5 5600X',          lo:145,hi:168,  spec:'6-Core AM4 · Boosted clocks · Step up from 5600'},
+      {name:'Intel Core i5-12400F',       lo:155,hi:188,  spec:'6-Core LGA1700 · Solid 1080p · No iGPU (good)'},
+      {name:'Intel Core i5-12600K',       lo:165,hi:212,  spec:'10-Core LGA1700 · More cores · Great for streaming'},
+      {name:'Intel Core Ultra 5 245KF',   lo:195,hi:232,  spec:'14-Core LGA1851 · DDR5 platform · Future-ready'}
+    ],
+    mobo: [
+      {name:'B550 ATX (AM4)',             lo:90,hi:138,   spec:'Pairs with Ryzen 4500/5600/5600X · Solid budget board'},
+      {name:'X570 ATX (AM4)',             lo:138,hi:198,  spec:'AM4 · Better VRMs · More features than B550'},
+      {name:'B660 ATX (LGA1700)',         lo:88,hi:132,   spec:'Pairs with i5-12400F/12600K · Budget Intel board'},
+      {name:'B760 ATX (LGA1700)',         lo:98,hi:155,   spec:'LGA1700 · Modern chipset · Better than B660'},
+      {name:'Z790 ATX (LGA1700)',         lo:158,hi:252,  spec:'LGA1700 · Overclocking support · Top Intel budget board'},
+      {name:'B860 ATX (LGA1851)',         lo:118,hi:185,  spec:'Pairs with Core Ultra 5 245KF · DDR5 platform'}
+    ],
+    ram: [
+      {name:'8GB DDR4 3200MHz',           lo:55,hi:80,    spec:'Entry only — tight budget · Will feel limited fast'},
+      {name:'16GB DDR4 3200MHz',          lo:125,hi:160,  spec:'Minimum for gaming in 2026 · Works for most titles'},
+      {name:'32GB DDR4 3200MHz',          lo:195,hi:262,  spec:'Recommended · Future-proofs your DDR4 build'},
+      {name:'16GB DDR5 4800MHz',          lo:100,hi:138,  spec:'Entry DDR5 · If pairing with Core Ultra 5 245KF'},
+      {name:'32GB DDR5 5600MHz',          lo:185,hi:238,  spec:'Mainstream DDR5 · 245KF build sweet spot'}
+    ]
+  },
+  mid: {
+    base: {lo:100,hi:148},
+    gpu: [
+      {name:'AMD RX 9070 16GB',           lo:572,hi:628,  spec:'1440p powerhouse · More VRAM than RTX 5070 · Great value'},
+      {name:'NVIDIA RTX 5070 12GB',       lo:592,hi:652,  spec:'1440p/4K · DLSS 4 Multi-Frame Gen · Near MSRP now'},
+      {name:'AMD RX 9070 XT 16GB',        lo:622,hi:722,  spec:'1440p/4K · Beats 5070 in most benchmarks · RDNA 4'},
+      {name:'NVIDIA RTX 5070 Ti 16GB',    lo:815,hi:998,  spec:'High-refresh 1440p / 4K entry · Top mid-range pick'}
+    ],
+    cpu: [
+      {name:'AMD Ryzen 5 7600X',          lo:175,hi:218,  spec:'6-Core AM5 · DDR5 · Fast 1080p/1440p gaming'},
+      {name:'AMD Ryzen 5 9600X',          lo:218,hi:252,  spec:'6-Core AM5 · Zen 5 · 5.4GHz boost · Efficient'},
+      {name:'Intel Core i5-14600K',       lo:225,hi:262,  spec:'14-Core LGA1700 · Phenomenal value · Great gaming'},
+      {name:'Intel Core i5-14600KF',      lo:238,hi:272,  spec:'14-Core LGA1700 · No iGPU · Slightly cheaper'},
+      {name:'AMD Ryzen 7 7700X',          lo:245,hi:282,  spec:'8-Core AM5 · More headroom for streaming + gaming'},
+      {name:'AMD Ryzen 7 9700X',          lo:298,hi:348,  spec:'8-Core AM5 · Zen 5 · Improved over 7700X'},
+      {name:'Intel Core Ultra 7 265KF',   lo:292,hi:342,  spec:'20-Core LGA1851 · DDR5 · Fast multi-threaded'},
+      {name:'Intel Core Ultra 7 265K',    lo:308,hi:362,  spec:'20-Core LGA1851 · DDR5 · Includes iGPU'}
+    ],
+    mobo: [
+      {name:'B650 ATX (AM5)',             lo:128,hi:212,  spec:'Pairs with Ryzen 7600X–9700X · Best AM5 entry board'},
+      {name:'B650E ATX (AM5)',            lo:155,hi:245,  spec:'AM5 · PCIe 5.0 support · Step up from B650'},
+      {name:'X670 ATX (AM5)',             lo:225,hi:358,  spec:'AM5 · More bandwidth · Better power delivery'},
+      {name:'Z790 ATX (LGA1700)',         lo:178,hi:302,  spec:'Pairs with i5-14600K / 14600KF · Best Intel mid board'},
+      {name:'Z890 ATX (LGA1851)',         lo:225,hi:388,  spec:'Pairs with Core Ultra 7 265K/KF · DDR5 flagship'}
+    ],
+    ram: [
+      {name:'16GB DDR5 6000MHz',          lo:100,hi:138,  spec:'Entry AM5 · Budget single stick · Upgrade later'},
+      {name:'32GB DDR5 5600MHz',          lo:185,hi:238,  spec:'Solid entry DDR5 kit · Good enough for most games'},
+      {name:'32GB DDR5 6000MHz CL30',     lo:192,hi:222,  spec:'Sweet spot · Recommended for all AM5 builds'},
+      {name:'32GB DDR5 6400MHz CL32',     lo:232,hi:268,  spec:'Faster kit · Noticeable gains with Ryzen AM5'},
+      {name:'64GB DDR5 6000MHz CL30',     lo:392,hi:452,  spec:'Content creation + streaming + gaming'},
+      {name:'64GB DDR5 6400MHz CL32',     lo:472,hi:542,  spec:'High-capacity fast kit · Future-proof'}
+    ]
+  },
+  high: {
+    base: {lo:130,hi:185},
+    gpu: [
+      {name:'AMD RX 9070 XT 16GB',        lo:622,hi:722,  spec:'4K value champ · Outperforms RTX 5070 · RDNA 4'},
+      {name:'NVIDIA RTX 5070 Ti 16GB',    lo:815,hi:998,  spec:'High-refresh 4K · Big step over 5070 · Great card'},
+      {name:'NVIDIA RTX 5080 16GB',       lo:1282,hi:1405,spec:'4K ultra beast · Flagship Blackwell · Best non-5090'}
+    ],
+    cpu: [
+      {name:'AMD Ryzen 7 9700X',          lo:298,hi:348,  spec:'8-Core AM5 · Zen 5 · Good high-end entry CPU'},
+      {name:'AMD Ryzen 7 9800X3D',        lo:425,hi:492,  spec:'8-Core AM5 · #1 gaming CPU on the market · Period'},
+      {name:'AMD Ryzen 9 7900X',          lo:325,hi:388,  spec:'12-Core AM5 · Gaming + content creation sweet spot'},
+      {name:'AMD Ryzen 9 9900X',          lo:388,hi:458,  spec:'12-Core AM5 · Zen 5 · Latest gen 12-core'},
+      {name:'AMD Ryzen 9 7950X',          lo:448,hi:532,  spec:'16-Core AM5 · Workstation-tier · Serious multitasking'},
+      {name:'Intel Core i7-14700K',       lo:322,hi:378,  spec:'20-Core LGA1700 · Excellent value · Gaming + work'},
+      {name:'Intel Core i7-14700KF',      lo:322,hi:378,  spec:'20-Core LGA1700 · No iGPU · Same chip, slightly cheaper'},
+      {name:'Intel Core i9-14900K',       lo:460,hi:492,  spec:'24-Core LGA1700 · Workhorse · All-time low pricing now'}
+    ],
+    mobo: [
+      {name:'X670 ATX (AM5)',             lo:225,hi:358,  spec:'Pairs with Ryzen 9700X–9950X · Solid high-end AM5'},
+      {name:'X670E ATX (AM5)',            lo:288,hi:462,  spec:'AM5 · PCIe 5.0 x16 · Better for fast GPUs'},
+      {name:'X870 ATX (AM5)',             lo:325,hi:492,  spec:'AM5 · Latest gen chipset · Supports 9800X3D well'},
+      {name:'X870E ATX (AM5)',            lo:385,hi:615,  spec:'AM5 flagship · Best for 9800X3D · Max bandwidth'},
+      {name:'Z790 ATX (LGA1700)',         lo:288,hi:462,  spec:'Pairs with i7-14700K / i9-14900K · High-end Intel'}
+    ],
+    ram: [
+      {name:'16GB DDR5 6000MHz',          lo:100,hi:138,  spec:'Minimum · Only if very budget-constrained'},
+      {name:'32GB DDR5 6000MHz CL30',     lo:192,hi:222,  spec:'Recommended starting point for high-end builds'},
+      {name:'32GB DDR5 6400MHz CL32',     lo:232,hi:268,  spec:'Optimized speed for Ryzen 9800X3D · Best pairing'},
+      {name:'64GB DDR5 6000MHz CL30',     lo:392,hi:452,  spec:'Gaming + content creation powerhouse'},
+      {name:'64GB DDR5 6400MHz CL32',     lo:472,hi:542,  spec:'High-speed 64GB · Serious workloads'},
+      {name:'96GB DDR5 6400MHz',          lo:642,hi:722,  spec:'Workstation territory · 3D / AI / heavy editing'}
+    ]
+  },
+  ultra: {
+    base: {lo:200,hi:285},
+    gpu: [
+      {name:'NVIDIA RTX 5090 32GB',       lo:3500,hi:4400, spec:'Best GPU alive · Nothing else comes close · 4K/8K'},
+      {name:'NVIDIA RTX 5080 16GB',       lo:1282,hi:1405, spec:'4K ultra flagship · Elite build secondary option'}
+    ],
+    cpu: [
+      {name:'AMD Ryzen 7 9800X3D',        lo:425,hi:492,  spec:'8-Core AM5 · Best pure gaming CPU · #1 choice'},
+      {name:'AMD Ryzen 9 9900X',          lo:388,hi:458,  spec:'12-Core AM5 · Great if you game AND stream/create'},
+      {name:'AMD Ryzen 9 9950X',          lo:518,hi:592,  spec:'16-Core AM5 · Absolute best for all workloads'},
+      {name:'AMD Ryzen 9 7950X',          lo:448,hi:532,  spec:'16-Core AM5 · Creator + gamer · Proven platform'},
+      {name:'Intel Core i9-14900K',       lo:460,hi:492,  spec:'24-Core LGA1700 · All-time low · Workhorse CPU'},
+      {name:'Intel Core i9-14900KS',      lo:478,hi:582,  spec:'24-Core LGA1700 · Max clock speeds · Top Intel'},
+      {name:'Intel Core Ultra 9 285K',    lo:538,hi:628,  spec:'24-Core LGA1851 · Arrow Lake flagship · DDR5'}
+    ],
+    mobo: [
+      {name:'X870E ATX (AM5)',            lo:385,hi:625,  spec:'Best for Ryzen 9800X3D / 9950X · AM5 flagship'},
+      {name:'X870E Premium (AM5)',        lo:555,hi:858,  spec:'AM5 top tier · Extreme overclocking · ROG / MEG'},
+      {name:'Z790 High-End (LGA1700)',    lo:288,hi:462,  spec:'Pairs with i9-14900K/KS · Best Intel ultra board'},
+      {name:'Z890 Extreme (LGA1851)',     lo:462,hi:822,  spec:'Pairs with Core Ultra 9 285K · DDR5 ultimate'}
+    ],
+    ram: [
+      {name:'16GB DDR5 6000MHz',          lo:100,hi:138,  spec:'Entry only — upgrade immediately when able'},
+      {name:'32GB DDR5 6000MHz CL30',     lo:192,hi:222,  spec:'Baseline for ultra builds · Upgrade when possible'},
+      {name:'32GB DDR5 6400MHz CL32',     lo:232,hi:268,  spec:'Optimized for 9800X3D · Best gaming pairing'},
+      {name:'64GB DDR5 6000MHz CL30',     lo:392,hi:452,  spec:'Solid ultra build kit · Gaming + creation'},
+      {name:'64GB DDR5 6400MHz CL32',     lo:472,hi:542,  spec:'High-speed 64GB · Premium kit'},
+      {name:'96GB DDR5 6400MHz',          lo:642,hi:722,  spec:'Workstation / AI builds · Heavy multitasking'},
+      {name:'128GB DDR5 6000MHz',         lo:852,hi:1105, spec:'Extreme workstation · Local AI models / 3D rendering'}
+    ]
+  }
+};
+
+// ── HANDLERS ─────────────────────────────────────────
+function pickUseCase(el, type) {
+  document.querySelectorAll('.uc-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  S.useCase = type;
+  setTimeout(()=>document.getElementById('builder').scrollIntoView({behavior:'smooth',block:'start'}),320);
+}
+
+function pickBudget(el, tier, lo, hi) {
+  document.querySelectorAll('.bud-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  S.budget = tier;
+  const d = DATA[tier];
+  S.baseLo = d.base.lo;
+  S.baseHi = d.base.hi;
+  S.gpu = {name:null,lo:0,hi:0};
+  S.cpu = {name:null,lo:0,hi:0};
+  S.mobo = {name:null,lo:0,hi:0};
+  S.ram = {name:null,lo:0,hi:0};
+  buildOpts('gpu-opts', d.gpu, 'gpu');
+  buildOpts('cpu-opts', d.cpu, 'cpu');
+  buildOpts('mobo-opts', d.mobo, 'mobo');
+  buildOpts('ram-opts', d.ram, 'ram');
+  setPriceLine('gpu',0,0);
+  setPriceLine('cpu',0,0);
+  setPriceLine('mobo',0,0);
+  setPriceLine('ram',0,0);
+  setPriceLine('base', d.base.lo, d.base.hi);
+  updateTotal();
+}
+
+function buildOpts(id, items, type) {
+  const c = document.getElementById(id);
+  c.innerHTML = '';
+  items.forEach(item => {
+    const b = document.createElement('button');
+    b.className = 'opt-btn';
+    b.innerHTML = `<span class="opt-name">${item.name}</span><span class="opt-price">~$${item.lo}–${item.hi}</span><span class="opt-spec">${item.spec}</span>`;
+    b.onclick = function(){ pickOpt(this, type, item.name, item.lo, item.hi); };
+    c.appendChild(b);
+  });
+}
+
+function pickOpt(el, type, name, lo, hi) {
+  el.closest('.copts').querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  S[type] = {name, lo, hi};
+  setPriceLine(type, lo, hi);
+  updateTotal();
+  updateSummary();
+}
+
+function setPriceLine(type, lo, hi) {
+  const el = document.getElementById('pp-'+type);
+  if (!el) return;
+  if (lo === 0) {
+    el.className = 'pval empty';
+    el.textContent = '—';
+  } else {
+    el.className = 'pval';
+    el.textContent = `~$${lo.toLocaleString()}–${hi.toLocaleString()}`;
+  }
+}
+
+function updateTotal() {
+  const parts = ['gpu','cpu','mobo','ram','storage','case'];
+  let tLo = S.baseLo, tHi = S.baseHi;
+  let allDone = S.budget !== null;
+  parts.forEach(p => {
+    if (S[p] && S[p].lo > 0) { tLo += S[p].lo; tHi += S[p].hi; }
+    else allDone = false;
+  });
+  const el = document.getElementById('pp-total');
+  if (tLo > S.baseLo) {
+    animateTotal(el, prevTotalLo, tLo, tHi);
+    prevTotalLo = tLo;
+  }
+  document.getElementById('req-btn').disabled = !allDone;
+}
+
+function animateTotal(el, from, toMin, toMax) {
+  const dur = 380, t0 = performance.now();
+  const tick = t => {
+    const p = Math.min((t-t0)/dur, 1);
+    const e = 1 - Math.pow(1-p, 3);
+    const v = Math.round(from + (toMin-from)*e);
+    el.textContent = `$${v.toLocaleString()}–$${toMax.toLocaleString()}`;
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = `$${toMin.toLocaleString()}–$${toMax.toLocaleString()}`;
+  };
+  requestAnimationFrame(tick);
+}
+
+function goToForm() {
+  updateSummary();
+  document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});
+}
+
+function updateSummary() {
+  const ucLabels = {gaming:'Gaming',content:'Content Creation',ai:'AI & Productivity',general:'General Use'};
+  const budLabels = {budget:'Budget ($400–$650)',mid:'Mid-Range ($800–$1,400)',high:'High-End ($1,600–$2,600)',ultra:'Ultra ($3,000+)'};
+  const rows = [
+    {label:'Use Case',   val: S.useCase ? ucLabels[S.useCase] : null},
+    {label:'Budget',     val: S.budget  ? budLabels[S.budget]  : null},
+    {label:'GPU',        val: S.gpu.name},
+    {label:'CPU',        val: S.cpu.name},
+    {label:'Motherboard',val: S.mobo.name},
+    {label:'RAM',        val: S.ram.name},
+    {label:'Storage',    val: S.storage.name},
+    {label:'Case',       val: S.case.name}
+  ].filter(r => r.val);
+
+  const wrap = document.getElementById('summary-lines');
+  if (!rows.length) {
+    wrap.innerHTML = '<div class="sline"><span style="color:var(--muted)">No components selected yet.</span></div>';
+    document.getElementById('hid-summary').value = '';
+    return;
+  }
+  wrap.innerHTML = rows.map(r=>`<div class="sline"><span>${r.label}</span><span class="sval">${r.val}</span></div>`).join('');
+  document.getElementById('hid-summary').value = rows.map(r=>`${r.label}: ${r.val}`).join(' | ');
+}
+
+function onSubmit(e) {
+  updateSummary();
+  // AJAX submission for inline success message (no page reload)
+  e.preventDefault();
+  const form = e.target;
+  const body = new FormData(form);
+  fetch(form.action, {method:'POST', body, headers:{Accept:'application/json'}})
+    .then(r => {
+      if (r.ok) {
+        document.getElementById('form-wrap').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        document.getElementById('success-msg').scrollIntoView({behavior:'smooth'});
+      } else {
+        alert('Oops — something went wrong. Please try emailing us directly.');
+      }
+    })
+    .catch(() => alert('Could not send request. Please try emailing us directly.'));
+}
+
+// ── SCROLL REVEAL ─────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
