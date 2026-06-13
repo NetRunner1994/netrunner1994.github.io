@@ -1151,14 +1151,14 @@ function checkCompat(){
   if(!cpu||!mobo){box.innerHTML='<span class="compat-hint">Select CPU and Motherboard to check socket compatibility.</span>';return;}
   let msgs=[];
   if(cpu.sk!==mobo.sk){
-    msgs.push('<div class="compat-err">&#10060; Socket mismatch! CPU needs '+cpu.sk+' but motherboard is '+mobo.sk+'. These won't work together.</div>');
+    msgs.push('<div class="compat-err">&#10060; Socket mismatch! CPU needs '+cpu.sk+' but motherboard is '+mobo.sk+'. These won&apos;t work together.</div>');
   }else{
     msgs.push('<div class="compat-ok">&#10003; Socket OK &mdash; both are '+cpu.sk+'</div>');
   }
   if(ram){
     const needsDDR = (cpu.sk==='AM5'||cpu.sk==='LGA1851') ? 'DDR5' : 'DDR4';
     if(ram.dd&&ram.dd!==needsDDR){
-      msgs.push('<div class="compat-err">&#10060; RAM mismatch! '+cpu.sk+' needs '+needsDDR+' but you selected '+ram.dd+'. These won't work together.</div>');
+      msgs.push('<div class="compat-err">&#10060; RAM mismatch! '+cpu.sk+' needs '+needsDDR+' but you selected '+ram.dd+'. These won&apos;t work together.</div>');
     }else if(ram.dd){
       msgs.push('<div class="compat-ok">&#10003; RAM type OK &mdash; '+ram.dd+' is correct for '+cpu.sk+'</div>');
     }
