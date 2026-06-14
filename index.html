@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RigForge — Veteran-owned custom PC builds in Melissa, McKinney, Frisco, Allen, Prosper, Plano, Celina and North Texas. Expert assembly, 24-hour stress testing, on-site service.">
+<title>RigForge — Custom PC Builds · North Texas</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+<style>
+:root{
+  --bg:#050508;--surf:#0A0A12;--card:#10101A;--card2:#14141F;
+  --brd:#2A1545;--brd2:#3D1F6A;
+  --cyan:#FF2D9B;--blue:#9D00FF;--blue2:#C060FF;
+  --teal:#00D4FF;--teal2:#80EAFF;
+  --cdim:rgba(255,45,155,.1);--gdim:rgba(0,212,255,.1);
+  --grn:#4ade80;--ylw:#FFD700;--red:#FF3C5A;
+  --txt:#F0F0F8;--sub:#B0B0D0;--mut:#6060A0;--muted:#303050;
+  --font:'Space Grotesk',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;} @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+a{color:var(--cyan);text-decoration:none;}
+a:hover{text-decoration:underline;}
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(6,13,26,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--brd);padding:0 1.5rem;}
+.nav-i{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;height:60px;}
+.nav-logo{font-size:1.1rem;font-weight:800;color:var(--cyan);white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--txt);}
+.nav-phone{font-size:.82rem;color:var(--grn);font-weight:700;white-space:nowrap;text-decoration:none;}
+.nav-phone:hover{color:#86efac;}
+.nav-links{display:flex;align-items:center;gap:1.25rem;list-style:none;margin-left:auto;flex-wrap:wrap;}
+.nav-links a{color:var(--sub);font-size:.88rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--txt);text-decoration:none;}
+.lang-btn{background:var(--surf);border:1px solid var(--brd);color:var(--sub);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:.78rem;font-weight:700;transition:all .2s;flex-shrink:0;}
+.lang-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+/* HERO */
+.hero{background:linear-gradient(160deg,#060d1a 0%,#0a1628 60%,#0d1f3c 100%);border-bottom:1px solid var(--brd);padding:5rem 1.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(34,211,238,.05) 0%,transparent 70%);pointer-events:none;}
+.vet-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gdim);border:1px solid var(--grn);color:var(--grn);padding:.4rem 1rem;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.02em;margin-bottom:1.25rem;}
+.hero-h1{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em;line-height:1.15;}
+.hero-h1 span{color:var(--cyan);}
+.hero-sub{font-size:1rem;color:var(--sub);margin-bottom:.75rem;}
+.gs-line{display:inline-block;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);color:#fca5a5;padding:.5rem 1.25rem;border-radius:8px;font-size:.85rem;margin-bottom:1.75rem;max-width:600px;}
+.bio-card{max-width:660px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.25rem 1.5rem;text-align:left;font-size:.88rem;color:var(--sub);line-height:1.7;}
+.bio-card strong{color:var(--txt);}
+.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;border:none;text-decoration:none !important;}
+.btn-primary{background:var(--cyan);color:#000;}
+.btn-primary:hover{background:#38bdf8;transform:translateY(-1px);}
+.btn-secondary{background:transparent;border:1px solid var(--brd);color:var(--txt);}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+.btn-green{background:var(--grn);color:#000;}
+.btn-green:hover{background:#16a34a;}
+/* SECTION */
+.sec{max-width:1200px;margin:0 auto;padding:3.5rem 1.5rem;}
+.sec-lbl{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--cyan);text-transform:uppercase;margin-bottom:.4rem;}
+.sec-title{font-size:clamp(1.4rem,3vw,1.85rem);font-weight:800;color:#fff;margin-bottom:.4rem;}
+.sec-title span{color:var(--cyan);}
+.sec-sub{color:var(--mut);font-size:.9rem;margin-bottom:2rem;line-height:1.6;}
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.9rem;}
+.uc-card{background:var(--card);border:2px solid var(--brd);border-radius:12px;padding:1.2rem;cursor:pointer;transition:all .2s;text-align:center;}
+.uc-card:hover{border-color:var(--cyan);background:rgba(34,211,238,.05);}
+.uc-card.active{border-color:var(--cyan);background:var(--cdim);}
+.uc-icon{font-size:1.75rem;margin-bottom:.5rem;}
+.uc-title{font-weight:700;font-size:.9rem;color:#fff;margin-bottom:.25rem;}
+.uc-note{font-size:.78rem;color:var(--mut);line-height:1.4;}
+.hot-badge{display:inline-block;background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.35);font-size:.65rem;padding:2px 7px;border-radius:999px;font-weight:700;margin-bottom:.4rem;}
+/* TIER */
+.tier-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.75rem;}
+.tier-btn{padding:.55rem 1.15rem;border-radius:8px;border:1px solid var(--brd);background:var(--surf);color:var(--sub);font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.tier-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.tier-btn.active{background:var(--cyan);border-color:var(--cyan);color:#000;}
+.tier-desc{font-size:.83rem;color:var(--mut);padding:.75rem 1rem;background:var(--surf);border-radius:8px;border-left:3px solid var(--cyan);margin-bottom:2rem;line-height:1.5;}
+/* PROGRESS */
+.prog-wrap{background:var(--surf);border:1px solid var(--brd);border-radius:12px;padding:.9rem 1.25rem;margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.prog-lbl{font-size:.85rem;color:var(--sub);white-space:nowrap;}
+.prog-lbl b{color:var(--cyan);}
+.prog-track{flex:1;min-width:120px;height:7px;background:var(--brd);border-radius:999px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--grn));border-radius:999px;transition:width .4s ease;width:0%;}
+/* BUILDER LAYOUT */
+.bld-layout{display:grid;grid-template-columns:1fr 310px;gap:1.75rem;align-items:start;}
+@media(max-width:920px){.bld-layout{grid-template-columns:1fr;}}
+.comp-col{display:flex;flex-direction:column;gap:.85rem;}
+/* COMPONENT SECTION */
+.csec{background:var(--card);border:1px solid var(--brd);border-radius:14px;overflow:hidden;transition:border-color .25s;}
+.csec.done{border-color:var(--grn);}
+.csec-hdr{display:flex;align-items:center;gap:.9rem;padding:1.1rem 1.25rem;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:background .2s,border-color .2s;}
+.csec-hdr:hover{background:rgba(255,255,255,.02);}
+.csec-hdr.open{border-bottom-color:var(--brd);}
+.csec-icon{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.csec-info{flex:1;min-width:0;}
+.csec-name{font-weight:700;font-size:.9rem;color:#fff;}
+.csec-sel{font-size:.8rem;color:var(--grn);margin-top:2px;}
+.csec-sel.empty{color:var(--mut);}
+.csec-chev{color:var(--mut);font-size:.9rem;transition:transform .3s;flex-shrink:0;}
+.csec-chev.open{transform:rotate(180deg);}
+.csec-body{display:none;padding:1.25rem;}
+.csec-body.open{display:block;}
+.cdesc{font-size:.8rem;color:var(--mut);margin-bottom:1rem;line-height:1.5;}
+/* OPTIONS */
+.opts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.65rem;}
+.opt{background:var(--surf);border:1.5px solid var(--brd);border-radius:9px;padding:.85rem 1rem;cursor:pointer;transition:all .2s;width:100%;text-align:left;}
+.opt:hover{border-color:var(--cyan);background:var(--cdim);}
+.opt.sel{border-color:var(--grn);background:var(--gdim);}
+.opt-check{font-size:.7rem;font-weight:700;color:var(--grn);margin-bottom:.2rem;display:none;}
+.opt.sel .opt-check{display:block;}
+.opt-tag{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 6px;border-radius:4px;margin-bottom:.25rem;}
+.tag-air{background:rgba(34,197,94,.15);color:#86efac;}
+.tag-aio{background:rgba(34,211,238,.15);color:#67e8f9;}
+.tag-brnz{background:rgba(180,120,60,.2);color:#d4956a;}
+.tag-gold{background:rgba(245,158,11,.2);color:#fbbf24;}
+.tag-plat{background:rgba(148,163,184,.2);color:#cbd5e1;}
+.opt-name{font-weight:600;font-size:.85rem;color:#fff;margin-bottom:.2rem;}
+.opt-price{font-size:.9rem;color:var(--cyan);font-weight:700;margin-bottom:.3rem;}
+.opt-note{font-size:.75rem;color:var(--mut);line-height:1.4;}
+/* PSU explain */
+.psu-box{background:var(--surf);border:1px solid var(--brd);border-radius:8px;padding:.75rem 1rem;margin-bottom:.9rem;font-size:.78rem;color:var(--mut);line-height:1.5;}
+.psu-box b{color:var(--txt);}
+/* STORAGE GROUPS */
+.sg{margin-bottom:.6rem;}
+.sg-hdr{width:100%;background:var(--surf);border:1px solid var(--brd);color:var(--txt);padding:.65rem 1rem;border-radius:8px;text-align:left;cursor:pointer;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:.6rem;transition:border-color .2s;}
+.sg-hdr:hover{border-color:var(--cyan);}
+.sg-hdr.open{border-radius:8px 8px 0 0;border-color:var(--cyan);}
+.sg-cnt{background:var(--cdim);color:var(--cyan);font-size:.7rem;padding:2px 8px;border-radius:999px;}
+.sg-chev{margin-left:auto;color:var(--mut);transition:transform .25s;}
+.sg-hdr.open .sg-chev{transform:rotate(180deg);}
+.sg-body{display:none;border:1px solid var(--cyan);border-top:none;border-radius:0 0 8px 8px;padding:.65rem;}
+.sg-body.open{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem;}
+/* COMPAT */
+.compat{background:var(--surf);border:1px solid var(--brd);border-radius:12px;padding:1.1rem 1.25rem;margin-top:1.5rem;}
+.compat-title{font-weight:700;font-size:.88rem;color:#fff;margin-bottom:.6rem;}
+.compat-hint{color:var(--mut);font-size:.85rem;}
+.compat-ok{color:var(--grn);font-size:.85rem;padding:.25rem 0;}
+.compat-err{color:var(--red);font-size:.85rem;padding:.25rem 0;}
+/* PRICE PANEL */
+.pp{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:1.4rem;position:sticky;top:76px;}
+.pp-title{font-weight:800;font-size:1rem;color:#fff;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:space-between;}
+.pp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;padding:.4rem 0;border-bottom:1px solid var(--brd);font-size:.82rem;}
+.pp-row:last-of-type{border-bottom:none;}
+.pp-lbl{color:var(--mut);flex:1;}
+.pp-val{color:var(--txt);font-weight:600;text-align:right;font-size:.8rem;}
+.pp-val.grn{color:var(--grn);}
+.pp-val.dim{color:var(--mut);font-style:italic;font-weight:400;}
+.pp-total{display:flex;justify-content:space-between;padding:.85rem 0 .5rem;border-top:1px solid var(--brd);margin-top:.4rem;}
+.pp-total-lbl{font-weight:700;color:#fff;}
+.pp-total-val{font-size:1.2rem;font-weight:800;color:var(--cyan);}
+.pp-note{font-size:.72rem;color:var(--mut);margin-top:.6rem;line-height:1.5;}
+.pp-upd{font-size:.68rem;color:var(--mut);opacity:.7;margin-top:.3rem;}
+.pp-os{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:8px;padding:.55rem .8rem;font-size:.75rem;color:var(--ylw);margin:.75rem 0;line-height:1.45;}
+.pp-actions{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem;}
+/* PROOF */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-bottom:1.5rem;}
+.proof-card{background:var(--card);border:1px solid var(--brd);border-radius:14px;overflow:hidden;}
+.proof-img{height:160px;background:linear-gradient(135deg,var(--surf) 0%,#0d2040 100%);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--mut);flex-direction:column;gap:.4rem;}
+.proof-body{padding:1.1rem;}
+.proof-tag{display:inline-block;background:var(--cdim);color:var(--cyan);border:1px solid rgba(34,211,238,.3);font-size:.72rem;padding:2px 9px;border-radius:999px;font-weight:700;margin-bottom:.6rem;}
+.proof-title{font-weight:700;color:#fff;font-size:.9rem;margin-bottom:.3rem;}
+.proof-desc{font-size:.8rem;color:var(--mut);line-height:1.5;}
+.test-banner{background:var(--gdim);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:1rem 1.4rem;display:flex;align-items:flex-start;gap:.85rem;font-size:.85rem;color:#86efac;line-height:1.6;}
+/* UPGRADES */
+.ug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;}
+.ug-card{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.25rem;transition:border-color .2s;}
+.ug-card:hover{border-color:var(--cyan);}
+.ug-icon{font-size:1.6rem;margin-bottom:.6rem;}
+.ug-title{font-weight:700;color:#fff;font-size:.9rem;margin-bottom:.25rem;}
+.ug-price{color:var(--cyan);font-weight:700;font-size:.85rem;margin-bottom:.4rem;}
+.ug-desc{font-size:.78rem;color:var(--mut);line-height:1.5;}
+/* HOW IT WORKS */
+.hiw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.85rem;margin-bottom:1.75rem;}
+.hiw-card{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.1rem;}
+.hiw-num{width:32px;height:32px;background:var(--cdim);color:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;margin-bottom:.7rem;}
+.hiw-title{font-weight:700;color:#fff;font-size:.85rem;margin-bottom:.25rem;}
+.hiw-desc{font-size:.78rem;color:var(--mut);line-height:1.45;}
+.fee-box{background:var(--card);border:1px solid var(--brd);border-radius:12px;overflow:hidden;margin-bottom:1.25rem;}
+.fee-row{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.25rem;border-bottom:1px solid var(--brd);font-size:.88rem;}
+.fee-row:last-child{border-bottom:none;}
+.fee-lbl{color:var(--mut);}
+.fee-val{font-weight:700;color:var(--txt);}
+.warranty-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem;}
+.w-card{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.1rem;}
+.w-icon{font-size:1.4rem;margin-bottom:.5rem;}
+.w-title{font-weight:700;color:#fff;font-size:.88rem;margin-bottom:.25rem;}
+.w-desc{font-size:.78rem;color:var(--mut);line-height:1.5;}
+/* AREA */
+.area-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1.25rem;}
+.area-card{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.25rem;}
+.area-card h4{font-weight:700;color:#fff;margin-bottom:.6rem;}
+.area-card p{font-size:.82rem;color:var(--mut);margin-bottom:.5rem;line-height:1.5;}
+.city-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem;}
+.city-tag{background:var(--surf);border:1px solid var(--brd);color:var(--sub);padding:3px 10px;border-radius:999px;font-size:.75rem;}
+.hours-row,.pay-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;}
+.badge-sm{background:var(--surf);border:1px solid var(--brd);color:var(--sub);padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:500;}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--brd);}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--txt);padding:1rem 0;font-size:.9rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:color .2s;}
+.faq-q:hover,.faq-q.open{color:var(--cyan);}
+.faq-plus{color:var(--cyan);font-size:1.1rem;transition:transform .3s;flex-shrink:0;}
+.faq-q.open .faq-plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;font-size:.85rem;color:var(--mut);line-height:1.7;}
+.faq-a.open{max-height:400px;padding-bottom:1rem;}
+/* CHECKLIST */
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:.75rem;}
+.cl-item{background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:.9rem 1rem;display:flex;gap:.75rem;align-items:flex-start;}
+.cl-icon{font-size:1.2rem;flex-shrink:0;}
+.cl-name{font-weight:600;color:#fff;font-size:.85rem;margin-bottom:.15rem;}
+.cl-price{font-size:.75rem;color:var(--mut);}
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr;}}
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem;}
+.fg label{font-size:.8rem;font-weight:600;color:var(--sub);}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--surf);border:1px solid var(--brd);border-radius:8px;color:var(--txt);padding:.7rem .9rem;font-size:.88rem;font-family:inherit;transition:border-color .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--cyan);}
+.fg textarea{min-height:110px;resize:vertical;}
+.fg select option{background:var(--surf);}
+.build-summ{background:var(--surf);border:1px solid var(--brd);border-radius:10px;padding:1rem;margin-bottom:1.1rem;font-size:.82rem;}
+.build-summ h4{font-weight:700;color:var(--cyan);margin-bottom:.6rem;font-size:.82rem;}
+.summ-row{display:flex;justify-content:space-between;padding:.25rem 0;border-bottom:1px solid var(--brd);font-size:.8rem;color:var(--mut);}
+.summ-row:last-child{border-bottom:none;}
+.summ-val{color:var(--txt);font-weight:600;}
+.parts-note{background:var(--surf);border:1px solid var(--brd);border-radius:9px;padding:.85rem 1rem;margin-bottom:1.1rem;font-size:.78rem;color:var(--mut);line-height:1.5;}
+.parts-note b{color:var(--txt);}
+.priv-note{font-size:.75rem;color:var(--mut);margin-bottom:1.1rem;display:flex;gap:.5rem;align-items:flex-start;line-height:1.5;}
+.success-wrap{display:none;text-align:center;padding:3rem 1rem;}
+.success-wrap.show{display:block;}
+.suc-icon{font-size:2.5rem;margin-bottom:.75rem;}
+.suc-h3{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.suc-p{color:var(--mut);font-size:.88rem;}
+/* FOOTER */
+footer{background:var(--surf);border-top:1px solid var(--brd);padding:2.5rem 1.5rem;}
+.ft-i{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;}
+@media(max-width:720px){.ft-i{grid-template-columns:1fr;}}
+.ft-brand{font-size:1.05rem;font-weight:800;color:var(--cyan);margin-bottom:.4rem;}
+.ft-brand span{color:var(--txt);}
+.ft-tag{font-size:.8rem;color:var(--mut);margin-bottom:.75rem;line-height:1.5;}
+.ft-phone{font-size:.88rem;color:var(--txt);font-weight:700;text-decoration:none;display:block;margin-bottom:.6rem;}
+.ft-phone:hover{color:var(--cyan);}
+.pay-badges{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.4rem;}
+.pay-b{background:var(--card);border:1px solid var(--brd);color:var(--sub);padding:3px 9px;border-radius:5px;font-size:.72rem;}
+.ft-col h4{font-size:.78rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.85rem;}
+.ft-col ul{list-style:none;}
+.ft-col ul li{padding:.28rem 0;}
+.ft-col ul li a{font-size:.82rem;color:var(--mut);}
+.ft-col ul li a:hover{color:var(--cyan);text-decoration:none;}
+.ft-soc{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem;}
+.ft-soc a{background:var(--card);border:1px solid var(--brd);color:var(--mut);padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:600;transition:all .2s;}
+.ft-soc a:hover{border-color:var(--cyan);color:var(--cyan);text-decoration:none;}
+.ft-bot{max-width:1200px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--mut);}
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--grn);color:#000;padding:.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:.88rem;z-index:9999;transition:transform .3s ease;pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+/* BACK TOP */
+#btt{position:fixed;bottom:2rem;right:2rem;background:var(--cyan);color:#000;border:none;border-radius:50%;width:42px;height:42px;font-size:1rem;cursor:pointer;opacity:0;transition:opacity .3s;z-index:500;display:flex;align-items:center;justify-content:center;font-weight:700;}
+#btt.show{opacity:1;}
+#btt:hover{background:#38bdf8;}
+/* REVEAL */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s;}
+.rev.in{opacity:1;transform:translateY(0);}
+/* MOBILE */
+@media(max-width:600px){
+  .nav-phone{display:none;}
+  .opts-grid{grid-template-columns:1fr;}
+  .sg-body.open{grid-template-columns:1fr;}
+  .hero{padding:3.5rem 1rem 2.5rem;}
+  .csec-hdr{padding:.9rem 1rem;}
+  .csec-body{padding:1rem;}
+}
+
+/* CYBERPUNK OVERRIDES */
+.nav-logo{color:var(--teal)!important;font-family:var(--font);}
+.nav-logo span{color:var(--cyan)!important;}
+.sec-title span,.sec-lbl,.a{color:var(--cyan)!important;}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan))!important;color:#fff!important;}
+.btn-primary:hover{box-shadow:0 0 22px rgba(255,45,155,.5)!important;}
+.uc-card:hover,.uc-card.active{border-color:var(--cyan)!important;background:var(--cdim)!important;}
+.tier-btn.active{background:var(--cyan)!important;border-color:var(--cyan)!important;color:#fff!important;}
+.tier-btn:hover{border-color:var(--cyan)!important;color:var(--cyan)!important;}
+.opt:hover,.opt.sel{border-color:var(--cyan)!important;background:var(--cdim)!important;}
+.opt.sel{box-shadow:0 0 14px rgba(255,45,155,.2)!important;}
+.opt-price,.csec-sel:not(.empty){color:var(--cyan)!important;}
+.prog-fill{background:linear-gradient(90deg,var(--blue),var(--cyan))!important;}
+.tier-desc{border-left-color:var(--cyan)!important;}
+.pp-total{color:var(--cyan)!important;text-shadow:0 0 12px rgba(255,45,155,.3)!important;}
+.pp-val.grn{color:var(--cyan)!important;}
+.sg-hdr:hover{color:var(--cyan)!important;}
+.faq-q:hover,.faq-plus{color:var(--cyan)!important;}
+.compat-ok{color:#4ade80!important;}
+.nav-cta{background:var(--cyan)!important;color:#fff!important;box-shadow:0 0 14px rgba(255,45,155,.3)!important;}
+.btt{background:var(--cyan)!important;box-shadow:0 0 12px rgba(255,45,155,.4)!important;}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan)!important;box-shadow:0 0 0 3px rgba(255,45,155,.12)!important;}
+/* HERO */
+.hero-bg-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,8,.96) 30%,rgba(5,5,8,.75) 65%,rgba(5,5,8,.3) 100%);z-index:1;}
+.hero>.vet-badge,.hero>.hero-h1,.hero>.hero-sub,.hero>.gs-line,.hero>.bio-card,.hero>.hero-btns{position:relative;z-index:2;}
+.rain-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.rdrop{position:absolute;width:1px;background:linear-gradient(transparent,rgba(0,212,255,.3));animation:rain linear infinite;border-radius:1px;}
+@keyframes rain{from{transform:translateY(-120px)}to{transform:translateY(110vh)}}
+/* WIZARD */
+.wz-bar{background:var(--surf);border:1px solid var(--brd);border-radius:12px;padding:.9rem 1.25rem;margin-bottom:1.25rem;}
+.wz-bar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;font-size:.85rem;}
+.wz-bar-top b{color:var(--cyan);}
+.wz-track{height:5px;background:var(--brd);border-radius:999px;overflow:hidden;}
+.wz-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:999px;transition:width .4s;box-shadow:0 0 8px rgba(255,45,155,.4);width:0%;}
+.wz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;gap:.75rem;flex-wrap:wrap;}
+.wz-btn{padding:.52rem 1.2rem;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all .2s;}
+.wz-back{background:var(--surf);color:var(--sub);border:1px solid var(--brd);}
+.wz-back:hover{border-color:var(--blue);color:var(--txt);}
+.wz-skip{background:transparent;color:var(--mut);border:1px solid var(--muted);font-size:.8rem;}
+.wz-next{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;box-shadow:0 0 14px rgba(255,45,155,.28);}
+.wz-next:hover{box-shadow:0 0 24px rgba(255,45,155,.5);transform:translateY(-1px);}
+/* VET BADGE */
+.vet-line{font-size:.82rem!important;font-weight:600;}
+.vet-flag{font-size:.82rem!important;}
+/* PROOF CARD */
+.proof-imgs{display:grid;grid-template-columns:2fr 1fr;gap:2px;height:180px;background:var(--brd);}
+.proof-imgs img{width:100%;height:100%;object-fit:cover;}
+.spec-tag{background:rgba(157,0,255,.12);border:1px solid rgba(157,0,255,.25);color:var(--blue2);}
+
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-i">
+    <a href="index.html" class="nav-logo"><img src="rigforge-logo.png" alt="RigForge" style="height:32px;width:32px;object-fit:cover;border-radius:6px;margin-right:.4rem;" onerror="this.style.display='none'">Rig<span style="color:var(--cyan)">Forge</span></a>
+    <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="pc-builder.html" class="active">PC Builder</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="lang-btn" onclick="toggleLang()" id="lang-btn">ES</button></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="position:relative;overflow:hidden;min-height:480px;">
+  <!-- CITYSCAPE BACKGROUND -->
+  <svg class="hero-bg-svg" viewBox="0 0 1400 580" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6B9AB8"/>
+        <stop offset="35%" stop-color="#A87C3A"/>
+        <stop offset="65%" stop-color="#C4823A"/>
+        <stop offset="100%" stop-color="#1A1620"/>
+      </linearGradient>
+      <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#D4A055" stop-opacity="0"/>
+        <stop offset="40%" stop-color="#C89040" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#B07830" stop-opacity="0.2"/>
+      </linearGradient>
+      <linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1A1620" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#0D0B12" stop-opacity="1"/>
+      </linearGradient>
+      <filter id="scr-glow" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="far-blur"><feGaussianBlur stdDeviation="1.5"/></filter>
+      <filter id="atm"><feGaussianBlur stdDeviation="18"/></filter>
+    </defs>
+
+    <!-- Sky -->
+    <rect width="1400" height="580" fill="url(#hsky)"/>
+
+    <!-- Atmospheric haze bands -->
+    <rect x="0" y="200" width="1400" height="220" fill="url(#haze)"/>
+    <ellipse cx="700" cy="310" rx="800" ry="120" fill="#C48840" opacity="0.18" filter="url(#atm)"/>
+
+    <!-- === FAR BACKGROUND BUILDINGS (hazy, desaturated) === -->
+    <g opacity="0.45" filter="url(#far-blur)">
+      <!-- Far left cluster -->
+      <rect x="0" y="180" width="60" height="400" fill="#8A8090"/>
+      <rect x="5" y="160" width="30" height="420" fill="#9088A0"/>
+      <rect x="65" y="200" width="45" height="380" fill="#858090"/>
+      <rect x="115" y="170" width="55" height="410" fill="#8A8098"/>
+      <!-- Far center -->
+      <rect x="420" y="150" width="80" height="430" fill="#908898"/>
+      <rect x="430" y="130" width="40" height="450" fill="#988898"/>
+      <rect x="505" y="160" width="65" height="420" fill="#908090"/>
+      <rect x="575" y="140" width="55" height="440" fill="#888090"/>
+      <rect x="640" y="155" width="70" height="425" fill="#908898"/>
+      <!-- Far right cluster -->
+      <rect x="1020" y="170" width="65" height="410" fill="#8A8898"/>
+      <rect x="1090" y="150" width="80" height="430" fill="#908090"/>
+      <rect x="1175" y="165" width="70" height="415" fill="#8A8898"/>
+      <rect x="1250" y="145" width="90" height="435" fill="#909098"/>
+      <rect x="1345" y="170" width="55" height="410" fill="#888090"/>
+    </g>
+
+    <!-- === MID BUILDINGS WITH LARGE SCREEN PANELS === -->
+
+    <!-- LEFT MEGA-BLOCK: huge purple/magenta screen tower -->
+    <rect x="0" y="60" width="155" height="520" fill="#252230"/>
+    <!-- Giant purple screen panel (like a massive billboard) -->
+    <rect x="8" y="70" width="140" height="280" fill="#6600CC" filter="url(#scr-glow)"/>
+    <rect x="8" y="70" width="140" height="280" fill="url(#purp-screen)" opacity="0.9"/>
+    <!-- Screen content: abstract shapes -->
+    <rect x="15" y="78" width="65" height="130" fill="#9900FF" opacity="0.8"/>
+    <rect x="85" y="78" width="56" height="80" fill="#FF00AA" opacity="0.7"/>
+    <rect x="85" y="163" width="56" height="45" fill="#7700EE" opacity="0.8"/>
+    <rect x="15" y="213" width="126" height="60" fill="#AA00FF" opacity="0.6"/>
+    <rect x="15" y="278" width="65" height="65" fill="#FF00CC" opacity="0.7"/>
+    <rect x="85" y="278" width="56" height="65" fill="#8800DD" opacity="0.6"/>
+    <!-- Screen glow -->
+    <rect x="8" y="70" width="140" height="280" fill="none" stroke="#CC00FF" stroke-width="1" opacity="0.5" filter="url(#scr-glow)"/>
+    <!-- Building windows below screen -->
+    <rect x="10" y="358" width="135" height="3" fill="#AA88FF" opacity="0.4"/>
+    <rect x="10" y="365" width="135" height="3" fill="#AA88FF" opacity="0.3"/>
+    <rect x="10" y="372" width="135" height="3" fill="#AA88FF" opacity="0.3"/>
+    <!-- Extra column left -->
+    <rect x="0" y="60" width="5" height="520" fill="#FF00CC" opacity="0.6" filter="url(#scr-glow)"/>
+
+    <!-- LEFT SECOND BUILDING: teal/cyan screen -->
+    <rect x="160" y="100" width="110" height="480" fill="#1E1C28"/>
+    <rect x="165" y="108" width="100" height="195" fill="#006688" opacity="0.9"/>
+    <rect x="165" y="108" width="100" height="195" fill="#00AACC" opacity="0.5" filter="url(#scr-glow)"/>
+    <rect x="168" y="112" width="45" height="95" fill="#00CCFF" opacity="0.7"/>
+    <rect x="218" y="112" width="44" height="60" fill="#00AABB" opacity="0.7"/>
+    <rect x="218" y="176" width="44" height="30" fill="#0088AA" opacity="0.8"/>
+    <rect x="168" y="212" width="97" height="45" fill="#006699" opacity="0.8"/>
+    <rect x="165" y="308" width="100" height="4" fill="#00DDFF" opacity="0.4"/>
+    <rect x="165" y="316" width="100" height="4" fill="#00DDFF" opacity="0.3"/>
+
+    <!-- LEFT TALL SKINNY TOWER -->
+    <rect x="275" y="40" width="70" height="540" fill="#201E2C"/>
+    <rect x="278" y="48" width="64" height="170" fill="#CC0055" opacity="0.85" filter="url(#scr-glow)"/>
+    <rect x="278" y="48" width="30" height="85" fill="#FF0066" opacity="0.7"/>
+    <rect x="312" y="48" width="30" height="60" fill="#EE0044" opacity="0.7"/>
+    <rect x="312" y="112" width="30" height="55" fill="#FF3388" opacity="0.6"/>
+    <rect x="278" y="122" width="64" height="58" fill="#BB0044" opacity="0.7"/>
+    <rect x="278" y="222" width="64" height="4" fill="#FF88AA" opacity="0.5"/>
+
+    <!-- CENTER LEFT BUILDING: yellow/amber screens -->
+    <rect x="350" y="80" width="130" height="500" fill="#221F2E"/>
+    <rect x="354" y="88" width="122" height="160" fill="#885500" opacity="0.9"/>
+    <rect x="354" y="88" width="122" height="160" fill="#FFAA00" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="357" y="92" width="55" height="75" fill="#FFB800" opacity="0.8"/>
+    <rect x="416" y="92" width="57" height="50" fill="#FF9900" opacity="0.8"/>
+    <rect x="416" y="146" width="57" height="44" fill="#FFCC00" opacity="0.7"/>
+    <rect x="357" y="171" width="116" height="40" fill="#FF8800" opacity="0.6"/>
+    <!-- Second screen panel -->
+    <rect x="354" y="255" width="122" height="100" fill="#552200" opacity="0.9"/>
+    <rect x="354" y="255" width="122" height="100" fill="#FF6600" opacity="0.35" filter="url(#scr-glow)"/>
+    <rect x="357" y="259" width="116" height="92" fill="#FF7700" opacity="0.5"/>
+    <rect x="354" y="358" width="122" height="3" fill="#FFAA55" opacity="0.4"/>
+
+    <!-- CENTER: gap/street perspective with haze -->
+    <rect x="485" y="0" width="180" height="580" fill="url(#haze)" opacity="0.6"/>
+
+    <!-- CENTER RIGHT BUILDING: massive magenta screen -->
+    <rect x="668" y="50" width="145" height="530" fill="#1E1B2A"/>
+    <rect x="672" y="58" width="137" height="240" fill="#880055" opacity="0.95"/>
+    <rect x="672" y="58" width="137" height="240" fill="#FF0088" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="676" y="62" width="62" height="120" fill="#FF00AA" opacity="0.75"/>
+    <rect x="743" y="62" width="63" height="80" fill="#CC0077" opacity="0.8"/>
+    <rect x="743" y="146" width="63" height="55" fill="#EE0099" opacity="0.7"/>
+    <rect x="676" y="186" width="130" height="55" fill="#AA0066" opacity="0.7"/>
+    <rect x="676" y="245" width="62" height="48" fill="#FF33AA" opacity="0.6"/>
+    <rect x="743" y="245" width="63" height="48" fill="#990055" opacity="0.7"/>
+    <!-- Building accent lines -->
+    <rect x="672" y="300" width="137" height="2" fill="#FF44BB" opacity="0.5" filter="url(#scr-glow)"/>
+    <rect x="672" y="308" width="137" height="2" fill="#FF44BB" opacity="0.35"/>
+    <rect x="668" y="50" width="3" height="530" fill="#FF00CC" opacity="0.5" filter="url(#scr-glow)"/>
+
+    <!-- RIGHT CENTER: purple + cyan combo tower -->
+    <rect x="818" y="75" width="120" height="505" fill="#201D2C"/>
+    <rect x="822" y="82" width="112" height="130" fill="#440099" opacity="0.9"/>
+    <rect x="822" y="82" width="112" height="130" fill="#6600FF" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="825" y="86" width="50" height="60" fill="#7700FF" opacity="0.8"/>
+    <rect x="879" y="86" width="52" height="45" fill="#5500CC" opacity="0.8"/>
+    <rect x="879" y="135" width="52" height="40" fill="#9900FF" opacity="0.7"/>
+    <rect x="825" y="150" width="109" height="35" fill="#6600DD" opacity="0.6"/>
+    <!-- Cyan panel lower -->
+    <rect x="822" y="228" width="112" height="90" fill="#005566" opacity="0.9"/>
+    <rect x="822" y="228" width="112" height="90" fill="#00DDFF" opacity="0.3" filter="url(#scr-glow)"/>
+    <rect x="825" y="232" width="109" height="82" fill="#00BBDD" opacity="0.5"/>
+
+    <!-- RIGHT TALL BUILDING -->
+    <rect x="943" y="55" width="100" height="525" fill="#1C1A28"/>
+    <rect x="946" y="62" width="94" height="200" fill="#003355" opacity="0.9"/>
+    <rect x="946" y="62" width="94" height="200" fill="#0099CC" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="949" y="66" width="44" height="95" fill="#00AADD" opacity="0.75"/>
+    <rect x="997" y="66" width="40" height="65" fill="#0088BB" opacity="0.8"/>
+    <rect x="997" y="135" width="40" height="60" fill="#00CCEE" opacity="0.7"/>
+    <rect x="949" y="165" width="88" height="52" fill="#006688" opacity="0.7"/>
+    <rect x="943" y="55" width="3" height="525" fill="#00CCFF" opacity="0.45" filter="url(#scr-glow)"/>
+
+    <!-- FAR RIGHT BUILDING: yellow screens -->
+    <rect x="1048" y="90" width="125" height="490" fill="#201E2C"/>
+    <rect x="1052" y="98" width="117" height="145" fill="#664400" opacity="0.9"/>
+    <rect x="1052" y="98" width="117" height="145" fill="#FFCC00" opacity="0.38" filter="url(#scr-glow)"/>
+    <rect x="1055" y="102" width="54" height="68" fill="#FFDD00" opacity="0.7"/>
+    <rect x="1113" y="102" width="53" height="48" fill="#FFB800" opacity="0.7"/>
+    <rect x="1113" y="154" width="53" height="40" fill="#FF9900" opacity="0.7"/>
+    <rect x="1055" y="174" width="111" height="35" fill="#CC8800" opacity="0.65"/>
+    <rect x="1052" y="270" width="117" height="80" fill="#550033" opacity="0.9"/>
+    <rect x="1052" y="270" width="117" height="80" fill="#FF0066" opacity="0.35" filter="url(#scr-glow)"/>
+    <rect x="1055" y="274" width="111" height="72" fill="#EE0055" opacity="0.5"/>
+
+    <!-- RIGHT EDGE TOWERS -->
+    <rect x="1178" y="70" width="90" height="510" fill="#1E1C28"/>
+    <rect x="1182" y="78" width="82" height="160" fill="#440088" opacity="0.9"/>
+    <rect x="1182" y="78" width="82" height="160" fill="#8800FF" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="1185" y="82" width="76" height="75" fill="#9900FF" opacity="0.75"/>
+    <rect x="1185" y="161" width="76" height="44" fill="#7700EE" opacity="0.65"/>
+    <rect x="1182" y="245" width="82" height="70" fill="#003344" opacity="0.9"/>
+    <rect x="1182" y="245" width="82" height="70" fill="#00CCDD" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="1185" y="249" width="78" height="62" fill="#00AABB" opacity="0.6"/>
+
+    <rect x="1273" y="85" width="127" height="495" fill="#201D2A"/>
+    <rect x="1277" y="93" width="119" height="185" fill="#660044" opacity="0.9"/>
+    <rect x="1277" y="93" width="119" height="185" fill="#FF0077" opacity="0.4" filter="url(#scr-glow)"/>
+    <rect x="1280" y="97" width="55" height="90" fill="#FF0088" opacity="0.75"/>
+    <rect x="1339" y="97" width="54" height="60" fill="#CC0055" opacity="0.8"/>
+    <rect x="1339" y="161" width="54" height="58" fill="#EE0066" opacity="0.7"/>
+    <rect x="1280" y="191" width="113" height="55" fill="#990044" opacity="0.65"/>
+    <rect x="1273" y="85" width="3" height="495" fill="#FF0088" opacity="0.5" filter="url(#scr-glow)"/>
+
+    <!-- Atmospheric haze overlay (middle distance) -->
+    <rect x="0" y="250" width="1400" height="180" fill="#C4883A" opacity="0.12"/>
+    <rect x="380" y="200" width="280" height="250" fill="#D4A050" opacity="0.25"/>
+
+    <!-- Ground dark gradient -->
+    <rect x="0" y="400" width="1400" height="180" fill="url(#gnd)"/>
+    <rect x="0" y="480" width="1400" height="100" fill="#0D0B12"/>
+
+    <!-- Street-level warm glow -->
+    <ellipse cx="700" cy="560" rx="700" ry="60" fill="#FF6600" opacity="0.08"/>
+    <ellipse cx="700" cy="560" rx="400" ry="35" fill="#FF8800" opacity="0.06"/>
+  </svg>
+  <!-- Rain -->
+  <div class="rain-wrap" aria-hidden="true">
+    <div class="rdrop" style="left:5%;height:70px;animation-duration:1.8s;animation-delay:.2s;opacity:.4;"></div>
+    <div class="rdrop" style="left:14%;height:90px;animation-duration:2.1s;animation-delay:.8s;opacity:.35;"></div>
+    <div class="rdrop" style="left:24%;height:65px;animation-duration:1.6s;animation-delay:.1s;opacity:.3;"></div>
+    <div class="rdrop" style="left:35%;height:80px;animation-duration:2.4s;animation-delay:.5s;opacity:.38;"></div>
+    <div class="rdrop" style="left:47%;height:75px;animation-duration:1.9s;animation-delay:1s;opacity:.32;"></div>
+    <div class="rdrop" style="left:58%;height:85px;animation-duration:1.7s;animation-delay:.7s;opacity:.4;"></div>
+    <div class="rdrop" style="left:68%;height:70px;animation-duration:2s;animation-delay:.15s;opacity:.33;"></div>
+    <div class="rdrop" style="left:78%;height:90px;animation-duration:2.3s;animation-delay:.9s;opacity:.38;"></div>
+    <div class="rdrop" style="left:88%;height:65px;animation-duration:1.8s;animation-delay:.4s;opacity:.3;"></div>
+    <div class="rdrop" style="left:95%;height:80px;animation-duration:2.1s;animation-delay:.6s;opacity:.35;"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="vet-badge">&#127482;&#127480; Veteran-Owned &amp; Operated &mdash; U.S. Marine Corps</div>
+  <h1 class="hero-h1">Want a <span>Custom PC</span><br>But Don&rsquo;t Want to Build It?</h1>
+  <p class="hero-sub">On-site assembly &middot; 24-hour stress test &middot; North Texas</p>
+  <p class="gs-line">Geek Squad charges $100+ just to look at your PC. We build yours from scratch, come to you, and test it for 24 hours straight.</p>
+  <div class="bio-card">
+    <img src="selfie.jpg" alt="Ismael Ruiz" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid var(--cyan);float:right;margin:0 0 .75rem 1rem;" onerror="this.style.display='none'">
+    <p>Hey, I&rsquo;m <strong>Ismael</strong> &mdash; Marine Corps veteran, North Texas local, and the guy behind RigForge. After getting out in 2017 I taught myself everything I know about computers, built my first PC, and never looked back. Three builds deep and I started this because I kept seeing people drop serious money on prebuilts from Best Buy when they could&rsquo;ve gotten something way better for the same price &mdash; or less.</p>
+    <p style="margin-top:.65rem;">I&rsquo;m not a big box store. I&rsquo;m a real person who comes to your house, builds your PC the right way, stress tests it until I&rsquo;m confident it&rsquo;s solid, and actually picks up when you have questions after. That&rsquo;s the whole pitch.</p>
+  </div>
+  <div class="hero-btns">
+    <a href="#builder" class="btn btn-primary">Start Building &#8594;</a>
+    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+  </div>
+</section>
+
+<section class="sec rev">
+  <div class="sec-lbl">Step 01 &mdash; Choose Your Purpose</div>
+  <h2 class="sec-title">What Are You Building <span>This PC For?</span></h2>
+  <p class="sec-sub">Not sure what you need? Start here. We&rsquo;ll match the right tier to your use case.</p>
+  <div class="uc-grid">
+    <div class="uc-card" data-uc="gaming" onclick="pickUC(this)">
+      <div class="uc-icon">&#127918;</div>
+      <div class="uc-title">Gaming</div>
+      <div class="uc-note">High FPS, smooth gameplay, GPU power to run modern titles at 1080p, 1440p, or 4K.</div>
+    </div>
+    <div class="uc-card" data-uc="content" onclick="pickUC(this)">
+      <div class="uc-icon">&#127909;</div>
+      <div class="uc-title">Content Creation</div>
+      <div class="uc-note">Video editing, streaming, photo work. CPU cores, fast RAM, and plenty of storage.</div>
+    </div>
+    <div class="uc-card" data-uc="ai" onclick="pickUC(this)">
+      <div class="hot-badge">&#128293; Trending 2026</div>
+      <div class="uc-icon">&#129302;</div>
+      <div class="uc-title">AI &amp; Productivity</div>
+      <div class="uc-note">Local LLMs, Stable Diffusion, AI art tools. VRAM and processing power are everything.</div>
+    </div>
+    <div class="uc-card" data-uc="general" onclick="pickUC(this)">
+      <div class="uc-icon">&#128187;</div>
+      <div class="uc-title">General Use</div>
+      <div class="uc-note">Browsing, Office, school, light tasks. Reliable, fast, and cost-effective.</div>
+    </div>
+  </div>
+</section>
+
+<section id="builder" class="sec">
+  <div class="sec-lbl">Step 02 &mdash; Configure Your Build</div>
+  <h2 class="sec-title">Pick Your <span>Components</span></h2>
+  <p class="sec-sub">Select your budget first, then choose each component. Price updates live as you build. Partial builds allowed &mdash; just select what you know and we&rsquo;ll sort the rest.</p>
+
+  <div class="tier-row">
+    <button class="tier-btn" data-tier="budget" onclick="setTier(this)">Budget</button>
+    <button class="tier-btn active" data-tier="mid" onclick="setTier(this)">Mid-Range</button>
+    <button class="tier-btn" data-tier="high" onclick="setTier(this)">High-End</button>
+    <button class="tier-btn" data-tier="ultra" onclick="setTier(this)">Ultra</button>
+  </div>
+  <div class="tier-desc" id="tier-desc">Mid-Range &mdash; ~$1,100&ndash;$1,800 total. 1080p maxed, solid 1440p, light streaming. The sweet spot for most gamers. Expect 3&ndash;5 years of relevance before an upgrade is needed.</div>
+
+  <div class="prog-wrap">
+    <span class="prog-lbl"><b id="prog-count">0</b> / 9 components selected</span>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+  </div>
+
+  <div class="bld-layout">
+    <div class="comp-col">
+
+      <div class="wz-bar" id="wz-bar">
+  <div class="wz-bar-top">
+    <span id="wz-lbl">Step <b>1</b> of 9 &mdash; <b style="color:var(--cyan)">GPU</b></span>
+    <span style="font-size:.75rem;color:var(--mut)" id="wz-done-lbl">0 of 9 selected</span>
+  </div>
+  <div class="wz-track"><div class="wz-fill" id="wz-fill"></div></div>
+</div>
+<div class="csec" id="csec-gpu">
+        <div class="csec-hdr open" onclick="toggle('gpu')">
+          <div class="csec-icon" id="ico-gpu"></div>
+          <div class="csec-info">
+            <div class="csec-name">Graphics Card (GPU)</div>
+            <div class="csec-sel empty" id="sel-gpu">Not selected</div>
+          </div>
+          <span class="csec-chev open" id="chev-gpu">&#9660;</span>
+        </div>
+        <div class="csec-body open" id="body-gpu">
+          <p class="cdesc">The GPU is the heart of gaming and visual work. It pushes pixels to your monitor. More VRAM = more detail, higher resolution, and better longevity. The number after the name (8GB, 16GB) is VRAM &mdash; don&rsquo;t go below 8GB in 2026.</p>
+          <div class="opts-grid" id="opts-gpu"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-cpu">
+        <div class="csec-hdr" onclick="toggle('cpu')">
+          <div class="csec-icon" id="ico-cpu"></div>
+          <div class="csec-info">
+            <div class="csec-name">Processor (CPU)</div>
+            <div class="csec-sel empty" id="sel-cpu">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-cpu">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-cpu">
+          <p class="cdesc">The CPU handles game logic, AI, background apps, and everything your GPU doesn&rsquo;t. Think of it as the brain. Socket type MUST match your motherboard (AM4, AM5, LGA1700, LGA1851) &mdash; the compatibility checker below will catch mismatches.</p>
+          <div class="opts-grid" id="opts-cpu"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-mobo">
+        <div class="csec-hdr" onclick="toggle('mobo')">
+          <div class="csec-icon" id="ico-mobo"></div>
+          <div class="csec-info">
+            <div class="csec-name">Motherboard</div>
+            <div class="csec-sel empty" id="sel-mobo">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-mobo">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-mobo">
+          <p class="cdesc">The motherboard connects everything together. It MUST share the same socket as your CPU (AM4, AM5, LGA1700, LGA1851). It also determines whether you use DDR4 or DDR5 RAM.</p>
+          <div class="opts-grid" id="opts-mobo"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-ram">
+        <div class="csec-hdr" onclick="toggle('ram')">
+          <div class="csec-icon" id="ico-ram"></div>
+          <div class="csec-info">
+            <div class="csec-name">Memory (RAM)</div>
+            <div class="csec-sel empty" id="sel-ram">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-ram">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-ram">
+          <p class="cdesc">RAM is your PC&rsquo;s short-term workspace. More = smoother multitasking. AM4 and LGA1700 platforms use DDR4. AM5 and LGA1851 use DDR5. Mixing the wrong type won&rsquo;t work &mdash; the compat checker will warn you.</p>
+          <div class="opts-grid" id="opts-ram"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-storage">
+        <div class="csec-hdr" onclick="toggle('storage')">
+          <div class="csec-icon" id="ico-storage"></div>
+          <div class="csec-info">
+            <div class="csec-name">Storage (NVMe SSD)</div>
+            <div class="csec-sel empty" id="sel-storage">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-storage">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-storage">
+          <p class="cdesc">Brand matters &mdash; Samsung and WD are the gold standards for reliability and warranty. Kingston NV3 is solid for budget. Avoid no-name drives for your primary drive. Options are grouped by capacity.</p>
+          <div id="storage-groups"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-case">
+        <div class="csec-hdr" onclick="toggle('case')">
+          <div class="csec-icon" id="ico-case"></div>
+          <div class="csec-info">
+            <div class="csec-name">Case (Chassis)</div>
+            <div class="csec-sel empty" id="sel-case">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-case">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-case">
+          <p class="cdesc">The case houses everything and affects airflow, size, and looks. Mid-towers are the sweet spot &mdash; plenty of room, easy to work in, great airflow. Want to show off your build? Go with tempered glass and RGB.</p>
+          <div class="opts-grid" id="opts-case"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-psu">
+        <div class="csec-hdr" onclick="toggle('psu')">
+          <div class="csec-icon" id="ico-psu"></div>
+          <div class="csec-info">
+            <div class="csec-name">Power Supply (PSU)</div>
+            <div class="csec-sel empty" id="sel-psu">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-psu">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-psu">
+          <div class="psu-box"><b>80+ Ratings explained:</b> Bronze (82&ndash;85% efficient) is fine for budget builds. <b>Gold (87&ndash;90%)</b> is the sweet spot &mdash; quieter, cooler, lasts longer, recommended for most builds. Platinum (90&ndash;92%) is for heavy 24/7 use. Higher rating = less wasted heat = longer lifespan.</div>
+          <div class="opts-grid" id="opts-psu"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-cooler">
+        <div class="csec-hdr" onclick="toggle('cooler')">
+          <div class="csec-icon" id="ico-cooler"></div>
+          <div class="csec-info">
+            <div class="csec-name">CPU Cooler</div>
+            <div class="csec-sel empty" id="sel-cooler">Not selected</div>
+          </div>
+          <span class="csec-chev" id="chev-cooler">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-cooler">
+          <p class="cdesc"><b style="color:var(--txt)">Air cooler</b> = metal heatsink tower that sits on the CPU with a fan. Reliable, quiet, no moving liquid. <b style="color:var(--txt)">AIO liquid cooler</b> = pump on the CPU connected to a radiator. Keeps CPUs cooler under heavy load and looks cleaner in glass-panel cases.</p>
+          <div class="opts-grid" id="opts-cooler"></div>
+        </div>
+      </div>
+
+      <div class="csec" id="csec-fans">
+        <div class="csec-hdr" onclick="toggle('fans')">
+          <div class="csec-icon" id="ico-fans"></div>
+          <div class="csec-info">
+            <div class="csec-name">Case Fans (3-Pack)</div>
+            <div class="csec-sel empty" id="sel-fans">Not selected</div>
+          </div>
+ 
+<div class="wz-nav" id="wz-nav-bar">
+  <button class="wz-btn wz-back" id="wz-back" onclick="wzBack()" style="display:none;">&larr; Back</button>
+  <button class="wz-btn wz-skip" id="wz-skip" onclick="wzSkip()" style="display:none;">Skip</button>
+  <button class="wz-btn wz-next" id="wz-next" onclick="wzNext()">Next &rarr;</button>
+</div>
+         <span class="csec-chev" id="chev-fans">&#9660;</span>
+        </div>
+        <div class="csec-body" id="body-fans">
+          <p class="cdesc">Case fans keep air moving through the whole build &mdash; cool air in from the front, hot air out the back and top. Most builds need 3&ndash;6 fans. These 120mm 3-packs are the standard. Some cases include fans but upgrading makes a real difference in temps and noise.</p>
+          <div class="opts-grid" id="opts-fans"></div>
+        </div>
+      </div>
+
+      <div class="compat" id="compat-box">
+        <div class="compat-title">&#128268; Compatibility Check</div>
+        <div class="compat-hint" id="compat-msg">Select CPU and Motherboard to check socket compatibility.</div>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="pp">
+        <div class="pp-title">Your Build Estimate</div>
+        <div id="pp-rows">
+          <div class="pp-row"><span class="pp-lbl">GPU</span><span class="pp-val dim" id="pp-gpu">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">CPU</span><span class="pp-val dim" id="pp-cpu">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">Motherboard</span><span class="pp-val dim" id="pp-mobo">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">RAM</span><span class="pp-val dim" id="pp-ram">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">Storage</span><span class="pp-val dim" id="pp-storage">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">Case</span><span class="pp-val dim" id="pp-case">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">PSU</span><span class="pp-val dim" id="pp-psu">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">CPU Cooler</span><span class="pp-val dim" id="pp-cooler">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">Case Fans</span><span class="pp-val dim" id="pp-fans">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">Thermal paste &amp; misc</span><span class="pp-val" id="pp-base">&mdash;</span></div>
+        </div>
+        <div class="pp-total">
+          <span class="pp-total-lbl">Estimated Total</span>
+          <span class="pp-total-val" id="pp-total">$&mdash;</span>
+        </div>
+        <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
+        <p class="pp-note">All prices are <strong>estimates only</strong> — verified June 2026. Assembly fee not included. Tower only — no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
+        <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM prices are elevated in 2026</strong> due to AI-driven memory shortages. DDR5 kits are 3–4x higher than 2025 lows. Verify on PCPartPicker before ordering.</p>
+        <!-- PRICE UPDATE: Change date below monthly. Update DATA object prices in script section. -->
+        <p class="pp-upd">Prices verified: June 2026 &mdash; <a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">Live RAM trends &#8599;</a></p>
+        <div class="pp-actions">
+          <button class="btn btn-green" onclick="goToContact()" style="width:100%;">Request This Build &#8594;</button>
+          <button class="btn btn-secondary" onclick="shareMyBuild()" style="width:100%;">&#128279; Share My Build</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="rev" style="background:var(--surf);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:3.5rem 0;">
+  <div class="sec">
+    <div class="sec-lbl">Our Work</div>
+    <h2 class="sec-title">Real Builds. <span>Real Results.</span></h2>
+    <p class="sec-sub">Every PC we build is assembled with care, stress tested for 24 hours, and backed by a 30-day warranty. Here are three examples.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-img"><span style="font-size:2rem">&#128444;&#65039;</span><span>Photo coming soon</span></div>
+        <div class="proof-body">
+          <span class="proof-tag">Built From Scratch</span>
+          <div class="proof-title">Full Custom Gaming Build</div>
+          <div class="proof-desc">Every component sourced and assembled from zero. Clean cable management, no shortcuts. Booted first try, stable for 24 hours on the burn-in test.</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-imgs">
+          <img src="pc_upgrade.jpg" alt="AMD gaming build upgrade">
+          <img src="pc_pic.jpg" alt="Segotep 650W PSU detail">
+        </div>
+          <div class="proof-title">Gaming Rig Upgrade</div>
+          <div class="proof-desc">Upgraded GPU from RX&nbsp;580 to RX&nbsp;6700&nbsp;XT for a massive 1080p/1440p performance jump. Upgraded PSU from 550W to 650W (Segotep GN650W 80+&nbsp;Gold) to handle the new card. Added new NVMe SSD and installed a fresh Windows license.</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img"><span style="font-size:2rem">&#128444;&#65039;</span><span>Photo coming soon</span></div>
+        <div class="proof-body">
+          <span class="proof-tag">Legacy Upgrade</span>
+          <div class="proof-title">Budget System Refresh</div>
+          <div class="proof-desc">Extended an older build&rsquo;s useful life by 2&ndash;3 years. Smart component choices made a big impact without breaking the bank.</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-banner">
+      <span style="font-size:1.75rem;flex-shrink:0">&#129514;</span>
+      <div><b>Every build goes through our full testing process.</b> We test from basic everyday tasks through hardcore gaming sessions &mdash; then leave the machine running for <b>24 hours straight</b> to verify complete stability under real load. You get a machine we&rsquo;re confident in, not just one that turned on.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec rev">
+  <div class="sec-lbl">Upgrade Service</div>
+  <h2 class="sec-title">Already Have a PC? <span>We Do Upgrades Too.</span></h2>
+  <p class="sec-sub">You don&rsquo;t always need a new build to get more performance. Sometimes one upgrade changes everything &mdash; and we&rsquo;ll come to you to do it.</p>
+  <div class="ug-grid">
+    <div class="ug-card"><div class="ug-icon">&#128165;</div><div class="ug-title">GPU Swap</div><div class="ug-price">Starting at $50 labor</div><div class="ug-desc">Upgrade to a newer graphics card. We remove the old one, install the new one, update drivers. Biggest single-upgrade performance gain possible.</div></div>
+    <div class="ug-card"><div class="ug-icon">&#129504;</div><div class="ug-title">RAM Upgrade</div><div class="ug-price">Starting at $35 labor</div><div class="ug-desc">Adding more RAM or upgrading to faster sticks. One of the cheapest ways to breathe new life into a sluggish system.</div></div>
+    <div class="ug-card"><div class="ug-icon">&#128190;</div><div class="ug-title">SSD Installation</div><div class="ug-price">Starting at $35 labor</div><div class="ug-desc">Swap your old spinning hard drive for an NVMe SSD. Boot in seconds, games load instantly. Night and day difference in feel.</div></div>
+    <div class="ug-card"><div class="ug-icon">&#128295;</div><div class="ug-title">Full System Refresh</div><div class="ug-price">Starting at $100 labor</div><div class="ug-desc">Deep clean, new thermal paste, cable cleanup, driver updates, and a full performance check. Like new again.</div></div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;">
+    <a href="#contact" class="btn btn-primary">Request an Upgrade &#8594;</a>
+  </div>
+</section>
+
+<section class="rev" style="background:var(--surf);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:3.5rem 0;">
+  <div class="sec">
+    <div class="sec-lbl">How It Works</div>
+    <h2 class="sec-title">You Pick It. <span>We Build It.</span></h2>
+    <p class="sec-sub">No YouTube tutorials. No screwdrivers. No stress.</p>
+    <div class="hiw-grid">
+      <div class="hiw-card"><div class="hiw-num">01</div><div class="hiw-title">Configure Your Build</div><div class="hiw-desc">Use the tool above to pick components and get an instant price estimate. Not sure what to pick? We&rsquo;ll guide you.</div></div>
+      <div class="hiw-card"><div class="hiw-num">02</div><div class="hiw-title">Order Your Parts</div><div class="hiw-desc">Parts are your responsibility to purchase. First-timer? We&rsquo;ll walk you through the ordering process step by step at no extra charge.</div></div>
+      <div class="hiw-card"><div class="hiw-num">03</div><div class="hiw-title">Submit Your Request</div><div class="hiw-desc">Send us your build details. We&rsquo;ll reach back out within 24&ndash;28 hours to confirm and schedule.</div></div>
+      <div class="hiw-card"><div class="hiw-num">04</div><div class="hiw-title">We Assemble &amp; Test</div><div class="hiw-desc">We build, cable manage, configure BIOS, install drivers, and run our 24-hour burn-in test before delivery.</div></div>
+      <div class="hiw-card"><div class="hiw-num">05</div><div class="hiw-title">Delivery</div><div class="hiw-desc"><b>3&ndash;4 days</b> once all parts are in hand. Up to 1 week if waiting on shipping. We&rsquo;ll keep you updated throughout.</div></div>
+    </div>
+    <h3 style="font-weight:700;color:#fff;margin-bottom:.75rem;font-size:1rem;">Assembly Fees</h3>
+    <div class="fee-box">
+      <div class="fee-row"><span class="fee-lbl">Standard mid-tower build (local in-home)</span><span class="fee-val">Starting at $75</span></div>
+      <div class="fee-row"><span class="fee-lbl">Mini-ITX / compact case</span><span class="fee-val">Starting at $125</span></div>
+      <div class="fee-row"><span class="fee-lbl">Remote / shipped build</span><span class="fee-val">Starting at $50</span></div>
+      <div class="fee-row"><span class="fee-lbl">OS installation add-on</span><span class="fee-val">+$35</span></div>
+    </div>
+    <h3 style="font-weight:700;color:#fff;margin-bottom:.75rem;font-size:1rem;">Warranty &amp; Parts Policy</h3>
+    <div class="warranty-grid">
+      <div class="w-card"><div class="w-icon">&#128737;&#65039;</div><div class="w-title">30-Day Assembly Warranty &mdash; Free</div><div class="w-desc">If something fails due to our work within 30 days, we fix it at no charge. No questions asked.</div></div>
+      <div class="w-card"><div class="w-icon">&#128230;</div><div class="w-title">RMA Concierge Service &mdash; $25/claim</div><div class="w-desc">Need to return a defective part? We handle the entire RMA process: box it, ship it, reinstall the replacement.</div></div>
+      <div class="w-card"><div class="w-icon">&#128722;</div><div class="w-title">Parts Policy</div><div class="w-desc">You buy your own parts. We guide first-timers through the ordering process step by step &mdash; at no extra charge.</div></div>
+      <div class="w-card"><div class="w-icon">&#128197;</div><div class="w-title">Turnaround Time</div><div class="w-desc">3&ndash;4 days once all parts are in hand. Up to 1 week waiting on shipping. You&rsquo;ll always know where things stand.</div></div>
+    </div>
+    <div class="area-info">
+      <div class="area-card">
+        <h4>&#128205; Service Area</h4>
+        <p>Based in <b>Melissa, TX</b>. Serving <b>North Texas</b> for in-home assembly. Out of area? Ship us your parts and we&rsquo;ll build and ship back.</p>
+        <div class="city-tags">
+          <span class="city-tag">Melissa</span><span class="city-tag">McKinney</span><span class="city-tag">Frisco</span><span class="city-tag">Allen</span><span class="city-tag">Prosper</span><span class="city-tag">Plano</span><span class="city-tag">Celina</span><span class="city-tag">+ surrounding North Texas</span>
+        </div>
+        <h4 style="margin-top:1rem;font-weight:700;font-size:.85rem;color:var(--sub);">Business Hours</h4>
+        <div class="hours-row">
+          <span class="badge-sm">Mon&ndash;Sat: 9AM&ndash;8PM</span>
+          <span class="badge-sm">Sun: By Appointment</span>
+        </div>
+        <h4 style="margin-top:.75rem;font-weight:700;font-size:.85rem;color:var(--sub);">Payment Accepted</h4>
+        <div class="pay-row">
+          <span class="badge-sm">&#128184; Zelle</span>
+          <span class="badge-sm">&#128241; Venmo</span>
+          <span class="badge-sm">&#127837;&#65039; PayPal</span>
+          <span class="badge-sm">&#128181; Cash</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="sec rev">
+  <div class="sec-lbl">FAQ</div>
+  <h2 class="sec-title"><span>Common Questions</span></h2>
+  <p class="sec-sub">Straight answers &mdash; no fluff.</p>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do I have to buy my own parts or will you source them? <span class="faq-plus">+</span></button><div class="faq-a">Parts are your responsibility to purchase. You buy them (Amazon, Newegg, Micro Center) and have them shipped to you or us. If you&rsquo;re a first-timer with no idea where to start &mdash; that&rsquo;s totally fine. We&rsquo;ll personally walk you through the ordering process so you don&rsquo;t accidentally buy the wrong thing.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do you come to me or do I bring parts somewhere? <span class="faq-plus">+</span></button><div class="faq-a">For North Texas customers, we come to you. No hauling anything anywhere &mdash; we show up with tools, build it at your place, and leave with a tested machine. For out-of-area customers, you ship parts to us and we ship the completed build back.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How long does a build take start to finish? <span class="faq-plus">+</span></button><div class="faq-a">Once all parts are in hand: 3&ndash;4 days. This includes assembly, cable management, BIOS setup, driver installs, and our 24-hour burn-in test. Allow up to 1 week if we&rsquo;re waiting on parts to arrive. We&rsquo;ll keep you posted.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What if a part turns out to be incompatible? <span class="faq-plus">+</span></button><div class="faq-a">That&rsquo;s exactly why the compatibility checker on this page exists. We also review every build before confirming. If anything looks off, we&rsquo;ll catch it before you order anything. We&rsquo;d rather catch it early than waste your money on a return.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Is Windows 11 included in the price? <span class="faq-plus">+</span></button><div class="faq-a">No &mdash; the build estimate covers hardware only. Windows 11 Home runs about $100&ndash;140. Linux is completely free and works great for gaming with Steam&rsquo;s Proton layer. Ask us about it. We also offer OS installation as an add-on for $35.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Can you upgrade my existing PC instead of building new? <span class="faq-plus">+</span></button><div class="faq-a">Absolutely &mdash; upgrades are one of the best ways to extend your PC&rsquo;s life without spending a fortune. GPU swaps, RAM upgrades, SSD installs, and full system refreshes all starting at $35 in labor. Reach out and tell us what you have and what you want to improve.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What happens if something breaks after you build it? <span class="faq-plus">+</span></button><div class="faq-a">Every build comes with a 30-day assembly warranty. If something fails because of our work, we fix it free. If a part itself fails (manufacturer defect), that&rsquo;s covered by the manufacturer&rsquo;s warranty. We also offer RMA concierge service starting at $25 where we handle the entire return process on your behalf.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What&rsquo;s included in the assembly fee? <span class="faq-plus">+</span></button><div class="faq-a">Full hardware installation and cable management, BIOS setup and updates, thermal paste application, driver installation, stability testing under load, and our 24-hour burn-in test. Optional add-ons: OS installation (+$35) and RMA concierge (+$25 per claim).</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Can I use parts I already own? <span class="faq-plus">+</span></button><div class="faq-a">Yes, as long as they&rsquo;re compatible with the rest of the build. We&rsquo;ll review your existing parts when you submit your request. Common reuses: cases, storage drives, and PSUs &mdash; just make sure they meet the power requirements.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How do I pay? <span class="faq-plus">+</span></button><div class="faq-a">Zelle, Venmo, PayPal, or cash. Payment is due upon completion and your satisfaction. We&rsquo;ll confirm payment details when we schedule your build.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What&rsquo;s the difference vs a prebuilt from Best Buy? <span class="faq-plus">+</span></button><div class="faq-a">A Best Buy prebuilt uses budget-bin parts to hit a price point, charges retail markup on everything, and comes with bloatware. A RigForge build uses the exact parts you choose at their actual market price, is assembled by hand with care, gets properly cable managed, and is tested for 24 hours. And we come to your house. Geek Squad charges $100+ just to look at your PC.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do you respond on weekends? <span class="faq-plus">+</span></button><div class="faq-a">Mon&ndash;Sat 9AM&ndash;8PM. Sunday by appointment only. All form submissions get a response within 24&ndash;28 hours. If you reach out Sunday we&rsquo;ll get back to you first thing Monday.</div></div>
+</section>
+
+<section class="rev" style="background:var(--surf);border-top:1px solid var(--brd);padding:3.5rem 0;">
+  <div class="sec">
+    <div class="sec-lbl">Don&rsquo;t Forget</div>
+    <h2 class="sec-title">Your PC Build <span>Checklist</span></h2>
+    <p class="sec-sub">A custom PC tower is just the tower. Make sure you also have these items before you start.</p>
+    <div class="cl-grid">
+      <div class="cl-item"><span class="cl-icon">&#128250;</span><div><div class="cl-name">Monitor</div><div class="cl-price">~$150&ndash;500 &middot; 1080p for budget, 1440p for mid+</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#9000;</span><div><div class="cl-name">Keyboard</div><div class="cl-price">~$30&ndash;150 &middot; Membrane budget, mechanical preferred</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mouse</div><div class="cl-price">~$25&ndash;100 &middot; Any USB mouse works to start</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#127911;</span><div><div class="cl-name">Headset / Speakers</div><div class="cl-price">~$30&ndash;200 &middot; Don&rsquo;t sleep on audio</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#127760;</span><div><div class="cl-name">WiFi Adapter</div><div class="cl-price">~$25&ndash;60 &middot; Many mobos lack built-in WiFi &mdash; check first</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128421;</span><div><div class="cl-name">Monitor Cable</div><div class="cl-price">~$10&ndash;30 &middot; DisplayPort preferred for gaming</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128190;</span><div><div class="cl-name">Windows 11</div><div class="cl-price">~$100&ndash;140 &middot; Or ask us about Linux (free)</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mousepad</div><div class="cl-price">~$15&ndash;50 &middot; Large desk pad makes a real difference</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec rev">
+  <div class="sec-lbl">Step 03 &mdash; Let&rsquo;s Get Started</div>
+  <h2 class="sec-title">Request <span>Your Build</span></h2>
+  <p class="sec-sub">Fill this out and we&rsquo;ll reach back out within <b style="color:var(--txt)">24&ndash;28 hours</b> using your preferred contact method.</p>
+
+  <div class="build-summ">
+    <h4>Your Selected Build</h4>
+    <div id="summ-rows"><div class="summ-row"><span style="color:var(--mut)">No components selected yet &mdash; configure your build above first.</span></div></div>
+  </div>
+
+  <div class="parts-note">
+    <b>&#128230; Parts are your responsibility to purchase.</b> You order the parts, have them shipped to you or to us, and we handle everything from there. Not sure where to order? Say so in the notes &mdash; we&rsquo;ll walk you through it.
+  </div>
+
+  <div id="form-wrap">
+    <form name="pc-build-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="pc-build-request">
+      <input type="hidden" name="build_summary" id="hid-summary">
+      <input type="hidden" name="use_case" id="hid-uc">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="form-grid">
+        <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
+        <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="form-grid">
+        <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
+        <div class="fg"><label>Preferred Contact *</label><select name="contact_pref" required><option value="" disabled selected>How should we reach you?</option><option>Email</option><option>Phone Call</option><option>Text Message</option></select></div>
+      </div>
+      <div class="fg"><label>City / Zip Code</label><input type="text" name="location" placeholder="Melissa, TX 75454"></div>
+      <div class="fg"><label>Anything else we should know?</label><textarea name="notes" placeholder="Timeline, budget flexibility, first-timer needing ordering help, out-of-state shipping, specific questions..."></textarea></div>
+      <div class="priv-note"><span>&#128274;</span><span>Your info is submitted securely via Netlify and only used to contact you about your build request. We don&rsquo;t store, sell, or share your data.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:.85rem;">Send My Build Request &#8594;</button>
+    </form>
+  </div>
+  <div class="success-wrap" id="success-wrap">
+    <div class="suc-icon">&#10004;&#65039;</div>
+    <div class="suc-h3">Request Sent!</div>
+    <p class="suc-p">We&rsquo;ll reach back out within <b>24&ndash;28 hours</b> using your preferred contact method. Thanks for choosing RigForge.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-i">
+    <div>
+      <div class="ft-brand">Rig<span style="color:var(--cyan)">Forge</span></div>
+      <div class="ft-tag">Veteran-owned custom PC building service based in Melissa, TX. Serving North Texas and beyond. We build it right, test it right, and back it up.</div>
+      <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
+      <div class="pay-badges">
+        <span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span>
+      </div>
+      <div style="margin-top:.75rem;font-size:.8rem;color:var(--mut);">
+        Questions? Call or text us directly.
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="pc-builder.html">PC Builder</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Hours</h4>
+      <ul>
+        <li>Mon&ndash;Sat: 9AM&ndash;8PM</li>
+        <li>Sun: By Appointment</li>
+      </ul>
+      <h4 style="margin-top:1rem;">Serving</h4>
+      <ul>
+        <li>Melissa &middot; McKinney</li>
+        <li>Frisco &middot; Allen &middot; Prosper</li>
+        <li>Plano &middot; Celina &middot; + more</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>&copy; 2026 RigForge &middot; Veteran-Owned &middot; Melissa, TX</span>
+    <span>&#127482;&#127480; Proudly serving North Texas</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">&#128279; Build link copied!</div>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<script>
+'use strict';
+
+// ============================================================
+// ICONS (SVG injected into component headers)
+// ============================================================
+const ICONS = {
+  gpu:'<svg viewBox="0 0 48 48" fill="none"><rect x="2" y="12" width="44" height="26" rx="3" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><circle cx="14" cy="25" r="7" stroke="#22d3ee" stroke-width="1.5"/><circle cx="14" cy="25" r="3" fill="#22d3ee" opacity=".3"/><circle cx="30" cy="25" r="7" stroke="#22d3ee" stroke-width="1.5"/><circle cx="30" cy="25" r="3" fill="#22d3ee" opacity=".3"/><rect x="44" y="16" width="2" height="3" fill="#22d3ee"/><rect x="44" y="21" width="2" height="3" fill="#22d3ee"/><rect x="44" y="26" width="2" height="3" fill="#22d3ee"/><rect x="14" y="8" width="14" height="4" rx="1" fill="#22d3ee" opacity=".5"/></svg>',
+  cpu:'<svg viewBox="0 0 48 48" fill="none"><rect x="11" y="11" width="26" height="26" rx="3" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><rect x="16" y="16" width="16" height="16" rx="1.5" fill="#22d3ee" opacity=".15" stroke="#22d3ee" stroke-width="1"/><line x1="17" y1="11" x2="17" y2="7" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="23" y1="11" x2="23" y2="7" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="29" y1="11" x2="29" y2="7" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="17" y1="41" x2="17" y2="37" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="23" y1="41" x2="23" y2="37" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="29" y1="41" x2="29" y2="37" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="17" x2="7" y2="17" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="23" x2="7" y2="23" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="29" x2="7" y2="29" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="41" y1="17" x2="37" y2="17" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="41" y1="23" x2="37" y2="23" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="41" y1="29" x2="37" y2="29" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  mobo:'<svg viewBox="0 0 48 48" fill="none"><rect x="3" y="3" width="42" height="42" rx="3" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><rect x="8" y="8" width="14" height="14" rx="2" fill="#22d3ee" opacity=".15" stroke="#22d3ee" stroke-width="1"/><rect x="9" y="27" width="30" height="4" rx="1" fill="none" stroke="#22d3ee" stroke-width="1"/><rect x="9" y="34" width="30" height="4" rx="1" fill="none" stroke="#22d3ee" stroke-width="1"/><rect x="27" y="8" width="12" height="8" rx="1" fill="none" stroke="#22d3ee" stroke-width="1"/><circle cx="36" cy="22" r="3" fill="none" stroke="#22d3ee" stroke-width="1.2"/></svg>',
+  ram:'<svg viewBox="0 0 48 48" fill="none"><rect x="5" y="6" width="14" height="36" rx="2" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><rect x="8" y="10" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="8" y="17" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="8" y="24" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="8" y="38" width="5" height="2" rx=".5" fill="#060d1a"/><rect x="29" y="6" width="14" height="36" rx="2" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><rect x="32" y="10" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="32" y="17" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="32" y="24" width="8" height="4" rx=".5" fill="#22d3ee" opacity=".5"/><rect x="32" y="38" width="5" height="2" rx=".5" fill="#060d1a"/></svg>',
+  storage:'<svg viewBox="0 0 48 48" fill="none"><rect x="3" y="17" width="42" height="14" rx="2" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><rect x="5" y="20" width="6" height="8" rx="1" fill="#22d3ee" opacity=".4"/><rect x="15" y="20" width="6" height="8" rx="1" fill="#22d3ee" opacity=".4"/><rect x="25" y="20" width="6" height="8" rx="1" fill="#22d3ee" opacity=".4"/><rect x="37" y="21" width="5" height="2" rx=".5" fill="#22d3ee" opacity=".6"/><rect x="37" y="25" width="5" height="2" rx=".5" fill="#22d3ee" opacity=".6"/><line x1="5" y1="17" x2="5" y2="14" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="17" x2="8" y2="14" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  case:'<svg viewBox="0 0 48 48" fill="none"><rect x="10" y="3" width="28" height="42" rx="3" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><circle cx="24" cy="10" r="3" fill="none" stroke="#22d3ee" stroke-width="1.2"/><rect x="14" y="17" width="20" height="15" rx="2" fill="none" stroke="#22d3ee" stroke-width="1"/><rect x="17" y="36" width="6" height="3" rx=".5" fill="#22d3ee" opacity=".4"/><line x1="36" y1="4" x2="36" y2="44" stroke="#22d3ee" stroke-width="1" opacity=".4"/></svg>',
+  psu:'<svg viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="36" height="28" rx="3" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><circle cx="16" cy="24" r="8" fill="none" stroke="#22d3ee" stroke-width="1.2"/><circle cx="16" cy="24" r="3" fill="#22d3ee" opacity=".3"/><line x1="16" y1="16" x2="16" y2="19" stroke="#22d3ee" stroke-width="1" stroke-linecap="round"/><line x1="16" y1="29" x2="16" y2="32" stroke="#22d3ee" stroke-width="1" stroke-linecap="round"/><line x1="8" y1="24" x2="11" y2="24" stroke="#22d3ee" stroke-width="1" stroke-linecap="round"/><line x1="21" y1="24" x2="24" y2="24" stroke="#22d3ee" stroke-width="1" stroke-linecap="round"/><rect x="30" y="14" width="10" height="2" rx="1" fill="#22d3ee" opacity=".5"/><rect x="30" y="19" width="10" height="2" rx="1" fill="#22d3ee" opacity=".5"/><rect x="30" y="24" width="10" height="2" rx="1" fill="#22d3ee" opacity=".5"/><rect x="30" y="29" width="10" height="2" rx="1" fill="#22d3ee" opacity=".5"/></svg>',
+  cooler:'<svg viewBox="0 0 48 48" fill="none"><rect x="9" y="28" width="30" height="14" rx="2" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><line x1="14" y1="28" x2="14" y2="12" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="28" x2="19" y2="10" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="28" x2="24" y2="10" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="28" x2="29" y2="10" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/><line x1="34" y1="28" x2="34" y2="12" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="36" r="4" fill="none" stroke="#22d3ee" stroke-width="1.2"/></svg>',
+  fans:'<svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" rx="4" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><circle cx="24" cy="24" r="14" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".3"/><circle cx="24" cy="24" r="4" fill="#22d3ee" opacity=".3" stroke="#22d3ee" stroke-width="1"/><path d="M24 20 C26 16 30 15 31 18 C32 21 28 22 24 20Z" fill="#22d3ee" opacity=".6"/><path d="M28 24 C32 22 34 25 32 28 C30 31 27 28 28 24Z" fill="#22d3ee" opacity=".6"/><path d="M24 28 C22 32 18 33 17 30 C16 27 20 26 24 28Z" fill="#22d3ee" opacity=".6"/><path d="M20 24 C16 26 14 23 16 20 C18 17 21 20 20 24Z" fill="#22d3ee" opacity=".6"/><circle cx="8" cy="8" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="40" cy="8" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="8" cy="40" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="40" cy="40" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/></svg>'
+};
+
+// ============================================================
+// DATA  -- PRICE UPDATE: update lo/hi values monthly
+//          Socket: AM4 | AM5 | LGA1700 | LGA1851
+//          DDR: DDR4 | DDR5
+// ============================================================
+const DATA = {
+  gpu: {
+    budget:[
+      {n:'NVIDIA RTX 5050 8GB',lo:278,hi:312,s:'1080p entry · Handles all modern titles at high settings',pcp:'https://pcpartpicker.com/search/?q=RTX+5050'},
+      {n:'NVIDIA RTX 5060 8GB',lo:335,hi:368,s:'Strong 1080p, capable 1440p · Blackwell gen',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+8GB'},
+      {n:'AMD RX 9060 XT 8GB',lo:352,hi:392,s:'AMD alternative · RDNA 4 · Great open-source drivers',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+8GB'},
+      {n:'NVIDIA RTX 5060 Ti 8GB',lo:368,hi:425,s:'1080p/1440p · Faster Ti chip · DLSS 4 · 8GB is limiting by 2027',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+8GB'}
+    ],
+    mid:[
+      {n:'AMD RX 9060 XT 16GB',lo:428,hi:478,s:'16GB VRAM future-proofs this card significantly · RDNA 4',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'},
+      {n:'NVIDIA RTX 5060 Ti 16GB',lo:565,hi:625,s:'Speed + headroom · Best mid-range overall balance',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+16GB'},
+      {n:'AMD RX 9070 16GB',lo:545,hi:625,s:'1440p powerhouse · Beats RTX 5070 in many benchmarks · Near MSRP now',pcp:'https://pcpartpicker.com/search/?q=RX+9070'},
+      {n:'NVIDIA RTX 5070 12GB',lo:605,hi:672,s:'Top 1440p · DLSS 4 Multi-Frame Gen · 4K capable',pcp:'https://pcpartpicker.com/search/?q=RTX+5070'}
+    ],
+    high:[
+      {n:'AMD RX 9070 XT 16GB',lo:648,hi:758,s:'1440p/4K champion · 16GB · AMD RDNA 4 flagship mid · Prices dropping',pcp:'https://pcpartpicker.com/search/?q=RX+9070+XT'},
+      {n:'NVIDIA RTX 5070 Ti 16GB',lo:975,hi:1108,s:'High-refresh 1440p / 4K · Big jump over 5070 · DLSS 4',pcp:'https://pcpartpicker.com/search/?q=RTX+5070+Ti'},
+      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,s:'4K ultra performance · Near-top Blackwell · No compromises · Poor value vs 5070 Ti',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'}
+    ],
+    ultra:[
+      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,s:'Second-best GPU alive · 4K / high-refresh beast',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
+      {n:'NVIDIA RTX 5090 32GB',lo:3200,hi:4200,s:'Best GPU on the market · 4K/8K · AI/ML workloads · 32GB VRAM · Elevated above MSRP',pcp:'https://pcpartpicker.com/search/?q=RTX+5090'}
+    ]
+  },
+  cpu: {
+    budget:[
+      {n:'AMD Ryzen 5 4500',lo:78,hi:105,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Budget entry · Good for light gaming + everyday use',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+4500'},
+      {n:'AMD Ryzen 5 5600',lo:105,hi:142,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Proven performer · Best budget gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600'},
+      {n:'AMD Ryzen 5 5600X',lo:135,hi:168,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Boosted clocks · Small OC headroom over 5600',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600X'},
+      {n:'Intel Core i5-12400F',lo:145,hi:185,sk:'LGA1700',dd:'DDR4',s:'6-core LGA1700 · Solid 1080p gaming · No iGPU',pcp:'https://pcpartpicker.com/search/?q=i5-12400F'}
+    ],
+    mid:[
+      {n:'Intel Core i5-14600K',lo:215,hi:258,sk:'LGA1700',dd:'DDR4',s:'14-core hybrid · Phenomenal gaming + streaming value',pcp:'https://pcpartpicker.com/search/?q=i5-14600K'},
+      {n:'Intel Core i5-14600KF',lo:228,hi:268,sk:'LGA1700',dd:'DDR4',s:'Same as 14600K · No iGPU · Slightly cheaper',pcp:'https://pcpartpicker.com/search/?q=i5-14600KF'},
+      {n:'AMD Ryzen 5 7600X',lo:172,hi:215,sk:'AM5',dd:'DDR5',s:'6-core AM5 · Fast single-core · Future platform',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+7600X'},
+      {n:'AMD Ryzen 5 9600X',lo:198,hi:238,sk:'AM5',dd:'DDR5',s:'6-core Zen 5 · 5.4GHz boost · Best mid gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+9600X'},
+      {n:'Intel Core Ultra 5 245KF',lo:188,hi:228,sk:'LGA1851',dd:'DDR5',s:'14-core Arrow Lake · Current-gen Intel · No iGPU',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+5+245KF'},
+      {n:'AMD Ryzen 7 7700X',lo:238,hi:278,sk:'AM5',dd:'DDR5',s:'8-core AM5 · Great streaming + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+7700X'}
+    ],
+    high:[
+      {n:'AMD Ryzen 7 9700X',lo:295,hi:342,sk:'AM5',dd:'DDR5',s:'8-core Zen 5 · Improved IPC · Runs cool',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9700X'},
+      {n:'AMD Ryzen 9 7900X',lo:315,hi:378,sk:'AM5',dd:'DDR5',s:'12-core AM5 · Serious creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+7900X'},
+      {n:'Intel Core i7-14700K',lo:315,hi:372,sk:'LGA1700',dd:'DDR4',s:'20-core hybrid · Gaming + content creation beast',pcp:'https://pcpartpicker.com/search/?q=i7-14700K'},
+      {n:'Intel Core Ultra 7 265KF',lo:285,hi:338,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · No iGPU · Excellent multi-threaded',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265KF'},
+      {n:'Intel Core Ultra 7 265K',lo:302,hi:355,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · Includes iGPU · Current-gen flagship mid',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265K'}
+    ],
+    ultra:[
+      {n:'AMD Ryzen 7 9800X3D',lo:465,hi:512,sk:'AM5',dd:'DDR5',s:'8-core · 3D V-Cache · Best gaming CPU alive. Period.',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9800X3D'},
+      {n:'AMD Ryzen 9 9900X',lo:485,hi:548,sk:'AM5',dd:'DDR5',s:'12-core Zen 5 · Top creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9900X'},
+      {n:'AMD Ryzen 9 9950X',lo:515,hi:598,sk:'AM5',dd:'DDR5',s:'16-core Zen 5 · Absolute workstation + gaming king',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9950X'},
+      {n:'Intel Core i9-14900K',lo:448,hi:508,sk:'LGA1700',dd:'DDR4',s:'24-core · At all-time low price in 2026 · Great DDR4 value play',pcp:'https://pcpartpicker.com/search/?q=i9-14900K'},
+      {n:'Intel Core Ultra 9 285K',lo:535,hi:628,sk:'LGA1851',dd:'DDR5',s:'24-core Arrow Lake flagship · Maximum Intel productivity',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+9+285K'}
+    ]
+  },
+  mobo: {
+    budget:[
+      {n:'B550 Motherboard (AM4)',lo:90,hi:138,sk:'AM4',dd:'DDR4',s:'Pairs with Ryzen 4500/5600/5600X · Solid budget board'},
+      {n:'B660 Motherboard (LGA1700)',lo:88,hi:132,sk:'LGA1700',dd:'DDR4',s:'Pairs with i5-12400F · Entry Intel 12th gen board'},
+      {n:'B760 Motherboard (LGA1700)',lo:98,hi:155,sk:'LGA1700',dd:'DDR4',s:'Better VRMs than B660 · More stable under load'},
+      {n:'B860 Motherboard (LGA1851)',lo:118,hi:185,sk:'LGA1851',dd:'DDR5',s:'Pairs with Core Ultra 5 245KF · Entry Arrow Lake'}
+    ],
+    mid:[
+      {n:'X570 Motherboard (AM4)',lo:138,hi:198,sk:'AM4',dd:'DDR4',s:'Premium AM4 · PCIe 4.0 across all lanes'},
+      {n:'Z790 Motherboard (LGA1700)',lo:158,hi:252,sk:'LGA1700',dd:'DDR4',s:'Top 12th/13th/14th gen Intel · Full OC support'},
+      {n:'B650 Motherboard (AM5)',lo:128,hi:212,sk:'AM5',dd:'DDR5',s:'Entry AM5 · Gets you onto the new platform affordably'},
+      {n:'Z890 Motherboard (LGA1851)',lo:225,hi:388,sk:'LGA1851',dd:'DDR5',s:'Pairs with Core Ultra 5/7 · Arrow Lake OC unlocked'}
+    ],
+    high:[
+      {n:'X670 Motherboard (AM5)',lo:225,hi:358,sk:'AM5',dd:'DDR5',s:'High-end AM5 · Serious VRMs · More bandwidth'},
+      {n:'X670E Motherboard (AM5)',lo:288,hi:462,sk:'AM5',dd:'DDR5',s:'AM5 · PCIe 5.0 x16 · Best for fast NVMe SSDs'},
+      {n:'X870 Motherboard (AM5)',lo:325,hi:492,sk:'AM5',dd:'DDR5',s:'Latest AMD chipset · USB4 · Pairs well with 9800X3D'},
+      {n:'Z790 High-End (LGA1700)',lo:288,hi:462,sk:'LGA1700',dd:'DDR4',s:'Pairs with i7-14700K/i9-14900K · Top Intel mid board'}
+    ],
+    ultra:[
+      {n:'X870E Motherboard (AM5)',lo:385,hi:858,sk:'AM5',dd:'DDR5',s:'Best AM5 board for 9800X3D / 9950X · Maximum bandwidth'},
+      {n:'Z890 Extreme (LGA1851)',lo:462,hi:822,sk:'LGA1851',dd:'DDR5',s:'Pairs with Core Ultra 9 285K · Absolute Intel flagship'}
+    ]
+  },
+  ram: {
+    budget:[
+      {n:'16GB DDR4-3200 Kit',lo:145,hi:195,dd:'DDR4',s:'Minimum for gaming in 2026 · AM4 + LGA1700 platforms · [!] Prices up ~3x since mid-2025',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR4+3200'},
+      {n:'32GB DDR4-3200 Kit',lo:252,hi:328,dd:'DDR4',s:'Recommended · Future-proofs your DDR4 build · [!] Memory prices elevated in 2026',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
+      {n:'16GB DDR5-4800 Kit',lo:198,hi:272,dd:'DDR5',s:'Entry DDR5 · For LGA1851 builds · [!] DDR5 prices surged significantly in 2026',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR5+4800'},
+      {n:'32GB DDR5-5600 Kit',lo:298,hi:385,dd:'DDR5',s:'Solid DDR5 · Good balance for Core Ultra 5 builds · [!] Verify current price before ordering',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'}
+    ],
+    mid:[
+      {n:'32GB DDR4-3200 Kit',lo:252,hi:328,dd:'DDR4',s:'Recommended DDR4 · LGA1700 sweet spot · Cheaper than DDR5 right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
+      {n:'32GB DDR5-5600 Kit',lo:298,hi:385,dd:'DDR5',s:'Entry AM5 · Solid for most games and workloads · [!] Check live price before ordering',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'},
+      {n:'32GB DDR5-6000 CL30',lo:318,hi:422,dd:'DDR5',s:'Sweet spot for AM5 · Highly recommended pairing · [!] Memory prices up ~4x from 2025 lows',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
+      {n:'64GB DDR5-6000 Kit',lo:698,hi:958,dd:'DDR5',s:'Content creation + streaming + heavy multitasking · [!] Significant price increase in 2026',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'}
+    ],
+    high:[
+      {n:'32GB DDR5-6000 CL30',lo:318,hi:422,dd:'DDR5',s:'Best starting point for high-end AM5 builds · Verify live price',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
+      {n:'32GB DDR5-6400 CL32',lo:375,hi:458,dd:'DDR5',s:'Faster kit · Noticeable gains with 9800X3D specifically · [!] Memory shortage impacting prices',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
+      {n:'64GB DDR5-6000 Kit',lo:698,hi:958,dd:'DDR5',s:'Gaming + serious content creation · No capacity limits',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'},
+      {n:'64GB DDR5-6400 Kit',lo:798,hi:1052,dd:'DDR5',s:'High-speed 64GB · For creators who game hard · [!] Check PCPartPicker for current price',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'}
+    ],
+    ultra:[
+      {n:'32GB DDR5-6400 CL32',lo:375,hi:458,dd:'DDR5',s:'Optimal for 9800X3D · Best gaming RAM pairing',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
+      {n:'64GB DDR5-6400 Kit',lo:798,hi:1052,dd:'DDR5',s:'High-speed large kit · Workstation + gaming',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'},
+      {n:'96GB DDR5-6400 Kit',lo:1195,hi:1498,dd:'DDR5',s:'Server-adjacent · Extreme rendering + AI workloads · [!] Highly volatile pricing',pcp:'https://pcpartpicker.com/search/?q=96GB+DDR5'},
+      {n:'128GB DDR5-6000 Kit',lo:1895,hi:2495,dd:'DDR5',s:'Maximum capacity · Local AI models + 3D rendering at scale · [!] Verify before ordering',pcp:'https://pcpartpicker.com/search/?q=128GB+DDR5'}
+    ]
+  },
+  storage: [
+    {n:'Kingston NV3 500GB',lo:48,hi:72,cap:'500GB',s:'Budget OS drive · PCIe 4.0 · Gets you booted fast',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+500GB'},
+    {n:'WD Blue SN580 500GB',lo:65,hi:92,cap:'500GB',s:'Better 500GB · Stronger sequential speeds + endurance',pcp:'https://pcpartpicker.com/search/?q=WD+SN580+500GB'},
+    {n:'Kingston NV3 1TB',lo:75,hi:105,cap:'1TB',s:'Budget 1TB · Enough for OS + games · Proven brand',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+1TB'},
+    {n:'WD Black SN770 1TB',lo:108,hi:148,cap:'1TB',s:'Fast 1TB · 5,150 MB/s · No cache dip · Gaming pick',pcp:'https://pcpartpicker.com/search/?q=WD+SN770+1TB'},
+    {n:'Samsung 990 Evo 1TB',lo:118,hi:158,cap:'1TB',s:'Samsung quality · PCIe 4x4/5x2 · Excellent reliability',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+1TB'},
+    {n:'WD Black SN850X 1TB',lo:138,hi:188,cap:'1TB',s:'7,300 MB/s · Top gaming drive · PS5-class speeds',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+1TB'},
+    {n:'Samsung 990 Pro 1TB',lo:155,hi:205,cap:'1TB',s:'Samsung flagship · 7,450 MB/s · Best 1TB endurance',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+1TB'},
+    {n:'WD Black SN7100 2TB',lo:195,hi:248,cap:'2TB',s:'Value 2TB · Strong all-rounder · Best entry 2TB',pcp:'https://pcpartpicker.com/search/?q=WD+SN7100+2TB'},
+    {n:'WD Black SN850X 2TB',lo:208,hi:272,cap:'2TB',s:'Fast 2TB · 200+ games · No compromise on speed',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+2TB'},
+    {n:'Samsung 990 Evo 2TB',lo:215,hi:278,cap:'2TB',s:'Samsung 2TB value tier · Reliable · Great warranty',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+2TB'},
+    {n:'Samsung 990 Pro 2TB',lo:245,hi:312,cap:'2TB',s:'Flagship 2TB · Max speed for power users',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+2TB'},
+    {n:'WD Black SN850X 4TB',lo:385,hi:495,cap:'4TB',s:'Massive NVMe · 300+ games · Enthusiast speed',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+4TB'},
+    {n:'Seagate FireCuda 530 4TB',lo:395,hi:515,cap:'4TB',s:'High-speed 4TB alternative · 7,300 MB/s',pcp:'https://pcpartpicker.com/search/?q=Seagate+FireCuda+530+4TB'},
+    {n:'Samsung 990 Pro 4TB',lo:415,hi:545,cap:'4TB',s:'Samsung flagship 4TB · Max speed + capacity',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+4TB'}
+  ],
+  case: {
+    budget:[
+      {n:'Budget Mid-Tower',lo:55,hi:85,s:'Clean mid-tower · No frills · Gets the job done · Good airflow'},
+      {n:'Mid-Tower (Airflow Focus)',lo:75,hi:115,s:'Mesh front panel · Excellent airflow · Most popular style'},
+      {n:'Mid-Tower (Tempered Glass)',lo:90,hi:145,s:'Glass side panel · Show off your components · RGB ready'}
+    ],
+    mid:[
+      {n:'Mid-Tower (Airflow Focus)',lo:75,hi:115,s:'Mesh front panel · Best airflow per dollar'},
+      {n:'Mid-Tower (Tempered Glass)',lo:90,hi:145,s:'NZXT H5 / Fractal Pop Air style · Clean and sharp'},
+      {n:'NZXT H5 Flow / Similar',lo:110,hi:155,s:'Premium airflow mid-tower · Excellent cable management'},
+      {n:'Lian Li Lancool 216 / Similar',lo:98,hi:145,s:'Dual 160mm fans included · Out-of-box airflow king'}
+    ],
+    high:[
+      {n:'Fractal Design Torrent / Similar',lo:155,hi:215,s:'Airflow-focused · Huge front intake · Premium build quality'},
+      {n:'Lian Li O11 Dynamic EVO',lo:148,hi:218,s:'AIO-friendly · Triple radiator support · Beautiful glass'},
+      {n:'be quiet! Silent Base 802',lo:168,hi:228,s:'Near-silent · Sound dampening panels · Premium quality'}
+    ],
+    ultra:[
+      {n:'Lian Li O11 Dynamic XL',lo:218,hi:298,s:'Full tower · Extreme cooling capacity · Dual-system capable'},
+      {n:'Corsair 7000D Airflow',lo:248,hi:338,s:'Full-tower beast · 420mm radiator support · Max airflow'},
+      {n:'Phanteks Enthoo 719',lo:228,hi:318,s:'EATX full-tower · Modular interior · Flagship'}
+    ]
+  },
+  psu: {
+    budget:[
+      {n:'650W 80+ Bronze',lo:45,hi:75,rt:'Bronze',s:'82-85% efficient · Entry level · Fine for budget builds'},
+      {n:'650W 80+ Gold',lo:75,hi:110,rt:'Gold',s:'Recommended · 90% efficient · Quieter + cooler + lasts longer'},
+      {n:'750W 80+ Gold',lo:85,hi:125,rt:'Gold',s:'Extra headroom · Gold rated · Safe for any budget GPU'}
+    ],
+    mid:[
+      {n:'750W 80+ Gold',lo:75,hi:120,rt:'Gold',s:'Recommended for RTX 5060 Ti / RX 9060 XT builds'},
+      {n:'850W 80+ Gold',lo:95,hi:145,rt:'Gold',s:'Best mid-range pick · Handles any GPU at this tier'},
+      {n:'850W 80+ Platinum',lo:125,hi:175,rt:'Platinum',s:'Premium efficiency · For streamers or heavy 24/7 use'},
+      {n:'1000W 80+ Gold',lo:120,hi:165,rt:'Gold',s:'Extra headroom · RTX 5070 Ti / heavy OC builds'}
+    ],
+    high:[
+      {n:'850W 80+ Gold',lo:95,hi:145,rt:'Gold',s:'Minimum for RTX 5070 Ti builds · Gold efficiency'},
+      {n:'1000W 80+ Gold',lo:120,hi:165,rt:'Gold',s:'Recommended for RTX 5080 · Solid headroom · Gold rated'},
+      {n:'1000W 80+ Platinum',lo:145,hi:195,rt:'Platinum',s:'Premium · 92% efficient · Near silent under load'},
+      {n:'1200W 80+ Gold',lo:155,hi:215,rt:'Gold',s:'For overclocked high-end builds · Maximum headroom'}
+    ],
+    ultra:[
+      {n:'1200W 80+ Gold',lo:155,hi:215,rt:'Gold',s:'Minimum for RTX 5090 builds · Gold efficiency'},
+      {n:'1200W 80+ Platinum',lo:185,hi:260,rt:'Platinum',s:'Recommended for RTX 5090 · Premium efficiency'},
+      {n:'1600W 80+ Platinum',lo:350,hi:455,rt:'Platinum',s:'Extreme builds · RTX 5090 + heavy OC · No limits'}
+    ]
+  },
+  cooler: {
+    budget:[
+      {n:'Thermalright Peerless Assassin 120 SE (Air)',lo:35,hi:48,tp:'air',s:'Best budget air cooler alive · Handles 250W · Very quiet'},
+      {n:'Arctic Freezer 36 (Air)',lo:45,hi:62,tp:'air',s:'Excellent push-pull · AM5 + LGA1700 ready · Great value'},
+      {n:'Arctic Liquid Freezer III 240mm (AIO)',lo:65,hi:88,tp:'aio',s:'Best budget AIO · 240mm · Award-winning performance'}
+    ],
+    mid:[
+      {n:'Thermalright Peerless Assassin 120 SE (Air)',lo:35,hi:48,tp:'air',s:'Budget king that punches way above its price'},
+      {n:'be quiet! Dark Rock 4 (Air)',lo:65,hi:88,tp:'air',s:'Premium quiet air cooler · Excellent thermals · Near-silent'},
+      {n:'Arctic Liquid Freezer III 240mm (AIO)',lo:65,hi:88,tp:'aio',s:'240mm · Best AIO per dollar · Strong pump + fans'},
+      {n:'NZXT Kraken Core 240mm (AIO)',lo:85,hi:118,tp:'aio',s:'240mm · Clean aesthetic · Good software · Solid cooling'},
+      {n:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,tp:'aio',s:'360mm · Best performance per dollar · 6-year warranty'}
+    ],
+    high:[
+      {n:'Noctua NH-D15 G2 (Air)',lo:125,hi:168,tp:'air',s:'Best air cooler money can buy · Whisper quiet · Beats most AIOs'},
+      {n:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,tp:'aio',s:'360mm · Award-winning · Best value AIO on the market'},
+      {n:'NZXT Kraken Plus 360mm (AIO)',lo:158,hi:225,tp:'aio',s:'360mm · Premium LCD pump head · Top-tier performance'},
+      {n:'Corsair iCUE H150i Elite 360mm (AIO)',lo:145,hi:198,tp:'aio',s:'360mm · Flagship Corsair · Great for i9 / Ryzen 9'}
+    ],
+    ultra:[
+      {n:'Noctua NH-D15 G2 (Air)',lo:125,hi:168,tp:'air',s:'Best air cooler on Earth · Handles 250W+ silently'},
+      {n:'Arctic Liquid Freezer III Pro 360mm (AIO)',lo:88,hi:115,tp:'aio',s:'360mm · Best AIO value · 6-year warranty'},
+      {n:'NZXT Kraken Plus 360mm (AIO)',lo:158,hi:225,tp:'aio',s:'360mm · Premium LCD display · Top performance'},
+      {n:'Corsair iCUE H150i Elite 360mm (AIO)',lo:145,hi:198,tp:'aio',s:'360mm · Flagship · Best for 9950X / Ultra 9 285K'}
+    ]
+  },
+  fans: [
+    {n:'Arctic P12 PWM 3-Pack',lo:22,hi:38,s:'No RGB · Pure airflow · Budget pick · Very quiet · 120mm'},
+    {n:'Corsair RS120 ARGB 3-Pack',lo:40,hi:62,s:'ARGB lighting · Most popular choice · Reliable brand · 120mm'},
+    {n:'Lian Li UNI Fan 120 ARGB 3-Pack',lo:55,hi:78,s:'Daisy chain cables · Premium ARGB · Cleanest install · 120mm'},
+    {n:'Corsair iCUE Link QX120 ARGB 3-Pack',lo:78,hi:108,s:'Smart RGB ecosystem · Best airflow + lighting · 120mm'}
+  ]
+};
+
+const BASE = {budget:{lo:12,hi:22},mid:{lo:12,hi:22},high:{lo:12,hi:22},ultra:{lo:12,hi:22}};
+const TIER_DESCS = {
+  budget:'Budget &mdash; ~$800&ndash;$1,200 total. 1080p gaming, everyday tasks, best value entry point. Note: RAM prices are elevated in 2026 &mdash; verify before ordering.',
+  mid:'Mid-Range &mdash; ~$1,300&ndash;$2,000 total. 1080p maxed, solid 1440p, light streaming. The sweet spot. Note: memory costs higher than usual right now.',
+  high:'High-End &mdash; ~$2,500&ndash;$4,000 total. 1440p maxed out, capable 4K, content creation. For serious gamers and creators. 5+ year build.',
+  ultra:'Ultra &mdash; $5,500+ total. No compromises. 4K high-refresh, local AI workloads, professional content creation. Absolute top-of-stack.'
+};
+const STORAGE_CAPS = ['500GB','1TB','2TB','4TB'];
+
+// ============================================================
+// STATE
+// ============================================================
+const ST = {
+  tier:'mid', uc:null,
+  sel:{gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null},
+  lang:localStorage.getItem('ct-lang')||'en'
+};
+
+// ============================================================
+// TRANSLATIONS (key UI strings only)
+// ============================================================
+const TR = {
+  en:{hero_h1:'Want a <span>Custom PC</span><br>But Don&rsquo;t Want to Build It?',request:'Request This Build &#8594;',share:'&#128279; Share My Build'},
+  es:{hero_h1:'&iquest;Quieres una <span>PC a Medida</span><br>Pero No Quieres Armarla?',request:'Solicitar este Build &#8594;',share:'&#128279; Compartir mi Build'}
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+function $(id){return document.getElementById(id);}
+function fmtP(lo,hi){return '$'+lo.toLocaleString()+'&ndash;$'+hi.toLocaleString();}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+
+// ============================================================
+// RENDER COMPONENT OPTIONS
+// ============================================================
+function renderCat(cat){
+  const items = Array.isArray(DATA[cat]) ? DATA[cat] : (DATA[cat][ST.tier]||[]);
+  const el = $('opts-'+cat);
+  if(!el)return;
+  el.innerHTML = items.map(function(item,i){
+    const isSel = ST.sel[cat] && ST.sel[cat].n === item.n;
+    let tag = '';
+    if(item.tp==='air') tag='<span class="opt-tag tag-air">Air</span> ';
+    if(item.tp==='aio') tag='<span class="opt-tag tag-aio">AIO Liquid</span> ';
+    if(item.rt==='Bronze') tag='<span class="opt-tag tag-brnz">Bronze</span> ';
+    if(item.rt==='Gold') tag='<span class="opt-tag tag-gold">Gold</span> ';
+    if(item.rt==='Platinum') tag='<span class="opt-tag tag-plat">Platinum</span> ';
+    var pcpLink = item.pcp ? '<a href="'+item.pcp+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:inline-block;margin-top:.35rem;font-size:.72rem;color:var(--cyan);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);">Check price on PCPartPicker &#8599;</a>' : '';
+    return '<button class="opt'+(isSel?' sel':'')+'" data-cat="'+cat+'" data-idx="'+i+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div>'+tag+'<div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+' <span style="font-size:.68rem;color:var(--mut);font-weight:400">est.</span></div><div class="opt-note">'+item.s+'</div>'+pcpLink+'</button>';
+  }).join('');
+}
+
+function renderStorage(){
+  const wrap = $('storage-groups');
+  if(!wrap)return;
+  let html = '';
+  STORAGE_CAPS.forEach(function(cap){
+    const items = DATA.storage.filter(function(i){return i.cap===cap;});
+    const isOpen = cap==='1TB';
+    const selInCap = items.some(function(i){return ST.sel.storage&&ST.sel.storage.n===i.n;});
+    html += '<div class="sg"><button class="sg-hdr'+(isOpen||selInCap?' open':'')+'" onclick="toggleSG(this)">';
+    html += '<span>'+cap+(cap==='1TB'?' <span style="font-size:.68rem;color:var(--cyan);font-weight:700">&#9733; Most Popular</span>':'')+'</span>';
+    html += '<span class="sg-cnt">'+items.length+' options</span>';
+    html += '<span class="sg-chev">&#9660;</span></button>';
+    html += '<div class="sg-body'+(isOpen||selInCap?' open':'')+'" >';
+    items.forEach(function(item,i){
+      const realIdx = DATA.storage.indexOf(item);
+      const isSel = ST.sel.storage&&ST.sel.storage.n===item.n;
+      var pcpLinkS = item.pcp ? '<a href="'+item.pcp+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:inline-block;margin-top:.35rem;font-size:.72rem;color:var(--cyan);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);">Check price on PCPartPicker &#8599;</a>' : '';
+      html += '<button class="opt'+(isSel?' sel':'')+'" data-cat="storage" data-idx="'+realIdx+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div><div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+' <span style="font-size:.68rem;color:var(--mut);font-weight:400">est.</span></div><div class="opt-note">'+item.s+'</div>'+pcpLinkS+'</button>';
+    });
+    html += '</div></div>';
+  });
+  wrap.innerHTML = html;
+}
+
+function renderAll(){
+  ['gpu','cpu','mobo','ram','case','psu','cooler','fans'].forEach(renderCat);
+  renderStorage();
+  ['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'].forEach(updateHeader);
+  updateProgress();
+  updatePrice();
+  checkCompat();
+}
+
+// ============================================================
+// SELECT OPTION
+// ============================================================
+function selectOpt(btn){
+  const cat = btn.dataset.cat;
+  const idx = parseInt(btn.dataset.idx);
+  const item = Array.isArray(DATA[cat]) ? DATA[cat][idx] : (DATA[cat][ST.tier]||[])[idx];
+  if(!item)return;
+  ST.sel[cat] = item;
+  if(cat!=='storage'){renderCat(cat);}else{renderStorage();}
+  updateHeader(cat);
+  $('csec-'+cat).classList.add('done');
+  updateProgress();
+  updatePrice();
+  checkCompat();
+  updateSummary();
+  openNext(cat);
+}
+
+const CATS = ['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'];
+
+function openNext(cat){
+  const idx = CATS.indexOf(cat);
+  if(idx<CATS.length-1){
+    const next = CATS[idx+1];
+    const body = $('body-'+next);
+    if(body&&!body.classList.contains('open')){toggle(next);}
+  }
+}
+
+// ============================================================
+// TOGGLE SECTION
+// ============================================================
+function toggle(cat){
+  const body=$('body-'+cat), chev=$('chev-'+cat), hdr=document.querySelector('#csec-'+cat+' .csec-hdr');
+  if(!body)return;
+  const open=body.classList.contains('open');
+  body.classList.toggle('open',!open);
+  if(chev)chev.classList.toggle('open',!open);
+  if(hdr)hdr.classList.toggle('open',!open);
+}
+
+function toggleSG(btn){
+  const body=btn.nextElementSibling;
+  btn.classList.toggle('open');
+  if(body)body.classList.toggle('open');
+}
+
+// ============================================================
+// HEADER UPDATE
+// ============================================================
+function updateHeader(cat){
+  const el=$('sel-'+cat);
+  if(!el)return;
+  const sel=ST.sel[cat];
+  if(sel){el.textContent=sel.n+' (~$'+sel.lo+'-$'+sel.hi+')';el.className='csec-sel';}
+  else{el.textContent='Not selected';el.className='csec-sel empty';}
+}
+
+// ============================================================
+// PROGRESS
+// ============================================================
+function updateProgress(){
+  const done=CATS.filter(function(c){return ST.sel[c]!=null;}).length;
+  $('prog-count').textContent=done;
+  $('prog-fill').style.width=((done/9)*100)+'%';
+}
+
+// ============================================================
+// PRICE PANEL
+// ============================================================
+function updatePrice(){
+  let tLo=0,tHi=0;
+  const base=BASE[ST.tier];
+  const keys=['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'];
+  const ppIds={gpu:'pp-gpu',cpu:'pp-cpu',mobo:'pp-mobo',ram:'pp-ram',storage:'pp-storage',case:'pp-case',psu:'pp-psu',cooler:'pp-cooler',fans:'pp-fans'};
+  keys.forEach(function(k){
+    const el=$(ppIds[k]);
+    const sel=ST.sel[k];
+    if(sel){
+      el.innerHTML='~'+fmtP(sel.lo,sel.hi);
+      el.className='pp-val grn';
+      tLo+=sel.lo;tHi+=sel.hi;
+    }else{
+      el.innerHTML='&mdash;';
+      el.className='pp-val dim';
+    }
+  });
+  $('pp-base').innerHTML='~'+fmtP(base.lo,base.hi);
+  tLo+=base.lo;tHi+=base.hi;
+  if(tLo>base.lo){$('pp-total').innerHTML='~'+fmtP(tLo,tHi);}
+  else{$('pp-total').innerHTML='$&mdash;';}
+}
+
+// ============================================================
+// COMPATIBILITY CHECK
+// ============================================================
+function checkCompat(){
+  const cpu=ST.sel.cpu, mobo=ST.sel.mobo, ram=ST.sel.ram;
+  const box=$('compat-msg');
+  if(!box)return;
+  if(!cpu||!mobo){box.innerHTML='<span class="compat-hint">Select CPU and Motherboard to check socket compatibility.</span>';return;}
+  let msgs=[];
+  if(cpu.sk!==mobo.sk){
+    msgs.push('<div class="compat-err">&#10060; Socket mismatch! CPU needs '+cpu.sk+' but motherboard is '+mobo.sk+'. These are not compatible.</div>');
+  }else{
+    msgs.push('<div class="compat-ok">&#10003; Socket OK &mdash; both are '+cpu.sk+'</div>');
+  }
+  if(ram){
+    const needsDDR = (cpu.sk==='AM5'||cpu.sk==='LGA1851') ? 'DDR5' : 'DDR4';
+    if(ram.dd&&ram.dd!==needsDDR){
+      msgs.push('<div class="compat-err">&#10060; RAM mismatch! '+cpu.sk+' needs '+needsDDR+' but you selected '+ram.dd+'. These are not compatible.</div>');
+    }else if(ram.dd){
+      msgs.push('<div class="compat-ok">&#10003; RAM type OK &mdash; '+ram.dd+' is correct for '+cpu.sk+'</div>');
+    }
+  }
+  box.innerHTML=msgs.join('');
+}
+
+// ============================================================
+// TIER SELECTION
+// ============================================================
+function setTier(btn){
+  document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  ST.tier=btn.dataset.tier;
+  $('tier-desc').innerHTML=TIER_DESCS[ST.tier];
+  ST.sel={gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null};
+  document.querySelectorAll('.csec').forEach(function(s){s.classList.remove('done');});
+  renderAll();
+}
+
+// ============================================================
+// USE CASE
+// ============================================================
+function pickUC(el){
+  document.querySelectorAll('.uc-card').forEach(function(c){c.classList.remove('active');});
+  el.classList.add('active');
+  ST.uc=el.dataset.uc;
+  $('hid-uc').value=ST.uc;
+  setTimeout(function(){$('builder').scrollIntoView({behavior:'smooth',block:'start'});},350);
+}
+
+// ============================================================
+// FORM
+// ============================================================
+function updateSummary(){
+  const rows=[];
+  if(ST.uc) rows.push({l:'Use Case',v:ST.uc});
+  if(ST.tier) rows.push({l:'Budget Tier',v:ST.tier});
+  CATS.forEach(function(c){if(ST.sel[c])rows.push({l:c.charAt(0).toUpperCase()+c.slice(1).replace('psu','PSU'),v:ST.sel[c].n+' (~$'+ST.sel[c].lo+'-$'+ST.sel[c].hi+')' });});
+  const wrap=$('summ-rows');
+  if(!wrap)return;
+  if(!rows.length){wrap.innerHTML='<div class="summ-row"><span style="color:var(--mut)">No components selected yet.</span></div>';$('hid-summary').value='';return;}
+  wrap.innerHTML=rows.map(function(r){return '<div class="summ-row"><span>'+r.l+'</span><span class="summ-val">'+r.v+'</span></div>';}).join('');
+  $('hid-summary').value=rows.map(function(r){return r.l+': '+r.v;}).join(' | ');
+}
+
+function goToContact(){
+  updateSummary();
+  $('contact').scrollIntoView({behavior:'smooth'});
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+  updateSummary();
+  const form=e.target;
+  fetch('/',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){$('form-wrap').style.display='none';$('success-wrap').classList.add('show');$('success-wrap').scrollIntoView({behavior:'smooth'});}
+      else{alert('Something went wrong. Please call us at (972) 391-7153.');}
+    })
+    .catch(function(){alert('Could not send. Please call us at (972) 391-7153.');});
+}
+
+// ============================================================
+// SHARE
+// ============================================================
+function shareMyBuild(){
+  updateSummary();
+  const params=new URLSearchParams();
+  params.set('tier',ST.tier);
+  if(ST.uc)params.set('uc',ST.uc);
+  CATS.forEach(function(c){if(ST.sel[c])params.set(c,ST.sel[c].n);});
+  const url=window.location.origin+window.location.pathname+'?'+params.toString()+'#builder';
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(url).then(function(){showToast('Build link copied!');});
+  }else{
+    const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('Build link copied!');
+  }
+}
+
+function loadFromURL(){
+  const p=new URLSearchParams(window.location.search);
+  const tier=p.get('tier');
+  if(tier&&['budget','mid','high','ultra'].includes(tier)){
+    const btn=document.querySelector('.tier-btn[data-tier="'+tier+'"]');
+    if(btn)setTier(btn);
+  }
+  const uc=p.get('uc');
+  if(uc){const el=document.querySelector('.uc-card[data-uc="'+uc+'"]');if(el)el.classList.add('active');ST.uc=uc;}
+  CATS.forEach(function(c){
+    const name=p.get(c);
+    if(!name)return;
+    const items=Array.isArray(DATA[c])?DATA[c]:(DATA[c][ST.tier]||[]);
+    const item=items.find(function(i){return i.n===name;});
+    if(item)ST.sel[c]=item;
+  });
+  renderAll();
+}
+
+// ============================================================
+// FAQ
+// ============================================================
+function toggleFAQ(btn){
+  const a=btn.nextElementSibling;
+  const open=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(function(b){b.classList.remove('open');b.nextElementSibling.classList.remove('open');});
+  if(!open){btn.classList.add('open');a.classList.add('open');}
+}
+
+// ============================================================
+// LANGUAGE
+// ============================================================
+function toggleLang(){
+  ST.lang=ST.lang==='en'?'es':'en';
+  localStorage.setItem('ct-lang',ST.lang);
+  $('lang-btn').textContent=ST.lang==='en'?'ES':'EN';
+  document.documentElement.lang=ST.lang;
+}
+
+// ============================================================
+// SCROLL REVEAL + BACK TO TOP
+// ============================================================
+const revObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rev').forEach(function(el){revObs.observe(el);});
+window.addEventListener('scroll',function(){$('btt').classList.toggle('show',window.scrollY>500);});
+
+// ============================================================
+// INJECT ICONS
+// ============================================================
+CATS.forEach(function(cat){
+  const el=$('ico-'+cat);
+  if(el&&ICONS[cat])el.innerHTML=ICONS[cat];
+});
+
+// ============================================================
+// INIT
+// ============================================================
+
+// == WIZARD =====================================================
+var WZ_CATS=['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'];
+var WZ_NAMES={gpu:'GPU',cpu:'CPU',mobo:'Motherboard',ram:'RAM',storage:'Storage',case:'Case',psu:'PSU',cooler:'Cooler',fans:'Fans (Optional)'};
+var WZ={step:0};
+
+function wzShow(n){
+  if(n<0||n>=WZ_CATS.length)return;
+  WZ.step=n;
+  document.querySelectorAll('.csec').forEach(function(el,i){el.style.display=i===n?'block':'none';});
+  var fill=document.getElementById('wz-fill');
+  if(fill)fill.style.width=Math.round(((n+1)/WZ_CATS.length)*100)+'%';
+  var lbl=document.getElementById('wz-lbl');
+  if(lbl)lbl.innerHTML='Step <b>'+(n+1)+'</b> of '+WZ_CATS.length+' &mdash; <b style="color:var(--cyan)">'+WZ_NAMES[WZ_CATS[n]]+'</b>';
+  var back=document.getElementById('wz-back');
+  if(back)back.style.display=n===0?'none':'inline-flex';
+  var skip=document.getElementById('wz-skip');
+  if(skip)skip.style.display=WZ_CATS[n]==='fans'?'inline-flex':'none';
+  var next=document.getElementById('wz-next');
+  if(next)next.textContent=n===WZ_CATS.length-1?'Review Build ->':'Next ->';
+  var bld=document.getElementById('builder');
+  if(bld)bld.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function wzNext(){if(WZ.step<WZ_CATS.length-1)wzShow(WZ.step+1);else goToContact();}
+function wzBack(){if(WZ.step>0)wzShow(WZ.step-1);}
+function wzSkip(){wzNext();}
+
+loadFromURL();
+if(!window.location.search){renderAll();}
+// Init wizard
+(function(){document.querySelectorAll('.csec').forEach(function(el,i){el.style.display=i===0?'block':'none';});})(); // no auto-advance: user clicks Next manually
+
+</script>
+</body>
+</html>
