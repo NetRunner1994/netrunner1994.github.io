@@ -318,7 +318,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--cyan)!important;box-s
 .proof-imgs{display:grid;grid-template-columns:2fr 1fr;gap:2px;height:180px;background:var(--brd);}
 .proof-imgs img{width:100%;height:100%;object-fit:cover;}
 .spec-tag{background:rgba(157,0,255,.12);border:1px solid rgba(157,0,255,.25);color:var(--blue2);}
-
+#wz-nav-bar{display:flex !important;visibility:visible !important;margin-top:1rem;background:var(--surf);border:1px solid var(--brd);border-radius:8px;padding:.75rem 1rem;}
+#wz-next{background:linear-gradient(135deg,#9D00FF,#FF2D9B);color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-weight:700;cursor:pointer;border:none;font-size:.88rem;}
+#wz-back{background:var(--surf);color:var(--sub);border:1px solid var(--brd);padding:.55rem 1.2rem;border-radius:8px;font-weight:700;cursor:pointer;}
 </style>
 </head>
 <body>
@@ -569,7 +571,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--cyan)!important;box-s
     </div>
 
     <div>
-      <div class="wz-nav" id="wz-nav-bar">
+  <div class="wz-nav" id="wz-nav-bar">
   <button class="wz-btn wz-back" id="wz-back" onclick="wzBack()" style="display:none;">&larr; Back</button>
   <button class="wz-btn wz-skip" id="wz-skip" onclick="wzSkip()" style="display:none;">Skip</button>
   <button class="wz-btn wz-next" id="wz-next" onclick="wzNext()">Next &rarr;</button>
