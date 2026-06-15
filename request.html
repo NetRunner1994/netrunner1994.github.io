@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Request a custom PC build or upgrade from RigForge. North Texas veteran-owned service. Response within 24-28 hours.">
-<title>Request a Build — RigForge</title>
+<meta name="description" content="Get in touch with RigForge. Questions, build requests, upgrade quotes, or anything else. North Texas veteran-owned service. Response within 24 to 28 hours.">
+<meta property="og:title" content="Get in Touch — RigForge">
+<meta property="og:description" content="Questions, build requests, upgrade quotes, or anything else. I get back to everyone within 24 to 28 hours.">
+<meta property="og:image" content="https://netrunner1994.github.io/rigforge-logo.png">
+<meta property="og:url" content="https://netrunner1994.github.io/request.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://netrunner1994.github.io/rigforge-logo.png">
+<title>Get in Touch — RigForge</title>
 <link rel="icon" href="rigforge-logo.png">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,32 +24,42 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="upgrade.html">Upgrade My PC</a></li>
       <li><a href="build.html">Build a PC</a></li>
-      <li><a href="request.html" class="active">Request a Build</a></li>
+      <li><a href="request.html" class="active">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="sec" style="max-width:760px;padding-top:3.5rem;">
-  <div class="sec-lbl">Get Started</div>
-  <h2 class="sec-title">Request <span>Your Build</span></h2>
-  <p class="sec-sub">Fill out the form below and I&rsquo;ll get back to you within 24&ndash;28 hours to confirm details and schedule.</p>
+  <div class="sec-lbl">Let&rsquo;s Talk</div>
+  <h2 class="sec-title">Get in <span>Touch</span></h2>
+  <p class="sec-sub">Questions, build requests, upgrade quotes, or just not sure where to start. Fill out the form and I&rsquo;ll get back to you within 24&ndash;28 hours.</p>
 
   <div class="build-summ" id="build-summ-wrap">
     <h4 id="summ-heading">Your Request</h4>
-    <div id="summ-rows"><div class="summ-row"><span style="color:var(--mut)">No build configured &mdash; describe what you need in the notes below, or <a href="build.html" style="color:var(--cyan)">use the builder first</a>.</span></div></div>
+    <div id="summ-rows"><div class="summ-row"><span style="color:var(--mut)">No build configured yet. Tell me what you&rsquo;re looking for in the notes below, or <a href="build.html" style="color:var(--cyan)">try the PC Builder Tool first</a>.</span></div></div>
   </div>
 
-  <div class="parts-note">
-    <b>&#128230; Parts are your responsibility to purchase.</b> You order the parts, have them shipped to you or to us, and we handle everything from there. Not sure where to order? Say so in the notes &mdash; we&rsquo;ll walk you through it.
+  <div class="parts-note" id="parts-note" style="display:none;">
+    <b>&#128230; Heads up on parts.</b> For builds and upgrades, parts are your responsibility to purchase. You order them (Amazon, Newegg, Micro Center) and we handle everything from there. Not sure what to get or where to order? Say so in the notes and I&rsquo;ll walk you through it.
   </div>
 
   <div id="form-wrap">
     <form name="pc-build-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
       <input type="hidden" name="form-name" value="pc-build-request">
       <input type="hidden" name="build_summary" id="hid-summary">
-      <input type="hidden" name="request_type" id="hid-type" value="build">
+      <input type="hidden" name="request_type" id="hid-type" value="">
       <input type="hidden" name="use_case" id="hid-uc">
       <p style="display:none"><input name="bot-field"></p>
+      <div class="fg">
+        <label>What can I help you with? *</label>
+        <select name="contact_reason" id="contact-reason" required onchange="updateContactContext(this.value)">
+          <option value="" disabled selected>Choose one...</option>
+          <option value="build">I want a new PC built</option>
+          <option value="upgrade">I want to upgrade my PC</option>
+          <option value="question">I have a question</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
       <div class="form-grid">
         <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
         <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="you@email.com" required></div>
@@ -52,9 +69,9 @@
         <div class="fg"><label>Preferred Contact *</label><select name="contact_pref" required><option value="" disabled selected>How should we reach you?</option><option>Email</option><option>Phone Call</option><option>Text Message</option></select></div>
       </div>
       <div class="fg"><label>City / Zip Code</label><input type="text" name="location" placeholder="Melissa, TX 75454"></div>
-      <div class="fg"><label>Anything else we should know?</label><textarea name="notes" placeholder="Timeline, budget flexibility, first-timer needing ordering help, out-of-state shipping, specific questions..."></textarea></div>
+      <div class="fg"><label>Tell me what&rsquo;s on your mind</label><textarea name="notes" placeholder="Questions, build ideas, budget, timeline, concerns, or anything else. No pressure to have it all figured out."></textarea></div>
       <div class="priv-note"><span>&#128274;</span><span>Your info is submitted securely via Netlify and only used to contact you about your build request. We don&rsquo;t store, sell, or share your data.</span></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:.85rem;">Send My Request &#8594;</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:.85rem;">Send It &#8594;</button>
     </form>
   </div>
 
@@ -70,7 +87,7 @@
   <div class="ft-i">
     <div>
       <div class="ft-brand"><img src="rigforge-logo.png" alt="RigForge" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;">Rig<span style="color:var(--cyan)">Forge</span></div>
-      <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran-owned, one-person operation.</div>
+      <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran owned, one person operation.</div>
       <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
       <div class="pay-badges"><span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span></div>
     </div>
@@ -80,7 +97,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="upgrade.html">Upgrade My PC</a></li>
         <li><a href="build.html">Build a PC</a></li>
-        <li><a href="request.html">Request a Build</a></li>
+        <li><a href="request.html">Contact</a></li>
       </ul>
     </div>
     <div class="ft-col">
@@ -103,6 +120,12 @@
 var CATS=['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'];
 var LABELS={gpu:'GPU',cpu:'CPU',mobo:'Motherboard',ram:'RAM',storage:'Storage',case:'Case',psu:'PSU',cooler:'CPU Cooler',fans:'Case Fans'};
 
+function updateContactContext(val){
+  document.getElementById('hid-type').value=val;
+  var pn=document.getElementById('parts-note');
+  if(pn)pn.style.display=(val==='build'||val==='upgrade')?'':'none';
+}
+
 function loadFromURL(){
   var p=new URLSearchParams(window.location.search);
   var type=p.get('type');
@@ -110,10 +133,17 @@ function loadFromURL(){
   var rows=[];
   var parts=[];
 
+  if(!type&&!tier){
+    document.getElementById('build-summ-wrap').style.display='none';
+    return;
+  }
+
   if(type==='upgrade'){
     document.getElementById('summ-heading').textContent='Your Upgrade Request';
-    document.getElementById('hid-type').value='upgrade';
     document.getElementById('hid-uc').value='upgrade';
+    var cr=document.getElementById('contact-reason');
+    if(cr)cr.value='upgrade';
+    updateContactContext('upgrade');
     rows.push('<div class="summ-row"><span>Request Type</span><span class="summ-val">PC Upgrade</span></div>');
     parts.push('Type: PC Upgrade');
     document.getElementById('summ-rows').innerHTML=rows.join('');
@@ -123,7 +153,9 @@ function loadFromURL(){
 
   if(tier){
     document.getElementById('summ-heading').textContent='Your Configured Build';
-    document.getElementById('hid-type').value='build';
+    var cr=document.getElementById('contact-reason');
+    if(cr)cr.value='build';
+    updateContactContext('build');
     var uc=p.get('uc');
     if(uc){
       var ucLabel=uc.charAt(0).toUpperCase()+uc.slice(1);
