@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Request a custom PC build or upgrade from RigForge. North Texas veteran-owned service. Response within 24-28 hours.">
+<title>Request a Build — RigForge</title>
+<link rel="icon" href="rigforge-logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <div class="nav-i">
+    <a href="index.html" class="nav-logo"><img src="rigforge-logo.png" alt="RigForge" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;">Rig<span style="color:var(--cyan)">Forge</span></a>
+    <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="upgrade.html">Upgrade My PC</a></li>
+      <li><a href="build.html">Build a PC</a></li>
+      <li><a href="request.html" class="active">Request a Build</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="sec" style="max-width:760px;padding-top:3.5rem;">
+  <div class="sec-lbl">Get Started</div>
+  <h2 class="sec-title">Request <span>Your Build</span></h2>
+  <p class="sec-sub">Fill out the form below and I&rsquo;ll get back to you within 24&ndash;28 hours to confirm details and schedule.</p>
+
+  <div class="build-summ" id="build-summ-wrap">
+    <h4 id="summ-heading">Your Request</h4>
+    <div id="summ-rows"><div class="summ-row"><span style="color:var(--mut)">No build configured &mdash; describe what you need in the notes below, or <a href="build.html" style="color:var(--cyan)">use the builder first</a>.</span></div></div>
+  </div>
+
+  <div class="parts-note">
+    <b>&#128230; Parts are your responsibility to purchase.</b> You order the parts, have them shipped to you or to us, and we handle everything from there. Not sure where to order? Say so in the notes &mdash; we&rsquo;ll walk you through it.
+  </div>
+
+  <div id="form-wrap">
+    <form name="pc-build-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="pc-build-request">
+      <input type="hidden" name="build_summary" id="hid-summary">
+      <input type="hidden" name="request_type" id="hid-type" value="build">
+      <input type="hidden" name="use_case" id="hid-uc">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="form-grid">
+        <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="John Smith" required></div>
+        <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="form-grid">
+        <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
+        <div class="fg"><label>Preferred Contact *</label><select name="contact_pref" required><option value="" disabled selected>How should we reach you?</option><option>Email</option><option>Phone Call</option><option>Text Message</option></select></div>
+      </div>
+      <div class="fg"><label>City / Zip Code</label><input type="text" name="location" placeholder="Melissa, TX 75454"></div>
+      <div class="fg"><label>Anything else we should know?</label><textarea name="notes" placeholder="Timeline, budget flexibility, first-timer needing ordering help, out-of-state shipping, specific questions..."></textarea></div>
+      <div class="priv-note"><span>&#128274;</span><span>Your info is submitted securely via Netlify and only used to contact you about your build request. We don&rsquo;t store, sell, or share your data.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:.85rem;">Send My Request &#8594;</button>
+    </form>
+  </div>
+
+  <div class="success-wrap" id="success-wrap">
+    <div class="suc-icon">&#10004;&#65039;</div>
+    <div class="suc-h3">Request Sent!</div>
+    <p class="suc-p">I&rsquo;ll get back to you within <b>24&ndash;28 hours</b>. Talk soon.</p>
+    <a href="index.html" class="btn btn-secondary" style="margin-top:1.5rem;display:inline-flex;">Back to Home</a>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-i">
+    <div>
+      <div class="ft-brand"><img src="rigforge-logo.png" alt="RigForge" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;">Rig<span style="color:var(--cyan)">Forge</span></div>
+      <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran-owned, one-person operation.</div>
+      <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
+      <div class="pay-badges"><span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span></div>
+    </div>
+    <div class="ft-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upgrade.html">Upgrade My PC</a></li>
+        <li><a href="build.html">Build a PC</a></li>
+        <li><a href="request.html">Request a Build</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Hours</h4>
+      <ul>
+        <li>Mon&ndash;Sat: 9AM&ndash;8PM</li>
+        <li>Sun: By Appointment</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>&copy; 2026 RigForge &middot; Veteran-Owned &middot; Melissa, TX</span>
+    <span>&#127482;&#127480; Proudly serving North Texas</span>
+  </div>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<script>
+'use strict';
+var CATS=['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'];
+var LABELS={gpu:'GPU',cpu:'CPU',mobo:'Motherboard',ram:'RAM',storage:'Storage',case:'Case',psu:'PSU',cooler:'CPU Cooler',fans:'Case Fans'};
+
+function loadFromURL(){
+  var p=new URLSearchParams(window.location.search);
+  var type=p.get('type');
+  var tier=p.get('tier');
+  var rows=[];
+  var parts=[];
+
+  if(type==='upgrade'){
+    document.getElementById('summ-heading').textContent='Your Upgrade Request';
+    document.getElementById('hid-type').value='upgrade';
+    document.getElementById('hid-uc').value='upgrade';
+    rows.push('<div class="summ-row"><span>Request Type</span><span class="summ-val">PC Upgrade</span></div>');
+    parts.push('Type: PC Upgrade');
+    document.getElementById('summ-rows').innerHTML=rows.join('');
+    document.getElementById('hid-summary').value=parts.join(' | ');
+    return;
+  }
+
+  if(tier){
+    document.getElementById('summ-heading').textContent='Your Configured Build';
+    document.getElementById('hid-type').value='build';
+    var uc=p.get('uc');
+    if(uc){
+      var ucLabel=uc.charAt(0).toUpperCase()+uc.slice(1);
+      rows.push('<div class="summ-row"><span>Use Case</span><span class="summ-val">'+ucLabel+'</span></div>');
+      parts.push('Use Case: '+uc);
+      document.getElementById('hid-uc').value=uc;
+    }
+    var tierLabel=tier.charAt(0).toUpperCase()+tier.slice(1);
+    rows.push('<div class="summ-row"><span>Budget Tier</span><span class="summ-val">'+tierLabel+'</span></div>');
+    parts.push('Tier: '+tier);
+    CATS.forEach(function(c){
+      var v=p.get(c);
+      if(v){
+        rows.push('<div class="summ-row"><span>'+LABELS[c]+'</span><span class="summ-val">'+v+'</span></div>');
+        parts.push(LABELS[c]+': '+v);
+      }
+    });
+    document.getElementById('summ-rows').innerHTML=rows.join('');
+    document.getElementById('hid-summary').value=parts.join(' | ');
+  }
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  fetch('/',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){
+        document.getElementById('form-wrap').style.display='none';
+        document.getElementById('build-summ-wrap').style.display='none';
+        var sw=document.getElementById('success-wrap');
+        sw.classList.add('show');
+        sw.scrollIntoView({behavior:'smooth'});
+      }else{
+        alert('Something went wrong. Please call us at (972) 391-7153.');
+      }
+    })
+    .catch(function(){alert('Could not send. Please call us at (972) 391-7153.');});
+}
+
+loadFromURL();
+window.addEventListener('scroll',function(){document.getElementById('btt').classList.toggle('show',window.scrollY>500);});
+</script>
+</body>
+</html>
