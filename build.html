@@ -29,9 +29,12 @@
   </div>
 </nav>
 
-<div style="background:rgba(0,5,20,.88);border-top:1px solid rgba(0,212,255,.4);border-bottom:1px solid rgba(0,212,255,.4);padding:1rem 1.5rem;">
-  <div style="max-width:860px;margin:0 auto;font-size:.9rem;line-height:1.6;color:var(--txt);">
-    <b style="color:#FCEE0A;">&#128296; Quick heads-up before you dive in:</b> this builder is completely free to use, with no sign up and no pressure. Put a build together and see what it costs. If you like what you see, just hit &ldquo;Request This Build&rdquo; when you&rsquo;re done and I&rsquo;ll take it from there. One thing worth knowing: you&rsquo;ll need to order the parts yourself, since I handle the building rather than the shopping. Not sure what to get or how? Just let me know and I&rsquo;ll walk you through it.
+<div class="modal-overlay" id="heads-up-modal">
+  <div class="modal-box">
+    <b style="color:#FCEE0A;font-size:1rem;">&#128296; Quick heads-up before you dive in</b>
+    <p style="margin-top:.75rem;">This builder is completely free to use, with no sign up and no pressure. Put a build together and see what it costs. If you like what you see, just hit &ldquo;Request This Build&rdquo; when you&rsquo;re done and I&rsquo;ll take it from there.</p>
+    <p style="margin-top:.75rem;">One thing worth knowing: you&rsquo;ll need to order the parts yourself, since I handle the building rather than the shopping. Not sure what to get or how? Just let me know and I&rsquo;ll walk you through it.</p>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.25rem;" onclick="document.getElementById('heads-up-modal').remove()">I Understand, Let&rsquo;s Build &#8594;</button>
   </div>
 </div>
 
@@ -260,7 +263,7 @@
         <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
         <p class="pp-note">All prices are <strong>estimates only</strong> &mdash; verified June 2026. Assembly fee not included. Tower only &mdash; no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
         <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM prices are elevated in 2026</strong> due to AI-driven memory shortages. DDR5 kits are 3&ndash;4x higher than 2025 lows. Verify on PCPartPicker before ordering.</p>
-        <p class="pp-upd">Prices verified: June 2026 &mdash; <a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">Live RAM trends &#8599;</a></p>
+        <p class="pp-upd"><a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">See live RAM price trends &#8599;</a></p>
         <div class="pp-actions">
           <button class="btn btn-green" onclick="goToContact()" style="width:100%;justify-content:center;">Request This Build &#8594;</button>
           <button class="btn btn-secondary" onclick="shareMyBuild()" style="width:100%;justify-content:center;">&#128279; Share My Build</button>
