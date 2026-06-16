@@ -259,7 +259,7 @@ footer{background:rgba(8,8,13,.6);border-top:1px solid var(--brd);padding:2.5rem
   .nav-phone{display:none;}
   .opts-grid{grid-template-columns:1fr;}
   .sg-body.open{grid-template-columns:1fr;}
-  .hero{padding:3.5rem 1rem 2.5rem;}
+  .hero{padding:3.5rem 1rem 2.5rem;background-size:cover!important;}
   .csec-hdr{padding:.9rem 1rem;}
   .csec-body{padding:1rem;}
 }
