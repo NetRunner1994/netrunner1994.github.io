@@ -6,19 +6,19 @@
 <meta name="description" content="Netrunner Builds PC Builder. Configure your custom PC build for North Texas. Interactive component picker with real time pricing and compatibility checking.">
 <meta property="og:title" content="PC Builder Tool — Netrunner Builds">
 <meta property="og:description" content="Free interactive PC builder for North Texas. Pick your parts, see real pricing, check compatibility. No experience needed.">
-<meta property="og:image" content="https://netrunner1994.github.io/rigforge-logo.png">
+<meta property="og:image" content="https://netrunner1994.github.io/netrunner_logo.png">
 <meta property="og:url" content="https://netrunner1994.github.io/build.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://netrunner1994.github.io/rigforge-logo.png">
+<meta name="twitter:image" content="https://netrunner1994.github.io/netrunner_logo.png">
 <title>PC Builder Tool · Netrunner Builds</title>
-<link rel="icon" href="rigforge-logo.png">
+<link rel="icon" href="netrunner_logo.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <nav>
   <div class="nav-i">
-    <a href="index.html" class="nav-logo"><img src="rigforge-logo.png" alt="Netrunner Builds" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;">Netrunner<span style="color:var(--cyan)"> Builds</span></a>
+    <a href="index.html" class="nav-logo"><img src="netrunner_logo.png" alt="Netrunner Builds" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;">Netrunner<span style="color:var(--cyan)"> Builds</span></a>
     <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -29,9 +29,12 @@
   </div>
 </nav>
 
-<div style="background:rgba(0,5,20,.88);border-top:1px solid rgba(0,212,255,.4);border-bottom:1px solid rgba(0,212,255,.4);padding:1rem 1.5rem;">
-  <div style="max-width:860px;margin:0 auto;font-size:.9rem;line-height:1.6;color:var(--txt);">
-    <b style="color:#FCEE0A;">&#128296; Before you scroll,</b> the builder below is free to use. Put a build together, see what it costs, figure out what fits your budget. No sign-up, no pressure. If you want me to actually build it just hit &ldquo;Request This Build&rdquo; when you&rsquo;re done. Parts are on you to order &mdash; I show up with tools, not a shopping cart. Need help ordering? Just say so.
+<div class="modal-overlay" id="heads-up-modal">
+  <div class="modal-box">
+    <b style="color:#FCEE0A;font-size:1rem;">&#128296; Quick heads-up before you dive in</b>
+    <p style="margin-top:.75rem;">This builder is completely free to use, with no sign up and no pressure. Put a build together and see what it costs. If you like what you see, just hit &ldquo;Request This Build&rdquo; when you&rsquo;re done and I&rsquo;ll take it from there.</p>
+    <p style="margin-top:.75rem;">One thing worth knowing: you&rsquo;ll need to order the parts yourself, since I handle the building rather than the shopping. Not sure what to get or how? Just let me know and I&rsquo;ll walk you through it.</p>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.25rem;" onclick="document.getElementById('heads-up-modal').remove()">I Understand, Let&rsquo;s Build &#8594;</button>
   </div>
 </div>
 
@@ -260,7 +263,7 @@
         <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
         <p class="pp-note">All prices are <strong>estimates only</strong> &mdash; verified June 2026. Assembly fee not included. Tower only &mdash; no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
         <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM prices are elevated in 2026</strong> due to AI-driven memory shortages. DDR5 kits are 3&ndash;4x higher than 2025 lows. Verify on PCPartPicker before ordering.</p>
-        <p class="pp-upd">Prices verified: June 2026 &mdash; <a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">Live RAM trends &#8599;</a></p>
+        <p class="pp-upd"><a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">See live RAM price trends &#8599;</a></p>
         <div class="pp-actions">
           <button class="btn btn-green" onclick="goToContact()" style="width:100%;justify-content:center;">Request This Build &#8594;</button>
           <button class="btn btn-secondary" onclick="shareMyBuild()" style="width:100%;justify-content:center;">&#128279; Share My Build</button>
@@ -291,7 +294,7 @@
 <footer>
   <div class="ft-i">
     <div>
-      <div class="ft-brand"><img src="rigforge-logo.png" alt="Netrunner Builds" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;">Netrunner<span style="color:var(--cyan)"> Builds</span></div>
+      <div class="ft-brand"><img src="netrunner_logo.png" alt="Netrunner Builds" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;">Netrunner<span style="color:var(--cyan)"> Builds</span></div>
       <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran owned, one person operation.</div>
       <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
       <div class="pay-badges"><span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span></div>
