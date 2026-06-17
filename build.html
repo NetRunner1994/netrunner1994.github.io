@@ -501,26 +501,27 @@ function setTier(btn){
   btn.classList.add('active');
   ST.tier=btn.dataset.tier;
   $('tier-desc').innerHTML=TIER_DESCS[ST.tier];
-  ST.sel={gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null};
-  document.querySelectorAll('.csec').forEach(function(s){s.classList.remove('done');});
-  var b=$('rec-banner');if(b)b.style.display='none';
-  renderAll();
+  if(ST.uc&&RECOMMENDED[ST.uc]){
+    applyRecommended(ST.uc,ST.tier);
+  }else{
+    ST.sel={gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null};
+    document.querySelectorAll('.csec').forEach(function(s){s.classList.remove('done');});
+    renderAll();
+  }
 }
 
-function applyRecommended(uc){
+function applyRecommended(uc,tier){
   var rec=RECOMMENDED[uc];
   if(!rec)return;
-  document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.remove('active');});
-  var tb=document.querySelector('.tier-btn[data-tier="'+rec.tier+'"]');
-  if(tb)tb.classList.add('active');
-  ST.tier=rec.tier;
-  $('tier-desc').innerHTML=TIER_DESCS[ST.tier];
+  var t=tier||ST.tier;
+  var tierRec=rec[t];
+  if(!tierRec)return;
   ST.sel={gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null};
   document.querySelectorAll('.csec').forEach(function(s){s.classList.remove('done');});
   CATS.forEach(function(cat){
-    var name=rec.sel[cat];
+    var name=tierRec.sel[cat];
     if(!name)return;
-    var items=Array.isArray(DATA[cat])?DATA[cat]:(DATA[cat][rec.tier]||[]);
+    var items=Array.isArray(DATA[cat])?DATA[cat]:(DATA[cat][t]||[]);
     var item=items.find(function(i){return i.n===name;});
     if(item){
       ST.sel[cat]=item;
@@ -532,7 +533,7 @@ function applyRecommended(uc){
   var b=$('rec-banner');
   if(b){
     b.style.display='flex';
-    b.innerHTML='<span style="font-size:1.1rem;flex-shrink:0">&#11088;</span><div><b style="color:var(--txt)">Recommended build for '+rec.label+' loaded.</b> '+rec.blurb+' Swap anything below to make it yours.</div><button onclick="this.parentElement.style.display=\'none\'" style="background:none;border:none;color:var(--mut);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 .25rem;flex-shrink:0">&times;</button>';
+    b.innerHTML='<span style="font-size:1.1rem;flex-shrink:0">&#11088;</span><div><b style="color:var(--txt)">Recommended '+rec.label+' build loaded.</b> '+tierRec.blurb+' Swap anything below to make it yours.</div><button onclick="this.parentElement.style.display=\'none\'" style="background:none;border:none;color:var(--mut);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 .25rem;flex-shrink:0">&times;</button>';
   }
 }
 

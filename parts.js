@@ -225,28 +225,32 @@ const TIER_DESCS = {
 
 const RECOMMENDED = {
   gaming:{
-    tier:'mid',
     label:'Gaming',
-    blurb:'1080p&ndash;1440p, smooth FPS, future-proofed for 3&ndash;5 years.',
-    sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'B650 Motherboard (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow / Similar',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}
+    budget:{blurb:'Solid 1080p on a budget. Runs modern titles well without breaking the bank.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'B550 Motherboard (AM4)',ram:'16GB DDR4-3200 Kit',storage:'WD Black SN770 1TB',case:'Mid-Tower (Airflow Focus)',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
+    mid:{blurb:'1080p maxed, solid 1440p, smooth FPS &mdash; future-proofed for 3&ndash;5 years.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'B650 Motherboard (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow / Similar',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    high:{blurb:'1440p maxed, capable 4K, high-refresh &mdash; a serious gaming rig.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'X870 Motherboard (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    ultra:{blurb:'4K high-refresh, no compromises. Built around the best gaming CPU available.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 7 9800X3D',mobo:'X870E Motherboard (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Corsair 7000D Airflow',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}
   },
   content:{
-    tier:'high',
     label:'Content Creation',
-    blurb:'Video editing, streaming, heavy multitasking &mdash; no bottlenecks.',
-    sel:{gpu:'NVIDIA RTX 5070 Ti 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'X670 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}
+    budget:{blurb:'Enough horsepower for 1080p editing and streaming without overspending.',sel:{gpu:'NVIDIA RTX 5060 Ti 8GB',cpu:'AMD Ryzen 5 5600X',mobo:'B550 Motherboard (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Mid-Tower (Tempered Glass)',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    mid:{blurb:'4K timeline editing, smooth streaming, heavy multitasking &mdash; no bottlenecks.',sel:{gpu:'NVIDIA RTX 5060 Ti 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'B650 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'NZXT H5 Flow / Similar',psu:'850W 80+ Platinum',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    high:{blurb:'Professional-grade. 4K/8K editing, rendering, and live streaming simultaneously.',sel:{gpu:'NVIDIA RTX 5070 Ti 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'X670 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    ultra:{blurb:'No workflow too heavy. 3D rendering, 8K export, multi-stream &mdash; all at once.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'X870E Motherboard (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 4TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Corsair iCUE H150i Elite 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
   },
   ai:{
-    tier:'ultra',
     label:'AI &amp; Productivity',
-    blurb:'Max VRAM for local LLMs and AI image generation. No compromises.',
-    sel:{gpu:'NVIDIA RTX 5090 32GB',cpu:'AMD Ryzen 9 9950X',mobo:'X870E Motherboard (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Platinum',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}
+    budget:{blurb:'16GB VRAM to run smaller local models &mdash; the minimum for real AI work.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 5600X',mobo:'B550 Motherboard (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Mid-Tower (Airflow Focus)',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    mid:{blurb:'Runs most local LLMs and Stable Diffusion models comfortably with room to grow.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'B650 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'Samsung 990 Evo 2TB',case:'Mid-Tower (Airflow Focus)',psu:'1000W 80+ Gold',cooler:'be quiet! Dark Rock 4 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    high:{blurb:'16GB VRAM, 12-core CPU, 64GB RAM &mdash; handles large models and heavy workloads.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 7900X',mobo:'X870 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'Samsung 990 Pro 2TB',case:'Fractal Design Torrent / Similar',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    ultra:{blurb:'32GB VRAM. Runs the largest local models, AI video, and Stable Diffusion at max quality.',sel:{gpu:'NVIDIA RTX 5090 32GB',cpu:'AMD Ryzen 9 9950X',mobo:'X870E Motherboard (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Platinum',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
   },
   general:{
-    tier:'budget',
     label:'General Use',
-    blurb:'Fast, reliable, cost-effective. Handles anything everyday.',
-    sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'B550 Motherboard (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Mid-Tower (Airflow Focus)',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}
+    budget:{blurb:'Fast, reliable, handles everything everyday &mdash; browsing, Office, school, light gaming.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'B550 Motherboard (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Mid-Tower (Airflow Focus)',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
+    mid:{blurb:'A well-rounded, future-proofed machine that handles anything you throw at it.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'B650 Motherboard (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'Mid-Tower (Tempered Glass)',psu:'750W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
+    high:{blurb:'Overkill for everyday tasks, but your machine will never feel slow. Ever.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'X670 Motherboard (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'be quiet! Silent Base 802',psu:'850W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    ultra:{blurb:'A forever machine. Premium components, whisper quiet, handles anything for a decade.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'X870E Motherboard (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Phanteks Enthoo 719',psu:'1200W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}
   }
 };
 const STORAGE_CAPS = ['500GB','1TB','2TB','4TB'];
