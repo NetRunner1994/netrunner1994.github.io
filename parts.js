@@ -222,4 +222,31 @@ const TIER_DESCS = {
   high:'High-End &mdash; ~$2,500&ndash;$4,000 total. 1440p maxed out, capable 4K, content creation. For serious gamers and creators. 5+ year build.',
   ultra:'Ultra &mdash; $5,500+ total. No compromises. 4K high-refresh, local AI workloads, professional content creation. Absolute top-of-stack.'
 };
+
+const RECOMMENDED = {
+  gaming:{
+    tier:'mid',
+    label:'Gaming',
+    blurb:'1080p&ndash;1440p, smooth FPS, future-proofed for 3&ndash;5 years.',
+    sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'B650 Motherboard (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow / Similar',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}
+  },
+  content:{
+    tier:'high',
+    label:'Content Creation',
+    blurb:'Video editing, streaming, heavy multitasking &mdash; no bottlenecks.',
+    sel:{gpu:'NVIDIA RTX 5070 Ti 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'X670 Motherboard (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}
+  },
+  ai:{
+    tier:'ultra',
+    label:'AI &amp; Productivity',
+    blurb:'Max VRAM for local LLMs and AI image generation. No compromises.',
+    sel:{gpu:'NVIDIA RTX 5090 32GB',cpu:'AMD Ryzen 9 9950X',mobo:'X870E Motherboard (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Platinum',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}
+  },
+  general:{
+    tier:'budget',
+    label:'General Use',
+    blurb:'Fast, reliable, cost-effective. Handles anything everyday.',
+    sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'B550 Motherboard (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Mid-Tower (Airflow Focus)',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}
+  }
+};
 const STORAGE_CAPS = ['500GB','1TB','2TB','4TB'];
