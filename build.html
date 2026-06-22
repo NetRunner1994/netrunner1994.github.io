@@ -424,7 +424,17 @@ function openNext(cat){
 
 function toggle(cat){
   var idx=WZ_CATS.indexOf(cat);
-  if(idx>=0){wzShow(idx);return;}
+  if(idx<0)return;
+  var body=$('body-'+cat);
+  if(body&&body.classList.contains('open')){
+    body.classList.remove('open');
+    var chev=$('chev-'+cat);
+    var hdr=document.querySelector('#csec-'+cat+' .csec-hdr');
+    if(chev)chev.classList.remove('open');
+    if(hdr)hdr.classList.remove('open');
+  }else{
+    wzShow(idx);
+  }
 }
 
 function toggleSG(btn){
