@@ -253,10 +253,10 @@ const DATA = {
 
 const BASE = {budget:{lo:12,hi:22},mid:{lo:12,hi:22},high:{lo:12,hi:22},ultra:{lo:12,hi:22}};
 const TIER_DESCS = {
-  budget:'Budget &mdash; ~$800&ndash;$1,200 total. 1080p gaming, everyday tasks, best value entry point. Note: RAM prices are elevated in 2026 &mdash; verify before ordering.',
-  mid:'Mid-Range &mdash; ~$1,300&ndash;$2,000 total. 1080p maxed, solid 1440p, light streaming. The sweet spot. Note: memory costs higher than usual right now.',
-  high:'High-End &mdash; ~$2,500&ndash;$4,000 total. 1440p maxed out, capable 4K, content creation. For serious gamers and creators. 5+ year build.',
-  ultra:'Ultra &mdash; $5,500+ total. No compromises. 4K high-refresh, local AI workloads, professional content creation. Absolute top-of-stack.'
+  budget:'Budget &mdash; ~$1,000&ndash;$1,350 total. Great 1080p gaming and everyday tasks. Best value entry point. Note: RAM prices are elevated right now &mdash; verify before ordering.',
+  mid:'Mid-Range &mdash; ~$1,600&ndash;$2,150 total. 1080p maxed, solid 1440p, smooth high framerates. The sweet spot for most gamers. Note: memory costs are higher than usual right now.',
+  high:'High-End &mdash; ~$2,300&ndash;$3,000 total. 1440p maxed out, capable 4K, handles content creation. For serious gamers who want 5+ years without upgrading.',
+  ultra:'Ultra &mdash; ~$3,400&ndash;$4,500 total. No compromises. 4K high-refresh gaming, streaming, and creation all at once. Built around the best gaming CPU available.'
 };
 
 const RECOMMENDED = {
