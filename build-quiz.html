@@ -419,10 +419,9 @@ const QUESTIONS = [
     id: 'use',
     text: 'What will you mainly use this PC for?',
     options: [
-      { value: 'gaming',    icon: '🎮', label: 'Gaming',           sub: 'Your primary goal is performance in games' },
-      { value: 'work',      icon: '💼', label: 'Work & School',    sub: 'Productivity, Office apps, video calls', note: 'Heads up — a laptop is honestly a better fit for this. A custom desktop makes the most sense for gaming or creative work.' },
-      { value: 'create',    icon: '🎬', label: 'Content Creation', sub: 'Video editing, streaming, design, 3D' },
-      { value: 'general',   icon: '🌐', label: 'General Use',      sub: 'Web, email, casual tasks, media', note: 'Heads up — a laptop will serve you better for less money here. A custom desktop shines when you need gaming power or serious creative muscle.' },
+      { value: 'gaming',    icon: '🎮', label: 'Gaming',                        sub: 'Your primary goal is performance in games' },
+      { value: 'create',    icon: '🎬', label: 'Content Creation',              sub: 'Video editing, streaming, design, 3D' },
+      { value: 'general',   icon: '🌐', label: 'Work, School & General Use',   sub: 'Browsing, Office apps, video calls, everyday tasks', note: 'Heads up — if this is all you need, a laptop will honestly serve you better for less money. A custom desktop build makes the most sense for gaming or serious creative work.' },
     ]
   },
   {
@@ -574,7 +573,7 @@ let showingResult = false;
 // ── RESULT PICKER ──
 function getResultKey(ans) {
   const { use, intensity, budget } = ans;
-  if (use === 'work' || use === 'general') return 'work_light';
+  if (use === 'general') return 'work_light';
   if (use === 'create') {
     if (budget === 'ultra') return 'ultra_beast';
     return 'creator';
@@ -642,7 +641,7 @@ function renderQuestion(idx) {
 function advance() {
   // skip intensity question if not gaming/create
   let next = currentQ + 1;
-  if (next === 1 && (answers.use === 'work' || answers.use === 'general')) {
+  if (next === 1 && answers.use === 'general') {
     answers.intensity = 'light';
     next = 2;
   }
