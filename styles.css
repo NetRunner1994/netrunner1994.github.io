@@ -222,7 +222,7 @@ section{background:rgba(5,5,10,.5);}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:640px){.form-grid{grid-template-columns:1fr;}}
 .fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem;}
-.fg label{font-size:.8rem;font-weight:600;color:var(--sub);}
+.fg label{font-size:.8rem;font-weight:600;color:var(--txt);}
 .fg input,.fg select,.fg textarea{width:100%;background:var(--surf);border:1px solid var(--brd);border-radius:8px;color:var(--txt);padding:.7rem .9rem;font-size:.88rem;font-family:inherit;transition:border-color .2s;}
 .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--cyan);}
 .fg textarea{min-height:110px;resize:vertical;}
@@ -297,9 +297,10 @@ footer{background:rgba(8,8,13,.6);border-top:1px solid var(--brd);padding:2.5rem
 @media(max-width:600px){
   .opts-grid{grid-template-columns:1fr;}
   .sg-body.open{grid-template-columns:1fr;}
-  .hero{padding:3.5rem 1rem 2.5rem;background-size:cover!important;}
+  .hero{padding:3.5rem 1rem 2.5rem;background:linear-gradient(rgba(4,8,18,.88),rgba(4,8,18,.88)),url('netrunner_logo.png') center/auto 100% no-repeat,#07090f!important;}
   .csec-hdr{padding:.9rem 1rem;}
   .csec-body{padding:1rem;}
+  .price-parts-badge{display:none;}
 }
 /* STYLE OVERRIDES */
 .nav-logo{color:var(--cyan)!important;font-family:var(--font);}
