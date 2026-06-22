@@ -357,8 +357,7 @@ function renderCat(cat){
     if(item.rt==='Bronze')tag='<span class="opt-tag tag-brnz">Bronze</span> ';
     if(item.rt==='Gold')tag='<span class="opt-tag tag-gold">Gold</span> ';
     if(item.rt==='Platinum')tag='<span class="opt-tag tag-plat">Platinum</span> ';
-    var pcpLink=item.pcp?'<a href="'+item.pcp+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:inline-block;margin-top:.35rem;font-size:.72rem;color:var(--cyan);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);">Check price on PCPartPicker &#8599;</a>':'';
-    return '<button class="opt'+(isSel?' sel':'')+'" data-cat="'+cat+'" data-idx="'+i+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div>'+tag+'<div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+' <span style="font-size:.68rem;color:var(--mut);font-weight:400">est.</span></div><div class="opt-note">'+item.s+'</div>'+pcpLink+'</button>';
+    return '<button class="opt'+(isSel?' sel':'')+'" data-cat="'+cat+'" data-idx="'+i+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div>'+tag+'<div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+'</div><div class="opt-note">'+item.s+'</div></button>';
   }).join('');
 }
 
@@ -378,8 +377,7 @@ function renderStorage(){
     items.forEach(function(item){
       var realIdx=DATA.storage.indexOf(item);
       var isSel=ST.sel.storage&&ST.sel.storage.n===item.n;
-      var pcpLinkS=item.pcp?'<a href="'+item.pcp+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="display:inline-block;margin-top:.35rem;font-size:.72rem;color:var(--cyan);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(34,211,238,.3);">Check price on PCPartPicker &#8599;</a>':'';
-      html+='<button class="opt'+(isSel?' sel':'')+'" data-cat="storage" data-idx="'+realIdx+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div><div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+' <span style="font-size:.68rem;color:var(--mut);font-weight:400">est.</span></div><div class="opt-note">'+item.s+'</div>'+pcpLinkS+'</button>';
+      html+='<button class="opt'+(isSel?' sel':'')+'" data-cat="storage" data-idx="'+realIdx+'" onclick="selectOpt(this)"><div class="opt-check">&#10003; Selected</div><div class="opt-name">'+item.n+'</div><div class="opt-price">~'+fmtP(item.lo,item.hi)+'</div><div class="opt-note">'+item.s+'</div></button>';
     });
     html+='</div></div>';
   });
