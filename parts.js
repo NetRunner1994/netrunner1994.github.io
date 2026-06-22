@@ -14,69 +14,105 @@ const ICONS = {
   fans:'<svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" rx="4" fill="#0d1b2a" stroke="#22d3ee" stroke-width="1.5"/><circle cx="24" cy="24" r="14" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".3"/><circle cx="24" cy="24" r="4" fill="#22d3ee" opacity=".3" stroke="#22d3ee" stroke-width="1"/><path d="M24 20 C26 16 30 15 31 18 C32 21 28 22 24 20Z" fill="#22d3ee" opacity=".6"/><path d="M28 24 C32 22 34 25 32 28 C30 31 27 28 28 24Z" fill="#22d3ee" opacity=".6"/><path d="M24 28 C22 32 18 33 17 30 C16 27 20 26 24 28Z" fill="#22d3ee" opacity=".6"/><path d="M20 24 C16 26 14 23 16 20 C18 17 21 20 20 24Z" fill="#22d3ee" opacity=".6"/><circle cx="8" cy="8" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="40" cy="8" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="8" cy="40" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/><circle cx="40" cy="40" r="2" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/></svg>'
 };
 
+// perf: 1=GTX 1060 tier (1080p medium) → 10=RTX 5090 tier (4K/8K flagship)
 const DATA = {
   gpu: {
     budget:[
-      {n:'NVIDIA RTX 5050 8GB',lo:278,hi:312,s:'1080p entry · Handles all modern titles at high settings',pcp:'https://pcpartpicker.com/search/?q=RTX+5050'},
-      {n:'NVIDIA RTX 5060 8GB',lo:335,hi:368,s:'Strong 1080p, capable 1440p · Blackwell gen',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+8GB'},
-      {n:'AMD RX 9060 XT 8GB',lo:352,hi:392,s:'AMD alternative · RDNA 4 · Great open-source drivers',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+8GB'},
-      {n:'NVIDIA RTX 5060 Ti 8GB',lo:368,hi:425,s:'1080p/1440p · Faster Ti chip · DLSS 4 · 8GB is limiting by 2027',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+8GB'}
+      {n:'NVIDIA RTX 5050 8GB',lo:278,hi:312,year:2025,perf:4,s:'1080p entry · Handles all modern titles at high settings',pcp:'https://pcpartpicker.com/search/?q=RTX+5050'},
+      {n:'NVIDIA RTX 5060 8GB',lo:335,hi:368,year:2025,perf:5,s:'Strong 1080p, capable 1440p · Blackwell gen',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+8GB'},
+      {n:'AMD RX 9060 XT 8GB',lo:352,hi:392,year:2025,perf:5,s:'AMD alternative · RDNA 4 · Great open-source drivers',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+8GB'},
+      {n:'NVIDIA RTX 5060 Ti 8GB',lo:368,hi:425,year:2025,perf:6,s:'1080p/1440p · Faster Ti chip · DLSS 4 · 8GB is limiting by 2027',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+8GB'},
+      // Used market / older generation options
+      {n:'NVIDIA RTX 3060 12GB',lo:190,hi:265,year:2021,perf:4,s:'Used market · Solid 1080p · 12GB VRAM helps · Light 1440p capable',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+12GB'},
+      {n:'NVIDIA RTX 2060 6GB',lo:130,hi:200,year:2018,perf:3,s:'Used market · 1080p ultra · Entry ray tracing · DLSS support',pcp:'https://pcpartpicker.com/search/?q=RTX+2060+6GB'},
+      {n:'NVIDIA GTX 1660 Super 6GB',lo:100,hi:155,year:2019,perf:2,s:'Used market · 1080p high settings · No ray tracing · Solid budget pick',pcp:'https://pcpartpicker.com/search/?q=GTX+1660+Super'},
+      {n:'AMD RX 580 8GB',lo:55,hi:90,year:2017,perf:1,s:'Used market · 1080p medium settings · 8GB VRAM · Great for Linux',pcp:'https://pcpartpicker.com/search/?q=RX+580+8GB'},
+      {n:'NVIDIA GTX 1060 6GB',lo:50,hi:85,year:2016,perf:1,s:'Used market · 1080p medium settings · Esports titles only · Cheapest entry point',pcp:'https://pcpartpicker.com/search/?q=GTX+1060+6GB'}
     ],
     mid:[
-      {n:'AMD RX 9060 XT 16GB',lo:428,hi:478,s:'16GB VRAM future-proofs this card significantly · RDNA 4',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'},
-      {n:'NVIDIA RTX 5060 Ti 16GB',lo:565,hi:625,s:'Speed + headroom · Best mid-range overall balance',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+16GB'},
-      {n:'AMD RX 9070 16GB',lo:545,hi:625,s:'1440p powerhouse · Beats RTX 5070 in many benchmarks · Near MSRP now',pcp:'https://pcpartpicker.com/search/?q=RX+9070'},
-      {n:'NVIDIA RTX 5070 12GB',lo:605,hi:672,s:'Top 1440p · DLSS 4 Multi-Frame Gen · 4K capable',pcp:'https://pcpartpicker.com/search/?q=RTX+5070'}
+      {n:'AMD RX 9060 XT 16GB',lo:428,hi:478,year:2025,perf:5,s:'16GB VRAM future-proofs this card significantly · RDNA 4',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'},
+      {n:'NVIDIA RTX 5060 Ti 16GB',lo:565,hi:625,year:2025,perf:6,s:'Speed + headroom · Best mid-range overall balance',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+16GB'},
+      {n:'AMD RX 9070 16GB',lo:545,hi:625,year:2025,perf:7,s:'1440p powerhouse · Beats RTX 5070 in many benchmarks · Near MSRP now',pcp:'https://pcpartpicker.com/search/?q=RX+9070'},
+      {n:'NVIDIA RTX 5070 12GB',lo:605,hi:672,year:2025,perf:8,s:'Top 1440p · DLSS 4 Multi-Frame Gen · 4K capable',pcp:'https://pcpartpicker.com/search/?q=RTX+5070'},
+      // Current-gen 2023-2024 options
+      {n:'NVIDIA RTX 4060 Ti 8GB',lo:350,hi:415,year:2023,perf:6,s:'Strong 1440p · DLSS 3 Frame Gen · Efficient 160W card',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+Ti+8GB'},
+      {n:'NVIDIA RTX 4060 8GB',lo:275,hi:330,year:2023,perf:5,s:'Solid 1440p entry · DLSS 3 · Frame gen support · Very efficient',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+8GB'},
+      // Used market / older generation options
+      {n:'NVIDIA RTX 3070 8GB',lo:295,hi:385,year:2020,perf:6,s:'Used market · Strong 1440p · Still very capable in 2026',pcp:'https://pcpartpicker.com/search/?q=RTX+3070+8GB'},
+      {n:'AMD RX 6700 XT 12GB',lo:235,hi:325,year:2021,perf:5,s:'Used market · Solid 1440p · 12GB VRAM advantage · Great value',pcp:'https://pcpartpicker.com/search/?q=RX+6700+XT+12GB'},
+      {n:'NVIDIA RTX 3060 Ti 8GB',lo:230,hi:310,year:2020,perf:5,s:'Used market · 1440p capable · Better than RTX 3060 for gaming',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+Ti+8GB'}
     ],
     high:[
-      {n:'AMD RX 9070 XT 16GB',lo:648,hi:758,s:'1440p/4K champion · 16GB · AMD RDNA 4 flagship mid · Prices dropping',pcp:'https://pcpartpicker.com/search/?q=RX+9070+XT'},
-      {n:'NVIDIA RTX 5070 Ti 16GB',lo:975,hi:1108,s:'High-refresh 1440p / 4K · Big jump over 5070 · DLSS 4',pcp:'https://pcpartpicker.com/search/?q=RTX+5070+Ti'},
-      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,s:'4K ultra performance · Near-top Blackwell · No compromises · Poor value vs 5070 Ti',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'}
+      {n:'AMD RX 9070 XT 16GB',lo:648,hi:758,year:2025,perf:8,s:'1440p/4K champion · 16GB · AMD RDNA 4 flagship mid · Prices dropping',pcp:'https://pcpartpicker.com/search/?q=RX+9070+XT'},
+      {n:'NVIDIA RTX 5070 Ti 16GB',lo:975,hi:1108,year:2025,perf:9,s:'High-refresh 1440p / 4K · Big jump over 5070 · DLSS 4',pcp:'https://pcpartpicker.com/search/?q=RTX+5070+Ti'},
+      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,year:2025,perf:9,s:'4K ultra performance · Near-top Blackwell · No compromises',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
+      // 2024 options
+      {n:'NVIDIA RTX 4070 Ti Super 16GB',lo:720,hi:845,year:2024,perf:8,s:'4K capable · 16GB VRAM · Strong high-end value · DLSS 3',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Ti+Super'},
+      // 2023 options
+      {n:'NVIDIA RTX 4070 12GB',lo:530,hi:615,year:2023,perf:7,s:'High 1440p · DLSS 3 Frame Gen · Very efficient · Great 2023 card',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+12GB'},
+      // Used market high-end options
+      {n:'NVIDIA RTX 3090 24GB',lo:600,hi:790,year:2020,perf:8,s:'Used market · 24GB VRAM · Content creation beast · 4K capable',pcp:'https://pcpartpicker.com/search/?q=RTX+3090'},
+      {n:'AMD RX 6800 XT 16GB',lo:410,hi:560,year:2020,perf:7,s:'Used market · 1440p max / entry 4K · 16GB VRAM · Excellent value used',pcp:'https://pcpartpicker.com/search/?q=RX+6800+XT+16GB'},
+      {n:'NVIDIA RTX 3080 10GB',lo:395,hi:540,year:2020,perf:7,s:'Used market · High 1440p / entry 4K · Still very capable in 2026',pcp:'https://pcpartpicker.com/search/?q=RTX+3080+10GB'}
     ],
     ultra:[
-      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,s:'Second-best GPU alive · 4K / high-refresh beast',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
-      {n:'NVIDIA RTX 5090 32GB',lo:3200,hi:4200,s:'Best GPU on the market · 4K/8K · AI/ML workloads · 32GB VRAM · Elevated above MSRP',pcp:'https://pcpartpicker.com/search/?q=RTX+5090'}
+      {n:'NVIDIA RTX 5080 16GB',lo:1285,hi:1455,year:2025,perf:9,s:'Second-best GPU alive · 4K / high-refresh beast',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
+      {n:'NVIDIA RTX 5090 32GB',lo:3200,hi:4200,year:2025,perf:10,s:'Best GPU on the market · 4K/8K · AI/ML workloads · 32GB VRAM · Elevated above MSRP',pcp:'https://pcpartpicker.com/search/?q=RTX+5090'},
+      // 2024 options
+      {n:'NVIDIA RTX 4080 Super 16GB',lo:900,hi:1085,year:2024,perf:9,s:'4K ultra · 16GB VRAM · Better value than original 4080 · DLSS 3',pcp:'https://pcpartpicker.com/search/?q=RTX+4080+Super'},
+      // 2022 options
+      {n:'NVIDIA RTX 4090 24GB',lo:1500,hi:2100,year:2022,perf:9,s:'Former flagship · 4K ultra · 24GB VRAM · Still top-5 GPU on the planet',pcp:'https://pcpartpicker.com/search/?q=RTX+4090'},
+      {n:'AMD RX 7900 XTX 24GB',lo:780,hi:1040,year:2022,perf:8,s:'AMD flagship · 4K ultra · 24GB VRAM · Strong rasterization performance',pcp:'https://pcpartpicker.com/search/?q=RX+7900+XTX'}
     ]
   },
   cpu: {
     budget:[
-      {n:'AMD Ryzen 5 4500',lo:78,hi:105,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Budget entry · Good for light gaming + everyday use',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+4500'},
-      {n:'AMD Ryzen 5 5600',lo:105,hi:142,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Proven performer · Best budget gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600'},
-      {n:'AMD Ryzen 5 5600X',lo:135,hi:168,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Boosted clocks · Small OC headroom over 5600',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600X'},
-      {n:'Intel Core i5-12400F',lo:145,hi:185,sk:'LGA1700',dd:'DDR4',s:'6-core LGA1700 · Solid 1080p gaming · No iGPU',pcp:'https://pcpartpicker.com/search/?q=i5-12400F'}
+      {n:'AMD Ryzen 5 4500',lo:78,hi:105,year:2020,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Budget entry · Good for light gaming + everyday use',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+4500'},
+      {n:'AMD Ryzen 5 5600',lo:105,hi:142,year:2021,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Proven performer · Best budget gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600'},
+      {n:'AMD Ryzen 5 5600X',lo:135,hi:168,year:2021,sk:'AM4',dd:'DDR4',s:'6-core AM4 · Boosted clocks · Small OC headroom over 5600',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600X'},
+      {n:'Intel Core i5-12400F',lo:145,hi:185,year:2022,sk:'LGA1700',dd:'DDR4',s:'6-core LGA1700 · Solid 1080p gaming · No iGPU',pcp:'https://pcpartpicker.com/search/?q=i5-12400F'},
+      // Used market / older AM4
+      {n:'AMD Ryzen 5 3600',lo:65,hi:95,year:2019,sk:'AM4',dd:'DDR4',s:'Used market · 6-core AM4 · Great value used · Still capable for gaming',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+3600'}
     ],
     mid:[
-      {n:'Intel Core i5-14600K',lo:215,hi:258,sk:'LGA1700',dd:'DDR4',s:'14-core hybrid · Phenomenal gaming + streaming value',pcp:'https://pcpartpicker.com/search/?q=i5-14600K'},
-      {n:'Intel Core i5-14600KF',lo:228,hi:268,sk:'LGA1700',dd:'DDR4',s:'Same as 14600K · No iGPU · Slightly cheaper',pcp:'https://pcpartpicker.com/search/?q=i5-14600KF'},
-      {n:'AMD Ryzen 5 7600X',lo:172,hi:215,sk:'AM5',dd:'DDR5',s:'6-core AM5 · Fast single-core · Future platform',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+7600X'},
-      {n:'AMD Ryzen 5 9600X',lo:198,hi:238,sk:'AM5',dd:'DDR5',s:'6-core Zen 5 · 5.4GHz boost · Best mid gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+9600X'},
-      {n:'Intel Core Ultra 5 245KF',lo:188,hi:228,sk:'LGA1851',dd:'DDR5',s:'14-core Arrow Lake · Current-gen Intel · No iGPU',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+5+245KF'},
-      {n:'AMD Ryzen 7 7700X',lo:238,hi:278,sk:'AM5',dd:'DDR5',s:'8-core AM5 · Great streaming + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+7700X'}
+      {n:'Intel Core i5-14600K',lo:215,hi:258,year:2023,sk:'LGA1700',dd:'DDR4',s:'14-core hybrid · Phenomenal gaming + streaming value',pcp:'https://pcpartpicker.com/search/?q=i5-14600K'},
+      {n:'Intel Core i5-14600KF',lo:228,hi:268,year:2023,sk:'LGA1700',dd:'DDR4',s:'Same as 14600K · No iGPU · Slightly cheaper',pcp:'https://pcpartpicker.com/search/?q=i5-14600KF'},
+      {n:'AMD Ryzen 5 7600X',lo:172,hi:215,year:2022,sk:'AM5',dd:'DDR5',s:'6-core AM5 · Fast single-core · Future platform',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+7600X'},
+      {n:'AMD Ryzen 5 9600X',lo:198,hi:238,year:2024,sk:'AM5',dd:'DDR5',s:'6-core Zen 5 · 5.4GHz boost · Best mid gaming CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+9600X'},
+      {n:'Intel Core Ultra 5 245KF',lo:188,hi:228,year:2024,sk:'LGA1851',dd:'DDR5',s:'14-core Arrow Lake · Current-gen Intel · No iGPU',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+5+245KF'},
+      {n:'AMD Ryzen 7 7700X',lo:238,hi:278,year:2022,sk:'AM5',dd:'DDR5',s:'8-core AM5 · Great streaming + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+7700X'},
+      // Strong AM4 options (great used / new value)
+      {n:'AMD Ryzen 7 5800X3D',lo:195,hi:255,year:2022,sk:'AM4',dd:'DDR4',s:'8-core AM4 · 3D V-Cache · Was the #1 gaming CPU of its era · Still excellent',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+5800X3D'},
+      {n:'AMD Ryzen 7 5700X',lo:128,hi:175,year:2022,sk:'AM4',dd:'DDR4',s:'8-core AM4 · Efficient · Great budget-to-mid upgrade CPU',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+5700X'},
+      {n:'Intel Core i5-13600K',lo:195,hi:245,year:2022,sk:'LGA1700',dd:'DDR4',s:'14-core hybrid · Excellent gaming + productivity value · LGA1700',pcp:'https://pcpartpicker.com/search/?q=i5-13600K'}
     ],
     high:[
-      {n:'AMD Ryzen 7 9700X',lo:295,hi:342,sk:'AM5',dd:'DDR5',s:'8-core Zen 5 · Improved IPC · Runs cool',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9700X'},
-      {n:'AMD Ryzen 9 7900X',lo:315,hi:378,sk:'AM5',dd:'DDR5',s:'12-core AM5 · Serious creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+7900X'},
-      {n:'Intel Core i7-14700K',lo:315,hi:372,sk:'LGA1700',dd:'DDR4',s:'20-core hybrid · Gaming + content creation beast',pcp:'https://pcpartpicker.com/search/?q=i7-14700K'},
-      {n:'Intel Core Ultra 7 265KF',lo:285,hi:338,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · No iGPU · Excellent multi-threaded',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265KF'},
-      {n:'Intel Core Ultra 7 265K',lo:302,hi:355,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · Includes iGPU · Current-gen flagship mid',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265K'}
+      {n:'AMD Ryzen 7 9700X',lo:295,hi:342,year:2024,sk:'AM5',dd:'DDR5',s:'8-core Zen 5 · Improved IPC · Runs cool',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9700X'},
+      {n:'AMD Ryzen 9 7900X',lo:315,hi:378,year:2022,sk:'AM5',dd:'DDR5',s:'12-core AM5 · Serious creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+7900X'},
+      {n:'Intel Core i7-14700K',lo:315,hi:372,year:2023,sk:'LGA1700',dd:'DDR4',s:'20-core hybrid · Gaming + content creation beast',pcp:'https://pcpartpicker.com/search/?q=i7-14700K'},
+      {n:'Intel Core Ultra 7 265KF',lo:285,hi:338,year:2024,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · No iGPU · Excellent multi-threaded',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265KF'},
+      {n:'Intel Core Ultra 7 265K',lo:302,hi:355,year:2024,sk:'LGA1851',dd:'DDR5',s:'20-core Arrow Lake · Includes iGPU · Current-gen flagship mid',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265K'},
+      // AM4 high-end (new or used)
+      {n:'AMD Ryzen 9 5900X',lo:175,hi:235,year:2020,sk:'AM4',dd:'DDR4',s:'12-core AM4 · Excellent content creation + gaming · Great value used or new',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+5900X'},
+      {n:'Intel Core i7-13700K',lo:265,hi:325,year:2022,sk:'LGA1700',dd:'DDR4',s:'16-core hybrid · Gaming + streaming powerhouse · LGA1700 platform',pcp:'https://pcpartpicker.com/search/?q=i7-13700K'}
     ],
     ultra:[
-      {n:'AMD Ryzen 7 9800X3D',lo:465,hi:512,sk:'AM5',dd:'DDR5',s:'8-core · 3D V-Cache · Best gaming CPU alive. Period.',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9800X3D'},
-      {n:'AMD Ryzen 9 9900X',lo:485,hi:548,sk:'AM5',dd:'DDR5',s:'12-core Zen 5 · Top creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9900X'},
-      {n:'AMD Ryzen 9 9950X',lo:515,hi:598,sk:'AM5',dd:'DDR5',s:'16-core Zen 5 · Absolute workstation + gaming king',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9950X'},
-      {n:'Intel Core i9-14900K',lo:448,hi:508,sk:'LGA1700',dd:'DDR4',s:'24-core · At all-time low price in 2026 · Great DDR4 value play',pcp:'https://pcpartpicker.com/search/?q=i9-14900K'},
-      {n:'Intel Core Ultra 9 285K',lo:535,hi:628,sk:'LGA1851',dd:'DDR5',s:'24-core Arrow Lake flagship · Maximum Intel productivity',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+9+285K'}
+      {n:'AMD Ryzen 7 9800X3D',lo:465,hi:512,year:2024,sk:'AM5',dd:'DDR5',s:'8-core · 3D V-Cache · Best gaming CPU alive. Period.',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9800X3D'},
+      {n:'AMD Ryzen 9 9900X',lo:485,hi:548,year:2024,sk:'AM5',dd:'DDR5',s:'12-core Zen 5 · Top creator + gaming combo',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9900X'},
+      {n:'AMD Ryzen 9 9950X',lo:515,hi:598,year:2024,sk:'AM5',dd:'DDR5',s:'16-core Zen 5 · Absolute workstation + gaming king',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+9950X'},
+      {n:'Intel Core i9-14900K',lo:448,hi:508,year:2023,sk:'LGA1700',dd:'DDR4',s:'24-core · At all-time low price in 2026 · Great DDR4 value play',pcp:'https://pcpartpicker.com/search/?q=i9-14900K'},
+      {n:'Intel Core Ultra 9 285K',lo:535,hi:628,year:2024,sk:'LGA1851',dd:'DDR5',s:'24-core Arrow Lake flagship · Maximum Intel productivity',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+9+285K'}
     ]
   },
   mobo: {
     budget:[
-      {n:'B550 Motherboard (AM4)',lo:90,hi:138,sk:'AM4',dd:'DDR4',s:'Pairs with Ryzen 4500/5600/5600X · Solid budget board'},
+      {n:'B550 Motherboard (AM4)',lo:90,hi:138,sk:'AM4',dd:'DDR4',s:'Pairs with Ryzen 3600/4500/5600/5600X · Solid budget board'},
       {n:'B660 Motherboard (LGA1700)',lo:88,hi:132,sk:'LGA1700',dd:'DDR4',s:'Pairs with i5-12400F · Entry Intel 12th gen board'},
       {n:'B760 Motherboard (LGA1700)',lo:98,hi:155,sk:'LGA1700',dd:'DDR4',s:'Better VRMs than B660 · More stable under load'},
       {n:'B860 Motherboard (LGA1851)',lo:118,hi:185,sk:'LGA1851',dd:'DDR5',s:'Pairs with Core Ultra 5 245KF · Entry Arrow Lake'}
     ],
     mid:[
-      {n:'X570 Motherboard (AM4)',lo:138,hi:198,sk:'AM4',dd:'DDR4',s:'Premium AM4 · PCIe 4.0 across all lanes'},
+      {n:'X570 Motherboard (AM4)',lo:138,hi:198,sk:'AM4',dd:'DDR4',s:'Premium AM4 · PCIe 4.0 across all lanes · Works with 5800X3D/5700X'},
       {n:'Z790 Motherboard (LGA1700)',lo:158,hi:252,sk:'LGA1700',dd:'DDR4',s:'Top 12th/13th/14th gen Intel · Full OC support'},
       {n:'B650 Motherboard (AM5)',lo:128,hi:212,sk:'AM5',dd:'DDR5',s:'Entry AM5 · Gets you onto the new platform affordably'},
       {n:'Z890 Motherboard (LGA1851)',lo:225,hi:388,sk:'LGA1851',dd:'DDR5',s:'Pairs with Core Ultra 5/7 · Arrow Lake OC unlocked'}

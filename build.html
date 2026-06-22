@@ -261,6 +261,7 @@
           <span class="pp-total-lbl">Estimated Total</span>
           <span class="pp-total-val" id="pp-total">$&mdash;</span>
         </div>
+        <div id="era-box" class="era-box" style="display:none;"></div>
         <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
         <p class="pp-note">All prices are <strong>estimates only</strong> &mdash; verified June 2026. Assembly fee not included. Tower only &mdash; no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
         <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM prices are elevated in 2026</strong> due to AI-driven memory shortages. DDR5 kits are 3&ndash;4x higher than 2025 lows. Verify on PCPartPicker before ordering.</p>
@@ -472,6 +473,65 @@ function updatePrice(){
   tLo+=base.lo;tHi+=base.hi;
   if(tLo>base.lo){$('pp-total').innerHTML='~'+fmtP(tLo,tHi);}
   else{$('pp-total').innerHTML='$&mdash;';}
+  updateEra();
+}
+
+var ERA_NAMES=[
+  null,
+  'Pascal / Polaris Era',   // perf 1
+  'Turing / RDNA 1 Era',    // perf 2
+  'Turing Era',             // perf 3
+  'Ampere / RDNA 2 Entry',  // perf 4
+  'Ampere / RDNA 2 Era',    // perf 5
+  'Ampere+ / RDNA 2 Era',   // perf 6
+  'Ada / RDNA 3 Era',       // perf 7
+  'Ada / RDNA 4 Era',       // perf 8
+  'Blackwell High-End',     // perf 9
+  'Blackwell Flagship'      // perf 10
+];
+var ERA_DESC=[
+  null,
+  '1080p gaming at medium settings. Great for esports titles like CS2, Valorant, and Fortnite.',
+  '1080p gaming at high settings. Handles most modern games smoothly at full HD.',
+  '1080p gaming at ultra settings. Entry-level ray tracing on supported titles.',
+  'Solid 1080p at high or ultra settings. Light 1440p gaming is possible with some settings adjustments.',
+  'Strong 1440p entry. Most games run at 1440p high settings. 1080p is fully maxed out.',
+  'Strong 1440p. Most games run at 1440p max settings with smooth frame rates.',
+  'High-end 1440p, entry 4K. Excellent for 1440p and capable at 4K on most titles.',
+  '4K capable. Handles 4K gaming at high or ultra settings in most titles.',
+  '4K ultra performance. Runs any game at 4K with max settings and ray tracing.',
+  'Absolute best. 4K ray tracing at 100fps+. No game will ever slow this machine down.'
+];
+var ERA_GAMES=[
+  null,
+  ['CS2 — Medium 1080p @ 60fps','Minecraft — High 1080p @ 60fps','Fortnite — Low/Medium 1080p @ 60fps'],
+  ['Fortnite — High 1080p @ 60fps','Valorant — Ultra 1080p @ 144fps','GTA V — High 1080p @ 60fps'],
+  ['Fortnite — Ultra 1080p @ 60fps','Call of Duty — High 1080p @ 60fps','Apex Legends — High 1080p @ 60fps'],
+  ['Cyberpunk 2077 — Medium 1080p @ 60fps','Elden Ring — High 1080p @ 60fps','Fortnite — Ultra 1080p @ 100fps'],
+  ['Cyberpunk 2077 — High 1080p @ 60fps','Elden Ring — Ultra 1080p @ 60fps','Fortnite — Ultra 1440p @ 60fps'],
+  ['Cyberpunk 2077 — Ultra 1080p @ 60fps','Elden Ring — Ultra 1440p @ 60fps','Black Myth: Wukong — High 1440p @ 60fps'],
+  ['Cyberpunk 2077 — Ultra 1440p @ 60fps','Black Myth: Wukong — High 1440p @ 60fps','Hogwarts Legacy — Ultra 1440p @ 60fps'],
+  ['Cyberpunk 2077 — Ultra 1440p @ 100fps+','Black Myth: Wukong — Ultra 1440p @ 60fps','Hogwarts Legacy — Ultra 4K @ 60fps'],
+  ['Cyberpunk 2077 — Ultra 4K RT @ 60fps','Black Myth: Wukong — Ultra 4K @ 60fps','Alan Wake 2 — Ultra 4K @ 60fps'],
+  ['Any game — Ultra 4K RT @ 100fps+','Black Myth: Wukong — 4K Ultra RT @ 100fps','Nothing will slow this machine down']
+];
+
+function updateEra(){
+  var box=$('era-box');
+  if(!box)return;
+  var gpu=ST.sel.gpu;
+  if(!gpu||!gpu.year||!gpu.perf){box.style.display='none';return;}
+  box.style.display='block';
+  var p=Math.max(1,Math.min(10,gpu.perf));
+  var html='<div class="era-badge">&#128197; '+gpu.year+' GPU &mdash; '+ERA_NAMES[p]+'</div>';
+  html+='<div class="era-desc">'+ERA_DESC[p]+'</div>';
+  if(ST.uc==='gaming'){
+    html+='<div class="era-games-lbl">&#127918; What this build can run:</div>';
+    html+='<div class="era-games">';
+    ERA_GAMES[p].forEach(function(g){html+='<div class="era-game-tag">'+g+'</div>';});
+    html+='</div>';
+  }
+  box.innerHTML=html;
 }
 
 function checkCompat(){
@@ -542,6 +602,7 @@ function pickUC(el){
   el.classList.add('active');
   ST.uc=el.dataset.uc;
   applyRecommended(ST.uc);
+  updateEra();
   setTimeout(function(){$('builder').scrollIntoView({behavior:'smooth',block:'start'});},350);
 }
 
@@ -623,6 +684,7 @@ function wzRestart(){
   ST.sel={gpu:null,cpu:null,mobo:null,ram:null,storage:null,case:null,psu:null,cooler:null,fans:null};
   document.querySelectorAll('.csec').forEach(function(s){s.classList.remove('done');});
   var b=$('rec-banner');if(b)b.style.display='none';
+  var eb=$('era-box');if(eb)eb.style.display='none';
   document.querySelectorAll('.uc-card').forEach(function(c){c.classList.remove('active');});
   ST.uc=null;
   renderAll();
