@@ -243,6 +243,7 @@
     </div>
 
     <div>
+      <div id="era-box" class="era-box" style="display:none;"></div>
       <div class="pp">
         <div class="pp-title">Your Build Estimate</div>
         <div id="pp-rows">
@@ -261,7 +262,6 @@
           <span class="pp-total-lbl">Estimated Total</span>
           <span class="pp-total-val" id="pp-total">$&mdash;</span>
         </div>
-        <div id="era-box" class="era-box" style="display:none;"></div>
         <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
         <p class="pp-note">All prices are <strong>estimates only</strong> &mdash; verified June 2026. Assembly fee not included. Tower only &mdash; no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
         <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM prices are elevated in 2026</strong> due to AI-driven memory shortages. DDR5 kits are 3&ndash;4x higher than 2025 lows. Verify on PCPartPicker before ordering.</p>
@@ -478,16 +478,16 @@ function updatePrice(){
 
 var ERA_NAMES=[
   null,
-  'Pascal / Polaris Era',   // perf 1
-  'Turing / RDNA 1 Era',    // perf 2
-  'Turing Era',             // perf 3
-  'Ampere / RDNA 2 Entry',  // perf 4
-  'Ampere / RDNA 2 Era',    // perf 5
-  'Ampere+ / RDNA 2 Era',   // perf 6
-  'Ada / RDNA 3 Era',       // perf 7
-  'Ada / RDNA 4 Era',       // perf 8
-  'Blackwell High-End',     // perf 9
-  'Blackwell Flagship'      // perf 10
+  'Good for esports &amp; lighter games',
+  'Good for most 1080p games',
+  'Strong 1080p gaming',
+  'Solid 1080p &mdash; light 1440p',
+  'Great 1440p gaming',
+  'Strong 1440p gaming',
+  'High-end 1440p &amp; entry 4K',
+  '4K gaming at high/ultra settings',
+  '4K ultra with ray tracing',
+  'Best GPU available &mdash; no limits'
 ];
 var ERA_DESC=[
   null,
@@ -523,7 +523,9 @@ function updateEra(){
   if(!gpu||!gpu.year||!gpu.perf){box.style.display='none';return;}
   box.style.display='block';
   var p=Math.max(1,Math.min(10,gpu.perf));
-  var html='<div class="era-badge">&#128197; '+gpu.year+' GPU &mdash; '+ERA_NAMES[p]+'</div>';
+  var html='<div class="era-header"><span class="era-label">Build Generation</span><span class="era-year">'+gpu.year+'</span></div>';
+  html+='<div class="era-bar-wrap"><div class="era-bar-fill" style="width:'+(p*10)+'%"></div></div>';
+  html+='<div class="era-title">'+ERA_NAMES[p]+'</div>';
   html+='<div class="era-desc">'+ERA_DESC[p]+'</div>';
   if(ST.uc==='gaming'){
     html+='<div class="era-games-lbl">&#127918; What this build can run:</div>';
