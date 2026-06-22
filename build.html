@@ -708,12 +708,37 @@ function wzRestart(){
 function loadFromURL(){
   var p=new URLSearchParams(window.location.search);
   var tier=p.get('tier');
-  if(tier&&['budget','mid','high','ultra'].includes(tier)){
-    var btn=document.querySelector('.tier-btn[data-tier="'+tier+'"]');
-    if(btn)setTier(btn);
-  }
   var uc=p.get('uc');
-  if(uc){var el=document.querySelector('.uc-card[data-uc="'+uc+'"]');if(el)el.classList.add('active');ST.uc=uc;}
+  var fromQuiz=p.get('from_quiz')==='1';
+
+  // Apply tier
+  if(tier&&['budget','mid','high','ultra'].includes(tier)){
+    ST.tier=tier;
+    document.querySelectorAll('.tier-btn').forEach(function(b){b.classList.remove('active');});
+    var tBtn=document.querySelector('.tier-btn[data-tier="'+tier+'"]');
+    if(tBtn)tBtn.classList.add('active');
+    var td=$('tier-desc');if(td)td.innerHTML=TIER_DESCS[tier];
+  }
+
+  // Apply use case
+  if(uc){
+    ST.uc=uc;
+    var el=document.querySelector('.uc-card[data-uc="'+uc+'"]');
+    if(el)el.classList.add('active');
+  }
+
+  // Coming from the quiz: pre-load all recommended parts and show a banner
+  if(fromQuiz&&uc){
+    applyRecommended(uc,ST.tier);
+    var b=$('rec-banner');
+    if(b&&b.style.display!=='none'){
+      b.innerHTML='<span style="font-size:1.1rem;flex-shrink:0">&#127917;</span><div><b style="color:var(--txt)">Your quiz build is loaded!</b> We picked these parts based on your answers. Swap anything you like &mdash; then hit <b style="color:var(--cyan)">Send My Build Request</b> at the bottom when you\'re ready.</div><button onclick="this.parentElement.style.display=\'none\'" style="background:none;border:none;color:var(--mut);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 .25rem;flex-shrink:0">&times;</button>';
+    }
+    setTimeout(function(){var bl=$('builder');if(bl)bl.scrollIntoView({behavior:'smooth',block:'start'});},200);
+    return;
+  }
+
+  // Coming from a share link: load individual parts from URL params
   CATS.forEach(function(c){
     var name=p.get(c);
     if(!name)return;

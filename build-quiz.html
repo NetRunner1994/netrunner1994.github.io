@@ -397,6 +397,16 @@
   </div>
 
 <script>
+// Maps each quiz result key to the matching use-case + tier in the PC Builder
+const QUIZ_TO_BUILD = {
+  budget_entry: { uc: 'gaming',  tier: 'budget' },
+  mid_sweet:    { uc: 'gaming',  tier: 'mid'    },
+  high_perf:    { uc: 'gaming',  tier: 'high'   },
+  ultra_beast:  { uc: 'gaming',  tier: 'ultra'  },
+  work_light:   { uc: 'general', tier: 'budget' },
+  creator:      { uc: 'content', tier: 'high'   },
+};
+
 const QUESTIONS = [
   {
     id: 'use',
@@ -555,23 +565,21 @@ let currentQ = 0;
 let showingResult = false;
 
 // ── RESULT PICKER ──
-function getResult(ans) {
+function getResultKey(ans) {
   const { use, intensity, budget } = ans;
-
-  if (use === 'work' || use === 'general') {
-    if (budget === 'ultra' || budget === 'high') return RESULTS.work_light; // still light for work
-    return RESULTS.work_light;
-  }
+  if (use === 'work' || use === 'general') return 'work_light';
   if (use === 'create') {
-    if (budget === 'ultra') return RESULTS.ultra_beast;
-    return RESULTS.creator;
+    if (budget === 'ultra') return 'ultra_beast';
+    return 'creator';
   }
+  if (budget === 'ultra' || intensity === 'pro') return 'ultra_beast';
+  if (budget === 'high' || intensity === 'heavy') return 'high_perf';
+  if (budget === 'mid' || intensity === 'mid') return 'mid_sweet';
+  return 'budget_entry';
+}
 
-  // gaming path
-  if (budget === 'ultra' || intensity === 'pro') return RESULTS.ultra_beast;
-  if (budget === 'high' || intensity === 'heavy') return RESULTS.high_perf;
-  if (budget === 'mid' || intensity === 'mid') return RESULTS.mid_sweet;
-  return RESULTS.budget_entry;
+function getResult(ans) {
+  return RESULTS[getResultKey(ans)];
 }
 
 // ── RENDER QUESTION ──
@@ -652,6 +660,9 @@ function showScan() {
 
 function renderResult() {
   const result = getResult(answers);
+  const key = getResultKey(answers);
+  const build = QUIZ_TO_BUILD[key] || { uc: 'gaming', tier: 'mid' };
+  const builderURL = 'build.html?from_quiz=1&uc=' + build.uc + '&tier=' + build.tier;
   const card = document.getElementById('quiz-card');
 
   card.innerHTML = `
@@ -682,8 +693,8 @@ function renderResult() {
         ↗ Browse compatible parts on PCPartPicker
       </a>
 
-      <a class="cta-btn" href="request.html" id="cta-link">
-        Got Your Parts? Book a Build →
+      <a class="cta-btn" href="${builderURL}">
+        See My Parts List in the Builder →
       </a>
       <button class="restart-btn" id="restart-btn">[ Start Over ]</button>
     </div>
