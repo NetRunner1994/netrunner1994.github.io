@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Netrunner Builds</title>
+<link rel="icon" href="netrunner_logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.err-wrap{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;}
+.err-code{font-size:6rem;font-weight:900;color:var(--cyan);line-height:1;margin-bottom:.5rem;}
+.err-title{font-size:1.5rem;font-weight:700;color:var(--txt);margin-bottom:.75rem;}
+.err-sub{color:var(--sub);max-width:420px;margin:0 auto 2rem;line-height:1.6;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-i">
+    <a href="index.html" class="nav-logo"><img src="netrunner_logo.webp" alt="Netrunner Builds" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;" width="32" height="32" decoding="async">Netrunner<span style="color:var(--cyan)"> Builds</span></a>
+    <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
+    <button class="nav-burger" id="nav-burger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="upgrade.html">Upgrade My PC</a></li>
+      <li><a href="build-quiz.html">Build Quiz</a></li>
+      <li><a href="build.html">PC Builder Tool</a></li>
+      <li><a href="request.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="err-wrap">
+  <div class="err-code">404</div>
+  <div class="err-title">Page Not Found</div>
+  <p class="err-sub">This page doesn&rsquo;t exist or may have moved. Head back home and we&rsquo;ll get you sorted.</p>
+  <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;">
+    <a href="index.html" class="btn btn-primary">Back to Home</a>
+    <a href="request.html" class="btn btn-secondary">&#128222; Get in Touch</a>
+  </div>
+</div>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+<script src="shared.js"></script>
+</body>
+</html>

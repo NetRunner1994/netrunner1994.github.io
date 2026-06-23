@@ -6,34 +6,20 @@
 <meta name="description" content="Netrunner Builds PC Upgrades. GPU swaps, RAM upgrades, SSD installs, system refreshes. On-site service in North Texas. Starting at $35 labor.">
 <meta property="og:title" content="Upgrade My PC — Netrunner Builds">
 <meta property="og:description" content="GPU swaps, RAM upgrades, SSD installs and more. On-site service in North Texas starting at $35 labor.">
-<meta property="og:image" content="https://netrunnerbuilds.com/netrunner_logo.png">
-<meta property="og:url" content="https://netrunnerbuilds.com/upgrade.html">
+<meta property="og:image" content="%%SITE_URL%%/netrunner_logo.png">
+<meta property="og:url" content="%%SITE_URL%%/upgrade.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://netrunnerbuilds.com/netrunner_logo.png">
+<meta name="twitter:image" content="%%SITE_URL%%/netrunner_logo.png">
 <title>Upgrade My PC — Netrunner Builds</title>
 <link rel="icon" href="netrunner_logo.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://netrunnerbuilds.com/upgrade.html">
+<link rel="canonical" href="%%SITE_URL%%/upgrade.html">
 <link rel="preload" as="image" href="hero-bg.webp" type="image/webp">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav>
-  <div class="nav-i">
-    <a href="index.html" class="nav-logo"><img src="netrunner_logo.webp" alt="Netrunner Builds" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;" width="32" height="32" decoding="async">Netrunner<span style="color:var(--cyan)"> Builds</span></a>
-    <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
-    <button class="nav-burger" id="nav-burger" onclick="toggleNav()" aria-label="Toggle navigation menu">&#9776;</button>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="upgrade.html" class="active">Upgrade My PC</a></li>
-      <li><a href="build-quiz.html" >Build Quiz</a></li>
-      <li><a href="build.html" >PC Builder Tool</a></li>
-      <li><a href="request.html" >Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
+%%NAV%%
 
 <section class="hero" style="position:relative;overflow:hidden;min-height:340px;">
   <div class="vet-badge"><span style="font-size:1.1rem;line-height:1;">&#127482;&#127480;</span> Veteran-Owned &amp; Operated &mdash; U.S. Marine Corps</div>
@@ -104,14 +90,14 @@
     <div class="area-info">
       <div class="area-card">
         <h4>&#128205; Service Area</h4>
-        <p>Based in <b>Melissa, TX</b>. Serving <b>North Texas</b> for in-home service. Out of area? Ship us your rig.</p>
+        <p>Based in <b>%%CITY%%, %%STATE%%</b>. Serving <b>North Texas</b> for in-home service. Out of area? Ship us your rig.</p>
         <div class="city-tags">
           <span class="city-tag">Melissa</span><span class="city-tag">McKinney</span><span class="city-tag">Frisco</span><span class="city-tag">Allen</span><span class="city-tag">Prosper</span><span class="city-tag">Plano</span><span class="city-tag">Celina</span><span class="city-tag">+ surrounding North Texas</span>
         </div>
         <h4 class="area-sub-h4">Business Hours</h4>
         <div class="hours-row">
-          <span class="badge-sm">Mon–Fri: 9AM–7PM</span>
-          <span class="badge-sm">Sat &amp; Sun: By Appointment</span>
+          <span class="badge-sm">%%HOURS_WD%%</span>
+          <span class="badge-sm">%%HOURS_WE%%</span>
         </div>
         <h4 class="area-sub-h4">Payment Accepted</h4>
         <div class="pay-row">
@@ -134,48 +120,11 @@
   <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What happens if something breaks after the upgrade? <span class="faq-plus">+</span></button><div class="faq-a">Every job comes with a 30-day warranty. If something fails because of our work, we fix it free. If a part itself fails (manufacturer defect), that&rsquo;s covered by the manufacturer&rsquo;s warranty. We also offer RMA concierge for $25 where we handle the return for you.</div></div>
   <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Can I use parts I already own? <span class="faq-plus">+</span></button><div class="faq-a">Yes, as long as they&rsquo;re compatible. Common reuses: cases, storage drives, PSUs. We&rsquo;ll review what you have when you submit your request.</div></div>
   <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">How do I pay? <span class="faq-plus">+</span></button><div class="faq-a">Zelle, Venmo, PayPal, or cash. Payment is due upon completion and your satisfaction.</div></div>
-  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do you respond on weekends? <span class="faq-plus">+</span></button><div class="faq-a">Active hours are Mon–Fri: 9AM–7PM. Weekends are by appointment only. All form submissions get a response within 24&ndash;28 hours.</div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">Do you respond on weekends? <span class="faq-plus">+</span></button><div class="faq-a">Active hours are %%HOURS_WD%%. Weekends are by appointment only. All form submissions get a response within 24&ndash;28 hours.</div></div>
   <div class="faq-item"><button class="faq-q" onclick="toggleFAQ(this)">What&rsquo;s the difference between an upgrade and a full new build? <span class="faq-plus">+</span></button><div class="faq-a">An upgrade keeps your existing system and swaps or adds specific components &mdash; cheaper and faster. A full new build starts from scratch with all-new parts. If your CPU and motherboard are more than 4&ndash;5 years old and you want a big jump in performance, a new build usually makes more sense. Not sure? <a href="request.html">Send us a message</a> and we&rsquo;ll be straight with you.</div></div>
 </section>
 
-<footer>
-  <div class="ft-i">
-    <div>
-      <div class="ft-brand"><img src="netrunner_logo.webp" alt="Netrunner Builds" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;" width="28" height="28" decoding="async" loading="lazy">Netrunner<span style="color:var(--cyan)"> Builds</span></div>
-      <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran owned, one person operation. I come to you, build it, test it, and actually answer my phone after.</div>
-      <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
-      <div class="pay-badges"><span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span></div>
-    </div>
-    <div class="ft-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="upgrade.html">Upgrade My PC</a></li>
-        <li><a href="build-quiz.html">Build Quiz</a></li>
-        <li><a href="build.html">PC Builder Tool</a></li>
-        <li><a href="request.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h4>Hours</h4>
-      <ul>
-        <li>Mon–Fri: 9AM–7PM</li>
-        <li>Sat &amp; Sun: By Appointment</li>
-      </ul>
-      <h4 style="margin-top:1rem;">Serving</h4>
-      <ul>
-        <li>Melissa &middot; McKinney</li>
-        <li>Frisco &middot; Allen &middot; Prosper</li>
-        <li>Plano &middot; Celina &middot; + more</li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft-bot">
-    <span>&copy; 2026 Netrunner Builds &middot; Melissa, TX</span>
-    <span>&#127482;&#127480; Proudly serving North Texas</span>
-  </div>
-</footer>
-
+%%FOOTER%%
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
 <script src="shared.js"></script>

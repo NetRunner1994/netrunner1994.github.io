@@ -37,6 +37,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(4,6,18,.97);backdrop-filte
 .gs-line{display:inline-block;background:rgba(0,0,8,.8);border:1px solid rgba(0,212,255,.4);color:#5EEDFF;padding:.5rem 1.25rem;border-radius:8px;font-size:.85rem;margin-bottom:1.75rem;max-width:600px;}
 .bio-card{max-width:660px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:1.25rem 1.5rem;text-align:left;font-size:.88rem;color:var(--sub);line-height:1.7;}
 .bio-card strong{color:var(--txt);}
+.bio-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid var(--cyan);float:left;margin:0 1rem .5rem 0;}
+.price-badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin:1.25rem 0 .5rem;}
+.price-badge{background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:.7rem 1.25rem;text-align:center;min-width:130px;}
+.price-badge-lbl{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem;}
+.price-badge-val{font-size:1.3rem;font-weight:800;color:var(--cyan);}
+.price-parts-badge{border-color:rgba(0,229,255,.25);}
+.price-badge-sub{font-size:.75rem;color:var(--sub);}
+.price-badge-sub a{color:var(--cyan);text-decoration:none;}
+.section-h3{font-size:1.1rem;font-weight:700;color:#fff;margin:2rem 0 1rem;padding-top:1rem;border-top:1px solid var(--brd);}
+.area-sub-h4{font-size:.82rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .5rem;}
 .hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;border:none;text-decoration:none !important;}
 .btn-primary{background:var(--cyan);color:#000;}

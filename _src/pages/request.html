@@ -6,34 +6,20 @@
 <meta name="description" content="Get in touch with Netrunner Builds. Questions, build requests, upgrade quotes, or anything else. North Texas veteran-owned service. Response within 24 to 28 hours.">
 <meta property="og:title" content="Get in Touch — Netrunner Builds">
 <meta property="og:description" content="Questions, build requests, upgrade quotes, or anything else. I get back to everyone within 24 to 28 hours.">
-<meta property="og:image" content="https://netrunnerbuilds.com/netrunner_logo.png">
-<meta property="og:url" content="https://netrunnerbuilds.com/request.html">
+<meta property="og:image" content="%%SITE_URL%%/netrunner_logo.png">
+<meta property="og:url" content="%%SITE_URL%%/request.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://netrunnerbuilds.com/netrunner_logo.png">
+<meta name="twitter:image" content="%%SITE_URL%%/netrunner_logo.png">
 <title>Get in Touch — Netrunner Builds</title>
 <link rel="icon" href="netrunner_logo.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="canonical" href="https://netrunnerbuilds.com/request.html">
+<link rel="canonical" href="%%SITE_URL%%/request.html">
 <link rel="preload" as="image" href="hero-bg.webp" type="image/webp">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav>
-  <div class="nav-i">
-    <a href="index.html" class="nav-logo"><img src="netrunner_logo.webp" alt="Netrunner Builds" style="height:32px;width:32px;object-fit:contain;border-radius:6px;margin-right:.45rem;vertical-align:middle;" width="32" height="32" decoding="async">Netrunner<span style="color:var(--cyan)"> Builds</span></a>
-    <a href="tel:9723917153" class="nav-phone">&#128222; (972) 391-7153</a>
-    <button class="nav-burger" id="nav-burger" onclick="toggleNav()" aria-label="Toggle navigation menu">&#9776;</button>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="upgrade.html" >Upgrade My PC</a></li>
-      <li><a href="build-quiz.html" >Build Quiz</a></li>
-      <li><a href="build.html" >PC Builder Tool</a></li>
-      <li><a href="request.html" class="active">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
+%%NAV%%
 
 <div class="sec" style="max-width:760px;padding-top:3.5rem;">
   <div class="sec-lbl">Let&rsquo;s Talk</div>
@@ -112,44 +98,7 @@
   </div>
 </div>
 
-<footer>
-  <div class="ft-i">
-    <div>
-      <div class="ft-brand"><img src="netrunner_logo.webp" alt="Netrunner Builds" style="height:28px;width:28px;object-fit:contain;border-radius:5px;margin-right:.4rem;vertical-align:middle;" width="28" height="28" decoding="async" loading="lazy">Netrunner<span style="color:var(--cyan)"> Builds</span></div>
-      <div class="ft-tag">Custom PC builds out of Melissa, TX. Veteran owned, one person operation. I come to you, build it, test it, and actually answer my phone after.</div>
-      <a href="tel:+19723917153" class="ft-phone">&#128222; (972) 391-7153</a>
-      <div class="pay-badges"><span class="pay-b">Zelle</span><span class="pay-b">Venmo</span><span class="pay-b">PayPal</span><span class="pay-b">Cash</span></div>
-    </div>
-    <div class="ft-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="upgrade.html">Upgrade My PC</a></li>
-        <li><a href="build-quiz.html">Build Quiz</a></li>
-        <li><a href="build.html">PC Builder Tool</a></li>
-        <li><a href="request.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h4>Hours</h4>
-      <ul>
-        <li>Mon–Fri: 9AM–7PM</li>
-        <li>Sat &amp; Sun: By Appointment</li>
-      </ul>
-      <h4 style="margin-top:1rem;">Serving</h4>
-      <ul>
-        <li>Melissa &middot; McKinney</li>
-        <li>Frisco &middot; Allen &middot; Prosper</li>
-        <li>Plano &middot; Celina &middot; + more</li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft-bot">
-    <span>&copy; 2026 Netrunner Builds &middot; Melissa, TX</span>
-    <span>&#127482;&#127480; Proudly serving North Texas</span>
-  </div>
-</footer>
-
+%%FOOTER%%
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
 <script src="shared.js"></script>
@@ -226,13 +175,13 @@ function handleSubmit(e){
       }else{
         btn.disabled=false;
         btn.textContent='Send It →';
-        alert('Something went wrong. Please call us at (972) 391-7153.');
+        alert('Something went wrong. Please call us at %%PHONE%%.');
       }
     })
     .catch(function(){
       btn.disabled=false;
       btn.textContent='Send It →';
-      alert('Could not send. Please call us at (972) 391-7153.');
+      alert('Could not send. Please call us at %%PHONE%%.');
     });
 }
 
