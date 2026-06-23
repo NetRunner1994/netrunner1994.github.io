@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://netrunnerbuilds.com/sitemap.xml
+Sitemap: https://netrunner1994.github.io/sitemap.xml
