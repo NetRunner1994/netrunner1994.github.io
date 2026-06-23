@@ -271,6 +271,7 @@
         <div class="pp-actions">
           <button class="btn btn-green" onclick="goToContact()" style="width:100%;justify-content:center;">Request This Build &#8594;</button>
           <button class="btn btn-secondary" onclick="shareMyBuild()" style="width:100%;justify-content:center;">&#128279; Share My Build</button>
+          <button class="btn" onclick="printPartsList()" style="width:100%;justify-content:center;background:var(--surf);border:1px solid var(--brd);color:var(--sub);">&#128438; Print / Save Parts List</button>
         </div>
       </div>
     </div>
@@ -629,6 +630,48 @@ function goToContact(){
   if(ST.uc)params.set('uc',ST.uc);
   CATS.forEach(function(c){if(ST.sel[c])params.set(c,ST.sel[c].n);});
   window.location.href='request.html?'+params.toString();
+}
+
+function printPartsList(){
+  var LBLS={gpu:'Graphics Card (GPU)',cpu:'Processor (CPU)',mobo:'Motherboard',ram:'Memory (RAM)',storage:'Storage (SSD)',case:'Case',psu:'Power Supply (PSU)',cooler:'CPU Cooler',fans:'Case Fans'};
+  var parts=[];
+  CATS.forEach(function(c){
+    var sel=ST.sel[c];
+    if(sel){
+      var pr=sel.lo&&sel.hi?'~$'+sel.lo.toLocaleString()+'–$'+sel.hi.toLocaleString():'';
+      parts.push({cat:LBLS[c]||c,name:sel.n,price:pr,pcp:sel.pcp||''});
+    }
+  });
+  if(parts.length===0){showToast('Select some parts first!');return;}
+  var date=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Parts List — Netrunner Builds</title><style>';
+  h+='body{font-family:system-ui,-apple-system,sans-serif;max-width:680px;margin:2rem auto;color:#1a1a1a;padding:1rem 1.5rem;}';
+  h+='h1{font-size:1.3rem;font-weight:800;margin-bottom:.2rem;}';
+  h+='.meta{font-size:.82rem;color:#666;margin-bottom:1.5rem;}';
+  h+='table{width:100%;border-collapse:collapse;margin-bottom:1.5rem;}';
+  h+='th{text-align:left;font-size:.72rem;color:#888;text-transform:uppercase;letter-spacing:.06em;padding:.5rem .75rem;border-bottom:2px solid #e0e0e0;}';
+  h+='td{padding:.65rem .75rem;border-bottom:1px solid #f0f0f0;font-size:.9rem;vertical-align:top;}';
+  h+='.c{color:#666;font-size:.8rem;width:170px;}.p{text-align:right;font-weight:700;color:#0070cc;white-space:nowrap;width:130px;}';
+  h+='a{color:#888;font-size:.72rem;text-decoration:none;}';
+  h+='.warn{background:#fffbeb;border:1px solid #e8c840;border-radius:8px;padding:.85rem 1rem;font-size:.83rem;color:#7c5a00;margin-bottom:1.25rem;line-height:1.6;}';
+  h+='.warn b{color:#5a3f00;}';
+  h+='.ft{font-size:.75rem;color:#aaa;border-top:1px solid #eee;padding-top:.85rem;}';
+  h+='.pbtn{background:#00b4cc;color:#fff;border:none;border-radius:6px;padding:.5rem 1.2rem;font-weight:700;cursor:pointer;font-size:.88rem;margin-bottom:1.5rem;}';
+  h+='@media print{.pbtn{display:none;}}';
+  h+='</style></head><body>';
+  h+='<h1>Parts List — Netrunner Builds</h1>';
+  h+='<div class="meta">Generated '+date+' &nbsp;&bull;&nbsp; (972) 391-7153 &nbsp;&bull;&nbsp; netrunner1994.github.io</div>';
+  h+='<button class="pbtn" onclick="window.print()">&#128438; Print / Save as PDF</button>';
+  h+='<table><thead><tr><th>Component</th><th>Part</th><th style="text-align:right">Est. Price</th></tr></thead><tbody>';
+  parts.forEach(function(p){
+    h+='<tr><td class="c">'+p.cat+'</td><td><b>'+p.name+'</b>'+(p.pcp?'<br><a href="'+p.pcp+'" target="_blank">Check current price &#8599;</a>':'')+'</td><td class="p">'+p.price+'</td></tr>';
+  });
+  h+='</tbody></table>';
+  h+='<div class="warn"><b>Important &mdash; please read before you shop:</b><br>These are the parts for your custom PC build. You purchase the parts yourself (Amazon, Newegg, or Micro Center). Netrunner Builds handles assembly, cable management, stress testing, and on-site installation only. Labor fee is separate. Prices are estimates and may vary — always confirm before ordering.</div>';
+  h+='<div class="ft">Assembled by Ismael Ruiz &bull; Marine Veteran &bull; Melissa, TX &bull; (972) 391-7153</div>';
+  h+='</body></html>';
+  var w=window.open('','_blank');
+  if(w){w.document.write(h);w.document.close();}else{showToast('Allow pop-ups to open the parts list.');}
 }
 
 function shareMyBuild(){
