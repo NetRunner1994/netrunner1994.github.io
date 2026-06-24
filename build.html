@@ -184,8 +184,8 @@
           <span class="csec-chev" id="chev-case">&#9660;</span>
         </div>
         <div class="csec-body" id="body-case">
-          <p class="cdesc">The case houses everything and affects airflow, size, and looks. Mid-towers are the sweet spot &mdash; plenty of room, easy to work in, great airflow. Want to show off your build? Go with tempered glass and RGB.</p>
-          <div class="opts-grid" id="opts-case"></div>
+          <p class="cdesc">The case houses everything and affects airflow, size, and looks. These are the most popular picks for 2026 &mdash; select one from the dropdown below.</p>
+          <div id="dd-case"></div>
         </div>
       </div>
 
@@ -229,8 +229,8 @@
           <span class="csec-chev" id="chev-fans">&#9660;</span>
         </div>
         <div class="csec-body" id="body-fans">
-          <p class="cdesc">Case fans keep air moving through the whole build &mdash; cool air in from the front, hot air out the back and top. Most builds need 3&ndash;6 fans. These 120mm 3-packs are the standard.</p>
-          <div class="opts-grid" id="opts-fans"></div>
+          <p class="cdesc">Case fans keep air moving through the build &mdash; cool air in from the front, hot air out the back. Select a 3-pack from the dropdown below.</p>
+          <div id="dd-fans"></div>
         </div>
       </div>
 
@@ -413,8 +413,44 @@ function renderStorage(){
   wrap.innerHTML=html;
 }
 
+const DROP_CATS=['case','fans'];
+
+function renderDropdown(cat){
+  var wrap=$('dd-'+cat);
+  if(!wrap)return;
+  var items=DATA[cat];
+  var sel=ST.sel[cat];
+  var selIdx=sel?items.findIndex(function(i){return i.n===sel.n;}): -1;
+  var label=cat==='case'?'a case':'a fan pack';
+  var opts='<option value="-1">— Choose '+label+' —</option>';
+  items.forEach(function(item,i){
+    opts+='<option value="'+i+'"'+(selIdx===i?' selected':'')+'>'+item.n+' (~$'+item.lo+'–$'+item.hi+')</option>';
+  });
+  var pickHtml=sel?'<div class="dd-pick">&#10003; '+sel.n+' <span style="font-size:.72rem;color:var(--mut)">~$'+sel.lo+'&ndash;$'+sel.hi+'</span><br><span style="font-size:.72rem;color:var(--sub)">'+sel.s+'</span></div>':'';
+  wrap.innerHTML='<select class="dd-sel" onchange="selectDrop(\''+cat+'\',parseInt(this.value))">'+opts+'</select>'+pickHtml;
+}
+
+function selectDrop(cat,idx){
+  if(idx<0){
+    ST.sel[cat]=null;
+    var sec=$('csec-'+cat);if(sec)sec.classList.remove('done');
+  }else{
+    var item=DATA[cat][idx];
+    if(!item)return;
+    ST.sel[cat]=item;
+    var sec=$('csec-'+cat);if(sec)sec.classList.add('done');
+    openNext(cat);
+  }
+  renderDropdown(cat);
+  updateHeader(cat);
+  updateProgress();
+  updatePrice();
+  checkCompat();
+}
+
 function renderAll(){
-  ['gpu','cpu','mobo','ram','case','psu','cooler','fans'].forEach(renderCat);
+  ['gpu','cpu','mobo','ram','psu','cooler'].forEach(renderCat);
+  DROP_CATS.forEach(renderDropdown);
   renderStorage();
   ['gpu','cpu','mobo','ram','storage','case','psu','cooler','fans'].forEach(updateHeader);
   updateProgress();
