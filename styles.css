@@ -125,6 +125,15 @@ section{background:rgba(5,5,10,.5);}
 .opt-name{font-weight:600;font-size:.8rem;color:#fff;margin-bottom:.15rem;}
 .opt-price{font-size:.82rem;color:var(--cyan);font-weight:700;margin-bottom:.2rem;}
 .opt-note{font-size:.72rem;color:var(--mut);line-height:1.35;}
+/* POLICY LIST (upgrade page) */
+.policy-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem;}
+.policy-list li{font-size:.83rem;color:var(--mut);line-height:1.5;padding:.6rem .9rem;background:var(--surf);border:1px solid var(--brd);border-radius:8px;}
+.policy-list li b{color:var(--txt);}
+/* DROPDOWN (case / fans) */
+.dd-sel{width:100%;background:var(--surf);border:1.5px solid var(--brd);border-radius:8px;color:var(--txt);font-family:inherit;font-size:.83rem;padding:.6rem .85rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300e5ff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .85rem center;padding-right:2.5rem;transition:border-color .2s;}
+.dd-sel:hover,.dd-sel:focus{border-color:var(--cyan);outline:none;}
+.dd-sel option{background:#0d1117;color:var(--txt);}
+.dd-pick{margin-top:.6rem;padding:.6rem .85rem;background:var(--gdim);border:1px solid var(--grn);border-radius:7px;font-size:.8rem;color:var(--grn);line-height:1.5;}
 /* PSU explain */
 .psu-box{background:var(--surf);border:1px solid var(--brd);border-radius:8px;padding:.75rem 1rem;margin-bottom:.9rem;font-size:.78rem;color:var(--mut);line-height:1.5;}
 .psu-box b{color:var(--txt);}
@@ -311,6 +320,8 @@ footer{background:rgba(8,8,13,.6);border-top:1px solid var(--brd);padding:2.5rem
   .csec-hdr{padding:.9rem 1rem;}
   .csec-body{padding:1rem;}
   .price-parts-badge{display:none;}
+  .bio-photo{float:none;display:block;margin:0 auto 1rem;}
+  .cdesc,.opt-note,.uc-note{font-size:.8rem;}
 }
 /* STYLE OVERRIDES */
 .nav-logo{color:var(--cyan)!important;font-family:var(--font);}
