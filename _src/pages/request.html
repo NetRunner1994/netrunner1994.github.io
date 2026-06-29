@@ -36,12 +36,11 @@
   </div>
 
   <div id="form-wrap">
-    <form name="pc-build-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-      <input type="hidden" name="form-name" value="pc-build-request">
+    <form action="https://formspree.io/f/xojzlwan" method="POST" onsubmit="handleSubmit(event)">
       <input type="hidden" name="build_summary" id="hid-summary">
       <input type="hidden" name="request_type" id="hid-type" value="">
       <input type="hidden" name="use_case" id="hid-uc">
-      <p style="display:none"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="fg">
         <label for="contact-reason">What can I help you with? *</label>
         <select name="contact_reason" id="contact-reason" required onchange="updateContactContext(this.value)">
@@ -85,7 +84,7 @@
         <label for="fnotes">Tell me what&rsquo;s on your mind</label>
         <textarea name="notes" id="fnotes" placeholder="Questions, build ideas, budget, timeline, concerns, or anything else. No pressure to have it all figured out."></textarea>
       </div>
-      <div class="priv-note"><span>&#128274;</span><span>Your info is submitted securely via Netlify and only used to contact you about your build request. We don&rsquo;t store, sell, or share your data.</span></div>
+      <div class="priv-note"><span>&#128274;</span><span>Your info is submitted securely via Formspree and only used to contact you about your build request. We don&rsquo;t store, sell, or share your data.</span></div>
       <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%;justify-content:center;padding:.85rem;">Send It &#8594;</button>
     </form>
   </div>
@@ -164,7 +163,7 @@ function handleSubmit(e){
   var btn=document.getElementById('submit-btn');
   btn.disabled=true;
   btn.textContent='Sending...';
-  fetch('/',{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}})
+  fetch('https://formspree.io/f/xojzlwan',{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}})
     .then(function(r){
       if(r.ok){
         document.getElementById('form-wrap').style.display='none';
