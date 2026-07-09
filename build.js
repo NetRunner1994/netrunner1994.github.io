@@ -11,6 +11,15 @@ const config      = JSON.parse(fs.readFileSync(path.join(SRC, 'config.json'), 'u
 const navTemplate = fs.readFileSync(path.join(SRC, '_partials', 'nav.html'), 'utf8');
 const ftrTemplate = fs.readFileSync(path.join(SRC, '_partials', 'footer.html'), 'utf8');
 
+const PWA_HEAD = [
+  '<link rel="manifest" href="manifest.json">',
+  '<meta name="theme-color" content="#00e5ff">',
+  '<meta name="apple-mobile-web-app-capable" content="yes">',
+  '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">',
+  '<meta name="apple-mobile-web-app-title" content="Netrunner Builds">',
+  '<meta name="mobile-web-app-capable" content="yes">'
+].join('\n');
+
 const PAGES = [
   { file: 'index.html',      active: 'INDEX'   },
   { file: 'upgrade.html',    active: 'UPGRADE' },
@@ -43,7 +52,7 @@ for (const page of PAGES) {
 
   const nav    = applyTokens(navTemplate, activeTokens);
   const footer = applyTokens(ftrTemplate);
-  const html   = applyTokens(fs.readFileSync(srcFile, 'utf8'), { NAV: nav, FOOTER: footer });
+  const html   = applyTokens(fs.readFileSync(srcFile, 'utf8'), { NAV: nav, FOOTER: footer, PWA: PWA_HEAD });
 
   fs.writeFileSync(outFile, html, 'utf8');
   console.log('Built:', page.file);
