@@ -1,0 +1,44 @@
+{
+  "name": "Netrunner Builds",
+  "short_name": "Netrunner",
+  "description": "Custom PC builds out of Melissa, TX. Veteran owned, one person operation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07090f",
+  "theme_color": "#00e5ff",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "netrunner_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "PC Builder",
+      "short_name": "Builder",
+      "url": "/build.html",
+      "icons": [{ "src": "netrunner_logo.png", "sizes": "512x512" }]
+    },
+    {
+      "name": "Get a Quote",
+      "short_name": "Quote",
+      "url": "/request.html",
+      "icons": [{ "src": "netrunner_logo.png", "sizes": "512x512" }]
+    },
+    {
+      "name": "Upgrades",
+      "short_name": "Upgrades",
+      "url": "/upgrade.html",
+      "icons": [{ "src": "netrunner_logo.png", "sizes": "512x512" }]
+    }
+  ]
+}

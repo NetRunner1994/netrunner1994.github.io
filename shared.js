@@ -38,4 +38,8 @@
     var btt=document.getElementById('btt');
     if(btt)btt.classList.toggle('show',window.scrollY>500);
   });
+
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  }
 })();
