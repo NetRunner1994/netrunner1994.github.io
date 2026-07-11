@@ -42,4 +42,14 @@
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('/sw.js').catch(function(){});
   }
+
+  document.querySelectorAll('.carousel-track').forEach(function(track){
+    var slides=track.children.length;
+    if(slides<2)return;
+    var i=0;
+    setInterval(function(){
+      i=(i+1)%slides;
+      track.style.transform='translateX(-'+(i*100)+'%)';
+    },3500);
+  });
 })();
