@@ -176,20 +176,20 @@ const DATA = {
   },
 
   storage: [
-    {n:'Kingston NV3 500GB',lo:35,hi:50,cap:'500GB',s:'Budget OS drive · Fast enough to boot and load programs quickly',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+500GB'},
-    {n:'WD Blue SN580 500GB',lo:35,hi:50,cap:'500GB',s:'Better 500GB option · Faster speeds + better reliability than budget alternatives',pcp:'https://pcpartpicker.com/search/?q=WD+SN580+500GB'},
-    {n:'Kingston NV3 1TB',lo:50,hi:70,cap:'1TB',s:'Budget 1TB · OS + solid game library · Trusted brand at a low price',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+1TB'},
-    {n:'WD Black SN770 1TB',lo:50,hi:75,cap:'1TB',s:'Fast 1TB · Great gaming drive · No slowdowns under load',pcp:'https://pcpartpicker.com/search/?q=WD+SN770+1TB'},
-    {n:'Samsung 990 Evo 1TB',lo:75,hi:110,cap:'1TB',s:'Samsung quality · Very fast · Works with both older and newer motherboards · Excellent longevity',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+1TB'},
-    {n:'Samsung 990 Pro 1TB',lo:100,hi:130,cap:'1TB',s:'Samsung\'s flagship 1TB · Blazing fast · Best endurance in its class',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+1TB'},
-    {n:'WD Black SN850X 1TB',lo:130,hi:230,cap:'1TB',s:'Among the fastest drives available · Same speed class as the PlayStation 5',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+1TB'},
-    {n:'WD Black SN7100 2TB',lo:100,hi:150,cap:'2TB',s:'Great value 2TB · Fast across all tasks · Best entry point for 2TB',pcp:'https://pcpartpicker.com/search/?q=WD+SN7100+2TB'},
-    {n:'Samsung 990 Evo 2TB',lo:150,hi:210,cap:'2TB',s:'Samsung 2TB value option · Very reliable · Strong warranty',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+2TB'},
-    {n:'Samsung 990 Pro 2TB',lo:229,hi:309,cap:'2TB',s:'Samsung flagship 2TB · Maximum speed for power users who need space and performance',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+2TB'},
-    {n:'WD Black SN850X 2TB',lo:269,hi:349,cap:'2TB',s:'Blazing-fast 2TB · 200+ games · No slowdowns at any task',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+2TB'},
-    {n:'WD Black SN850X 4TB',lo:269,hi:349,cap:'4TB',s:'Massive fast drive · 300+ games · For enthusiasts who refuse to delete anything',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+4TB'},
-    {n:'Seagate FireCuda 530 4TB',lo:329,hi:419,cap:'4TB',s:'Blazing-fast 4TB alternative · Matches the fastest drives · Great for large game libraries',pcp:'https://pcpartpicker.com/search/?q=Seagate+FireCuda+530+4TB'},
-    {n:'Samsung 990 Pro 4TB',lo:349,hi:439,cap:'4TB',s:'Samsung flagship 4TB · Maximum speed and maximum capacity in one drive',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+4TB'}
+    {n:'Kingston NV3 500GB',lo:55,hi:75,cap:'500GB',s:'Budget OS drive · Fast enough to boot and load programs quickly · NAND shortage has pushed even budget drives up',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+500GB'},
+    {n:'WD Blue SN580 500GB',lo:59,hi:79,cap:'500GB',s:'Better 500GB option · Faster speeds + better reliability than budget alternatives',pcp:'https://pcpartpicker.com/search/?q=WD+SN580+500GB'},
+    {n:'Kingston NV3 1TB',lo:89,hi:119,cap:'1TB',s:'Budget 1TB · OS + solid game library · Trusted brand at a low price',pcp:'https://pcpartpicker.com/search/?q=Kingston+NV3+1TB'},
+    {n:'WD Black SN770 1TB',lo:99,hi:135,cap:'1TB',s:'Fast 1TB · Great gaming drive · No slowdowns under load',pcp:'https://pcpartpicker.com/search/?q=WD+SN770+1TB'},
+    {n:'Samsung 990 Evo 1TB',lo:145,hi:195,cap:'1TB',s:'Samsung quality · Very fast · Works with both older and newer motherboards · Excellent longevity',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+1TB'},
+    {n:'Samsung 990 Pro 1TB',lo:185,hi:245,cap:'1TB',s:'Samsung\'s flagship 1TB · Blazing fast · Best endurance in its class',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+1TB'},
+    {n:'WD Black SN850X 1TB',lo:239,hi:319,cap:'1TB',s:'Among the fastest drives available · Same speed class as the PlayStation 5',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+1TB'},
+    {n:'WD Black SN7100 2TB',lo:195,hi:265,cap:'2TB',s:'Great value 2TB · Fast across all tasks · Best entry point for 2TB',pcp:'https://pcpartpicker.com/search/?q=WD+SN7100+2TB'},
+    {n:'Samsung 990 Evo 2TB',lo:299,hi:379,cap:'2TB',s:'Samsung 2TB value option · Very reliable · Strong warranty · Reflects current NAND shortage pricing',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Evo+2TB'},
+    {n:'Samsung 990 Pro 2TB',lo:379,hi:459,cap:'2TB',s:'Samsung flagship 2TB · Maximum speed for power users who need space and performance',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+2TB'},
+    {n:'WD Black SN850X 2TB',lo:419,hi:499,cap:'2TB',s:'Blazing-fast 2TB · 200+ games · No slowdowns at any task',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+2TB'},
+    {n:'Seagate FireCuda 530 4TB',lo:699,hi:789,cap:'4TB',s:'Blazing-fast 4TB alternative · Matches the fastest drives · Great for large game libraries · 4TB pricing hit hardest by the shortage',pcp:'https://pcpartpicker.com/search/?q=Seagate+FireCuda+530+4TB'},
+    {n:'Samsung 990 Pro 4TB',lo:749,hi:839,cap:'4TB',s:'Samsung flagship 4TB · Maximum speed and maximum capacity in one drive',pcp:'https://pcpartpicker.com/search/?q=Samsung+990+Pro+4TB'},
+    {n:'WD Black SN850X 4TB',lo:799,hi:899,cap:'4TB',s:'Massive fast drive · 300+ games · For enthusiasts who refuse to delete anything',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+4TB'}
   ],
 
   // Flat list — all popular cases shown as a dropdown regardless of tier
