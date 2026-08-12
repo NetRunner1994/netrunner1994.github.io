@@ -68,10 +68,10 @@ const DATA = {
       {n:'AMD Ryzen 5 3600',lo:45,hi:80,sk:'AM4',dd:'DDR4',s:'Used · 6-core · Great secondhand value · Still capable for everyday gaming',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+3600'},
       {n:'AMD Ryzen 5 5500',lo:65,hi:90,sk:'AM4',dd:'DDR4',s:'6-core · Cheaper than 5600 · Good entry point for AMD platform · Great for everyday gaming',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5500'},
       {n:'AMD Ryzen 5 4500',lo:70,hi:85,sk:'AM4',dd:'DDR4',s:'6-core · Budget entry · Good for everyday tasks and light gaming',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+4500'},
-      {n:'Intel Core i3-12100F',lo:80,hi:110,sk:'LGA1700',dd:'DDR4',s:'4-core Intel · Excellent single-core speed · No built-in graphics — dedicated GPU required · Surprisingly fast for gaming',pcp:'https://pcpartpicker.com/search/?q=i3-12100F'},
+      {n:'Intel Core i3-12100F',lo:80,hi:110,sk:'LGA1700',dd:'DDR4',s:'4-core Intel · Excellent single-core speed · No built-in graphics, dedicated GPU required · Surprisingly fast for gaming',pcp:'https://pcpartpicker.com/search/?q=i3-12100F'},
       {n:'AMD Ryzen 5 5600',lo:99,hi:145,sk:'AM4',dd:'DDR4',s:'6-core · Proven reliable · Best value gaming chip at this price range',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600'},
       {n:'AMD Ryzen 5 5600X',lo:149,hi:177,sk:'AM4',dd:'DDR4',s:'6-core · Runs a bit faster than the 5600 · Small but real performance boost',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+5600X'},
-      {n:'Intel Core i5-12400F',lo:120,hi:149,sk:'LGA1700',dd:'DDR4',s:'6-core Intel · Great for 1080p gaming · No built-in graphics — dedicated GPU required',pcp:'https://pcpartpicker.com/search/?q=i5-12400F'},
+      {n:'Intel Core i5-12400F',lo:120,hi:149,sk:'LGA1700',dd:'DDR4',s:'6-core Intel · Great for 1080p gaming · No built-in graphics, dedicated GPU required',pcp:'https://pcpartpicker.com/search/?q=i5-12400F'},
       {n:'Intel Core i5-13400F',lo:145,hi:180,sk:'LGA1700',dd:'DDR4',s:'10-core Intel · Big step up from 12400F · Better multitasking and streaming · No built-in graphics',pcp:'https://pcpartpicker.com/search/?q=i5-13400F'}
     ],
     mid:[
@@ -81,23 +81,23 @@ const DATA = {
       {n:'Intel Core i5-12600K',lo:165,hi:210,sk:'LGA1700',dd:'DDR4',s:'10-core Intel · Solid gaming and multitasking · Good value on older-gen platform · Widely available',pcp:'https://pcpartpicker.com/search/?q=i5-12600K'},
       {n:'Intel Core i5-13600K',lo:220,hi:275,sk:'LGA1700',dd:'DDR4',s:'14-core Intel · Excellent all-around gaming and productivity · Great value overall',pcp:'https://pcpartpicker.com/search/?q=i5-13600K'},
       {n:'Intel Core i5-14600K',lo:200,hi:240,sk:'LGA1700',dd:'DDR4',s:'14-core Intel · Outstanding gaming and streaming combo · Strong price-to-performance',pcp:'https://pcpartpicker.com/search/?q=i5-14600K'},
-      {n:'Intel Core i5-14600KF',lo:185,hi:210,sk:'LGA1700',dd:'DDR4',s:'Same as 14600K · No built-in graphics — dedicated GPU required · Slightly cheaper as a result',pcp:'https://pcpartpicker.com/search/?q=i5-14600KF'},
+      {n:'Intel Core i5-14600KF',lo:185,hi:210,sk:'LGA1700',dd:'DDR4',s:'Same as 14600K · No built-in graphics, dedicated GPU required · Slightly cheaper as a result',pcp:'https://pcpartpicker.com/search/?q=i5-14600KF'},
       {n:'AMD Ryzen 5 7600',lo:160,hi:195,sk:'AM5',dd:'DDR5',s:'6-core · Lower power draw than 7600X · Excellent AM5 entry point · Future-proof platform',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+7600'},
       {n:'AMD Ryzen 5 7600X',lo:165,hi:205,sk:'AM5',dd:'DDR5',s:'6-core · Snappy single-task speed · AM5 future-proof platform · Higher power draw than 7600',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+7600X'},
       {n:'AMD Ryzen 5 9600X',lo:200,hi:230,sk:'AM5',dd:'DDR5',s:'6-core from AMD\'s latest generation · Very fast in games · Best mid-range gaming chip right now',pcp:'https://pcpartpicker.com/search/?q=Ryzen+5+9600X'},
       {n:'AMD Ryzen 7 7700X',lo:220,hi:255,sk:'AM5',dd:'DDR5',s:'8-core · Handles gaming and streaming simultaneously with ease · AM5 platform',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+7700X'},
-      {n:'Intel Core Ultra 5 245KF',lo:160,hi:195,sk:'LGA1851',dd:'DDR5',s:'14-core latest-gen Intel · No built-in graphics — GPU required · Great all-around performance · Latest platform',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+5+245KF'}
+      {n:'Intel Core Ultra 5 245KF',lo:160,hi:195,sk:'LGA1851',dd:'DDR5',s:'14-core latest-gen Intel · No built-in graphics, GPU required · Great all-around performance · Latest platform',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+5+245KF'}
     ],
     high:[
-      {n:'AMD Ryzen 9 5900X',lo:160,hi:200,sk:'AM4',dd:'DDR4',s:'12-core · Excellent video editing and gaming · Great value on AM4 — new or used',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+5900X'},
+      {n:'AMD Ryzen 9 5900X',lo:160,hi:200,sk:'AM4',dd:'DDR4',s:'12-core · Excellent video editing and gaming · Great value on AM4, new or used',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+5900X'},
       {n:'Intel Core i7-13700K',lo:280,hi:340,sk:'LGA1700',dd:'DDR4',s:'16-core Intel · Handles gaming, streaming, and content creation simultaneously · Strong platform',pcp:'https://pcpartpicker.com/search/?q=i7-13700K'},
       {n:'Intel Core i7-14700K',lo:310,hi:360,sk:'LGA1700',dd:'DDR4',s:'20-core Intel · Gaming, video editing, and streaming all at once without slowdowns',pcp:'https://pcpartpicker.com/search/?q=i7-14700K'},
-      {n:'Intel Core i7-14700KF',lo:290,hi:340,sk:'LGA1700',dd:'DDR4',s:'20-core Intel · No built-in graphics — GPU required · Same power as i7-14700K at a lower price',pcp:'https://pcpartpicker.com/search/?q=i7-14700KF'},
+      {n:'Intel Core i7-14700KF',lo:290,hi:340,sk:'LGA1700',dd:'DDR4',s:'20-core Intel · No built-in graphics, GPU required · Same power as i7-14700K at a lower price',pcp:'https://pcpartpicker.com/search/?q=i7-14700KF'},
       {n:'Intel Core i9-13900K',lo:330,hi:400,sk:'LGA1700',dd:'DDR4',s:'24-core Intel · Top-tier performance on the LGA1700 platform · Great for heavy workloads',pcp:'https://pcpartpicker.com/search/?q=i9-13900K'},
       {n:'AMD Ryzen 7 9700X',lo:295,hi:330,sk:'AM5',dd:'DDR5',s:'8-core from AMD\'s latest generation · Runs cool · Faster per-core than previous generations',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9700X'},
       {n:'AMD Ryzen 9 7900X',lo:240,hi:280,sk:'AM5',dd:'DDR5',s:'12-core · Handles serious video editing or 3D work while gaming with no slowdowns',pcp:'https://pcpartpicker.com/search/?q=Ryzen+9+7900X'},
       {n:'Intel Core Ultra 7 265K',lo:230,hi:270,sk:'LGA1851',dd:'DDR5',s:'20-core latest-gen Intel · Includes basic built-in graphics · Current-gen flagship mid-range Intel chip',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265K'},
-      {n:'Intel Core Ultra 7 265KF',lo:215,hi:250,sk:'LGA1851',dd:'DDR5',s:'20-core latest-gen Intel · No built-in graphics — GPU required · Excellent multi-tasking performance',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265KF'}
+      {n:'Intel Core Ultra 7 265KF',lo:215,hi:250,sk:'LGA1851',dd:'DDR5',s:'20-core latest-gen Intel · No built-in graphics, GPU required · Excellent multi-tasking performance',pcp:'https://pcpartpicker.com/search/?q=Core+Ultra+7+265KF'}
     ],
     ultra:[
       {n:'AMD Ryzen 7 9800X3D',lo:420,hi:450,sk:'AM5',dd:'DDR5',s:'8-core with 3D VCache · The best gaming processor you can buy, full stop · Worth every dollar',pcp:'https://pcpartpicker.com/search/?q=Ryzen+7+9800X3D'},
@@ -150,7 +150,7 @@ const DATA = {
 
   ram: {
     budget:[
-      {n:'16GB DDR4-3200 Kit',lo:115,hi:155,dd:'DDR4',s:'Minimum for gaming in 2026 · Works with AM4 and LGA1700 builds · Note: RAM prices elevated — check before ordering',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR4+3200'},
+      {n:'16GB DDR4-3200 Kit',lo:115,hi:155,dd:'DDR4',s:'Minimum for gaming in 2026 · Works with AM4 and LGA1700 builds · Note: RAM prices elevated, check before ordering',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR4+3200'},
       {n:'32GB DDR4-3200 Kit',lo:180,hi:260,dd:'DDR4',s:'Recommended capacity · Keeps older AMD or Intel builds comfortable for years · Verify current price before buying',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
       {n:'16GB DDR5-4800 Kit',lo:80,hi:120,dd:'DDR5',s:'Entry DDR5 for latest Intel builds · Minimum to get started on the newest platform',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR5+4800'},
       {n:'32GB DDR5-5600 Kit',lo:200,hi:300,dd:'DDR5',s:'Solid DDR5 for latest Intel builds · Good balance of speed and capacity',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'}
@@ -162,7 +162,7 @@ const DATA = {
       {n:'64GB DDR5-6000 Kit',lo:569,hi:659,dd:'DDR5',s:'For video editing, streaming, and heavy multitasking · Plenty of room for large projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'}
     ],
     high:[
-      {n:'32GB DDR5-6000 CL30',lo:265,hi:355,dd:'DDR5',s:'Best starting point for high-end AMD builds · Verified strong performance · Check current price — elevated right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
+      {n:'32GB DDR5-6000 CL30',lo:265,hi:355,dd:'DDR5',s:'Best starting point for high-end AMD builds · Verified strong performance · Check current price, elevated right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
       {n:'32GB DDR5-6400 CL32',lo:299,hi:389,dd:'DDR5',s:'Faster DDR5 kit · Noticeable boost specifically with Ryzen 7 9800X3D · Verify price before ordering',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
       {n:'64GB DDR5-6000 Kit',lo:569,hi:659,dd:'DDR5',s:'For gaming + serious content creation · No worrying about running out on big projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'},
       {n:'64GB DDR5-6400 Kit',lo:629,hi:719,dd:'DDR5',s:'Fast, high-capacity · For people who create content and game hard · Check PCPartPicker before ordering',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'}
@@ -192,7 +192,7 @@ const DATA = {
     {n:'WD Black SN850X 4TB',lo:799,hi:899,cap:'4TB',s:'Massive fast drive · 300+ games · For enthusiasts who refuse to delete anything',pcp:'https://pcpartpicker.com/search/?q=WD+SN850X+4TB'}
   ],
 
-  // Flat list — all popular cases shown as a dropdown regardless of tier
+  // Flat list: all popular cases shown as a dropdown regardless of tier
   case: [
     {n:'Fractal Design Pop Air',lo:70,hi:100,s:'Mid-tower · Great airflow · Classic clean look · Budget-friendly · Pre-installed fans'},
     {n:'Phanteks Eclipse G360A',lo:80,hi:110,s:'Mid-tower · Tempered glass side · Three 120mm fans included · Best value pick'},
@@ -264,7 +264,7 @@ const DATA = {
     ]
   },
 
-  // Flat list — shown as a dropdown
+  // Flat list: shown as a dropdown
   fans: [
     {n:'Arctic P12 PWM 3-Pack',lo:22,hi:35,s:'No RGB · Pure airflow · Very quiet · Best budget pick · 120mm'},
     {n:'be quiet! Pure Wings 3 120mm 3-Pack',lo:28,hi:42,s:'No RGB · Ultra quiet · German engineering · Great for silent builds · 120mm'},
@@ -279,37 +279,37 @@ const DATA = {
 const BASE = {budget:{lo:12,hi:22},mid:{lo:12,hi:22},high:{lo:12,hi:22},ultra:{lo:12,hi:22}};
 
 const TIER_DESCS = {
-  budget:'Budget &mdash; ~$875&ndash;$1,200 total. Great 1080p gaming and everyday tasks. Best value entry point. Note: RAM prices are elevated right now &mdash; verify before ordering.',
-  mid:'Mid-Range &mdash; ~$1,500&ndash;$2,000 total. 1080p maxed, solid 1440p, smooth high framerates. The sweet spot for most gamers. Memory costs are higher than usual right now.',
-  high:'High-End &mdash; ~$2,150&ndash;$2,850 total. 1440p maxed out, capable 4K, handles content creation. For serious gamers who want 5+ years without upgrading.',
-  ultra:'Ultra &mdash; ~$3,000&ndash;$4,450 total. No compromises. 4K high-refresh gaming, streaming, and creation all at once. Built around the best gaming CPU available.'
+  budget:'Budget: ~$875-$1,200 total. Great 1080p gaming and everyday tasks. Best value entry point. Note: RAM prices are elevated right now. Verify before ordering.',
+  mid:'Mid-Range: ~$1,500-$2,000 total. 1080p maxed, solid 1440p, smooth high framerates. The sweet spot for most gamers. Memory costs are higher than usual right now.',
+  high:'High-End: ~$2,150-$2,850 total. 1440p maxed out, capable 4K, handles content creation. For serious gamers who want 5+ years without upgrading.',
+  ultra:'Ultra: ~$3,000-$4,450 total. No compromises. 4K high-refresh gaming, streaming, and creation all at once. Built around the best gaming CPU available.'
 };
 
 const RECOMMENDED = {
   gaming:{
     label:'Gaming',
     budget:{blurb:'Solid 1080p on a budget. Runs modern titles well without breaking the bank.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
-    mid:{blurb:'1080p maxed, solid 1440p, smooth FPS &mdash; future-proofed for 3&ndash;5 years.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}},
-    high:{blurb:'1440p maxed, capable 4K, high-refresh &mdash; a serious gaming rig.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    mid:{blurb:'1080p maxed, solid 1440p, smooth FPS. Future-proofed for 3-5 years.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    high:{blurb:'1440p maxed, capable 4K, high-refresh. A serious gaming rig.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'4K high-refresh, no compromises. Built around the best gaming CPU available.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 7 9800X3D',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Corsair 7000D Airflow',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}
   },
   content:{
     label:'Content Creation',
     budget:{blurb:'Enough horsepower for 1080p editing and streaming without overspending.',sel:{gpu:'NVIDIA RTX 5060 Ti 8GB',cpu:'AMD Ryzen 5 5600X',mobo:'ASUS Prime B550M-A (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Phanteks Eclipse G360A',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
-    mid:{blurb:'4K timeline editing, smooth streaming, heavy multitasking &mdash; no bottlenecks.',sel:{gpu:'NVIDIA RTX 5060 Ti 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'NZXT H7 Flow',psu:'850W 80+ Platinum',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    mid:{blurb:'4K timeline editing, smooth streaming, heavy multitasking. No bottlenecks.',sel:{gpu:'NVIDIA RTX 5060 Ti 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'NZXT H7 Flow',psu:'850W 80+ Platinum',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     high:{blurb:'Professional-grade. 4K/8K editing, rendering, and live streaming simultaneously.',sel:{gpu:'NVIDIA RTX 5070 Ti 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
-    ultra:{blurb:'No workflow too heavy. 3D rendering, 8K export, multi-stream &mdash; all at once.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 4TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Corsair iCUE H150i Elite 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
+    ultra:{blurb:'No workflow too heavy. 3D rendering, 8K export, multi-stream, all at once.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 4TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Corsair iCUE H150i Elite 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
   },
   ai:{
     label:'AI &amp; Productivity',
-    budget:{blurb:'16GB VRAM to run smaller local models &mdash; the minimum for real AI work.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 5600X',mobo:'ASUS Prime B550M-A (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'NZXT H5 Flow',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    budget:{blurb:'16GB VRAM to run smaller local models, the minimum for real AI work.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 5600X',mobo:'ASUS Prime B550M-A (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'NZXT H5 Flow',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
     mid:{blurb:'Runs most local LLMs and Stable Diffusion models comfortably with room to grow.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'64GB DDR5-6000 Kit',storage:'Samsung 990 Evo 2TB',case:'NZXT H5 Flow',psu:'1000W 80+ Gold',cooler:'be quiet! Dark Rock 4 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
-    high:{blurb:'16GB VRAM, high-core CPU, 64GB RAM &mdash; handles large models and heavy workloads.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 7900X',mobo:'MSI MEG X870 Ace (AM5)',ram:'64GB DDR5-6000 Kit',storage:'Samsung 990 Pro 2TB',case:'Fractal Design Torrent',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    high:{blurb:'16GB VRAM, high-core CPU, 64GB RAM. Handles large models and heavy workloads.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 7900X',mobo:'MSI MEG X870 Ace (AM5)',ram:'64GB DDR5-6000 Kit',storage:'Samsung 990 Pro 2TB',case:'Fractal Design Torrent',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'32GB VRAM. Runs the largest local models, AI video, and Stable Diffusion at max quality.',sel:{gpu:'NVIDIA RTX 5090 32GB',cpu:'AMD Ryzen 9 9950X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Platinum',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
   },
   general:{
     label:'General Use',
-    budget:{blurb:'Fast, reliable, handles everything everyday &mdash; browsing, Office, school, light gaming.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Fractal Design Pop Air',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
+    budget:{blurb:'Fast, reliable, handles everything everyday: browsing, Office, school, light gaming.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Fractal Design Pop Air',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
     mid:{blurb:'A well-rounded, future-proofed machine that handles anything you throw at it.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'Corsair 4000D Airflow',psu:'750W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
     high:{blurb:'Overkill for everyday tasks, but your machine will never feel slow. Ever.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'be quiet! Silent Base 802',psu:'850W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'A forever machine. Premium components, whisper quiet, handles anything for a decade.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}
