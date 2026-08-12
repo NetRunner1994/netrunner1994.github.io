@@ -57,4 +57,4 @@ for (const page of PAGES) {
   fs.writeFileSync(outFile, html, 'utf8');
   console.log('Built:', page.file);
 }
-console.log('\nDone —', PAGES.length, 'pages.');
+console.log('\nDone:', PAGES.length, 'pages.');

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Netrunner Builds PC Builder. Configure your custom PC build for North Texas. Interactive component picker with real time pricing and compatibility checking.">
-<meta property="og:title" content="PC Builder Tool — Netrunner Builds">
+<meta property="og:title" content="PC Builder Tool · Netrunner Builds">
 <meta property="og:description" content="Free interactive PC builder for North Texas. Pick your parts, see real pricing, check compatibility. No experience needed.">
 <meta property="og:image" content="https://netrunnerbuilds.com/netrunner_logo.png">
 <meta property="og:url" content="https://netrunnerbuilds.com/build.html">
@@ -72,7 +72,7 @@
     <div class="uc-card" data-uc="general" onclick="pickUC(this)">
       <div class="uc-icon">&#128187;</div>
       <div class="uc-title">General Use</div>
-      <div class="uc-note">Browsing, Office, school, light tasks. <em style="color:var(--ylw);font-style:normal;">(Heads up — if this is all you need, a laptop will honestly serve you better for less money. A custom desktop build shines when you need gaming or serious creative power.)</em></div>
+      <div class="uc-note">Browsing, Office, school, light tasks. <em style="color:var(--ylw);font-style:normal;">(Heads up: if this is all you need, a laptop will honestly serve you better for less money. A custom desktop build shines when you need gaming or serious creative power.)</em></div>
     </div>
   </div>
 </section>
@@ -86,7 +86,7 @@
     <button class="tier-btn" data-tier="high" onclick="setTier(this)">High-End</button>
     <button class="tier-btn" data-tier="ultra" onclick="setTier(this)">Ultra</button>
   </div>
-  <div class="tier-desc" id="tier-desc">Mid-Range &mdash; ~$1,100&ndash;$1,800 total. 1080p maxed, solid 1440p, light streaming. The sweet spot for most gamers. Expect 3&ndash;5 years of relevance before an upgrade is needed.</div>
+  <div class="tier-desc" id="tier-desc">Mid-Range: ~$1,100-$1,800 total. 1080p maxed, solid 1440p, light streaming. The sweet spot for most gamers. Expect 3-5 years of relevance before an upgrade is needed.</div>
   <div id="rec-banner" style="display:none;background:rgba(252,238,10,.07);border:1px solid rgba(252,238,10,.28);border-radius:8px;padding:.7rem 1rem;margin-top:.5rem;font-size:.82rem;color:var(--sub);gap:.65rem;align-items:flex-start;line-height:1.5;"></div>
 
   <div class="prog-wrap">
@@ -99,7 +99,7 @@
 
       <div class="wz-bar" id="wz-bar">
         <div class="wz-bar-top">
-          <span id="wz-lbl">Step <b>1</b> of 9 &mdash; <b style="color:var(--cyan)">GPU</b></span>
+          <span id="wz-lbl">Step <b>1</b> of 9: <b style="color:var(--cyan)">GPU</b></span>
           <span style="font-size:.75rem;color:var(--mut)" id="wz-done-lbl">0 of 9 selected</span>
         </div>
         <div class="wz-track"><div class="wz-fill" id="wz-fill"></div></div>
@@ -115,7 +115,7 @@
           <span class="csec-chev open" id="chev-gpu">&#9660;</span>
         </div>
         <div class="csec-body open" id="body-gpu">
-          <p class="cdesc">The GPU is the heart of gaming and visual work. It pushes pixels to your monitor. More VRAM = more detail, higher resolution, and better longevity. The number after the name (8GB, 16GB) is VRAM &mdash; don&rsquo;t go below 8GB in 2026.</p>
+          <p class="cdesc">The GPU is the heart of gaming and visual work. It pushes pixels to your monitor. More VRAM = more detail, higher resolution, and better longevity. The number after the name (8GB, 16GB) is VRAM. Don&rsquo;t go below 8GB in 2026.</p>
           <div class="opts-grid" id="opts-gpu"></div>
         </div>
       </div>
@@ -130,7 +130,7 @@
           <span class="csec-chev" id="chev-cpu">&#9660;</span>
         </div>
         <div class="csec-body" id="body-cpu">
-          <p class="cdesc">The CPU handles game logic, AI, background apps, and everything your GPU doesn&rsquo;t. Socket type MUST match your motherboard (AM4, AM5, LGA1700, LGA1851) &mdash; the compatibility checker below will catch mismatches.</p>
+          <p class="cdesc">The CPU handles game logic, AI, background apps, and everything your GPU doesn&rsquo;t. Socket type MUST match your motherboard (AM4, AM5, LGA1700, LGA1851). The compatibility checker below will catch mismatches.</p>
           <div class="opts-grid" id="opts-cpu"></div>
         </div>
       </div>
@@ -160,7 +160,7 @@
           <span class="csec-chev" id="chev-ram">&#9660;</span>
         </div>
         <div class="csec-body" id="body-ram">
-          <p class="cdesc">RAM is your PC&rsquo;s short-term workspace. AM4 and LGA1700 platforms use DDR4. AM5 and LGA1851 use DDR5. Mixing the wrong type won&rsquo;t work &mdash; the compat checker will warn you.</p>
+          <p class="cdesc">RAM is your PC&rsquo;s short-term workspace. AM4 and LGA1700 platforms use DDR4. AM5 and LGA1851 use DDR5. Mixing the wrong type won&rsquo;t work. The compat checker will warn you.</p>
           <div class="opts-grid" id="opts-ram"></div>
         </div>
       </div>
@@ -175,7 +175,7 @@
           <span class="csec-chev" id="chev-storage">&#9660;</span>
         </div>
         <div class="csec-body" id="body-storage">
-          <p class="cdesc">Brand matters &mdash; Samsung and WD are the gold standards for reliability and warranty. Kingston NV3 is solid for budget. Avoid no-name drives for your primary drive. Options are grouped by capacity. <strong style="color:var(--ylw)">Note: SSD prices are elevated in 2026</strong> due to the same NAND flash shortage driving up RAM &mdash; verify current price before ordering.</p>
+          <p class="cdesc">Brand matters. Samsung and WD are the gold standards for reliability and warranty. Kingston NV3 is solid for budget. Avoid no-name drives for your primary drive. Options are grouped by capacity. <strong style="color:var(--ylw)">Note: SSD prices are elevated in 2026</strong> due to the same NAND flash shortage driving up RAM. Verify current price before ordering.</p>
           <div id="storage-groups"></div>
         </div>
       </div>
@@ -190,7 +190,7 @@
           <span class="csec-chev" id="chev-case">&#9660;</span>
         </div>
         <div class="csec-body" id="body-case">
-          <p class="cdesc">The case houses everything and affects airflow, size, and looks. These are the most popular picks for 2026 &mdash; select one from the dropdown below.</p>
+          <p class="cdesc">The case houses everything and affects airflow, size, and looks. These are the most popular picks for 2026. Select one from the dropdown below.</p>
           <div id="dd-case"></div>
         </div>
       </div>
@@ -205,7 +205,7 @@
           <span class="csec-chev" id="chev-psu">&#9660;</span>
         </div>
         <div class="csec-body" id="body-psu">
-          <div class="psu-box"><b>80+ Ratings explained:</b> Bronze (82&ndash;85% efficient) is fine for budget builds. <b>Gold (87&ndash;90%)</b> is the sweet spot &mdash; quieter, cooler, lasts longer, recommended for most builds. Platinum (90&ndash;92%) is for heavy 24/7 use. Higher rating = less wasted heat = longer lifespan.</div>
+          <div class="psu-box"><b>80+ Ratings explained:</b> Bronze (82-85% efficient) is fine for budget builds. <b>Gold (87-90%)</b> is the sweet spot: quieter, cooler, lasts longer, recommended for most builds. Platinum (90-92%) is for heavy 24/7 use. Higher rating = less wasted heat = longer lifespan.</div>
           <div class="opts-grid" id="opts-psu"></div>
         </div>
       </div>
@@ -235,7 +235,7 @@
           <span class="csec-chev" id="chev-fans">&#9660;</span>
         </div>
         <div class="csec-body" id="body-fans">
-          <p class="cdesc">Case fans keep air moving through the build &mdash; cool air in from the front, hot air out the back. Select a 3-pack from the dropdown below.</p>
+          <p class="cdesc">Case fans keep air moving through the build: cool air in from the front, hot air out the back. Select a 3-pack from the dropdown below.</p>
           <div id="dd-fans"></div>
         </div>
       </div>
@@ -259,24 +259,24 @@
       <div class="pp">
         <div class="pp-title">Your Build Estimate</div>
         <div id="pp-rows">
-          <div class="pp-row"><span class="pp-lbl">GPU</span><span class="pp-val dim" id="pp-gpu">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">CPU</span><span class="pp-val dim" id="pp-cpu">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">Motherboard</span><span class="pp-val dim" id="pp-mobo">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">RAM</span><span class="pp-val dim" id="pp-ram">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">Storage</span><span class="pp-val dim" id="pp-storage">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">Case</span><span class="pp-val dim" id="pp-case">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">PSU</span><span class="pp-val dim" id="pp-psu">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">CPU Cooler</span><span class="pp-val dim" id="pp-cooler">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">Case Fans</span><span class="pp-val dim" id="pp-fans">&mdash;</span></div>
-          <div class="pp-row"><span class="pp-lbl">Thermal paste &amp; misc</span><span class="pp-val" id="pp-base">&mdash;</span></div>
+          <div class="pp-row"><span class="pp-lbl">GPU</span><span class="pp-val dim" id="pp-gpu">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">CPU</span><span class="pp-val dim" id="pp-cpu">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">Motherboard</span><span class="pp-val dim" id="pp-mobo">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">RAM</span><span class="pp-val dim" id="pp-ram">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">Storage</span><span class="pp-val dim" id="pp-storage">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">Case</span><span class="pp-val dim" id="pp-case">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">PSU</span><span class="pp-val dim" id="pp-psu">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">CPU Cooler</span><span class="pp-val dim" id="pp-cooler">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">Case Fans</span><span class="pp-val dim" id="pp-fans">N/A</span></div>
+          <div class="pp-row"><span class="pp-lbl">Thermal paste &amp; misc</span><span class="pp-val" id="pp-base">N/A</span></div>
         </div>
         <div class="pp-total">
           <span class="pp-total-lbl">Estimated Total</span>
-          <span class="pp-total-val" id="pp-total">$&mdash;</span>
+          <span class="pp-total-val" id="pp-total">TBD</span>
         </div>
-        <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100&ndash;140). Linux is free &mdash; ask us about it.</div>
-        <p class="pp-note">All prices are <strong>estimates only</strong> &mdash; verified July 2026. Assembly fee not included. Tower only &mdash; no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
-        <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM and SSD prices are elevated in 2026</strong> due to a global NAND/memory shortage driven by AI data center demand. DDR5 kits are 3&ndash;4x higher than 2025 lows, and NVMe SSDs have jumped 40&ndash;60%+ since mid-2025. Verify on PCPartPicker before ordering.</p>
+        <div class="pp-os">&#9888;&#65039; <b>Windows 11 not included</b> (~$100-140). Linux is free. Ask us about it.</div>
+        <p class="pp-note">All prices are <strong>estimates only</strong>, verified July 2026. Assembly fee not included. Tower only, no monitor or peripherals. Always confirm on PCPartPicker before ordering.</p>
+        <p class="pp-note" style="color:var(--ylw);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:.5rem .75rem;margin-top:.5rem;">[!] <strong>RAM and SSD prices are elevated in 2026</strong> due to a global NAND/memory shortage driven by AI data center demand. DDR5 kits are 3-4x higher than 2025 lows, and NVMe SSDs have jumped 40-60%+ since mid-2025. Verify on PCPartPicker before ordering.</p>
         <p class="pp-upd"><a href="https://pcpartpicker.com/trends/price/memory/" target="_blank" style="color:var(--cyan);font-size:.68rem;text-decoration:none;">See live RAM price trends &#8599;</a></p>
         <div class="pp-actions">
           <button class="btn btn-green" onclick="goToContact()" style="width:100%;justify-content:center;">Request This Build &#8594;</button>
@@ -312,14 +312,14 @@
     <h2 class="sec-title">Your PC Build <span>Checklist</span></h2>
     <p class="sec-sub">The builder covers the tower. Don&rsquo;t forget these extras.</p>
     <div class="cl-grid">
-      <div class="cl-item"><span class="cl-icon">&#128250;</span><div><div class="cl-name">Monitor</div><div class="cl-price">~$150&ndash;500 &middot; 1080p for budget, 1440p for mid+</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#9000;</span><div><div class="cl-name">Keyboard</div><div class="cl-price">~$30&ndash;150 &middot; Membrane budget, mechanical preferred</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mouse</div><div class="cl-price">~$25&ndash;100 &middot; Any USB mouse works to start</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#127911;</span><div><div class="cl-name">Headset / Speakers</div><div class="cl-price">~$30&ndash;200 &middot; Don&rsquo;t sleep on audio</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#127760;</span><div><div class="cl-name">WiFi Adapter</div><div class="cl-price">~$25&ndash;60 &middot; Many mobos lack built-in WiFi &mdash; check first</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#128421;</span><div><div class="cl-name">Monitor Cable</div><div class="cl-price">~$10&ndash;30 &middot; DisplayPort preferred for gaming</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#128190;</span><div><div class="cl-name">Windows 11</div><div class="cl-price">~$100&ndash;140 &middot; Or ask us about Linux (free)</div></div></div>
-      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mousepad</div><div class="cl-price">~$15&ndash;50 &middot; Large desk pad makes a real difference</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128250;</span><div><div class="cl-name">Monitor</div><div class="cl-price">~$150-500 &middot; 1080p for budget, 1440p for mid+</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#9000;</span><div><div class="cl-name">Keyboard</div><div class="cl-price">~$30-150 &middot; Membrane budget, mechanical preferred</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mouse</div><div class="cl-price">~$25-100 &middot; Any USB mouse works to start</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#127911;</span><div><div class="cl-name">Headset / Speakers</div><div class="cl-price">~$30-200 &middot; Don&rsquo;t sleep on audio</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#127760;</span><div><div class="cl-name">WiFi Adapter</div><div class="cl-price">~$25-60 &middot; Many mobos lack built-in WiFi. Check first</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128421;</span><div><div class="cl-name">Monitor Cable</div><div class="cl-price">~$10-30 &middot; DisplayPort preferred for gaming</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128190;</span><div><div class="cl-name">Windows 11</div><div class="cl-price">~$100-140 &middot; Or ask us about Linux (free)</div></div></div>
+      <div class="cl-item"><span class="cl-icon">&#128432;</span><div><div class="cl-name">Mousepad</div><div class="cl-price">~$15-50 &middot; Large desk pad makes a real difference</div></div></div>
     </div>
   </div>
 </section>
@@ -345,7 +345,7 @@
     <div class="ft-col">
       <h4>Hours</h4>
       <ul>
-        <li>Mon–Fri: 9AM–7PM</li>
+        <li>Mon-Fri: 9AM-7PM</li>
         <li>Sat &amp; Sun: By Appointment</li>
       </ul>
       <h4 style="margin-top:1rem;">Serving</h4>
@@ -375,7 +375,7 @@ const ST = {
 };
 
 function $(id){return document.getElementById(id);}
-function fmtP(lo,hi){return '$'+lo.toLocaleString()+'&ndash;$'+hi.toLocaleString();}
+function fmtP(lo,hi){return '$'+lo.toLocaleString()+'-$'+hi.toLocaleString();}
 function showToast(msg){var t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}
 
 function renderCat(cat){
@@ -428,11 +428,11 @@ function renderDropdown(cat){
   var sel=ST.sel[cat];
   var selIdx=sel?items.findIndex(function(i){return i.n===sel.n;}): -1;
   var label=cat==='case'?'a case':'a fan pack';
-  var opts='<option value="-1">— Choose '+label+' —</option>';
+  var opts='<option value="-1">Choose '+label+'...</option>';
   items.forEach(function(item,i){
-    opts+='<option value="'+i+'"'+(selIdx===i?' selected':'')+'>'+item.n+' (~$'+item.lo+'–$'+item.hi+')</option>';
+    opts+='<option value="'+i+'"'+(selIdx===i?' selected':'')+'>'+item.n+' (~$'+item.lo+'-$'+item.hi+')</option>';
   });
-  var pickHtml=sel?'<div class="dd-pick">&#10003; '+sel.n+' <span style="font-size:.72rem;color:var(--mut)">~$'+sel.lo+'&ndash;$'+sel.hi+'</span><br><span style="font-size:.72rem;color:var(--sub)">'+sel.s+'</span></div>':'';
+  var pickHtml=sel?'<div class="dd-pick">&#10003; '+sel.n+' <span style="font-size:.72rem;color:var(--mut)">~$'+sel.lo+'-$'+sel.hi+'</span><br><span style="font-size:.72rem;color:var(--sub)">'+sel.s+'</span></div>':'';
   wrap.innerHTML='<select class="dd-sel" onchange="selectDrop(\''+cat+'\',parseInt(this.value))">'+opts+'</select>'+pickHtml;
 }
 
@@ -517,7 +517,7 @@ function updateHeader(cat){
   if(!el)return;
   var sel=ST.sel[cat];
   if(sel){
-    el.innerHTML=sel.n+' (~$'+sel.lo+'&ndash;$'+sel.hi+') <span style="font-size:.65rem;color:var(--mut);font-weight:400">&middot; click to change</span>';
+    el.innerHTML=sel.n+' (~$'+sel.lo+'-$'+sel.hi+') <span style="font-size:.65rem;color:var(--mut);font-weight:400">&middot; click to change</span>';
     el.className='csec-sel';
   }else{
     el.textContent='Not selected';
@@ -544,14 +544,14 @@ function updatePrice(){
       el.className='pp-val grn';
       tLo+=sel.lo;tHi+=sel.hi;
     }else{
-      el.innerHTML='&mdash;';
+      el.innerHTML='N/A';
       el.className='pp-val dim';
     }
   });
   $('pp-base').innerHTML='~'+fmtP(base.lo,base.hi);
   tLo+=base.lo;tHi+=base.hi;
   if(tLo>base.lo){$('pp-total').innerHTML='~'+fmtP(tLo,tHi);}
-  else{$('pp-total').innerHTML='$&mdash;';}
+  else{$('pp-total').innerHTML='TBD';}
   updateEra();
 }
 
@@ -560,13 +560,13 @@ var ERA_NAMES=[
   'Good for esports &amp; lighter games',
   'Good for most 1080p games',
   'Strong 1080p gaming',
-  'Solid 1080p &mdash; light 1440p',
+  'Solid 1080p, light 1440p',
   'Great 1440p gaming',
   'Strong 1440p gaming',
   'High-end 1440p &amp; entry 4K',
   '4K gaming at high/ultra settings',
   '4K ultra with ray tracing',
-  'Best GPU available &mdash; no limits'
+  'Best GPU available, no limits'
 ];
 var ERA_DESC=[
   null,
@@ -583,16 +583,16 @@ var ERA_DESC=[
 ];
 var ERA_GAMES=[
   null,
-  ['CS2 — Medium 1080p @ 60fps','Minecraft — High 1080p @ 60fps','Fortnite — Low/Medium 1080p @ 60fps'],
-  ['Fortnite — High 1080p @ 60fps','Valorant — Ultra 1080p @ 144fps','GTA V — High 1080p @ 60fps'],
-  ['Fortnite — Ultra 1080p @ 60fps','Call of Duty — High 1080p @ 60fps','Apex Legends — High 1080p @ 60fps'],
-  ['Cyberpunk 2077 — Medium 1080p @ 60fps','Elden Ring — High 1080p @ 60fps','Fortnite — Ultra 1080p @ 100fps'],
-  ['Cyberpunk 2077 — High 1080p @ 60fps','Elden Ring — Ultra 1080p @ 60fps','Fortnite — Ultra 1440p @ 60fps'],
-  ['Cyberpunk 2077 — Ultra 1080p @ 60fps','Elden Ring — Ultra 1440p @ 60fps','Black Myth: Wukong — High 1440p @ 60fps'],
-  ['Cyberpunk 2077 — Ultra 1440p @ 60fps','Black Myth: Wukong — High 1440p @ 60fps','Hogwarts Legacy — Ultra 1440p @ 60fps'],
-  ['Cyberpunk 2077 — Ultra 1440p @ 100fps+','Black Myth: Wukong — Ultra 1440p @ 60fps','Hogwarts Legacy — Ultra 4K @ 60fps'],
-  ['Cyberpunk 2077 — Ultra 4K RT @ 60fps','Black Myth: Wukong — Ultra 4K @ 60fps','Alan Wake 2 — Ultra 4K @ 60fps'],
-  ['Any game — Ultra 4K RT @ 100fps+','Black Myth: Wukong — 4K Ultra RT @ 100fps','Nothing will slow this machine down']
+  ['CS2: Medium 1080p @ 60fps','Minecraft: High 1080p @ 60fps','Fortnite: Low/Medium 1080p @ 60fps'],
+  ['Fortnite: High 1080p @ 60fps','Valorant: Ultra 1080p @ 144fps','GTA V: High 1080p @ 60fps'],
+  ['Fortnite: Ultra 1080p @ 60fps','Call of Duty: High 1080p @ 60fps','Apex Legends: High 1080p @ 60fps'],
+  ['Cyberpunk 2077: Medium 1080p @ 60fps','Elden Ring: High 1080p @ 60fps','Fortnite: Ultra 1080p @ 100fps'],
+  ['Cyberpunk 2077: High 1080p @ 60fps','Elden Ring: Ultra 1080p @ 60fps','Fortnite: Ultra 1440p @ 60fps'],
+  ['Cyberpunk 2077: Ultra 1080p @ 60fps','Elden Ring: Ultra 1440p @ 60fps','Black Myth: Wukong: High 1440p @ 60fps'],
+  ['Cyberpunk 2077: Ultra 1440p @ 60fps','Black Myth: Wukong: High 1440p @ 60fps','Hogwarts Legacy: Ultra 1440p @ 60fps'],
+  ['Cyberpunk 2077: Ultra 1440p @ 100fps+','Black Myth: Wukong: Ultra 1440p @ 60fps','Hogwarts Legacy: Ultra 4K @ 60fps'],
+  ['Cyberpunk 2077: Ultra 4K RT @ 60fps','Black Myth: Wukong: Ultra 4K @ 60fps','Alan Wake 2: Ultra 4K @ 60fps'],
+  ['Any game: Ultra 4K RT @ 100fps+','Black Myth: Wukong: 4K Ultra RT @ 100fps','Nothing will slow this machine down']
 ];
 
 function updateEra(){
@@ -624,14 +624,14 @@ function checkCompat(){
   if(cpu.sk!==mobo.sk){
     msgs.push('<div class="compat-err">&#10060; Socket mismatch! CPU needs '+cpu.sk+' but motherboard is '+mobo.sk+'. These are not compatible.</div>');
   }else{
-    msgs.push('<div class="compat-ok">&#10003; Socket OK &mdash; both are '+cpu.sk+'</div>');
+    msgs.push('<div class="compat-ok">&#10003; Socket OK: both are '+cpu.sk+'</div>');
   }
   if(ram){
     var needsDDR=(cpu.sk==='AM5'||cpu.sk==='LGA1851')?'DDR5':'DDR4';
     if(ram.dd&&ram.dd!==needsDDR){
       msgs.push('<div class="compat-err">&#10060; RAM mismatch! '+cpu.sk+' needs '+needsDDR+' but you selected '+ram.dd+'. These are not compatible.</div>');
     }else if(ram.dd){
-      msgs.push('<div class="compat-ok">&#10003; RAM type OK &mdash; '+ram.dd+' is correct for '+cpu.sk+'</div>');
+      msgs.push('<div class="compat-ok">&#10003; RAM type OK: '+ram.dd+' is correct for '+cpu.sk+'</div>');
     }
   }
   box.innerHTML=msgs.join('');
@@ -701,13 +701,13 @@ function printPartsList(){
   CATS.forEach(function(c){
     var sel=ST.sel[c];
     if(sel){
-      var pr=sel.lo&&sel.hi?'~$'+sel.lo.toLocaleString()+'–$'+sel.hi.toLocaleString():'';
+      var pr=sel.lo&&sel.hi?'~$'+sel.lo.toLocaleString()+'-$'+sel.hi.toLocaleString():'';
       parts.push({cat:LBLS[c]||c,name:sel.n,price:pr,pcp:sel.pcp||''});
     }
   });
   if(parts.length===0){showToast('Select some parts first!');return;}
   var date=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
-  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Parts List — Netrunner Builds</title><style>';
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Parts List · Netrunner Builds</title><style>';
   h+='body{font-family:system-ui,-apple-system,sans-serif;max-width:680px;margin:2rem auto;color:#1a1a1a;padding:1rem 1.5rem;}';
   h+='h1{font-size:1.3rem;font-weight:800;margin-bottom:.2rem;}';
   h+='.meta{font-size:.82rem;color:#666;margin-bottom:1.5rem;}';
@@ -722,7 +722,7 @@ function printPartsList(){
   h+='.pbtn{background:#00b4cc;color:#fff;border:none;border-radius:6px;padding:.5rem 1.2rem;font-weight:700;cursor:pointer;font-size:.88rem;margin-bottom:1.5rem;}';
   h+='@media print{.pbtn{display:none;}}';
   h+='</style></head><body>';
-  h+='<h1>Parts List — Netrunner Builds</h1>';
+  h+='<h1>Parts List · Netrunner Builds</h1>';
   h+='<div class="meta">Generated '+date+' &nbsp;&bull;&nbsp; (972) 391-7153 &nbsp;&bull;&nbsp; https://netrunnerbuilds.com</div>';
   h+='<button class="pbtn" onclick="window.print()">&#128438; Print / Save as PDF</button>';
   h+='<table><thead><tr><th>Component</th><th>Part</th><th style="text-align:right">Est. Price</th></tr></thead><tbody>';
@@ -730,7 +730,7 @@ function printPartsList(){
     h+='<tr><td class="c">'+p.cat+'</td><td><b>'+p.name+'</b>'+(p.pcp?'<br><a href="'+p.pcp+'" target="_blank">Check current price &#8599;</a>':'')+'</td><td class="p">'+p.price+'</td></tr>';
   });
   h+='</tbody></table>';
-  h+='<div class="warn"><b>Important &mdash; please read before you shop:</b><br>These are the parts for your custom PC build. You purchase the parts yourself (Amazon, Newegg, or Micro Center). Netrunner Builds handles assembly, cable management, stress testing, and on-site installation only. Labor fee is separate. Prices are estimates and may vary — always confirm before ordering.</div>';
+  h+='<div class="warn"><b>Please read before you shop:</b><br>These are the parts for your custom PC build. You purchase the parts yourself (Amazon, Newegg, or Micro Center). Netrunner Builds handles assembly, cable management, stress testing, and on-site installation only. Labor fee is separate. Prices are estimates and may vary. Always confirm before ordering.</div>';
   h+='<div class="ft">Assembled by Ismael Ruiz &bull; Marine Veteran &bull; Melissa, TX &bull; (972) 391-7153</div>';
   h+='</body></html>';
   var w=window.open('','_blank');
@@ -759,7 +759,7 @@ function shareOn(platform){
   if(platform==='x')window.open('https://x.com/intent/tweet?text='+textEnc+'&url='+enc,'_blank');
   else if(platform==='facebook')window.open('https://www.facebook.com/sharer/sharer.php?u='+enc,'_blank');
   else if(platform==='reddit')window.open('https://www.reddit.com/submit?url='+enc+'&title='+textEnc,'_blank');
-  else if(platform==='discord')copyToClipboard(url,'Link copied — paste it in Discord!');
+  else if(platform==='discord')copyToClipboard(url,'Link copied! Paste it in Discord!');
 }
 
 function shareMyBuild(){copyToClipboard(getBuildURL(),'Build link copied!');}
@@ -786,7 +786,7 @@ function wzShow(step){
     if(hdr){hdr.classList.toggle('open',isOpen);}
   });
   var lbl=$('wz-lbl');
-  if(lbl)lbl.innerHTML='Step <b>'+(step+1)+'</b> of '+WZ_CATS.length+' &mdash; <b style="color:var(--cyan)">'+cat.toUpperCase()+'</b>';
+  if(lbl)lbl.innerHTML='Step <b>'+(step+1)+'</b> of '+WZ_CATS.length+': <b style="color:var(--cyan)">'+cat.toUpperCase()+'</b>';
   var doneLbl=$('wz-done-lbl');
   if(doneLbl)doneLbl.textContent=done+' of 9 selected';
   var fill=$('wz-fill');
@@ -843,7 +843,7 @@ function loadFromURL(){
     applyRecommended(uc,ST.tier);
     var b=$('rec-banner');
     if(b&&b.style.display!=='none'){
-      b.innerHTML='<span style="font-size:1.1rem;flex-shrink:0">&#127917;</span><div><b style="color:var(--txt)">Your quiz build is loaded!</b> We picked these parts based on your answers. Swap anything you like &mdash; then hit <b style="color:var(--cyan)">Send My Build Request</b> at the bottom when you\'re ready.</div><button onclick="this.parentElement.style.display=\'none\'" style="background:none;border:none;color:var(--mut);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 .25rem;flex-shrink:0">&times;</button>';
+      b.innerHTML='<span style="font-size:1.1rem;flex-shrink:0">&#127917;</span><div><b style="color:var(--txt)">Your quiz build is loaded!</b> We picked these parts based on your answers. Swap anything you like, then hit <b style="color:var(--cyan)">Send My Build Request</b> at the bottom when you\'re ready.</div><button onclick="this.parentElement.style.display=\'none\'" style="background:none;border:none;color:var(--mut);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 .25rem;flex-shrink:0">&times;</button>';
     }
     setTimeout(function(){var bl=$('builder');if(bl)bl.scrollIntoView({behavior:'smooth',block:'start'});},200);
     return;

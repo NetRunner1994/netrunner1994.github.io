@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Not sure what PC you need? Answer 5 quick questions and get a real recommendation from Netrunner Builds. Free, no signup needed.">
-  <meta property="og:title" content="What Build Do I Need? — Netrunner Builds">
+  <meta property="og:title" content="What Build Do I Need? | Netrunner Builds">
   <meta property="og:description" content="5 quick questions. Get a custom PC build recommendation matched to your budget and goals.">
   <meta property="og:image" content="%%SITE_URL%%/netrunner_logo.png">
   <meta property="og:url" content="%%SITE_URL%%/build-quiz.html">
@@ -192,7 +192,7 @@
   <div class="quiz-header">
     <div class="eyebrow">// Netrunner Builds</div>
     <h1>What Build Do<br><span>You Actually Need?</span></h1>
-    <p>Answer 5 quick questions. Get a real recommendation &mdash; then let us handle the build.</p>
+    <p>Answer 5 quick questions. Get a real recommendation, then let us handle the build.</p>
   </div>
 
   <div class="quiz-card" id="quiz-card">
@@ -216,7 +216,7 @@ const QUESTIONS = [
     options: [
       { value: 'gaming',  icon: '🎮', label: 'Gaming',                       sub: 'Your primary goal is performance in games' },
       { value: 'create',  icon: '🎬', label: 'Content Creation',             sub: 'Video editing, streaming, design, 3D' },
-      { value: 'general', icon: '🌐', label: 'Work, School & General Use',  sub: 'Browsing, Office apps, video calls, everyday tasks', note: 'Heads up — if this is all you need, a laptop will honestly serve you better for less money. A custom desktop build makes the most sense for gaming or serious creative work.' },
+      { value: 'general', icon: '🌐', label: 'Work, School & General Use',  sub: 'Browsing, Office apps, video calls, everyday tasks', note: 'Heads up: if this is all you need, a laptop will honestly serve you better for less money. A custom desktop build makes the most sense for gaming or serious creative work.' },
     ]
   },
   {
@@ -224,19 +224,19 @@ const QUESTIONS = [
     text: 'What kind of games or workloads are we talking?',
     options: [
       { value: 'light', icon: '🍃', label: 'Light',          sub: 'Minecraft, indie games, Roblox, 1080p casual' },
-      { value: 'mid',   icon: '⚡', label: 'Mid-Range',      sub: 'Valorant, Fortnite, FC 26, 1080p–1440p' },
-      { value: 'heavy', icon: '🔥', label: 'Demanding',      sub: 'Cyberpunk, Flight Sim, Battlefield, 1440p–4K' },
-      { value: 'pro',   icon: '🚀', label: 'No Compromises', sub: 'Max settings, streaming, editing — all at once' },
+      { value: 'mid',   icon: '⚡', label: 'Mid-Range',      sub: 'Valorant, Fortnite, FC 26, 1080p-1440p' },
+      { value: 'heavy', icon: '🔥', label: 'Demanding',      sub: 'Cyberpunk, Flight Sim, Battlefield, 1440p-4K' },
+      { value: 'pro',   icon: '🚀', label: 'No Compromises', sub: 'Max settings, streaming, editing, all at once' },
     ]
   },
   {
     id: 'budget',
     text: "What's your total parts budget?",
     options: [
-      { value: 'low',   icon: '💵',     label: 'Under $1,200',    sub: 'Entry build — everyday tasks and casual gaming' },
-      { value: 'mid',   icon: '💵💵',   label: '$1,200 – $2,000', sub: 'Sweet spot — great 1080p, solid 1440p gaming' },
-      { value: 'high',  icon: '💵💵💵', label: '$2,000 – $3,000', sub: 'High-performance — strong 1440p, capable 4K' },
-      { value: 'ultra', icon: '💎',     label: '$3,000+',         sub: 'No compromises — 4K, streaming, creation' },
+      { value: 'low',   icon: '💵',     label: 'Under $1,200',    sub: 'Entry build: everyday tasks and casual gaming' },
+      { value: 'mid',   icon: '💵💵',   label: '$1,200-$2,000', sub: 'Sweet spot: great 1080p, solid 1440p gaming' },
+      { value: 'high',  icon: '💵💵💵', label: '$2,000-$3,000', sub: 'High-performance: strong 1440p, capable 4K' },
+      { value: 'ultra', icon: '💎',     label: '$3,000+',         sub: 'No compromises: 4K, streaming, creation' },
     ]
   },
   {
@@ -263,7 +263,7 @@ const QUESTIONS = [
 const RESULTS = {
   budget_entry: {
     tier: 'Entry Level', name: 'The Ghost Protocol',
-    budget: 'Estimated total: ~$1,000–$1,350',
+    budget: 'Estimated total: ~$1,000-$1,350',
     desc: 'A solid entry-level machine for everyday computing and casual gaming. Handles most modern games at 1080p on high settings without breaking the bank.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 5 5600' }, { key: 'GPU', val: 'NVIDIA RTX 5060 8GB' },
@@ -275,8 +275,8 @@ const RESULTS = {
   },
   mid_sweet: {
     tier: 'Mid-Range', name: 'The Neural Link',
-    budget: 'Estimated total: ~$1,600–$2,150',
-    desc: 'The sweet spot. This build runs 1080p at max settings and handles 1440p gaming comfortably. Built on AMD\'s latest platform for 3–5 years of relevance before any upgrade is needed.',
+    budget: 'Estimated total: ~$1,600-$2,150',
+    desc: 'The sweet spot. This build runs 1080p at max settings and handles 1440p gaming comfortably. Built on AMD\'s latest platform for 3-5 years of relevance before any upgrade is needed.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 5 9600X' }, { key: 'GPU', val: 'AMD RX 9070 16GB' },
       { key: 'RAM', val: '32GB DDR5-6000' },    { key: 'Storage', val: 'WD Black SN770 1TB NVMe' },
@@ -287,7 +287,7 @@ const RESULTS = {
   },
   high_perf: {
     tier: 'High Performance', name: 'The Icepick',
-    budget: 'Estimated total: ~$2,300–$3,000',
+    budget: 'Estimated total: ~$2,300-$3,000',
     desc: 'No compromises on 1440p and very capable at 4K. Built for demanding games, high-refresh competitive play, and someone who wants serious headroom for the next 5+ years.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 7 9700X' }, { key: 'GPU', val: 'AMD RX 9070 XT 16GB' },
@@ -299,31 +299,31 @@ const RESULTS = {
   },
   ultra_beast: {
     tier: 'High-End / Ultra', name: 'The Arasaka',
-    budget: 'Estimated total: ~$3,400–$4,500',
+    budget: 'Estimated total: ~$3,400-$4,500',
     desc: 'Maximum gaming performance. Built around the best gaming CPU available and a top-tier GPU. 4K at max settings, 240Hz 1440p, and no game will slow it down.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 7 9800X3D' }, { key: 'GPU', val: 'NVIDIA RTX 5080 16GB' },
       { key: 'RAM', val: '32GB DDR5-6400' },       { key: 'Storage', val: 'WD Black SN850X 2TB NVMe' },
       { key: 'Motherboard', val: 'X870E (AMD AM5)' }, { key: 'PSU', val: '1200W 80+ Gold' },
     ],
-    usedFor: '4K gaming at ultra settings, 240Hz 1440p, heavy streaming, video editing. Future-proofed — nothing coming out in the next several years will slow this machine down.',
+    usedFor: '4K gaming at ultra settings, 240Hz 1440p, heavy streaming, video editing. Future-proofed: nothing coming out in the next several years will slow this machine down.',
     pcpp: 'https://pcpartpicker.com/list/'
   },
   work_light: {
     tier: 'Office / School', name: 'The Operative',
-    budget: 'Estimated total: ~$1,000–$1,300',
-    desc: 'Fast, efficient, and reliable. Purpose-built for productivity — snappy boot times, multitasking across dozens of tabs, and handles everything Office 365, Zoom, and your browser can throw at it.',
+    budget: 'Estimated total: ~$1,000-$1,300',
+    desc: 'Fast, efficient, and reliable. Purpose-built for productivity: snappy boot times, multitasking across dozens of tabs, and handles everything Office 365, Zoom, and your browser can throw at it.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 5 5600' }, { key: 'GPU', val: 'NVIDIA RTX 5060 8GB' },
       { key: 'RAM', val: '16GB DDR4-3200' },   { key: 'Storage', val: 'Kingston NV3 1TB NVMe' },
       { key: 'Motherboard', val: 'B550 (AMD AM4)' }, { key: 'PSU', val: '650W 80+ Gold' },
     ],
-    usedFor: 'Office apps, web browsing, video calls, spreadsheets, light photo editing. Also handles casual gaming on the side — Minecraft, Fortnite, older titles at 1080p.',
+    usedFor: 'Office apps, web browsing, video calls, spreadsheets, light photo editing. Also handles casual gaming on the side: Minecraft, Fortnite, older titles at 1080p.',
     pcpp: 'https://pcpartpicker.com/list/'
   },
   creator: {
     tier: 'Creator Workstation', name: 'The Edit Suite',
-    budget: 'Estimated total: ~$2,800–$3,650',
+    budget: 'Estimated total: ~$2,800-$3,650',
     desc: 'Built for the grind. High core counts for rendering, 64GB of RAM for video timelines, and a top-tier GPU that handles both creative workloads and gaming when the work is done.',
     specs: [
       { key: 'CPU', val: 'AMD Ryzen 7 9700X' }, { key: 'GPU', val: 'NVIDIA RTX 5070 Ti 16GB' },
