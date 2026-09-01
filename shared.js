@@ -52,4 +52,31 @@
       track.style.transform='translateX(-'+(i*100)+'%)';
     },3500);
   });
+
+  function dismissSaleBanner(){
+    var b=document.getElementById('sale-banner');
+    if(!b)return;
+    try{localStorage.setItem('sale-dismissed-'+b.dataset.phase,'1');}catch(e){}
+    b.style.display='none';
+  }
+  window.dismissSaleBanner=dismissSaleBanner;
+
+  (function(){
+    var banner=document.getElementById('sale-banner');
+    var textEl=document.getElementById('sale-banner-text');
+    if(!banner||!textEl)return;
+    var now=new Date();
+    var saleStart=new Date('2026-09-04T00:00:00');
+    var saleEnd=new Date('2026-09-13T00:00:00');
+    if(now>=saleEnd)return;
+    var phase=now>=saleStart?'live':'announce';
+    banner.dataset.phase=phase;
+    var dismissed=false;
+    try{dismissed=localStorage.getItem('sale-dismissed-'+phase)==='1';}catch(e){}
+    if(dismissed)return;
+    textEl.innerHTML=phase==='live'
+      ?'&#127881; <b>Labor Day Sale is live:</b> 25% off all labor through Sept 12. <a href="request.html?promo=laborday2026">Book now &rarr;</a>'
+      :'&#127881; <b>Labor Day Sale starts Friday, Sept 4:</b> 25% off all labor through Sept 12. <a href="request.html?promo=laborday2026">Book now &rarr;</a>';
+    banner.style.display='flex';
+  })();
 })();

@@ -15,6 +15,12 @@ body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:linear
 @media(max-width:900px){body{background-attachment:scroll;}}
 a{color:var(--cyan);text-decoration:none;}
 a:hover{text-decoration:underline;}
+/* SALE BANNER */
+.sale-banner{display:flex;align-items:center;justify-content:center;gap:.75rem;background:linear-gradient(90deg,var(--magenta),var(--cyan));color:#06060e;font-weight:700;font-size:.82rem;padding:.55rem 1rem;text-align:center;position:relative;}
+.sale-banner-text a{color:#06060e;text-decoration:underline;font-weight:800;}
+.sale-banner-close{background:none;border:none;color:#06060e;font-size:1.1rem;line-height:1;cursor:pointer;padding:0 .2rem;flex-shrink:0;opacity:.75;}
+.sale-banner-close:hover{opacity:1;}
+@media(max-width:600px){.sale-banner{font-size:.74rem;padding:.55rem .75rem;}}
 /* NAV */
 nav{position:sticky;top:0;z-index:100;background:rgba(4,6,18,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,229,255,.15);padding:0 1.5rem;}
 .nav-i{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;height:60px;}
