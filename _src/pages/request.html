@@ -32,6 +32,10 @@
     <div id="summ-rows"><div class="summ-row"><span style="color:var(--mut)">No build configured yet. Tell me what you&rsquo;re looking for in the notes below, or <a href="build.html">try the PC Builder Tool first</a>.</span></div></div>
   </div>
 
+  <div class="parts-note" id="promo-note" style="display:none;background:rgba(255,45,120,.08);border:1px solid rgba(255,45,120,.3);">
+    <b>&#127881; Labor Day Sale applied:</b> 25% off labor on this request. I&rsquo;ll apply the discount when I send your quote.
+  </div>
+
   <div class="parts-note" style="display:block;">
     <b>&#128230; Heads up:</b> I handle the building, not the shopping. You&rsquo;ll need to buy the parts yourself (Amazon, Newegg, Micro Center, etc.). I come to you and put it all together. Not sure what to get or where to order? Just say so in the notes and I&rsquo;ll walk you through it, no extra charge.
   </div>
@@ -41,6 +45,7 @@
       <input type="hidden" name="build_summary" id="hid-summary">
       <input type="hidden" name="request_type" id="hid-type" value="">
       <input type="hidden" name="use_case" id="hid-uc">
+      <input type="hidden" name="promo_code" id="hid-promo" value="">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="fg">
         <label for="contact-reason">What can I help you with? *</label>
@@ -115,8 +120,16 @@ function loadFromURL(){
   var p=new URLSearchParams(window.location.search);
   var type=p.get('type');
   var tier=p.get('tier');
+  var promo=p.get('promo');
   var rows=[];
   var parts=[];
+
+  if(promo==='laborday2026'){
+    var pn=document.getElementById('promo-note');
+    if(pn)pn.style.display='block';
+    var hp=document.getElementById('hid-promo');
+    if(hp)hp.value='LABORDAY2026 (25% off labor)';
+  }
 
   if(!type&&!tier){
     document.getElementById('build-summ-wrap').style.display='none';
