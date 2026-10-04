@@ -16,50 +16,51 @@ const ICONS = {
 const DATA = {
   gpu: {
     budget:[
-      {n:'NVIDIA GTX 1060 6GB',lo:35,hi:75,year:2016,perf:1,s:'Used · 1080p medium · Cheapest way into PC gaming · Best for Fortnite, Minecraft, older titles',pcp:'https://pcpartpicker.com/search/?q=GTX+1060+6GB'},
-      {n:'AMD RX 580 8GB',lo:45,hi:90,year:2017,perf:1,s:'Used · 1080p medium settings · Great Linux support · Good amount of VRAM for the price',pcp:'https://pcpartpicker.com/search/?q=RX+580+8GB'},
-      {n:'NVIDIA GTX 1660 Super 6GB',lo:65,hi:120,year:2019,perf:2,s:'Used · 1080p high settings · No ray tracing · Solid reliable budget pick',pcp:'https://pcpartpicker.com/search/?q=GTX+1660+Super'},
-      {n:'AMD RX 6600 XT 8GB',lo:110,hi:160,year:2021,perf:3,s:'Used · Strong 1080p gaming · Efficient power draw · Great value on used market',pcp:'https://pcpartpicker.com/search/?q=RX+6600+XT'},
-      {n:'NVIDIA RTX 2060 6GB',lo:100,hi:165,year:2018,perf:3,s:'Used · 1080p high settings · Includes ray tracing · Older but still capable',pcp:'https://pcpartpicker.com/search/?q=RTX+2060+6GB'},
-      {n:'NVIDIA RTX 3060 12GB',lo:160,hi:250,year:2021,perf:4,s:'Used · Great 1080p, light 1440p · Extra VRAM helps longevity · Ray tracing capable',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+12GB'},
-      {n:'AMD RX 7600 8GB',lo:195,hi:240,year:2023,perf:4,s:'Solid 1080p at ultra settings · Power efficient · Current-gen AMD entry card · Good driver support',pcp:'https://pcpartpicker.com/search/?q=RX+7600+8GB'},
-      {n:'NVIDIA RTX 5050 8GB',lo:249,hi:299,year:2025,perf:4,s:'Entry-level current-gen · Plays all modern games at 1080p high settings · Latest NVIDIA architecture',pcp:'https://pcpartpicker.com/search/?q=RTX+5050'},
-      {n:'NVIDIA RTX 5060 8GB',lo:299,hi:339,year:2025,perf:5,s:'Great 1080p, handles 1440p at medium-high · Latest generation · AI-powered frame generation included',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+8GB'},
-      {n:'AMD RX 9060 XT 8GB',lo:299,hi:359,year:2025,perf:5,s:'AMD current-gen entry · Great 1080p/1440p gaming · Excellent Linux and open-source driver support',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+8GB'},
-      {n:'NVIDIA RTX 5060 Ti 8GB',lo:369,hi:420,year:2025,perf:6,s:'Strong 1080p, solid 1440p · Step up from 5060 · AI frame generation · 8GB VRAM may feel tight in 2-3 years',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+8GB'}
+      {n:'NVIDIA GTX 1060 6GB',lo:50,hi:90,year:2016,perf:1,s:'Used · 1080p medium · Cheapest way into PC gaming · Best for Fortnite, Minecraft, older titles',pcp:'https://pcpartpicker.com/search/?q=GTX+1060+6GB'},
+      {n:'AMD RX 580 8GB',lo:60,hi:100,year:2017,perf:1,s:'Used · 1080p medium settings · Great Linux support · Good amount of VRAM for the price',pcp:'https://pcpartpicker.com/search/?q=RX+580+8GB'},
+      {n:'NVIDIA GTX 1660 Super 6GB',lo:90,hi:150,year:2019,perf:2,s:'Used · 1080p high settings · No ray tracing · Solid reliable budget pick',pcp:'https://pcpartpicker.com/search/?q=GTX+1660+Super'},
+      {n:'AMD RX 6600 XT 8GB',lo:150,hi:220,year:2021,perf:3,s:'Used · Strong 1080p gaming · Efficient power draw · Great value on used market',pcp:'https://pcpartpicker.com/search/?q=RX+6600+XT'},
+      {n:'NVIDIA RTX 2060 6GB',lo:130,hi:200,year:2018,perf:3,s:'Used · 1080p high settings · Includes ray tracing · Older but still capable',pcp:'https://pcpartpicker.com/search/?q=RTX+2060+6GB'},
+      {n:'NVIDIA RTX 3060 12GB',lo:220,hi:300,year:2021,perf:4,s:'Used · Great 1080p, light 1440p · Extra VRAM helps longevity · Ray tracing capable',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+12GB'},
+      {n:'AMD RX 7600 8GB',lo:260,hi:330,year:2023,perf:4,s:'Solid 1080p at ultra settings · Power efficient · Current-gen AMD entry card · Good driver support',pcp:'https://pcpartpicker.com/search/?q=RX+7600+8GB'},
+      {n:'NVIDIA RTX 5050 8GB',lo:349,hi:429,year:2025,perf:4,s:'Entry-level current-gen · Plays all modern games at 1080p high settings · Latest NVIDIA architecture',pcp:'https://pcpartpicker.com/search/?q=RTX+5050'},
+      {n:'NVIDIA RTX 5060 8GB',lo:449,hi:529,year:2025,perf:5,s:'Great 1080p, handles 1440p at medium-high · Latest generation · AI-powered frame generation included',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+8GB'},
+      {n:'AMD RX 9060 XT 8GB',lo:279,hi:349,year:2025,perf:5,s:'Best budget value right now · Great 1080p/1440p gaming · AMD prices have held up far better than NVIDIA in 2026 · Excellent Linux support',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+8GB'},
+      {n:'NVIDIA RTX 5060 Ti 8GB',lo:479,hi:559,year:2025,perf:6,s:'Strong 1080p, solid 1440p · Step up from 5060 · AI frame generation · 8GB VRAM may feel tight in 2-3 years',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+8GB'},
+      {n:'AMD RX 9060 XT 16GB',lo:349,hi:429,year:2025,perf:5,s:'Best value 16GB card right now · Great 1080p/1440p · VRAM keeps it useful for years · Latest AMD generation',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'}
     ],
     mid:[
-      {n:'NVIDIA RTX 3060 Ti 8GB',lo:205,hi:285,year:2020,perf:5,s:'Used · Good 1440p entry · Faster than standard 3060 · Proven reliable card',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+Ti+8GB'},
-      {n:'AMD RX 6700 XT 12GB',lo:200,hi:300,year:2021,perf:5,s:'Used · Solid 1440p · More VRAM than most cards at this price · Great used value',pcp:'https://pcpartpicker.com/search/?q=RX+6700+XT+12GB'},
-      {n:'NVIDIA RTX 3070 8GB',lo:200,hi:280,year:2020,perf:6,s:'Used · Strong 1440p · Still competitive in 2026 · Great secondhand value',pcp:'https://pcpartpicker.com/search/?q=RTX+3070+8GB'},
-      {n:'AMD RX 7700 XT 12GB',lo:320,hi:400,year:2023,perf:6,s:'Current-gen 1440p card · Good VRAM · Solid rasterization performance · Great for content creation',pcp:'https://pcpartpicker.com/search/?q=RX+7700+XT'},
-      {n:'AMD RX 7900 GRE 16GB',lo:400,hi:500,year:2023,perf:7,s:'16GB VRAM · Strong 1440p and capable 4K · Excellent value for memory-heavy workloads and AI tools',pcp:'https://pcpartpicker.com/search/?q=RX+7900+GRE'},
-      {n:'NVIDIA RTX 4060 8GB',lo:280,hi:330,year:2023,perf:5,s:'Efficient 1080p/1440p card · AI frame generation · Very low power draw · Good mainstream pick',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+8GB'},
-      {n:'NVIDIA RTX 4060 Ti 8GB',lo:360,hi:420,year:2023,perf:6,s:'Strong 1440p · AI frame boost · Efficient for its class · Good mid-tier 2023 pick',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+Ti+8GB'},
-      {n:'NVIDIA RTX 4070 Super 12GB',lo:490,hi:580,year:2024,perf:7,s:'Excellent 1440p, capable 4K · Great price-to-performance · AI features included · One of the best value cards available',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Super'},
-      {n:'AMD RX 9060 XT 16GB',lo:349,hi:448,year:2025,perf:5,s:'16GB VRAM keeps this card useful for years · Great 1080p/1440p · Latest AMD generation',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'},
-      {n:'NVIDIA RTX 5060 Ti 16GB',lo:449,hi:539,year:2025,perf:6,s:'Speed + staying power · Best all-around mid-range balance · Large VRAM means fewer compromises later',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+16GB'},
-      {n:'AMD RX 9070 16GB',lo:499,hi:580,year:2025,perf:7,s:'Excellent 1440p · Beats similarly-priced competition in most games · 16GB VRAM · Latest AMD generation',pcp:'https://pcpartpicker.com/search/?q=RX+9070'},
-      {n:'NVIDIA RTX 5070 12GB',lo:569,hi:649,year:2025,perf:8,s:'Best-in-class 1440p · Capable 4K · AI frame generation · Great for high-refresh gaming',pcp:'https://pcpartpicker.com/search/?q=RTX+5070'}
+      {n:'NVIDIA RTX 3060 Ti 8GB',lo:260,hi:340,year:2020,perf:5,s:'Used · Good 1440p entry · Faster than standard 3060 · Proven reliable card',pcp:'https://pcpartpicker.com/search/?q=RTX+3060+Ti+8GB'},
+      {n:'AMD RX 6700 XT 12GB',lo:260,hi:350,year:2021,perf:5,s:'Used · Solid 1440p · More VRAM than most cards at this price · Great used value',pcp:'https://pcpartpicker.com/search/?q=RX+6700+XT+12GB'},
+      {n:'NVIDIA RTX 3070 8GB',lo:270,hi:350,year:2020,perf:6,s:'Used · Strong 1440p · Still competitive in 2026 · Great secondhand value',pcp:'https://pcpartpicker.com/search/?q=RTX+3070+8GB'},
+      {n:'AMD RX 7700 XT 12GB',lo:399,hi:479,year:2023,perf:6,s:'Current-gen 1440p card · Good VRAM · Solid rasterization performance · Great for content creation',pcp:'https://pcpartpicker.com/search/?q=RX+7700+XT'},
+      {n:'AMD RX 7900 GRE 16GB',lo:549,hi:639,year:2023,perf:7,s:'16GB VRAM · Strong 1440p and capable 4K · Excellent value for memory-heavy workloads and AI tools',pcp:'https://pcpartpicker.com/search/?q=RX+7900+GRE'},
+      {n:'NVIDIA RTX 4060 8GB',lo:349,hi:429,year:2023,perf:5,s:'Efficient 1080p/1440p card · AI frame generation · Very low power draw · Good mainstream pick',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+8GB'},
+      {n:'NVIDIA RTX 4060 Ti 8GB',lo:449,hi:529,year:2023,perf:6,s:'Strong 1440p · AI frame boost · Efficient for its class · Good mid-tier 2023 pick',pcp:'https://pcpartpicker.com/search/?q=RTX+4060+Ti+8GB'},
+      {n:'NVIDIA RTX 4070 Super 12GB',lo:599,hi:699,year:2024,perf:7,s:'Excellent 1440p, capable 4K · Mostly found used now · New stock is scarce and selling 60%+ over MSRP',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Super'},
+      {n:'AMD RX 9060 XT 16GB',lo:349,hi:429,year:2025,perf:5,s:'Best value 16GB card right now · Great 1080p/1440p · VRAM keeps it useful for years · Latest AMD generation',pcp:'https://pcpartpicker.com/search/?q=RX+9060+XT+16GB'},
+      {n:'NVIDIA RTX 5060 Ti 16GB',lo:999,hi:1099,year:2025,perf:6,s:'Heavily inflated and often out of stock in 2026 · The RX 9060 XT 16GB or RTX 5070 are much better value right now',pcp:'https://pcpartpicker.com/search/?q=RTX+5060+Ti+16GB'},
+      {n:'AMD RX 9070 16GB',lo:599,hi:679,year:2025,perf:7,s:'Excellent 1440p · Beats similarly-priced competition in most games · 16GB VRAM · Latest AMD generation',pcp:'https://pcpartpicker.com/search/?q=RX+9070'},
+      {n:'NVIDIA RTX 5070 12GB',lo:749,hi:849,year:2025,perf:8,s:'Best-in-class 1440p · Capable 4K · AI frame generation · Great for high-refresh gaming',pcp:'https://pcpartpicker.com/search/?q=RTX+5070'}
     ],
     high:[
-      {n:'NVIDIA RTX 3080 10GB',lo:265,hi:349,year:2020,perf:7,s:'Used · High-performance 1440p and entry 4K · Still very capable in 2026',pcp:'https://pcpartpicker.com/search/?q=RTX+3080+10GB'},
-      {n:'AMD RX 6800 XT 16GB',lo:315,hi:399,year:2020,perf:7,s:'Used · Maxes 1440p, handles entry 4K · 16GB VRAM · Excellent used market value',pcp:'https://pcpartpicker.com/search/?q=RX+6800+XT+16GB'},
-      {n:'NVIDIA RTX 3090 24GB',lo:429,hi:519,year:2020,perf:8,s:'Used · Massive VRAM · Excellent for video editing, 3D, AI work · Handles 4K gaming well',pcp:'https://pcpartpicker.com/search/?q=RTX+3090'},
-      {n:'AMD RX 7900 XT 20GB',lo:589,hi:679,year:2022,perf:8,s:'20GB VRAM · Strong 4K gaming · Excellent for creative workloads · Good current-gen AMD pick',pcp:'https://pcpartpicker.com/search/?q=RX+7900+XT'},
-      {n:'NVIDIA RTX 4070 12GB',lo:559,hi:649,year:2023,perf:7,s:'Great 1440p, capable 4K · AI features · Efficient · A solid 2023 card still worth buying',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+12GB'},
-      {n:'NVIDIA RTX 4070 Ti 12GB',lo:649,hi:749,year:2023,perf:8,s:'High-end 1440p and strong 4K · AI features · Big jump over 4070 · Good high-tier 2023 option',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Ti'},
-      {n:'NVIDIA RTX 4070 Ti Super 16GB',lo:779,hi:869,year:2024,perf:8,s:'4K capable · 16GB VRAM · Strong value at the high end · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Ti+Super'},
-      {n:'AMD RX 9070 XT 16GB',lo:559,hi:649,year:2025,perf:8,s:'Excellent 1440p and capable 4K · 16GB VRAM · AMD\'s top mid-range from the latest generation · Prices coming down',pcp:'https://pcpartpicker.com/search/?q=RX+9070+XT'},
-      {n:'NVIDIA RTX 5070 Ti 16GB',lo:849,hi:949,year:2025,perf:9,s:'High-refresh 1440p and smooth 4K · Big performance jump over 5070 · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+5070+Ti'},
-      {n:'NVIDIA RTX 5080 16GB',lo:1049,hi:1149,year:2025,perf:9,s:'Top-tier 4K gaming · Near-best card available · No compromises at any resolution',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'}
+      {n:'NVIDIA RTX 3080 10GB',lo:349,hi:439,year:2020,perf:7,s:'Used · High-performance 1440p and entry 4K · Still very capable in 2026',pcp:'https://pcpartpicker.com/search/?q=RTX+3080+10GB'},
+      {n:'AMD RX 6800 XT 16GB',lo:379,hi:469,year:2020,perf:7,s:'Used · Maxes 1440p, handles entry 4K · 16GB VRAM · Excellent used market value',pcp:'https://pcpartpicker.com/search/?q=RX+6800+XT+16GB'},
+      {n:'NVIDIA RTX 3090 24GB',lo:599,hi:699,year:2020,perf:8,s:'Used · Massive VRAM · Excellent for video editing, 3D, AI work · Handles 4K gaming well',pcp:'https://pcpartpicker.com/search/?q=RTX+3090'},
+      {n:'AMD RX 7900 XT 20GB',lo:699,hi:799,year:2022,perf:8,s:'20GB VRAM · Strong 4K gaming · Excellent for creative workloads · Good current-gen AMD pick',pcp:'https://pcpartpicker.com/search/?q=RX+7900+XT'},
+      {n:'NVIDIA RTX 4070 12GB',lo:649,hi:749,year:2023,perf:7,s:'Great 1440p, capable 4K · AI features · Efficient · A solid 2023 card still worth buying',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+12GB'},
+      {n:'NVIDIA RTX 4070 Ti 12GB',lo:749,hi:849,year:2023,perf:8,s:'High-end 1440p and strong 4K · AI features · Big jump over 4070 · Good high-tier 2023 option',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Ti'},
+      {n:'NVIDIA RTX 4070 Ti Super 16GB',lo:899,hi:999,year:2024,perf:8,s:'4K capable · 16GB VRAM · Strong value at the high end · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+4070+Ti+Super'},
+      {n:'AMD RX 9070 XT 16GB',lo:699,hi:799,year:2025,perf:8,s:'Excellent 1440p and capable 4K · 16GB VRAM · AMD\'s top card from the latest generation · Holding closer to MSRP than NVIDIA',pcp:'https://pcpartpicker.com/search/?q=RX+9070+XT'},
+      {n:'NVIDIA RTX 5070 Ti 16GB',lo:1149,hi:1249,year:2025,perf:9,s:'High-refresh 1440p and smooth 4K · Discontinued, so remaining stock is limited and pricey · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+5070+Ti'},
+      {n:'NVIDIA RTX 5080 16GB',lo:1499,hi:1599,year:2025,perf:9,s:'Top-tier 4K gaming · Near-best card available · No compromises at any resolution',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'}
     ],
     ultra:[
-      {n:'AMD RX 7900 XTX 24GB',lo:949,hi:1049,year:2022,perf:8,s:'AMD flagship · 4K ultra settings · Very large VRAM · Outstanding raw performance',pcp:'https://pcpartpicker.com/search/?q=RX+7900+XTX'},
-      {n:'NVIDIA RTX 4090 24GB',lo:1499,hi:1599,year:2022,perf:9,s:'Previous NVIDIA flagship · 4K ultra settings · Massive VRAM · Still one of the top cards in the world',pcp:'https://pcpartpicker.com/search/?q=RTX+4090'},
-      {n:'NVIDIA RTX 4080 Super 16GB',lo:1049,hi:1149,year:2024,perf:9,s:'4K ultra settings · 16GB VRAM · Better value than the original 4080 · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+4080+Super'},
-      {n:'NVIDIA RTX 5080 16GB',lo:1049,hi:1149,year:2025,perf:9,s:'Second-best card available · 4K gaming and high frame rates with ease · Latest generation',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
-      {n:'NVIDIA RTX 5090 32GB',lo:2299,hi:2399,year:2025,perf:10,s:'Best graphics card on the market · 4K and 8K capable · 32GB VRAM for AI and video work · Selling above suggested retail',pcp:'https://pcpartpicker.com/search/?q=RTX+5090'}
+      {n:'AMD RX 7900 XTX 24GB',lo:1049,hi:1149,year:2022,perf:8,s:'AMD flagship · 4K ultra settings · Very large VRAM · Outstanding raw performance',pcp:'https://pcpartpicker.com/search/?q=RX+7900+XTX'},
+      {n:'NVIDIA RTX 4090 24GB',lo:1999,hi:2099,year:2022,perf:9,s:'Previous NVIDIA flagship · 4K ultra settings · Massive VRAM · Still one of the top cards in the world',pcp:'https://pcpartpicker.com/search/?q=RTX+4090'},
+      {n:'NVIDIA RTX 4080 Super 16GB',lo:1249,hi:1349,year:2024,perf:9,s:'4K ultra settings · 16GB VRAM · Better value than the original 4080 · AI features included',pcp:'https://pcpartpicker.com/search/?q=RTX+4080+Super'},
+      {n:'NVIDIA RTX 5080 16GB',lo:1499,hi:1599,year:2025,perf:9,s:'Second-best card available · 4K gaming and high frame rates with ease · Latest generation',pcp:'https://pcpartpicker.com/search/?q=RTX+5080'},
+      {n:'NVIDIA RTX 5090 32GB',lo:4849,hi:4949,year:2025,perf:10,s:'Best graphics card on the market · 4K and 8K capable · 32GB VRAM for AI and video work · Selling at more than double MSRP in 2026',pcp:'https://pcpartpicker.com/search/?q=RTX+5090'}
     ]
   },
 
@@ -150,28 +151,28 @@ const DATA = {
 
   ram: {
     budget:[
-      {n:'16GB DDR4-3200 Kit',lo:115,hi:155,dd:'DDR4',s:'Minimum for gaming in 2026 · Works with AM4 and LGA1700 builds · Note: RAM prices elevated, check before ordering',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR4+3200'},
-      {n:'32GB DDR4-3200 Kit',lo:180,hi:260,dd:'DDR4',s:'Recommended capacity · Keeps older AMD or Intel builds comfortable for years · Verify current price before buying',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
-      {n:'16GB DDR5-4800 Kit',lo:80,hi:120,dd:'DDR5',s:'Entry DDR5 for latest Intel builds · Minimum to get started on the newest platform',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR5+4800'},
-      {n:'32GB DDR5-5600 Kit',lo:200,hi:300,dd:'DDR5',s:'Solid DDR5 for latest Intel builds · Good balance of speed and capacity',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'}
+      {n:'16GB DDR4-3200 Kit',lo:139,hi:209,dd:'DDR4',s:'Minimum for gaming in 2026 · Works with AM4 and LGA1700 builds · Note: RAM prices elevated, check before ordering',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR4+3200'},
+      {n:'32GB DDR4-3200 Kit',lo:219,hi:299,dd:'DDR4',s:'Recommended capacity · Keeps older AMD or Intel builds comfortable for years · Verify current price before buying',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
+      {n:'16GB DDR5-4800 Kit',lo:249,hi:329,dd:'DDR5',s:'Entry DDR5 for latest Intel builds · Minimum to get started on the newest platform',pcp:'https://pcpartpicker.com/search/?q=16GB+DDR5+4800'},
+      {n:'32GB DDR5-5600 Kit',lo:379,hi:459,dd:'DDR5',s:'Solid DDR5 for latest Intel builds · Good balance of speed and capacity',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'}
     ],
     mid:[
-      {n:'32GB DDR4-3200 Kit',lo:180,hi:260,dd:'DDR4',s:'Best value for AM4 and LGA1700 builds · Currently cheaper than DDR5 · Good all-around choice',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
-      {n:'32GB DDR5-5600 Kit',lo:200,hi:300,dd:'DDR5',s:'Entry DDR5 for AM5 platform · Handles most games and tasks well · Note: memory prices are elevated right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'},
-      {n:'32GB DDR5-6000 CL30',lo:265,hi:355,dd:'DDR5',s:'Sweet spot for AM5 · This speed pairs especially well with Ryzen 7000/9000 · Note: prices are about 4x higher than 2025 lows',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
-      {n:'64GB DDR5-6000 Kit',lo:569,hi:659,dd:'DDR5',s:'For video editing, streaming, and heavy multitasking · Plenty of room for large projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'}
+      {n:'32GB DDR4-3200 Kit',lo:219,hi:299,dd:'DDR4',s:'Best value for AM4 and LGA1700 builds · Currently cheaper than DDR5 · Good all-around choice',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR4+3200'},
+      {n:'32GB DDR5-5600 Kit',lo:379,hi:459,dd:'DDR5',s:'Entry DDR5 for AM5 platform · Handles most games and tasks well · Note: memory prices are elevated right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+5600'},
+      {n:'32GB DDR5-6000 CL30',lo:409,hi:499,dd:'DDR5',s:'Sweet spot for AM5 · This speed pairs especially well with Ryzen 7000/9000 · Note: DDR5 is roughly 4-5x its 2025 low',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
+      {n:'64GB DDR5-6000 Kit',lo:849,hi:949,dd:'DDR5',s:'For video editing, streaming, and heavy multitasking · Plenty of room for large projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'}
     ],
     high:[
-      {n:'32GB DDR5-6000 CL30',lo:265,hi:355,dd:'DDR5',s:'Best starting point for high-end AMD builds · Verified strong performance · Check current price, elevated right now',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
-      {n:'32GB DDR5-6400 CL32',lo:299,hi:389,dd:'DDR5',s:'Faster DDR5 kit · Noticeable boost specifically with Ryzen 7 9800X3D · Verify price before ordering',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
-      {n:'64GB DDR5-6000 Kit',lo:569,hi:659,dd:'DDR5',s:'For gaming + serious content creation · No worrying about running out on big projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'},
-      {n:'64GB DDR5-6400 Kit',lo:629,hi:719,dd:'DDR5',s:'Fast, high-capacity · For people who create content and game hard · Check PCPartPicker before ordering',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'}
+      {n:'32GB DDR5-6000 CL30',lo:409,hi:499,dd:'DDR5',s:'Sweet spot for AM5 · This speed pairs especially well with Ryzen 7000/9000 · Note: DDR5 is roughly 4-5x its 2025 low',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6000'},
+      {n:'32GB DDR5-6400 CL32',lo:449,hi:539,dd:'DDR5',s:'Faster DDR5 kit · Noticeable boost specifically with Ryzen 7 9800X3D · Verify price before ordering',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
+      {n:'64GB DDR5-6000 Kit',lo:849,hi:949,dd:'DDR5',s:'For gaming + serious content creation · No worrying about running out on big projects',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6000'},
+      {n:'64GB DDR5-6400 Kit',lo:949,hi:1049,dd:'DDR5',s:'Fast, high-capacity · For people who create content and game hard · Check PCPartPicker before ordering',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'}
     ],
     ultra:[
-      {n:'32GB DDR5-6400 CL32',lo:299,hi:389,dd:'DDR5',s:'Best pairing for the Ryzen 7 9800X3D · Unlocks maximum gaming performance from that chip',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
-      {n:'64GB DDR5-6400 Kit',lo:629,hi:719,dd:'DDR5',s:'Fast + high-capacity · Handles professional workstation tasks and gaming with no limits',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'},
-      {n:'96GB DDR5-6400 Kit',lo:1099,hi:1199,dd:'DDR5',s:'Near server-level capacity · For extreme video rendering and running large AI models locally',pcp:'https://pcpartpicker.com/search/?q=96GB+DDR5'},
-      {n:'128GB DDR5-6000 Kit',lo:1299,hi:1399,dd:'DDR5',s:'Maximum capacity · For large AI models or rendering 3D scenes at scale · Verify price before ordering',pcp:'https://pcpartpicker.com/search/?q=128GB+DDR5'}
+      {n:'32GB DDR5-6400 CL32',lo:449,hi:539,dd:'DDR5',s:'Best pairing for the Ryzen 7 9800X3D · Unlocks maximum gaming performance from that chip',pcp:'https://pcpartpicker.com/search/?q=32GB+DDR5+6400'},
+      {n:'64GB DDR5-6400 Kit',lo:949,hi:1049,dd:'DDR5',s:'Fast + high-capacity · Handles professional workstation tasks and gaming with no limits',pcp:'https://pcpartpicker.com/search/?q=64GB+DDR5+6400'},
+      {n:'96GB DDR5-6400 Kit',lo:1599,hi:1699,dd:'DDR5',s:'Near server-level capacity · For extreme video rendering and running large AI models locally',pcp:'https://pcpartpicker.com/search/?q=96GB+DDR5'},
+      {n:'128GB DDR5-6000 Kit',lo:2099,hi:2199,dd:'DDR5',s:'Maximum capacity · For large AI models or rendering 3D scenes at scale · Verify price before ordering',pcp:'https://pcpartpicker.com/search/?q=128GB+DDR5'}
     ]
   },
 
@@ -279,16 +280,16 @@ const DATA = {
 const BASE = {budget:{lo:12,hi:22},mid:{lo:12,hi:22},high:{lo:12,hi:22},ultra:{lo:12,hi:22}};
 
 const TIER_DESCS = {
-  budget:'Budget: ~$875-$1,200 total. Great 1080p gaming and everyday tasks. Best value entry point. Note: RAM prices are elevated right now. Verify before ordering.',
-  mid:'Mid-Range: ~$1,500-$2,000 total. 1080p maxed, solid 1440p, smooth high framerates. The sweet spot for most gamers. Memory costs are higher than usual right now.',
-  high:'High-End: ~$2,150-$2,850 total. 1440p maxed out, capable 4K, handles content creation. For serious gamers who want 5+ years without upgrading.',
-  ultra:'Ultra: ~$3,000-$4,450 total. No compromises. 4K high-refresh gaming, streaming, and creation all at once. Built around the best gaming CPU available.'
+  budget:'Budget: ~$900-$1,650 total. Great 1080p gaming and everyday tasks. Best value entry point. Note: RAM and GPU prices are elevated right now. Verify before ordering.',
+  mid:'Mid-Range: ~$1,450-$2,200 total for gaming builds (creator and AI builds run higher). 1080p maxed, solid 1440p, smooth high framerates. The sweet spot for most gamers.',
+  high:'High-End: ~$2,450-$3,050 total for gaming builds. 1440p maxed out, capable 4K, handles content creation. For serious gamers who want 5+ years without upgrading.',
+  ultra:'Ultra: ~$3,800-$4,600 total for gaming builds. No compromises. 4K high-refresh gaming, streaming, and creation all at once. Heads up: an RTX 5090 build runs $7,500+ right now.'
 };
 
 const RECOMMENDED = {
   gaming:{
     label:'Gaming',
-    budget:{blurb:'Solid 1080p on a budget. Runs modern titles well without breaking the bank.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
+    budget:{blurb:'Solid 1080p on a budget. Runs modern titles well without breaking the bank.',sel:{gpu:'AMD RX 9060 XT 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
     mid:{blurb:'1080p maxed, solid 1440p, smooth FPS. Future-proofed for 3-5 years.',sel:{gpu:'AMD RX 9070 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'NZXT H5 Flow',psu:'850W 80+ Gold',cooler:'Arctic Liquid Freezer III 240mm (AIO)',fans:'Corsair RS120 ARGB 3-Pack'}},
     high:{blurb:'1440p maxed, capable 4K, high-refresh. A serious gaming rig.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'4K high-refresh, no compromises. Built around the best gaming CPU available.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 7 9800X3D',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Corsair 7000D Airflow',psu:'1200W 80+ Gold',cooler:'NZXT Kraken Plus 360mm (AIO)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}
@@ -296,7 +297,7 @@ const RECOMMENDED = {
   content:{
     label:'Content Creation',
     budget:{blurb:'Enough horsepower for 1080p editing and streaming without overspending.',sel:{gpu:'NVIDIA RTX 5060 Ti 8GB',cpu:'AMD Ryzen 5 5600X',mobo:'ASUS Prime B550M-A (AM4)',ram:'32GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Phanteks Eclipse G360A',psu:'750W 80+ Gold',cooler:'Arctic Freezer 36 (Air)',fans:'Corsair RS120 ARGB 3-Pack'}},
-    mid:{blurb:'4K timeline editing, smooth streaming, heavy multitasking. No bottlenecks.',sel:{gpu:'NVIDIA RTX 5060 Ti 16GB',cpu:'AMD Ryzen 7 7700X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'NZXT H7 Flow',psu:'850W 80+ Platinum',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
+    mid:{blurb:'4K timeline editing, smooth streaming, heavy multitasking. No bottlenecks.',sel:{gpu:'NVIDIA RTX 5070 12GB',cpu:'AMD Ryzen 7 7700X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'NZXT H7 Flow',psu:'850W 80+ Platinum',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     high:{blurb:'Professional-grade. 4K/8K editing, rendering, and live streaming simultaneously.',sel:{gpu:'NVIDIA RTX 5070 Ti 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'64GB DDR5-6000 Kit',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic EVO',psu:'1000W 80+ Gold',cooler:'Arctic Liquid Freezer III Pro 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'No workflow too heavy. 3D rendering, 8K export, multi-stream, all at once.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'64GB DDR5-6400 Kit',storage:'Samsung 990 Pro 4TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Corsair iCUE H150i Elite 360mm (AIO)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}}
   },
@@ -309,7 +310,7 @@ const RECOMMENDED = {
   },
   general:{
     label:'General Use',
-    budget:{blurb:'Fast, reliable, handles everything everyday: browsing, Office, school, light gaming.',sel:{gpu:'NVIDIA RTX 5060 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Fractal Design Pop Air',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
+    budget:{blurb:'Fast, reliable, handles everything everyday: browsing, Office, school, light gaming.',sel:{gpu:'AMD RX 9060 XT 8GB',cpu:'AMD Ryzen 5 5600',mobo:'MSI PRO B550-VC (AM4)',ram:'16GB DDR4-3200 Kit',storage:'Kingston NV3 1TB',case:'Fractal Design Pop Air',psu:'650W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
     mid:{blurb:'A well-rounded, future-proofed machine that handles anything you throw at it.',sel:{gpu:'AMD RX 9060 XT 16GB',cpu:'AMD Ryzen 5 9600X',mobo:'MSI MAG B650 Tomahawk WiFi (AM5)',ram:'32GB DDR5-6000 CL30',storage:'WD Black SN770 1TB',case:'Corsair 4000D Airflow',psu:'750W 80+ Gold',cooler:'Thermalright Peerless Assassin 120 SE (Air)',fans:'Arctic P12 PWM 3-Pack'}},
     high:{blurb:'Overkill for everyday tasks, but your machine will never feel slow. Ever.',sel:{gpu:'AMD RX 9070 XT 16GB',cpu:'AMD Ryzen 7 9700X',mobo:'ASUS ROG Strix X670E-F Gaming (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 1TB',case:'be quiet! Silent Base 802',psu:'850W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Lian Li UNI Fan 120 ARGB 3-Pack'}},
     ultra:{blurb:'A forever machine. Premium components, whisper quiet, handles anything for a decade.',sel:{gpu:'NVIDIA RTX 5080 16GB',cpu:'AMD Ryzen 9 9900X',mobo:'ASUS ROG Crosshair X870E Hero (AM5)',ram:'32GB DDR5-6400 CL32',storage:'WD Black SN850X 2TB',case:'Lian Li O11 Dynamic XL',psu:'1200W 80+ Gold',cooler:'Noctua NH-D15 G2 (Air)',fans:'Corsair iCUE Link QX120 ARGB 3-Pack'}}

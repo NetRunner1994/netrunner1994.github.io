@@ -1,5 +1,5 @@
 'use strict';
-var CACHE = 'netrunner-v1';
+var CACHE = 'netrunner-v2';
 var PRECACHE = [
   '/',
   '/index.html',
@@ -45,17 +45,20 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   if (e.request.method !== 'GET') return;
   var url = new URL(e.request.url);
-  if (url.hostname === 'formspree.io') return;
-  e.respondWith(
-    caches.match(e.request).then(function(cached) {
-      var net = fetch(e.request).then(function(res) {
-        if (res.ok) {
-          var clone = res.clone();
-          caches.open(CACHE).then(function(c) { c.put(e.request, clone); });
-        }
-        return res;
-      }).catch(function() { return cached; });
-      return cached || net;
-    })
-  );
+  if (url.origin !== self.location.origin) return;
+  var fresh = e.request.mode === 'navigate' || /\.(html|js|css|json)$/.test(url.pathname);
+  function fromNetwork() {
+    return fetch(e.request).then(function(res) {
+      if (res.ok) {
+        var clone = res.clone();
+        caches.open(CACHE).then(function(c) { c.put(e.request, clone); });
+      }
+      return res;
+    });
+  }
+  if (fresh) {
+    e.respondWith(fromNetwork().catch(function() { return caches.match(e.request); }));
+  } else {
+    e.respondWith(caches.match(e.request).then(function(cached) { return cached || fromNetwork(); }));
+  }
 });
