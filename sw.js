@@ -1,5 +1,5 @@
 'use strict';
-var CACHE = 'netrunner-v2';
+var CACHE = 'netrunner-v3';
 var PRECACHE = [
   '/',
   '/index.html',
@@ -23,7 +23,12 @@ var PRECACHE = [
   '/first_build-2.webp',
   '/first_build-3.webp',
   '/first_build-4.webp',
-  '/first_build-5.webp'
+  '/first_build-5.webp',
+  '/son_build.webp',
+  '/son_build-2.webp',
+  '/son_build-3.webp',
+  '/son_build-4.webp',
+  '/son_build-5.webp'
 ];
 
 self.addEventListener('install', function(e) {
